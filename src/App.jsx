@@ -1,21 +1,44 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import PlacementUpdate from "./pages/PlacementUpdate";
+import React from 'react';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import DirectorDesk from './components/DirectorDesk';
+import Courses from './components/Courses';
+import InfoCards from './components/InfoCards';
+import NoticesStrip from './components/NoticesStrip';
+import Footer from './components/Footer';
+
+/**
+ * Main App Component
+ * Combines all sections to create the complete college website
+ */
 function App() {
   return (
-    <BrowserRouter>
+    <div className="App">
+      {/* Top Header with College Name and Logo */}
       <Header />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/PlacementUpdate" element={<PlacementUpdate />} />
-      </Routes>
-    </BrowserRouter>
+      
+      {/* Sticky Navigation Bar */}
+      <Navbar />
+      
+      {/* Hero Section with Banner Image */}
+      <Hero />
+      
+      {/* Director's Message Section */}
+      <DirectorDesk />
+      
+      {/* Courses Section - Current and Upcoming Programs */}
+      <Courses />
+      
+      {/* Information Cards: News, Notifications, Placements */}
+      <InfoCards />
+      
+      {/* Scrolling Notices Strip */}
+      <NoticesStrip />
+      
+      {/* Footer with Links and Contact Info */}
+      <Footer />
+    </div>
   );
 }
 
