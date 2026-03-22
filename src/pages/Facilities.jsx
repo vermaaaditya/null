@@ -1,0 +1,246 @@
+import React from 'react';
+import '../styles.css';
+
+/**
+ * Facilities Page Component
+ * Showcases all campus facilities at SIET
+ */
+const Facilities = () => {
+  const facilities = [
+    {
+      id: 'infrastructure',
+      icon: '🏢',
+      title: 'Infrastructure',
+      description: 'Modern campus spread across acres with well-designed buildings, spacious classrooms, and green spaces for holistic development.',
+      features: [
+        'Air-conditioned Smart Classrooms',
+        'Seminar Halls with AV Equipment',
+        'High-speed WiFi Campus',
+        'Green Campus Initiative',
+        'Parking Facilities'
+      ]
+    },
+    {
+      id: 'library',
+      icon: '📚',
+      title: 'Library',
+      description: 'State-of-the-art library with extensive collection of books, journals, e-resources, and digital databases for comprehensive learning.',
+      features: [
+        '10,000+ Books Collection',
+        'Digital Library & E-Resources',
+        'National & International Journals',
+        'Reading Rooms & Study Areas',
+        'Online Database Access'
+      ]
+    },
+    {
+      id: 'hostel',
+      icon: '🏠',
+      title: 'Hostel',
+      description: 'Comfortable and secure hostel accommodation with all modern amenities for both boys and girls, creating a home away from home.',
+      features: [
+        'Separate Boys & Girls Hostels',
+        'Furnished Rooms with WiFi',
+        'Mess with Nutritious Food',
+        '24/7 Security & CCTV',
+        'Recreation & Common Areas'
+      ]
+    },
+    {
+      id: 'sports',
+      icon: '⚽',
+      title: 'Sports Facilities',
+      description: 'Comprehensive sports infrastructure promoting physical fitness and sportsmanship with facilities for indoor and outdoor games.',
+      features: [
+        'Cricket & Football Grounds',
+        'Basketball & Volleyball Courts',
+        'Indoor Games Room',
+        'Gymnasium & Fitness Center',
+        'Sports Equipment & Coaching'
+      ]
+    },
+    {
+      id: 'smart-classes',
+      icon: '💻',
+      title: 'Smart Classes',
+      description: 'Technology-enabled classrooms with interactive displays, digital content, and modern teaching aids for enhanced learning experience.',
+      features: [
+        'Interactive Smart Boards',
+        'Digital Content Library',
+        'Audio-Visual Systems',
+        'Recording Facilities',
+        'Online Learning Integration'
+      ]
+    },
+    {
+      id: 'canteen',
+      icon: '🍽️',
+      title: 'Canteen',
+      description: 'Hygienic and spacious canteen serving nutritious meals, snacks, and beverages at affordable prices in a comfortable environment.',
+      features: [
+        'Hygienic Food Preparation',
+        'Varied Menu Options',
+        'Affordable Pricing',
+        'Spacious Seating Area',
+        'Quality Maintained'
+      ]
+    },
+    {
+      id: 'laboratories',
+      icon: '🔬',
+      title: 'Laboratories',
+      description: 'Well-equipped laboratories with latest instruments and technology for practical learning and research in all engineering disciplines.',
+      features: [
+        'AI/ML Lab with GPU Systems',
+        'Cyber Security & Forensics Lab',
+        'Robotics & Automation Lab',
+        'Computer Labs with Latest Config',
+        'Research & Innovation Labs'
+      ]
+    },
+    {
+      id: 'seminar-halls',
+      icon: '🎤',
+      title: 'Seminar/Conference Rooms',
+      description: 'Modern seminar halls and conference rooms equipped with advanced audio-visual facilities for workshops, seminars, and events.',
+      features: [
+        'Seating Capacity: 100-300',
+        'Advanced AV Equipment',
+        'Video Conferencing Facilities',
+        'Acoustic Design',
+        'Air Conditioning'
+      ]
+    },
+    {
+      id: 'campus',
+      icon: '🌳',
+      title: 'Campus',
+      description: 'Lush green campus with eco-friendly environment, providing a perfect blend of modern infrastructure and natural beauty.',
+      features: [
+        'Landscaped Gardens',
+        'Open Air Theater',
+        'Student Gathering Areas',
+        'Clean & Green Initiative',
+        'Sustainable Practices'
+      ]
+    },
+    {
+      id: 'healthcare',
+      icon: '⚕️',
+      title: 'Healthcare',
+      description: 'First-aid and medical facilities available on campus with tie-ups with nearby hospitals for emergency medical care.',
+      features: [
+        'First Aid Room',
+        'Medical Officer on Call',
+        'Tie-up with Hospitals',
+        'Health Check-up Camps',
+        'Emergency Ambulance Service'
+      ]
+    },
+    {
+      id: 'security',
+      icon: '🛡️',
+      title: 'Security',
+      description: 'Round-the-clock security with CCTV surveillance, trained security personnel, and controlled access for safe campus environment.',
+      features: [
+        '24/7 Security Personnel',
+        'CCTV Surveillance',
+        'Controlled Entry/Exit',
+        'Fire Safety Systems',
+        'Emergency Response Team'
+      ]
+    }
+  ];
+
+  return (
+    <div className="facilities-page">
+      {/* Page Hero */}
+      <section className="page-hero">
+        <div className="container">
+          <h1 className="page-title">Campus Facilities</h1>
+          <p className="page-subtitle">World-Class Infrastructure for Excellence in Education</p>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="section facilities-intro">
+        <div className="container">
+          <div className="intro-content">
+            <h2>Comprehensive Facilities for Holistic Development</h2>
+            <p>
+              SIET provides state-of-the-art facilities designed to support academic excellence, research,
+              and overall student development. Our modern infrastructure creates an ideal environment for
+              learning, innovation, and personal growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Grid */}
+      <section className="section facilities-grid-section">
+        <div className="container">
+          <div className="facilities-grid">
+            {facilities.map((facility) => (
+              <div key={facility.id} className="facility-card">
+                <div className="facility-icon">{facility.icon}</div>
+                <h3 className="facility-title">{facility.title}</h3>
+                <p className="facility-description">{facility.description}</p>
+                <ul className="facility-features">
+                  {facility.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <span className="feature-icon">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights Section */}
+      <section className="section facilities-highlights">
+        <div className="container">
+          <div className="highlights-grid">
+            <div className="highlight-box">
+              <h3>100% WiFi Coverage</h3>
+              <p>High-speed internet connectivity across entire campus</p>
+            </div>
+            <div className="highlight-box">
+              <h3>Power Backup</h3>
+              <p>Uninterrupted power supply with backup generators</p>
+            </div>
+            <div className="highlight-box">
+              <h3>Green Campus</h3>
+              <p>Eco-friendly initiatives and sustainable practices</p>
+            </div>
+            <div className="highlight-box">
+              <h3>Disabled Friendly</h3>
+              <p>Accessible infrastructure for differently-abled students</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section facilities-cta">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Experience Our Campus</h2>
+            <p>
+              Visit SIET to see our world-class facilities firsthand. Schedule a campus tour and
+              discover how our infrastructure supports your engineering education journey.
+            </p>
+            <div className="cta-buttons">
+              <a href="#contact" className="btn btn-primary">Schedule Campus Tour</a>
+              <a href="#virtual-tour" className="btn btn-secondary">Virtual Tour</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Facilities;
