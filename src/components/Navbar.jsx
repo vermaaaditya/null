@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 
 /**
@@ -18,11 +19,14 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Director', href: '#about' },
-    { name: 'Programs', href: '#courses' },
-    { name: 'Updates', href: '#updates' },
-    { name: 'Notices', href: '#notices' }
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Departments', href: '/departments' },
+    { name: 'Academics', href: '/academics' },
+    { name: 'Facilities', href: '/facilities' },
+    { name: 'Training & Placements', href: '/placements' },
+    { name: 'Alumni', href: '/alumni' },
+    { name: 'Life @ SIET', href: '/life-at-siet' }
   ];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
@@ -32,9 +36,9 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-content">
-          <a href="#home" className="nav-brand">
+          <Link to="/" className="nav-brand">
             SIET
-          </a>
+          </Link>
 
           <button
             className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
@@ -51,13 +55,13 @@ const Navbar = () => {
           <ul className={`navbar-quick-links ${isMobileMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, index) => (
               <li key={index} className="nav-item">
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="nav-link"
                   onClick={closeMobileMenu}
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
