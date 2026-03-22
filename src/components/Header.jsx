@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 import logo from '../assets/LOGO.png';
 
@@ -11,12 +12,12 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          <a href="#home" className="header-logo" aria-label="State Institute of Engineering and Technology">
+          <Link to="/" className="header-logo" aria-label="State Institute of Engineering and Technology">
             <img
               src={logo}
               alt="SIET Logo"
             />
-          </a>
+          </Link>
 
           <div className="header-info">
             <p className="header-kicker">Public Technical Institute</p>

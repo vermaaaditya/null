@@ -23,6 +23,7 @@ const DirectorDesk = () => {
 
         <div className="director-content">
           <div className="director-message">
+            <p className="director-kicker">Leadership Message</p>
             <h3 className="message-title">A Message from the Director</h3>
             <p className="message-text">{isExpanded ? fullMessage : shortMessage}</p>
             <button
@@ -60,14 +61,22 @@ const DirectorDesk = () => {
           </div>
 
           <div className="director-card">
-            <div className="card-image">
-              <img src={principalPhoto} alt="Director" />
-              <div className="image-overlay"></div>
+            <div className="director-photo-wrap">
+              <div className="card-image">
+                <img src={principalPhoto} alt="Prof. Anil Kumar" />
+              </div>
             </div>
             <div className="card-info">
               <h3 className="director-name">Prof. Anil Kumar</h3>
               <p className="director-designation">Director & Principal</p>
               <p className="director-credentials">PhD (IIT Bombay) | M.Tech | B.E.</p>
+
+              <div className="director-focus-list">
+                <span className="focus-pill">Outcome-Based Learning</span>
+                <span className="focus-pill">Research Mentorship</span>
+                <span className="focus-pill">Industry Engagement</span>
+              </div>
+
               <div className="director-contact">
                 <p>Email: director@siet.edu.in</p>
                 <p>Phone: +91-XXX-XXXXXXX</p>

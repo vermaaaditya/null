@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 import heroBg1 from '../assets/homepageimage/siet1.jpg';
 import heroBg2 from '../assets/homepageimage/siet2.jpg';
@@ -42,12 +43,12 @@ const Hero = () => {
               Learn from faculty mentors, build in modern labs, and graduate with the confidence to lead in AI, Cyber Security, and Robotics.
             </p>
             <div className="hero-buttons">
-              <a href="#courses" className="btn btn-primary">
+              <Link to="/departments" className="btn btn-primary">
                 Start Application
-              </a>
-              <a href="#about" className="btn btn-secondary">
+              </Link>
+              <Link to="/about" className="btn btn-secondary">
                 Director Message
-              </a>
+              </Link>
             </div>
           </div>
         </div>

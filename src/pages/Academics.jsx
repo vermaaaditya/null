@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import '../styles.css';
+import facultyLead from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/12/anil-kumar.jpg';
+import facultyNormsDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/08/UGC-Qualification-18-Jul-2018.pdf';
+import aicteDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/08/AICTE-Degree-Pay-Qualifications-and-Promotions.pdf';
+import academicCalendarDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/01/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
 
 /**
  * Academics Page Component
@@ -14,6 +18,7 @@ const Academics = () => {
     feedback: '',
     rating: '5'
   });
+  const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +27,7 @@ const Academics = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you for your feedback! (Demo submission)');
+    setIsFeedbackSubmitted(true);
     setFeedbackForm({
       name: '',
       email: '',
@@ -90,6 +95,36 @@ const Academics = () => {
                 <h3>50+</h3>
                 <p>Years Combined Experience</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section faculty-docs-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Faculty Profile & Documents</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="faculty-docs-grid">
+            <article className="faculty-profile-card">
+              <img src={facultyLead} alt="Prof. Anil Kumar" loading="lazy" />
+              <div>
+                <h3>Prof. Anil Kumar</h3>
+                <p>Director and Senior Academic Lead</p>
+                <p>Research-driven leadership with focus on quality technical education.</p>
+              </div>
+            </article>
+            <div className="faculty-doc-list">
+              <a href={facultyNormsDoc} target="_blank" rel="noopener noreferrer" className="faculty-doc-item">
+                UGC Qualification Guidelines
+              </a>
+              <a href={aicteDoc} target="_blank" rel="noopener noreferrer" className="faculty-doc-item">
+                AICTE Degree Qualifications and Promotions
+              </a>
+              <a href={academicCalendarDoc} target="_blank" rel="noopener noreferrer" className="faculty-doc-item">
+                Official Academic Calendar Schedule
+              </a>
             </div>
           </div>
         </div>
@@ -371,6 +406,9 @@ const Academics = () => {
               <button type="submit" className="btn btn-primary">
                 Submit Feedback
               </button>
+              {isFeedbackSubmitted && (
+                <p className="form-success">Thank you for your feedback. We value your suggestions.</p>
+              )}
             </form>
           </div>
         </div>

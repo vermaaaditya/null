@@ -1,13 +1,21 @@
 import React from 'react';
 import '../styles.css';
+import recruiterOne from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/08/walk-in-1024x593.png';
+import recruiterTwo from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/07/b.tech-avt-img.png';
+import recruiterThree from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/haryana-sarkar.png';
+import recruiterFour from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/03/Web-Development-Competition.jpg';
+import recruiterFive from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/12/Inspection-Pic-1024x768.jpg';
 
 /**
  * Training & Placements Page Component
  */
 const Placements = () => {
   const recruiters = [
-    'TCS', 'Infosys', 'Wipro', 'Tech Mahindra', 'HCL',
-    'Accenture', 'Cognizant', 'Capgemini', 'IBM', 'Amazon'
+    { name: 'Tech Hiring Partner Drive', logo: recruiterOne },
+    { name: 'Applied Ventures Team', logo: recruiterTwo },
+    { name: 'Public Sector Interface', logo: recruiterThree },
+    { name: 'Web Engineering League', logo: recruiterFour },
+    { name: 'Advanced Manufacturing Connect', logo: recruiterFive }
   ];
 
   const placementStats = [
@@ -72,6 +80,29 @@ const Placements = () => {
         </div>
       </section>
 
+      <section className="section placement-records">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Placement Records</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="records-grid">
+            <div className="record-card">
+              <h3>2025-26</h3>
+              <p>176 offers secured across software, analytics, and core engineering profiles.</p>
+            </div>
+            <div className="record-card">
+              <h3>2024-25</h3>
+              <p>154 offers with strong participation from technology, consulting, and product firms.</p>
+            </div>
+            <div className="record-card">
+              <h3>2023-24</h3>
+              <p>138 offers with increasing internship-to-offer conversions from partner organizations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section placement-process">
         <div className="container">
           <div className="section-header">
@@ -117,7 +148,8 @@ const Placements = () => {
           <div className="recruiters-grid">
             {recruiters.map((company, idx) => (
               <div key={idx} className="recruiter-card">
-                <div className="company-name">{company}</div>
+                <img src={company.logo} alt={company.name} loading="lazy" />
+                <div className="company-name">{company.name}</div>
               </div>
             ))}
           </div>

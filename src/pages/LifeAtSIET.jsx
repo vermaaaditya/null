@@ -6,20 +6,19 @@ import '../styles.css';
  * Media section and gallery
  */
 const LifeAtSIET = () => {
-  const galleryImages = [
-    { id: 1, title: 'Campus View', category: 'campus' },
-    { id: 2, title: 'Lab Session', category: 'academics' },
-    { id: 3, title: 'Sports Event', category: 'sports' },
-    { id: 4, title: 'Cultural Fest', category: 'events' },
-    { id: 5, title: 'Tech Symposium', category: 'events' },
-    { id: 6, title: 'Library', category: 'facilities' },
-    { id: 7, title: 'Hostel Block', category: 'facilities' },
-    { id: 8, title: 'Convocation', category: 'events' },
-    { id: 9, title: 'Robotics Lab', category: 'academics' },
-    { id: 10, title: 'Annual Day', category: 'events' },
-    { id: 11, title: 'Sports Complex', category: 'sports' },
-    { id: 12, title: 'Green Campus', category: 'campus' }
-  ];
+  const galleryPool = import.meta.glob('../assets/sietpanchkula.ac.in/wp-content/uploads/**/*.{jpg,jpeg,png,webp}', {
+    eager: true,
+    import: 'default'
+  });
+
+  const galleryImages = Object.values(galleryPool)
+    .slice(0, 12)
+    .map((image, index) => ({
+      id: index + 1,
+      src: image,
+      title: `Campus Moment ${index + 1}`,
+      category: index % 3 === 0 ? 'campus' : index % 3 === 1 ? 'academics' : 'events'
+    }));
 
   const studentLife = [
     {
@@ -103,8 +102,8 @@ const LifeAtSIET = () => {
           <div className="gallery-grid">
             {galleryImages.map((image) => (
               <div key={image.id} className="gallery-item">
-                <div className="gallery-placeholder">
-                  <span className="gallery-icon">📷</span>
+                <img src={image.src} alt={image.title} loading="lazy" />
+                <div className="gallery-overlay">
                   <p className="gallery-title">{image.title}</p>
                   <span className="gallery-category">{image.category}</span>
                 </div>
@@ -149,17 +148,17 @@ const LifeAtSIET = () => {
           </div>
           <div className="media-grid">
             <div className="media-card">
-              <div className="media-icon">📰</div>
+              <img src={galleryImages[0]?.src} alt="Campus media coverage" loading="lazy" />
               <h3>Latest News</h3>
               <p>Stay updated with latest campus news and announcements</p>
             </div>
             <div className="media-card">
-              <div className="media-icon">📹</div>
+              <img src={galleryImages[1]?.src} alt="Video gallery highlights" loading="lazy" />
               <h3>Video Gallery</h3>
               <p>Watch highlights from events and campus activities</p>
             </div>
             <div className="media-card">
-              <div className="media-icon">📱</div>
+              <img src={galleryImages[2]?.src} alt="Social stories from SIET" loading="lazy" />
               <h3>Social Media</h3>
               <p>Follow us on Facebook, Instagram, and LinkedIn</p>
             </div>

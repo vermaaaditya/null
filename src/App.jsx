@@ -11,6 +11,8 @@ import Facilities from './pages/Facilities';
 import Placements from './pages/Placements';
 import Alumni from './pages/Alumni';
 import LifeAtSIET from './pages/LifeAtSIET';
+import ChatbotWidget from './components/ChatbotWidget';
+import AllNotices from './pages/AllNotices';
 
 /**
  * Main App Component
@@ -35,7 +37,10 @@ function App() {
         <Route path="/placements" element={<Placements />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
+        <Route path="/all-notices" element={<AllNotices />} />
       </Routes>
+
+      <ChatbotWidget />
 
       {/* Footer with Links and Contact Info */}
       <Footer />

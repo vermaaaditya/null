@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../styles.css';
 
 /**
@@ -55,20 +55,22 @@ const Navbar = () => {
           <ul className={`navbar-quick-links ${isMobileMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, index) => (
               <li key={index} className="nav-item">
-                <Link
+                <NavLink
                   to={item.href}
-                  className="nav-link"
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                   onClick={closeMobileMenu}
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
 
-          <a href="#contact" className="nav-cta" onClick={closeMobileMenu}>
-            Contact
-          </a>
+          <div className="nav-actions">
+            <a href="#contact" className="nav-cta" onClick={closeMobileMenu}>
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>

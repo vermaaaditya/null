@@ -4,6 +4,8 @@ import DirectorDesk from '../components/DirectorDesk';
 import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
 import NoticesStrip from '../components/NoticesStrip';
+import TopAnnouncements from '../components/TopAnnouncements';
+import SocialMediaPanel from '../components/SocialMediaPanel';
 
 /**
  * Home Page Component
@@ -12,6 +14,8 @@ import NoticesStrip from '../components/NoticesStrip';
 function Home() {
   return (
     <div>
+      <TopAnnouncements />
+
       {/* Hero Section with Banner Image */}
       <Hero />
 
@@ -23,6 +27,8 @@ function Home() {
 
       {/* Information Cards: News, Notifications, Placements */}
       <InfoCards />
+
+      <SocialMediaPanel />
 
       {/* Scrolling Notices Strip */}
       <NoticesStrip />

@@ -6,6 +6,13 @@ import '../styles.css';
  * Showcases all campus facilities at SIET
  */
 const Facilities = () => {
+  const facilityImages = Object.values(
+    import.meta.glob('../assets/sietpanchkula.ac.in/wp-content/uploads/**/*.{jpg,jpeg,png,webp}', {
+      eager: true,
+      import: 'default'
+    })
+  ).slice(0, 11);
+
   const facilities = [
     {
       id: 'infrastructure',
@@ -18,7 +25,8 @@ const Facilities = () => {
         'High-speed WiFi Campus',
         'Green Campus Initiative',
         'Parking Facilities'
-      ]
+      ],
+      image: facilityImages[0]
     },
     {
       id: 'library',
@@ -31,7 +39,8 @@ const Facilities = () => {
         'National & International Journals',
         'Reading Rooms & Study Areas',
         'Online Database Access'
-      ]
+      ],
+      image: facilityImages[1]
     },
     {
       id: 'hostel',
@@ -44,7 +53,8 @@ const Facilities = () => {
         'Mess with Nutritious Food',
         '24/7 Security & CCTV',
         'Recreation & Common Areas'
-      ]
+      ],
+      image: facilityImages[2]
     },
     {
       id: 'sports',
@@ -57,7 +67,8 @@ const Facilities = () => {
         'Indoor Games Room',
         'Gymnasium & Fitness Center',
         'Sports Equipment & Coaching'
-      ]
+      ],
+      image: facilityImages[3]
     },
     {
       id: 'smart-classes',
@@ -70,7 +81,8 @@ const Facilities = () => {
         'Audio-Visual Systems',
         'Recording Facilities',
         'Online Learning Integration'
-      ]
+      ],
+      image: facilityImages[4]
     },
     {
       id: 'canteen',
@@ -83,7 +95,8 @@ const Facilities = () => {
         'Affordable Pricing',
         'Spacious Seating Area',
         'Quality Maintained'
-      ]
+      ],
+      image: facilityImages[5]
     },
     {
       id: 'laboratories',
@@ -96,7 +109,8 @@ const Facilities = () => {
         'Robotics & Automation Lab',
         'Computer Labs with Latest Config',
         'Research & Innovation Labs'
-      ]
+      ],
+      image: facilityImages[6]
     },
     {
       id: 'seminar-halls',
@@ -109,7 +123,8 @@ const Facilities = () => {
         'Video Conferencing Facilities',
         'Acoustic Design',
         'Air Conditioning'
-      ]
+      ],
+      image: facilityImages[7]
     },
     {
       id: 'campus',
@@ -122,7 +137,8 @@ const Facilities = () => {
         'Student Gathering Areas',
         'Clean & Green Initiative',
         'Sustainable Practices'
-      ]
+      ],
+      image: facilityImages[8]
     },
     {
       id: 'healthcare',
@@ -135,7 +151,8 @@ const Facilities = () => {
         'Tie-up with Hospitals',
         'Health Check-up Camps',
         'Emergency Ambulance Service'
-      ]
+      ],
+      image: facilityImages[9]
     },
     {
       id: 'security',
@@ -148,7 +165,8 @@ const Facilities = () => {
         'Controlled Entry/Exit',
         'Fire Safety Systems',
         'Emergency Response Team'
-      ]
+      ],
+      image: facilityImages[10]
     }
   ];
 
@@ -182,6 +200,7 @@ const Facilities = () => {
           <div className="facilities-grid">
             {facilities.map((facility) => (
               <div key={facility.id} className="facility-card">
+                {facility.image && <img src={facility.image} alt={facility.title} loading="lazy" className="facility-image" />}
                 <div className="facility-icon">{facility.icon}</div>
                 <h3 className="facility-title">{facility.title}</h3>
                 <p className="facility-description">{facility.description}</p>
@@ -199,25 +218,25 @@ const Facilities = () => {
         </div>
       </section>
 
-      {/* Highlights Section */}
-      <section className="section facilities-highlights">
+      <section className="section campus-map-section">
         <div className="container">
-          <div className="highlights-grid">
-            <div className="highlight-box">
-              <h3>100% WiFi Coverage</h3>
-              <p>High-speed internet connectivity across entire campus</p>
-            </div>
-            <div className="highlight-box">
-              <h3>Power Backup</h3>
-              <p>Uninterrupted power supply with backup generators</p>
-            </div>
-            <div className="highlight-box">
-              <h3>Green Campus</h3>
-              <p>Eco-friendly initiatives and sustainable practices</p>
-            </div>
-            <div className="highlight-box">
-              <h3>Disabled Friendly</h3>
-              <p>Accessible infrastructure for differently-abled students</p>
+          <div className="section-header">
+            <h2 className="section-title">Find Us on Map</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="campus-map-card">
+            <iframe
+              title="SIET Panchkula Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=76.7909%2C30.6912%2C76.9012%2C30.7604&layer=mapnik"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div className="map-info">
+              <h3>State Institute of Engineering and Technology</h3>
+              <p>Sector 26, Panchkula, Haryana</p>
+              <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" className="map-link">
+                Open Full Map
+              </a>
             </div>
           </div>
         </div>
@@ -233,8 +252,8 @@ const Facilities = () => {
               discover how our infrastructure supports your engineering education journey.
             </p>
             <div className="cta-buttons">
-              <a href="#contact" className="btn btn-primary">Schedule Campus Tour</a>
-              <a href="#virtual-tour" className="btn btn-secondary">Virtual Tour</a>
+              <a href="mailto:admissions@siet.edu.in?subject=Campus%20Tour%20Request" className="btn btn-primary">Schedule Campus Tour</a>
+              <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Virtual Tour</a>
             </div>
           </div>
         </div>

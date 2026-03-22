@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 
 /**
@@ -66,9 +67,9 @@ const NoticesStrip = () => {
           </div>
 
           <div className="notices-action">
-            <a href="#all-notices" className="view-all-btn">
+            <Link to="/all-notices" className="view-all-btn">
               View All
-            </a>
+            </Link>
           </div>
         </div>
       </div>

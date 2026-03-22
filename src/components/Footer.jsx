@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
+import scholarshipDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/01/Scholarships.pdf';
+import antiRaggingDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/03/student-conduct.pdf';
 
 /**
  * Footer Component
@@ -100,9 +102,9 @@ const Footer = () => {
               <ul className="footer-links">
                 <li><Link to="/alumni">Alumni</Link></li>
                 <li><Link to="/life-at-siet">Life @ SIET</Link></li>
-                <li><a href="#admissions">Admission Cell</a></li>
-                <li><a href="#scholarships">Scholarships</a></li>
-                <li><a href="#anti-ragging">Anti-Ragging Cell</a></li>
+                <li><Link to="/departments">Admission Cell</Link></li>
+                <li><a href={scholarshipDoc} target="_blank" rel="noopener noreferrer">Scholarships</a></li>
+                <li><a href={antiRaggingDoc} target="_blank" rel="noopener noreferrer">Anti-Ragging Cell</a></li>
               </ul>
             </div>
 
@@ -148,11 +150,11 @@ const Footer = () => {
               &copy; {currentYear} State Institute of Engineering and Technology. All rights reserved.
             </p>
             <div className="footer-bottom-links">
-              <a href="#privacy">Privacy Policy</a>
+              <Link to="/about">Privacy Policy</Link>
               <span className="separator">|</span>
-              <a href="#terms">Terms and Conditions</a>
+              <Link to="/academics">Terms and Conditions</Link>
               <span className="separator">|</span>
-              <a href="#sitemap">Sitemap</a>
+              <Link to="/all-notices">Sitemap</Link>
             </div>
           </div>
         </div>

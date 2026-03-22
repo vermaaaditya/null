@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 
 const useAutoScroll = (scrollRef, contentRef, pauseRef) => {
@@ -120,9 +121,9 @@ const InfoCards = () => {
               pauseRef={newsPauseRef}
             />
             <div className="card-footer">
-              <a href="#news" className="card-link">
+              <Link to="/all-notices" className="card-link">
                 View all news {'->'}
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -138,9 +139,9 @@ const InfoCards = () => {
               pauseRef={notifPauseRef}
             />
             <div className="card-footer">
-              <a href="#notifications" className="card-link">
+              <Link to="/all-notices" className="card-link">
                 View all notifications {'->'}
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -156,9 +157,9 @@ const InfoCards = () => {
               pauseRef={placPauseRef}
             />
             <div className="card-footer">
-              <a href="#placements" className="card-link">
+              <Link to="/placements" className="card-link">
                 View all placements {'->'}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

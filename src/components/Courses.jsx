@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
+import admissionFormDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/07/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
 
 /**
  * Courses Component
@@ -105,9 +107,15 @@ const Courses = () => {
           </div>
         </div>
         
-        <button className={`course-btn ${course.status}`}>
-          {course.status === 'upcoming' ? 'Pre-Register' : 'Learn More'}
-        </button>
+        {course.status === 'upcoming' ? (
+          <a href={admissionFormDoc} target="_blank" rel="noopener noreferrer" className={`course-btn ${course.status}`}>
+            Pre-Register
+          </a>
+        ) : (
+          <Link to="/departments" className={`course-btn ${course.status}`}>
+            Learn More
+          </Link>
+        )}
       </div>
     </div>
   );

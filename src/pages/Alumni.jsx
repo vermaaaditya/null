@@ -18,15 +18,47 @@ const Alumni = () => {
     linkedIn: '',
     message: ''
   });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: '' }));
+  };
+
+  const validateForm = () => {
+    const nextErrors = {};
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[+]?\d{10,13}$/;
+    const batchPattern = /^\d{4}$/;
+
+    if (!emailPattern.test(formData.email)) {
+      nextErrors.email = 'Enter a valid email address.';
+    }
+
+    if (!phonePattern.test(formData.phone)) {
+      nextErrors.phone = 'Phone should contain 10 to 13 digits.';
+    }
+
+    if (!batchPattern.test(formData.batch)) {
+      nextErrors.batch = 'Passing year must be a 4 digit year.';
+    }
+
+    return nextErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Registration submitted successfully! (Demo)');
+    const nextErrors = validateForm();
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      setIsSubmitted(false);
+      return;
+    }
+
+    setErrors({});
+    setIsSubmitted(true);
     setFormData({
       fullName: '',
       email: '',
@@ -117,6 +149,7 @@ const Alumni = () => {
                     required
                     placeholder="your.email@example.com"
                   />
+                  {errors.email && <p className="form-error">{errors.email}</p>}
                 </div>
               </div>
 
@@ -132,6 +165,7 @@ const Alumni = () => {
                     required
                     placeholder="+91 XXXXXXXXXX"
                   />
+                  {errors.phone && <p className="form-error">{errors.phone}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="batch">Passing Year/Batch *</label>
@@ -144,6 +178,7 @@ const Alumni = () => {
                     required
                     placeholder="e.g., 2023"
                   />
+                  {errors.batch && <p className="form-error">{errors.batch}</p>}
                 </div>
               </div>
 
@@ -228,6 +263,9 @@ const Alumni = () => {
               <button type="submit" className="btn btn-primary">
                 Register as Alumni
               </button>
+              {isSubmitted && (
+                <p className="form-success">Thanks for registering. Our alumni team will contact you soon.</p>
+              )}
             </form>
           </div>
         </div>
