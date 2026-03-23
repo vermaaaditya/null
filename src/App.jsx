@@ -11,6 +11,7 @@ import Facilities from './pages/Facilities';
 import Placements from './pages/Placements';
 import Alumni from './pages/Alumni';
 import LifeAtSIET from './pages/LifeAtSIET';
+import SubmenuRouteHandler from './pages/submenu/SubmenuRouteHandler';
 import ChatbotWidget from './components/ChatbotWidget';
 import AllNotices from './pages/AllNotices';
 
@@ -31,12 +32,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/departments" element={<Departments />} />
+        <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/academics" element={<Academics />} />
+        <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/facilities" element={<Facilities />} />
+        <Route path="/facilities/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/placements" element={<Placements />} />
+        <Route path="/placements/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/alumni" element={<Alumni />} />
+        <Route path="/alumni/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
+        <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/all-notices" element={<AllNotices />} />
       </Routes>
 

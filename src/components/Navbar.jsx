@@ -9,6 +9,7 @@ import '../styles.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
@@ -19,14 +20,91 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Departments', href: '/departments' },
-    { name: 'Academics', href: '/academics' },
-    { name: 'Facilities', href: '/facilities' },
-    { name: 'Training & Placements', href: '/placements' },
-    { name: 'Alumni', href: '/alumni' },
-    { name: 'Life @ SIET', href: '/life-at-siet' }
+    { 
+      name: 'Home', 
+      href: '/',
+      submenu: null
+    },
+    { 
+      name: 'About Us', 
+      href: '/about',
+      submenu: [
+        { name: 'About Institute', href: '/about/about-institute' },
+        { name: 'Vision & Mission', href: '/about/vision-mission' },
+        { name: 'Director\'s Message', href: '/about/directors-message' },
+        { name: 'Quality Policy', href: '/about/quality-policy' },
+        { name: 'Affiliations', href: '/about/affiliations' },
+        { name: 'Anti-Ragging', href: '/about/anti-ragging' }
+      ]
+    },
+    { 
+      name: 'Departments', 
+      href: '/departments',
+      submenu: [
+        { name: 'Engineering', href: '/departments/engineering' },
+        { name: 'AI & Machine Learning', href: '/departments/ai-ml' },
+        { name: 'Cyber Security', href: '/departments/cyber-security' },
+        { name: 'Robotics & Automation', href: '/departments/robotics' },
+        { name: 'Computer Science', href: '/departments/computer-science' }
+      ]
+    },
+    { 
+      name: 'Academics', 
+      href: '/academics',
+      submenu: [
+        { name: 'Courses Offered', href: '/academics/courses-offered' },
+        { name: 'Academic Calendar', href: '/academics/academic-calendar' },
+        { name: 'Teaching & Learning', href: '/academics/teaching-learning' },
+        { name: 'Curriculum', href: '/academics/curriculum' },
+        { name: 'Exam Schedule', href: '/academics/exam-schedule' },
+        { name: 'Student Testimonials', href: '/academics/student-testimonials' }
+      ]
+    },
+    { 
+      name: 'Facilities', 
+      href: '/facilities',
+      submenu: [
+        { name: 'Infrastructure', href: '/facilities/infrastructure' },
+        { name: 'Library', href: '/facilities/library' },
+        { name: 'Hostels', href: '/facilities/hostels' },
+        { name: 'Sports', href: '/facilities/sports' },
+        { name: 'Smart Classrooms', href: '/facilities/smart-classrooms' },
+        { name: 'Laboratories', href: '/facilities/laboratories' },
+        { name: 'Cafeteria', href: '/facilities/cafeteria' },
+        { name: 'Healthcare', href: '/facilities/healthcare' },
+        { name: 'Security', href: '/facilities/security' }
+      ]
+    },
+    { 
+      name: 'Training & Placements', 
+      href: '/placements',
+      submenu: [
+        { name: 'Campus Training', href: '/placements/campus-training' },
+        { name: 'Placement Records', href: '/placements/placement-records' },
+        { name: 'Major Recruiters', href: '/placements/major-recruiters' },
+        { name: 'Placement Process', href: '/placements/placement-process' },
+        { name: 'Student Testimonials', href: '/placements/student-testimonials' }
+      ]
+    },
+    { 
+      name: 'Alumni', 
+      href: '/alumni',
+      submenu: [
+        { name: 'Alumni Directory', href: '/alumni/alumni-directory' },
+        { name: 'Alumni Registration', href: '/alumni/alumni-registration' },
+        { name: 'Alumni Events', href: '/alumni/alumni-events' }
+      ]
+    },
+    { 
+      name: 'Life @ SIET', 
+      href: '/life-at-siet',
+      submenu: [
+        { name: 'Campus Life', href: '/life-at-siet/campus-life' },
+        { name: 'Photo Gallery', href: '/life-at-siet/photo-gallery' },
+        { name: 'Video Gallery', href: '/life-at-siet/video-gallery' },
+        { name: 'Events & Activities', href: '/life-at-siet/events-activities' }
+      ]
+    }
   ];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
@@ -54,14 +132,35 @@ const Navbar = () => {
 
           <ul className={`navbar-quick-links ${isMobileMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, index) => (
-              <li key={index} className="nav-item">
+              <li 
+                key={index} 
+                className={`nav-item ${item.submenu ? 'has-submenu' : ''}`}
+                onMouseEnter={() => item.submenu && setOpenDropdown(index)}
+                onMouseLeave={() => item.submenu && setOpenDropdown(null)}
+              >
                 <NavLink
                   to={item.href}
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                  onClick={closeMobileMenu}
+                  onClick={() => {
+                    setOpenDropdown(null);
+                    closeMobileMenu();
+                  }}
                 >
                   {item.name}
+                  {item.submenu && <span className="dropdown-arrow">▼</span>}
                 </NavLink>
+                
+                {item.submenu && (
+                  <ul className={`dropdown-menu ${openDropdown === index ? 'active' : ''}`}>
+                    {item.submenu.map((subitem, subindex) => (
+                      <li key={subindex} className="dropdown-item">
+                        <Link to={subitem.href} className="dropdown-link" onClick={closeMobileMenu}>
+                          {subitem.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

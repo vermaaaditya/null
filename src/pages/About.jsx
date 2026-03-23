@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles.css';
 import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
 
@@ -7,12 +7,6 @@ import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
  * Comprehensive information about SIET
  */
 const About = () => {
-  const [expandedSection, setExpandedSection] = useState(null);
-
-  const toggleSection = (section) => {
-    setExpandedSection(expandedSection === section ? null : section);
-  };
-
   return (
     <div className="about-page">
       {/* Page Hero */}

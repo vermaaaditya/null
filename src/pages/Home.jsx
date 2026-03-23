@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import CampusUpdates from '../components/CampusUpdates';
 import DirectorDesk from '../components/DirectorDesk';
 import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
@@ -18,6 +19,9 @@ function Home() {
 
       {/* Hero Section with Banner Image */}
       <Hero />
+
+      {/* Campus Updates - Latest Notices & Announcements */}
+      <CampusUpdates />
 
       {/* Director's Message Section */}
       <DirectorDesk />
