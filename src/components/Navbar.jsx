@@ -53,6 +53,7 @@ const Navbar = () => {
       href: '/academics',
       submenu: [
         { name: 'Courses Offered', href: '/academics/courses-offered' },
+        { name: 'Admission Form', href: '/admission-form' },
         { name: 'Academic Calendar', href: '/academics/academic-calendar' },
         { name: 'Teaching & Learning', href: '/academics/teaching-learning' },
         { name: 'Curriculum', href: '/academics/curriculum' },
