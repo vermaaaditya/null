@@ -46,8 +46,8 @@ const Hero = () => {
               <Link to="/departments" className="btn btn-primary">
                 Start Application
               </Link>
-              <Link to="/about" className="btn btn-secondary">
-                Director Message
+              <Link to="/admission-form" className="btn btn-secondary">
+                Admission Form
               </Link>
             </div>
           </div>
