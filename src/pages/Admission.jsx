@@ -128,7 +128,7 @@ const Admission = () => {
                     value={formData.contactNo}
                     onChange={handleChange}
                     required
-                    placeholder="+91 XXXXXXXXXX"
+                    placeholder="Enter contact number with country code"
                   />
                   {errors.contactNo && <p className="form-error">{errors.contactNo}</p>}
                 </div>
@@ -140,7 +140,7 @@ const Admission = () => {
                     name="alternativeContactNo"
                     value={formData.alternativeContactNo}
                     onChange={handleChange}
-                    placeholder="+91 XXXXXXXXXX"
+                    placeholder="Enter alternative contact number"
                   />
                   {errors.alternativeContactNo && (
                     <p className="form-error">{errors.alternativeContactNo}</p>
