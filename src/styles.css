@@ -3036,7 +3036,7 @@ img {
   }
 
   .hero {
-    border-radius: 20px;
+    border-radius: 0;
     min-height: 640px;
   }
 
