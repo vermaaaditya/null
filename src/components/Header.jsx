@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
 import logo from '../assets/LOGO.png';
+import haryanaEmblem from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/haryana-sarkar.png';
 
 /**
  * Header Component
@@ -29,7 +30,8 @@ const Header = () => {
             
           </div>
            <img
-              src="https://siettpo.vercel.app/images/haryana-sarkar.png"
+              className="tpo-gov-emblem"
+              src={haryanaEmblem}
               alt="Haryana Government Emblem"
               loading="lazy"
             />
