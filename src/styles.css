@@ -267,6 +267,8 @@ img {
 
 .navbar > .container {
   width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .navbar-content {
@@ -515,6 +517,7 @@ img {
 
 .hero-content .container {
   width: 100%;
+  max-width: none;
   padding-inline: clamp(1rem, 3vw, 2.4rem);
 }
 
@@ -1606,6 +1609,8 @@ img {
 
 .top-announcements > .container {
   width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .top-announcements-wrap {
