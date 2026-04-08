@@ -26,8 +26,8 @@ const Header = () => {
             <p className="college-subtitle tpo-college-subtitle">
               APPROVED BY AICTE, NEW DELHI AND AFFILIATED TO KURUKSHETRA UNIVERSITY, KURUKSHETRA
             </p>
-            <p className="tpo-cell-title">SIET PANCHKULA</p>
-            <p className="college-tagline tpo-cell-subtitle">Training &amp; Placement Cell</p>
+            
+            
           </div>
 
           <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
