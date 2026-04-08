@@ -257,9 +257,8 @@ img {
 }
 
 .tpo-gov-emblem {
-  width: clamp(90px, 16vw, 240px);
+  width: clamp(64px, 8vw, 88px);
   height: auto;
-  max-height: 220px;
   object-fit: contain;
   justify-self: end;
   align-self: center;
