@@ -29,7 +29,7 @@ const Header = () => {
             
             
           </div>
-          <div className="tpo-header-emblem" aria-hidden="true">
+          <div className="tpo-header-emblem">
             <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
               <img src={logo} alt="SIET Panchkula Logo" />
             </Link>
