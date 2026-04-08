@@ -11,32 +11,28 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container">
-        <div className="header-content">
-          <Link to="/" className="header-logo" aria-label="State Institute of Engineering and Technology">
+        <div className="header-content tpo-header-content">
+          <div className="tpo-header-emblem" aria-hidden="true">
             <img
-              src={logo}
-              alt="SIET Logo"
+              src="https://siettpo.vercel.app/images/haryana-sarkar.png"
+              alt="Haryana Government Emblem"
+              loading="lazy"
             />
+          </div>
+
+          <div className="header-info tpo-header-info">
+            <p className="tpo-header-hindi">राज्य अभियांत्रिकी एवं प्रौद्योगिकी संस्थान, पंचकुला</p>
+            <h1 className="college-name tpo-college-name">STATE INSTITUTE OF ENGINEERING &amp; TECHNOLOGY, PANCHKULA</h1>
+            <p className="college-subtitle tpo-college-subtitle">
+              APPROVED BY AICTE, NEW DELHI AND AFFILIATED TO KURUKSHETRA UNIVERSITY, KURUKSHETRA
+            </p>
+            <p className="tpo-cell-title">SIET PANCHKULA</p>
+            <p className="college-tagline tpo-cell-subtitle">Training &amp; Placement Cell</p>
+          </div>
+
+          <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
+            <img src={logo} alt="SIET Panchkula Logo" />
           </Link>
-
-          <div className="header-info">
-            <p className="header-kicker">Public Technical Institute</p>
-            <h1 className="college-name">
-              State Institute of Engineering and Technology (SIET)
-            </h1>
-            <p className="college-subtitle">
-              Approved by AICTE, New Delhi and affiliated to Kurukshetra University
-            </p>
-            <p className="college-tagline">
-              Practical learning, research culture, and industry-ready graduates
-            </p>
-          </div>
-
-          <div className="header-meta" aria-label="Institute Highlights">
-            <span className="meta-chip">Admissions 2026 Open</span>
-            <span className="meta-chip">NAAC A++ Quality Focus</span>
-            <span className="meta-chip">Placement Support Cell</span>
-          </div>
         </div>
       </div>
     </header>
