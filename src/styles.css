@@ -256,6 +256,15 @@ img {
   font-weight: 700;
 }
 
+.tpo-gov-emblem {
+  width: clamp(90px, 16vw, 240px);
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  justify-self: end;
+  align-self: center;
+}
+
 /* Navbar */
 .navbar {
   position: sticky;
@@ -2816,6 +2825,10 @@ img {
 @media (max-width: 1140px) {
   .header-content {
     grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .tpo-gov-emblem {
+    display: none;
   }
 
   .header-meta {
