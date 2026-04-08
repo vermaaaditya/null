@@ -13,11 +13,10 @@ const Header = () => {
       <div className="container">
         <div className="header-content tpo-header-content">
           <div className="tpo-header-emblem" aria-hidden="true">
-            <img
-              src="https://siettpo.vercel.app/images/haryana-sarkar.png"
-              alt="Haryana Government Emblem"
-              loading="lazy"
-            />
+            <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
+              <img src={logo} alt="SIET Panchkula Logo" />
+            </Link>
+           
           </div>
 
           <div className="header-info tpo-header-info">
@@ -29,10 +28,12 @@ const Header = () => {
             
             
           </div>
-
-          <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
-            <img src={logo} alt="SIET Panchkula Logo" />
-          </Link>
+           <img
+              src="https://siettpo.vercel.app/images/haryana-sarkar.png"
+              alt="Haryana Government Emblem"
+              loading="lazy"
+            />
+          
         </div>
       </div>
     </header>
