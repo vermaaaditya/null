@@ -14,6 +14,7 @@ import LifeAtSIET from './pages/LifeAtSIET';
 import SubmenuRouteHandler from './pages/submenu/SubmenuRouteHandler';
 import ChatbotWidget from './components/ChatbotWidget';
 import AllNotices from './pages/AllNotices';
+import Admission from './pages/Admission';
 
 /**
  * Main App Component
@@ -46,6 +47,7 @@ function App() {
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/all-notices" element={<AllNotices />} />
+        <Route path="/admission-form" element={<Admission />} />
       </Routes>
 
       <ChatbotWidget />

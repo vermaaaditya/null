@@ -2669,6 +2669,42 @@ img {
   font-weight: 700;
 }
 
+.admission-form-container {
+  border-radius: 20px;
+  border: 1px solid rgba(16, 35, 63, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.96));
+  box-shadow: var(--shadow-mid);
+  padding: clamp(1rem, 2.3vw, 1.5rem);
+}
+
+.admission-form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.admission-form-container .form-intro {
+  margin-bottom: 0.2rem;
+}
+
+.admission-form .form-row {
+  gap: 1.2rem;
+}
+
+.admission-form .form-group {
+  gap: 0.55rem;
+}
+
+.admission-form .form-group input,
+.admission-form .form-group select,
+.admission-form .form-group textarea {
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+}
+
+.admission-form .form-group textarea {
+  min-height: 140px;
+}
+
 .placement-stats-section .stats-grid {
   background: transparent;
   border: 0;
