@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 
 /**
@@ -8,12 +9,12 @@ import '../styles.css';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const quickLinks = [
-    { label: 'HOME', href: 'https://siettpo.vercel.app/' },
-    { label: 'EVENTS', href: 'https://siettpo.vercel.app/events' },
-    { label: 'CODE OF CONDUCT', href: 'https://siettpo.vercel.app/code-of-conduct' },
-    { label: 'CURRENT COHORT', href: 'https://siettpo.vercel.app/batch-2025' },
-    { label: 'TEAM', href: 'https://siettpo.vercel.app/team' },
-    { label: 'CONTACT US', href: 'https://siettpo.vercel.app/contact-us' },
+    { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/about' },
+    { label: 'Academics', to: '/academics' },
+    { label: 'Departments', to: '/departments' },
+    { label: 'Admission Form', to: '/admission-form' },
+    { label: 'All Notices', to: '/all-notices' },
   ];
 
   return (
@@ -23,9 +24,9 @@ const Footer = () => {
           <div className="footer-grid tpo-footer-grid">
             <div className="footer-column">
               <h3 className="footer-title">STATE INSTITUTE OF ENGINEERING &amp; TECHNOLOGY, PANCHKULA</h3>
-              <p className="footer-text">TRAINING &amp; PLACEMENT OFFICE</p>
+              <p className="footer-text">Government Institute, Haryana</p>
               <p className="footer-text tpo-footer-text-gap">
-                Bridging academia and industry by connecting skilled graduates with leading organizations across the country.
+                Empowering students through quality technical education, practical learning, and strong industry readiness.
               </p>
             </div>
 
@@ -34,18 +35,18 @@ const Footer = () => {
               <ul className="footer-links">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                    <Link to={link.to}>{link.label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="footer-column">
-              <h3 className="footer-title">CONTACT TPO</h3>
+              <h3 className="footer-title">CONTACT US</h3>
               <div className="contact-info">
                 <div className="contact-item">
                   <div>
-                    <p><a href="mailto:tpo@sietpanchkula.ac.in">tpo@sietpanchkula.ac.in</a></p>
+                    <p><a href="mailto:info@sietpanchkula.ac.in">info@sietpanchkula.ac.in</a></p>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -56,7 +57,7 @@ const Footer = () => {
                 <div className="contact-item">
                   <div>
                     <h4 className="tpo-find-title">FIND US</h4>
-                    <p>Sector 26, Panchkula, Haryana</p>
+                    <p>Sector 26, Panchkula, Haryana, India</p>
                   </div>
                 </div>
               </div>
@@ -69,7 +70,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              &copy; {currentYear} SIET PANCHKULA. TRAINING &amp; PLACEMENT OFFICE. ALL RIGHTS RESERVED.
+              &copy; {currentYear} State Institute of Engineering &amp; Technology, Panchkula. All rights reserved.
             </p>
           </div>
         </div>
