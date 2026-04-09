@@ -1,34 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from './ScrollReveal';
-import bannerOne from '../assets/new-assets/hero-home/siet1.jpg';
-import bannerTwo from '../assets/new-assets/hero-home/siet2.jpg';
-import bannerThree from '../assets/new-assets/hero-home/siet3.jpg';
-import bannerFour from '../assets/new-assets/campus/siet-panchkula-building.jpg';
+import galleryOne from '../assets/new-assets/gallery/1-1-1024x768.jpg';
+import galleryTwo from '../assets/new-assets/gallery/3-1-edited.jpg';
+import galleryThree from '../assets/new-assets/gallery/IMG_1922-1024x768.jpg';
+import galleryFour from '../assets/new-assets/gallery/IMG_1927-1024x768.jpg';
+import galleryFive from '../assets/new-assets/gallery/Inspection-Pic-1024x768.jpg';
+import gallerySix from '../assets/new-assets/gallery/sportsmeetpic_nancy-edited.jpg';
 
 const banners = [
   {
     id: 1,
-    image: bannerOne,
-    title: 'Campus Front View',
-    subtitle: 'A modern learning environment built for practical engineering education.'
+    image: galleryOne,
+    title: 'Campus Gallery',
+    subtitle: 'Snapshots from campus life, academics, and events.'
   },
   {
     id: 2,
-    image: bannerTwo,
-    title: 'Innovation-Oriented Spaces',
-    subtitle: 'Project labs and maker spaces where ideas become prototypes.'
+    image: galleryTwo,
+    title: 'Institute Moments',
+    subtitle: 'Highlights from activities and student engagement.'
   },
   {
     id: 3,
-    image: bannerThree,
-    title: 'Academic Life at SIET',
-    subtitle: 'Collaborative classrooms with faculty-led mentorship and peer learning.'
+    image: galleryThree,
+    title: 'Academic Spaces',
+    subtitle: 'Learning spaces that support practical and outcome-focused education.'
   },
   {
     id: 4,
-    image: bannerFour,
-    title: 'Green & Connected Campus',
-    subtitle: 'Open spaces, smart classrooms, and modern facilities in one place.'
+    image: galleryFour,
+    title: 'Events & Activities',
+    subtitle: 'A look at institute events and campus experiences.'
+  },
+  {
+    id: 5,
+    image: galleryFive,
+    title: 'Visits & Highlights',
+    subtitle: 'Official visits and campus highlights captured in photos.'
+  },
+  {
+    id: 6,
+    image: gallerySix,
+    title: 'Sports & Wellness',
+    subtitle: 'Sports meets and student participation moments.'
   }
 ];
 

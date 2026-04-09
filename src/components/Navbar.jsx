@@ -87,15 +87,9 @@ const Navbar = () => {
     },
     {
       name: 'Training & Placements',
-      href: '/placements',
-      submenu: [
-        { name: 'TPO Portal', href: 'https://siettpo.vercel.app/', external: true },
-        { name: 'Campus Training', href: '/placements/campus-training' },
-        { name: 'Placement Records', href: '/placements/placement-records' },
-        { name: 'Major Recruiters', href: '/placements/major-recruiters' },
-        { name: 'Placement Process', href: '/placements/placement-process' },
-        { name: 'Student Testimonials', href: '/placements/student-testimonials' }
-      ]
+      href: 'https://siettpo.vercel.app/',
+      external: true,
+      submenu: null
     },
     {
       name: 'Alumni',
@@ -146,17 +140,33 @@ const Navbar = () => {
                 onMouseLeave={() => !isMobile && item.submenu && setOpenDropdown(null)}
               >
                 <div className="nav-link-row">
-                  <NavLink
-                    to={item.href}
-                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                    onClick={() => {
-                      setOpenDropdown(null);
-                      closeMobileMenu();
-                    }}
-                  >
-                    {item.name}
-                    {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
-                  </NavLink>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      className="nav-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        closeMobileMenu();
+                      }}
+                    >
+                      {item.name}
+                      {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={item.href}
+                      className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        closeMobileMenu();
+                      }}
+                    >
+                      {item.name}
+                      {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
+                    </NavLink>
+                  )}
 
                   {isMobile && item.submenu ? (
                     <button
