@@ -102,7 +102,14 @@ const Navbar = () => {
     {
       name: 'Life @ SIET',
       href: '/life-at-siet',
-      submenu: null
+      submenu: [
+        { name: 'Life @ SIET Overview', href: '/life-at-siet' },
+        { name: 'Events', href: '/events' },
+        { name: 'Student Helpline', href: '/student-helpline' },
+        { name: 'Top-Level Sections', href: '/top-level-sections' },
+        { name: 'Staff Utilities', href: '/staff' },
+        { name: 'Content Differences', href: '/content-differences' }
+      ]
     }
   ];
 
