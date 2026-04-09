@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import { topAnnouncementsData } from '../data/noticesData';
 
@@ -39,7 +40,7 @@ const TopAnnouncements = () => {
               </div>
             </div>
 
-            <a href="#notices" className="announcements-link">View Notices</a>
+            <Link to="/all-notices" className="announcements-link">View Notices</Link>
           </div>
         </div>
       </section>

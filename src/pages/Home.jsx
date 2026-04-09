@@ -1,10 +1,9 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import CampusUpdates from '../components/CampusUpdates';
+import AboutInstituteHome from '../components/AboutInstituteHome';
 import DirectorDesk from '../components/DirectorDesk';
 import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
-import NoticesStrip from '../components/NoticesStrip';
 import TopAnnouncements from '../components/TopAnnouncements';
 import SocialMediaPanel from '../components/SocialMediaPanel';
 
@@ -20,8 +19,8 @@ function Home() {
       {/* Hero Section with Banner Image */}
       <Hero />
 
-      {/* Campus Updates - Latest Notices & Announcements */}
-      <CampusUpdates />
+      {/* About Institute */}
+      <AboutInstituteHome />
 
       {/* Director's Message Section */}
       <DirectorDesk />
@@ -33,9 +32,6 @@ function Home() {
       <InfoCards />
 
       <SocialMediaPanel />
-
-      {/* Scrolling Notices Strip */}
-      <NoticesStrip />
     </div>
   );
 }
