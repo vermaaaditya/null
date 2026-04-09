@@ -33,10 +33,17 @@ export const submenuData = {
     sectionLabel: 'ABOUT US',
     title: 'Vision & Mission',
     image: campusAltImage,
+    body: [
+      'Vision',
+      'To be a centre of excellence in technical education, research, and innovation, fostering a skilled and ethical workforce that contributes to the sustainable development of society and the nation.',
+      'Mission'
+    ],
     points: [
-      'The mission focuses on holistic education with strong training outcomes and student well-being.',
-      'The institute aims to prepare students for life in a rapidly changing 21st century.',
-      'Teaching approach combines technical skills, practical orientation, and career readiness.'
+      'Quality Education – To provide a dynamic and inclusive learning environment that nurtures creativity, problem-solving, and technical expertise.',
+      'Research & Innovation – To promote research and technological advancements that address local and global challenges.',
+      'Industry Collaboration – To strengthen industry-academia partnerships for hands-on learning, internships, and employability.',
+      'Social Responsibility – To instil values of ethics, leadership, and sustainability for the betterment of society.',
+      'Lifelong Learning – To equip students with the skills necessary for continuous learning and adaptation to emerging technologies.'
     ]
   },
   'about/directors-message': {
@@ -44,10 +51,15 @@ export const submenuData = {
     title: "Director's Message",
     image: directorImage,
     imageMode: 'portrait',
-    points: [
-      'We aim to inculcate industrial skills amongst youth to empower them for gainful employment through technical & industrial education and to enhance productivity of formal and non-formal sector of economy.',
-      'Our mission is to provide an outstanding holistic education for our students characterized by successful training and emotional well being that provide firm foundation for the next stage of their learning and fully prepare them for life in a rapidly changing 21st century.'
-    ]
+    body: [
+      'I take the pleasure in welcoming you to State Institute of Engineering and Technology (SIET), Panchkula an institute dedicated to the proper growth and development of each and every student for a better career prospect.',
+      'The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the college.',
+      'The college provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility. All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.',
+      'SIET has a team of highly qualified, experienced and dedicated faculty who devote their time not only to teaching but also for the overall development of the students. Further, faculty from other renowned institutions are invited to deliver guest lectures to help augment their studies beyond syllabus.',
+      'We are confident that the students passing out from this college will be technically sound, confident and have good leadership skills. I wish all the best to all the prospective students.',
+      'Prof. Anil Kumar (Director Principal)'
+    ],
+    points: []
   },
   'about/quality-policy': {
     sectionLabel: 'ABOUT US',
@@ -63,11 +75,14 @@ export const submenuData = {
     sectionLabel: 'ABOUT US',
     title: 'Affiliations',
     image: inspectionImage,
-    points: [
-      'University affiliation details.',
-      'Regulatory approvals and recognition status.',
-      'Compliance and accreditation overview.'
-    ]
+    body: [
+      'The institute is approved by AICTE, New Delhi and affiliated to Kurukshetra University (KUK), Kurukshetra. The official documents are provided below.'
+    ],
+    resources: [
+      { label: 'AICTE Approval (PDF)', href: 'https://sietpanchkula.ac.in/wp-content/uploads/2025/03/AICTE-LOA.pdf' },
+      { label: 'KUK Affiliation (PDF)', href: 'https://sietpanchkula.ac.in/wp-content/uploads/2026/01/KUK-Affiliation.pdf' }
+    ],
+    points: []
   },
   'about/anti-ragging': {
     sectionLabel: 'ABOUT US',
@@ -149,11 +164,13 @@ export const submenuData = {
     sectionLabel: 'ACADEMICS',
     title: 'Courses Offered',
     image: aiMlImage,
+    body: [
+      'SIET Panchkula offers B.Tech programs designed around industry-relevant learning and career readiness.'
+    ],
     points: [
-      'B.Tech CSE (AI & ML) with intake of 60 seats.',
-      'B.Tech CSE (Cyber Security) with intake of 60 seats.',
-      'B.Tech Robotics & Automation with intake of 60 seats.',
-      'Official fee structure and admission details are published on the SIET website.'
+      'Computer Science and Engineering (AI & ML) (Intake: 60) — Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
+      'Computer Science and Engineering (Cyber Security) (Intake: 60) — Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
+      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.'
     ]
   },
   'academics/academic-calendar': {
