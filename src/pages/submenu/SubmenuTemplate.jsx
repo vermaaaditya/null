@@ -2,7 +2,16 @@
 import { Link } from 'react-router-dom';
 import '../../styles.css';
 
-const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, points }) => {
+const SubmenuTemplate = ({
+  sectionLabel,
+  title,
+  subtitle,
+  image,
+  imageMode,
+  points = [],
+  showHeroImage = true,
+  showSidebar = true,
+}) => {
   const sectionGuidance = {
     'ABOUT US': [
       'Review institute profile and governance details before admission decisions.',
@@ -65,7 +74,7 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
     ]
   };
 
-  const infoText = `${title} is an important part of ${sectionLabel}. This section helps students and visitors quickly understand the scope, focus, and practical relevance.`;
+  const infoText = `${title} is an important part of ${sectionLabel}.`;
 
   const sectionHome = (() => {
     switch (sectionLabel) {
@@ -114,16 +123,18 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
                 </div>
               </div>
 
-              <div className="submenu-hero-visual" aria-hidden="true">
-                <div className="submenu-hero-image-wrap">
-                  <img
-                    src={image}
-                    alt=""
-                    className={`submenu-hero-image ${imageMode === 'portrait' ? 'portrait' : ''}`}
-                    loading="eager"
-                  />
+              {showHeroImage && image ? (
+                <div className="submenu-hero-visual" aria-hidden="true">
+                  <div className="submenu-hero-image-wrap">
+                    <img
+                      src={image}
+                      alt=""
+                      className={`submenu-hero-image ${imageMode === 'portrait' ? 'portrait' : ''}`}
+                      loading="eager"
+                    />
+                  </div>
                 </div>
-              </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -136,17 +147,20 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
               <div className="submenu-content-card">
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
-                  <ul className="submenu-point-list">
-                    {points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
+                  {points.length > 0 ? (
+                    <ul className="submenu-point-list">
+                      {points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  ) : null}
                   <p className="submenu-info-text">{infoText}</p>
                 </div>
               </div>
             </main>
 
-            <aside className="submenu-aside">
+            {showSidebar ? (
+              <aside className="submenu-aside">
               <div className="submenu-aside-card">
                 <h3>Quick Links</h3>
                 <div className="submenu-link-list">
@@ -176,7 +190,8 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
                   Open Notices Board →
                 </Link>
               </div>
-            </aside>
+              </aside>
+            ) : null}
           </div>
         </div>
       </section>

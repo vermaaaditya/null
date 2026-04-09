@@ -14,66 +14,66 @@ const Departments = () => {
   const departments = [
     {
       id: 'aiml',
-      name: 'Artificial Intelligence & Machine Learning',
-      shortName: 'AIML',
+      name: 'Computer Science and Engineering (AI & ML)',
+      shortName: 'CSE (AI & ML)',
       image: aimlImg,
-      description: 'Dive into the future of technology with AI and Machine Learning. Learn to build intelligent systems, work with neural networks, and create solutions that think and learn.',
-      highlights: [
-        'Deep Learning & Neural Networks',
-        'Natural Language Processing',
-        'Computer Vision',
-        'Predictive Analytics',
-        'AI Ethics & Applications'
-      ],
-      careerPaths: [
-        'Machine Learning Engineer',
-        'Data Scientist',
-        'AI Research Scientist',
-        'Deep Learning Specialist'
-      ],
-      labs: ['AI/ML Lab', 'Data Science Lab', 'Research Lab']
+      description:
+        'Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
+      highlights: [],
+      careerPaths: [],
+      labs: []
     },
     {
       id: 'cs',
-      name: 'Computer Science & Engineering',
-      shortName: 'CSE',
+      name: 'Computer Science and Engineering (Cyber Security)',
+      shortName: 'CSE (Cyber Security)',
       image: csImg,
-      description: 'Build strong foundations in algorithms, software systems, cloud-native applications, and modern full stack development for high-impact careers.',
-      highlights: [
-        'Data Structures and Algorithms',
-        'Operating Systems and DBMS',
-        'Web and Mobile Application Development',
-        'Cloud Computing and DevOps',
-        'Open Source and System Design'
-      ],
-      careerPaths: [
-        'Software Development Engineer',
-        'Full Stack Developer',
-        'Cloud Engineer',
-        'Product Engineer'
-      ],
-      labs: ['Programming Lab', 'Systems Lab', 'Cloud and DevOps Lab']
+      description:
+        'Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
+      highlights: [],
+      careerPaths: [],
+      labs: []
     },
     {
       id: 'robotics',
       name: 'Robotics & Automation',
-      shortName: 'Robotics',
+      shortName: 'RA',
       image: roboticsImg,
-      description: 'Shape the future of automation and robotics. Learn to design, build, and program robots for industrial, medical, and consumer applications.',
-      highlights: [
-        'Robot Design & Kinematics',
-        'Industrial Automation',
-        'IoT & Embedded Systems',
-        'Control Systems',
-        'Autonomous Systems'
-      ],
-      careerPaths: [
-        'Robotics Engineer',
-        'Automation Specialist',
-        'Control Systems Engineer',
-        'IoT Developer'
-      ],
-      labs: ['Robotics Lab', 'Automation Lab', 'IoT Lab']
+      description:
+        'Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.',
+      highlights: [],
+      careerPaths: [],
+      labs: []
+    },
+    {
+      id: 'electrical',
+      name: 'Electrical Engineering',
+      shortName: 'EE',
+      image: null,
+      description: '',
+      highlights: [],
+      careerPaths: [],
+      labs: []
+    },
+    {
+      id: 'electronics-vlsi',
+      name: 'Electronics Engineering (VLSI Design)',
+      shortName: 'ECE (VLSI)',
+      image: null,
+      description: '',
+      highlights: [],
+      careerPaths: [],
+      labs: []
+    },
+    {
+      id: 'applied-science',
+      name: 'Applied Science',
+      shortName: 'AS',
+      image: null,
+      description: '',
+      highlights: [],
+      careerPaths: [],
+      labs: []
     }
   ];
 
@@ -109,7 +109,7 @@ const Departments = () => {
                 className={`dept-compact-card ${selectedDepartment.id === dept.id ? 'active' : ''}`}
                 onClick={() => setSelectedDepartment(dept)}
               >
-                <img src={dept.image} alt={dept.name} loading="lazy" />
+                {dept.image ? <img src={dept.image} alt={dept.name} loading="lazy" /> : null}
                 <div>
                   <p className="dept-short-tag">{dept.shortName}</p>
                   <h3>{dept.name}</h3>
@@ -124,43 +124,57 @@ const Departments = () => {
         <div className="container">
           <div className="dept-showcase-grid">
             <div className="dept-showcase-visual">
-              <img src={selectedDepartment.image} alt={selectedDepartment.name} loading="lazy" />
+              {selectedDepartment.image ? (
+                <img src={selectedDepartment.image} alt={selectedDepartment.name} loading="lazy" />
+              ) : (
+                <div className="dept-showcase-placeholder" aria-hidden="true" />
+              )}
               <div className="dept-badge">{selectedDepartment.shortName}</div>
             </div>
             <div className="dept-content">
               <h2 className="dept-name">{selectedDepartment.name}</h2>
-              <p className="dept-description">{selectedDepartment.description}</p>
+              {selectedDepartment.description ? (
+                <p className="dept-description">{selectedDepartment.description}</p>
+              ) : null}
 
-              <div className="dept-highlights">
-                <h3>Key Areas of Study</h3>
-                <ul className="highlights-list">
-                  {selectedDepartment.highlights.map((highlight, idx) => (
-                    <li key={idx}>
-                      <span className="highlight-icon">✓</span>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="dept-info-grid">
-                <div className="info-box">
-                  <h4>Career Opportunities</h4>
-                  <ul className="career-list">
-                    {selectedDepartment.careerPaths.map((career, idx) => (
-                      <li key={idx}>{career}</li>
+              {selectedDepartment.highlights.length > 0 ? (
+                <div className="dept-highlights">
+                  <h3>Key Areas of Study</h3>
+                  <ul className="highlights-list">
+                    {selectedDepartment.highlights.map((highlight, idx) => (
+                      <li key={idx}>
+                        <span className="highlight-icon">✓</span>
+                        {highlight}
+                      </li>
                     ))}
                   </ul>
                 </div>
-                <div className="info-box">
-                  <h4>Laboratory Facilities</h4>
-                  <ul className="lab-list">
-                    {selectedDepartment.labs.map((lab, idx) => (
-                      <li key={idx}>{lab}</li>
-                    ))}
-                  </ul>
+              ) : null}
+
+              {selectedDepartment.careerPaths.length > 0 || selectedDepartment.labs.length > 0 ? (
+                <div className="dept-info-grid">
+                  {selectedDepartment.careerPaths.length > 0 ? (
+                    <div className="info-box">
+                      <h4>Career Opportunities</h4>
+                      <ul className="career-list">
+                        {selectedDepartment.careerPaths.map((career, idx) => (
+                          <li key={idx}>{career}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                  {selectedDepartment.labs.length > 0 ? (
+                    <div className="info-box">
+                      <h4>Laboratory Facilities</h4>
+                      <ul className="lab-list">
+                        {selectedDepartment.labs.map((lab, idx) => (
+                          <li key={idx}>{lab}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
                 </div>
-              </div>
+              ) : null}
 
               <div className="dept-stats">
                 <div className="stat">
@@ -178,7 +192,7 @@ const Departments = () => {
               </div>
 
               <a href={syllabusDoc} target="_blank" rel="noopener noreferrer" className="dept-doc-link">
-                View Department Syllabus Document
+                View Syllabus Document
               </a>
             </div>
           </div>

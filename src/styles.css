@@ -416,6 +416,31 @@ img {
   position: relative;
 }
 
+.nav-link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.submenu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  background: rgba(197, 160, 89, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.submenu-toggle .dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.submenu-toggle .dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
 .nav-item.has-submenu > .nav-link {
   gap: 0.45rem;
 }
@@ -2653,6 +2678,12 @@ img {
   background: #f2f6fb;
 }
 
+.dept-showcase-placeholder {
+  width: 100%;
+  min-height: 320px;
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.08), rgba(197, 160, 89, 0.12));
+}
+
 .dept-doc-link {
   display: inline-flex;
   margin-top: 0.9rem;
@@ -3253,6 +3284,15 @@ img {
     border-radius: 10px;
   }
 
+  .nav-link-row {
+    width: 100%;
+  }
+
+  .submenu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
   .dropdown-menu {
     position: static;
     opacity: 1;
@@ -3373,7 +3413,7 @@ img {
   }
 
   .dept-card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .department-detail.reverse .dept-image,
@@ -3399,6 +3439,12 @@ img {
 
   .view-all-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .dept-card-grid {
+    grid-template-columns: 1fr;
   }
 }
 

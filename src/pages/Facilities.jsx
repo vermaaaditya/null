@@ -227,14 +227,14 @@ const Facilities = () => {
           <div className="campus-map-card">
             <iframe
               title="SIET Panchkula Map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=76.7909%2C30.6912%2C76.9012%2C30.7604&layer=mapnik"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=76.8480%2C30.7040%2C76.8560%2C30.7100&layer=mapnik&marker=30.7070%2C76.8520"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             <div className="map-info">
               <h3>State Institute of Engineering and Technology</h3>
               <p>Sector 26, Panchkula, Haryana</p>
-              <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" className="map-link">
+              <a href="https://www.openstreetmap.org/?mlat=30.7070&mlon=76.8520#map=17/30.7070/76.8520" target="_blank" rel="noopener noreferrer" className="map-link">
                 Open Full Map
               </a>
             </div>

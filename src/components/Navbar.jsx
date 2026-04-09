@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
@@ -17,6 +18,14 @@ const Navbar = () => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 920px)');
+    const apply = () => setIsMobile(mq.matches);
+    apply();
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
   }, []);
 
   const navItems = [
@@ -41,11 +50,11 @@ const Navbar = () => {
       name: 'Departments',
       href: '/departments',
       submenu: [
-        { name: 'Engineering', href: '/departments/engineering' },
         { name: 'AI & Machine Learning', href: '/departments/ai-ml' },
         { name: 'Cyber Security', href: '/departments/cyber-security' },
         { name: 'Robotics & Automation', href: '/departments/robotics' },
-        { name: 'Computer Science', href: '/departments/computer-science' }
+        { name: 'Electrical Engineering', href: '/departments/electrical-engineering' },
+        { name: 'Electronics Engineering (VLSI Design)', href: '/departments/electronics-vlsi' }
       ]
     },
     {
@@ -110,6 +119,7 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const toggleDropdown = (index) => setOpenDropdown((prev) => (prev === index ? null : index));
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -136,20 +146,40 @@ const Navbar = () => {
               <li
                 key={index}
                 className={`nav-item ${item.submenu ? 'has-submenu' : ''}`}
-                onMouseEnter={() => item.submenu && setOpenDropdown(index)}
-                onMouseLeave={() => item.submenu && setOpenDropdown(null)}
+                onMouseEnter={() => !isMobile && item.submenu && setOpenDropdown(index)}
+                onMouseLeave={() => !isMobile && item.submenu && setOpenDropdown(null)}
               >
-                <NavLink
-                  to={item.href}
-                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                  onClick={() => {
-                    setOpenDropdown(null);
-                    closeMobileMenu();
-                  }}
-                >
-                  {item.name}
-                  {item.submenu && <span className="dropdown-arrow">▼</span>}
-                </NavLink>
+                <div className="nav-link-row">
+                  <NavLink
+                    to={item.href}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                    onClick={() => {
+                      setOpenDropdown(null);
+                      closeMobileMenu();
+                    }}
+                  >
+                    {item.name}
+                    {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
+                  </NavLink>
+
+                  {isMobile && item.submenu ? (
+                    <button
+                      type="button"
+                      className="submenu-toggle"
+                      aria-label={`Toggle ${item.name} submenu`}
+                      aria-expanded={openDropdown === index}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleDropdown(index);
+                      }}
+                    >
+                      <span className={`dropdown-arrow ${openDropdown === index ? 'open' : ''}`} aria-hidden="true">
+                        ▼
+                      </span>
+                    </button>
+                  ) : null}
+                </div>
 
                 {item.submenu && (
                   <ul className={`dropdown-menu ${openDropdown === index ? 'active' : ''}`}>

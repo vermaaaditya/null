@@ -129,6 +129,20 @@ export const submenuData = {
       'Cloud, data, and modern application stacks.'
     ]
   },
+  'departments/electrical-engineering': {
+    sectionLabel: 'DEPARTMENTS',
+    title: 'Electrical Engineering',
+    // no dedicated asset yet, so omit hero image
+    showHeroImage: false,
+    points: []
+  },
+  'departments/electronics-vlsi': {
+    sectionLabel: 'DEPARTMENTS',
+    title: 'Electronics Engineering (VLSI Design)',
+    // no dedicated asset yet, so omit hero image
+    showHeroImage: false,
+    points: []
+  },
   'academics/courses-offered': {
     sectionLabel: 'ACADEMICS',
     title: 'Courses Offered',

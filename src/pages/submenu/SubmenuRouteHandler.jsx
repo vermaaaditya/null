@@ -11,6 +11,8 @@ import DepartmentAiMl from './DepartmentAiMl';
 import DepartmentCyberSecurity from './DepartmentCyberSecurity';
 import DepartmentRobotics from './DepartmentRobotics';
 import DepartmentComputerScience from './DepartmentComputerScience';
+import DepartmentElectricalEngineering from './DepartmentElectricalEngineering';
+import DepartmentElectronicsVlsi from './DepartmentElectronicsVlsi';
 import CoursesOffered from './CoursesOffered';
 import AcademicCalendar from './AcademicCalendar';
 import TeachingLearning from './TeachingLearning';
@@ -51,6 +53,8 @@ const submenuComponents = {
   'departments/cyber-security': DepartmentCyberSecurity,
   'departments/robotics': DepartmentRobotics,
   'departments/computer-science': DepartmentComputerScience,
+  'departments/electrical-engineering': DepartmentElectricalEngineering,
+  'departments/electronics-vlsi': DepartmentElectronicsVlsi,
   'academics/courses-offered': CoursesOffered,
   'academics/academic-calendar': AcademicCalendar,
   'academics/teaching-learning': TeachingLearning,
