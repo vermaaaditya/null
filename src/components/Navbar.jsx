@@ -108,12 +108,7 @@ const Navbar = () => {
     {
       name: 'Life @ SIET',
       href: '/life-at-siet',
-      submenu: [
-        { name: 'Campus Life', href: '/life-at-siet/campus-life' },
-        { name: 'Photo Gallery', href: '/life-at-siet/photo-gallery' },
-        { name: 'Video Gallery', href: '/life-at-siet/video-gallery' },
-        { name: 'Events & Activities', href: '/life-at-siet/events-activities' }
-      ]
+      submenu: null
     }
   ];
 
