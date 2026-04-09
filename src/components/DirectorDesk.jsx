@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles.css';
 import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
 
@@ -7,11 +7,11 @@ import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
  * Split section with director note and profile card
  */
 const DirectorDesk = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const shortMessage = "Welcome to SIET. We are building a campus where students learn by doing, collaborate across disciplines, and graduate ready for real engineering challenges. Academic depth, ethical thinking, and practical problem-solving are central to everything we teach.";
-
-  const fullMessage = `${shortMessage} Our faculty teams combine research experience with industry exposure so every course connects theory to implementation. We encourage project-based learning, internships, and innovation challenges throughout the year. I invite you to explore our programs and become part of a student community focused on leadership, curiosity, and measurable impact.`;
+  const messageParagraphs = [
+    'The Training & Placement Office and academic leadership at SIET are dedicated to strengthening the professional journey of our students through practical learning, internships, and industry-oriented mentoring. Our objective is to build confident graduates who are ready to meet evolving technical and workplace expectations.',
+    'We strongly encourage students to participate in project work, skill-building activities, and internship opportunities, as these experiences improve employability and professional maturity. Faculty and mentors work closely with students to ensure consistent guidance and timely support.',
+    'Our institution continues to focus on academic quality, research culture, and responsible leadership. We invite every learner to stay proactive, disciplined, and committed to continuous growth throughout their time at SIET.'
+  ];
 
   return (
     <section className="director-desk section" id="about">
@@ -21,67 +21,19 @@ const DirectorDesk = () => {
           <div className="title-underline"></div>
         </div>
 
-        <div className="director-content">
-          <div className="director-message">
-            <p className="director-kicker">Leadership Message</p>
-            <h3 className="message-title">A Message from the Director</h3>
-            <p className="message-text">{isExpanded ? fullMessage : shortMessage}</p>
-            <button
-              className="read-more-btn"
-              onClick={() => setIsExpanded(!isExpanded)}
-              type="button"
-            >
-              {isExpanded ? 'Read Less' : 'Read More'}
-              <span className="btn-arrow">{isExpanded ? '<-' : '->'}</span>
-            </button>
-
-            <div className="highlights">
-              <div className="highlight-item">
-                <div className="highlight-icon" aria-hidden="true">AC</div>
-                <div className="highlight-text">
-                  <h4>Academic Excellence</h4>
-                  <p>Strong outcome-based curriculum</p>
-                </div>
-              </div>
-              <div className="highlight-item">
-                <div className="highlight-icon" aria-hidden="true">RS</div>
-                <div className="highlight-text">
-                  <h4>Research Focus</h4>
-                  <p>Innovation labs and guided projects</p>
-                </div>
-              </div>
-              <div className="highlight-item">
-                <div className="highlight-icon" aria-hidden="true">IN</div>
-                <div className="highlight-text">
-                  <h4>Industry Connect</h4>
-                  <p>Mentorship and placement readiness</p>
-                </div>
-              </div>
-            </div>
+        <div className="director-classic-wrap">
+          <div className="director-classic-photo">
+            <img src={principalPhoto} alt="Prof. Anil Kumar - Director" />
           </div>
 
-          <div className="director-card">
-            <div className="director-photo-wrap">
-              <div className="card-image">
-                <img src={principalPhoto} alt="Prof. Anil Kumar" />
-              </div>
-            </div>
-            <div className="card-info">
-              <h3 className="director-name">Prof. Anil Kumar</h3>
-              <p className="director-designation">Director & Principal</p>
-              <p className="director-credentials">PhD (IIT Bombay) | M.Tech | B.E.</p>
-
-              <div className="director-focus-list">
-                <span className="focus-pill">Outcome-Based Learning</span>
-                <span className="focus-pill">Research Mentorship</span>
-                <span className="focus-pill">Industry Engagement</span>
-              </div>
-
-              <div className="director-contact">
-                <p>Email: director@siet.edu.in</p>
-                <p>Phone: +91-XXX-XXXXXXX</p>
-              </div>
-            </div>
+          <div className="director-classic-message">
+            {messageParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p className="director-classic-signoff">
+              Prof. Anil Kumar<br />
+              Director &amp; Principal, SIET Panchkula
+            </p>
           </div>
         </div>
       </div>
