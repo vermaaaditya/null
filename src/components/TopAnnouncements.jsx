@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import { topAnnouncementsData } from '../data/noticesData';
 
 const TopAnnouncements = () => {
   const [isPaused, setIsPaused] = useState(false);
 
-  const announcements = [
-    'Admission portal open for 2026-27 session',
-    'Academic Calendar (Odd Semester) released',
-    'Robotics Club orientation on 28 March 2026',
-    'Campus hiring prep bootcamp starts next week',
-    'Mid-semester exam form deadline: 5 April 2026'
-  ];
+  const announcements = topAnnouncementsData;
 
   return (
     <ScrollReveal>

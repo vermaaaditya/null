@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../styles.css';
-import aimlImg from '../assets/new assets/departments/AI-ML.jpg';
-import csImg from '../assets/new assets/departments/Cyber-Security.jpg';
-import roboticsImg from '../assets/new assets/departments/Robotics-Automation.jpg';
-import syllabusDoc from '../assets/new assets/notification and notice purpose/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
-import admissionFormDoc from '../assets/new assets/some other document for official work/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
+import aimlImg from '../assets/new-assets/departments/AI-ML.jpg';
+import csImg from '../assets/new-assets/departments/Cyber-Security.jpg';
+import roboticsImg from '../assets/new-assets/departments/Robotics-Automation.jpg';
+import syllabusDoc from '../assets/new-assets/notifications/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
+import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
 
 /**
  * Departments Page Component

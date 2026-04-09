@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import logo from '../assets/new assets/logoes/LOGO.png';
-import haryanaEmblem from '../assets/new assets/logoes/haryana-sarkar.png';
+import logo from '../assets/new-assets/logos/LOGO.png';
+import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 
 /**
  * Header Component

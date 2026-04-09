@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
+import { noticesStripData } from '../data/noticesData';
 
 /**
  * NoticesStrip Component
@@ -9,38 +10,7 @@ import '../styles.css';
 const NoticesStrip = () => {
   const [isPaused, setIsPaused] = useState(false);
 
-  const notices = [
-    {
-      id: 1,
-      text: 'Admissions open for academic year 2026-27',
-      type: 'important',
-      icon: 'AD'
-    },
-    {
-      id: 2,
-      text: 'Exam form submission deadline: February 15, 2026',
-      type: 'deadline',
-      icon: 'DL'
-    },
-    {
-      id: 3,
-      text: 'Campus placement drive by top recruiters this month',
-      type: 'placement',
-      icon: 'PL'
-    },
-    {
-      id: 4,
-      text: 'Semester results available on the student portal',
-      type: 'result',
-      icon: 'RS'
-    },
-    {
-      id: 5,
-      text: 'Machine Learning workshop from February 20-22, 2026',
-      type: 'event',
-      icon: 'EV'
-    }
-  ];
+  const notices = noticesStripData;
 
   return (
     <section className="notices-strip" id="notices">

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../styles.css';
-import facultyLead from '../assets/new assets/teachers/anil-kumar.jpg';
-import facultyNormsDoc from '../assets/new assets/some other document for official work/UGC-Qualification-18-Jul-2018.pdf';
-import aicteDoc from '../assets/new assets/notification and notice purpose/AICTE-Degree-Pay-Qualifications-and-Promotions.pdf';
-import academicCalendarDoc from '../assets/new assets/notification and notice purpose/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
+import facultyLead from '../assets/new-assets/teachers/anil-kumar.jpg';
+import facultyNormsDoc from '../assets/new-assets/documents/UGC-Qualification-18-Jul-2018.pdf';
+import aicteDoc from '../assets/new-assets/notifications/AICTE-Degree-Pay-Qualifications-and-Promotions.pdf';
+import academicCalendarDoc from '../assets/new-assets/notifications/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
 
 /**
  * Academics Page Component

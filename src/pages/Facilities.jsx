@@ -7,7 +7,7 @@ import '../styles.css';
  */
 const Facilities = () => {
   const facilityImages = Object.values(
-    import.meta.glob('../assets/new assets/**/*.{jpg,jpeg,png,webp}', {
+    import.meta.glob('../assets/new-assets/**/*.{jpg,jpeg,png,webp}', {
       eager: true,
       import: 'default'
     })

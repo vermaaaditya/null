@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import admissionFormDoc from '../assets/new assets/some other document for official work/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
+import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
 
 /**
  * Courses Component

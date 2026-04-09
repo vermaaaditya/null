@@ -1,13 +1,13 @@
-﻿import campusImage from '../../assets/new assets/hero or home page/siet1.jpg';
-import directorImage from '../../assets/new assets/prienciplephoto/prienciple.jpeg';
-import aiMlImage from '../../assets/new assets/departments/AI-ML.jpg';
-import cyberImage from '../../assets/new assets/departments/Cyber-Security.jpg';
-import roboticsImage from '../../assets/new assets/departments/Robotics-Automation.jpg';
-import academicCalendarImage from '../../assets/new assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
-import facilitiesImage from '../../assets/new assets/campus/siet-panchkula-building.jpg';
-import competitionImage from '../../assets/new assets/events/Web-Development-Competition.jpg';
-import campusLifeImage from '../../assets/new assets/gallery/1-1-1024x768.jpg';
-import galleryImage from '../../assets/new assets/gallery/3-1-edited.jpg';
+import campusImage from '../../assets/new-assets/hero-home/siet1.jpg';
+import directorImage from '../../assets/new-assets/principal-photo/prienciple.jpeg';
+import aiMlImage from '../../assets/new-assets/departments/AI-ML.jpg';
+import cyberImage from '../../assets/new-assets/departments/Cyber-Security.jpg';
+import roboticsImage from '../../assets/new-assets/departments/Robotics-Automation.jpg';
+import academicCalendarImage from '../../assets/new-assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
+import facilitiesImage from '../../assets/new-assets/campus/siet-panchkula-building.jpg';
+import competitionImage from '../../assets/new-assets/events/Web-Development-Competition.jpg';
+import campusLifeImage from '../../assets/new-assets/gallery/1-1-1024x768.jpg';
+import galleryImage from '../../assets/new-assets/gallery/3-1-edited.jpg';
 
 export const submenuData = {
   'about/about-institute': {

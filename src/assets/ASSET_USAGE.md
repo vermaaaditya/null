@@ -4,27 +4,27 @@ This project keeps only curated assets that are used in the React app.
 
 ## Current Structure
 
-- `src/assets/new assets/hero or home page/`
-- `src/assets/new assets/logoes/`
-- `src/assets/new assets/prienciplephoto/`
-- `src/assets/new assets/gallery/`
-- `src/assets/new assets/departments/`
-- `src/assets/new assets/campus/`
-- `src/assets/new assets/events/`
-- `src/assets/new assets/teachers/`
-- `src/assets/new assets/notification and notice purpose/`
-- `src/assets/new assets/some other document for official work/`
+- `src/assets/new-assets/hero-home/`
+- `src/assets/new-assets/logos/`
+- `src/assets/new-assets/principal-photo/`
+- `src/assets/new-assets/gallery/`
+- `src/assets/new-assets/departments/`
+- `src/assets/new-assets/campus/`
+- `src/assets/new-assets/events/`
+- `src/assets/new-assets/teachers/`
+- `src/assets/new-assets/notifications/`
+- `src/assets/new-assets/documents/`
 
 ## How These Are Used
 
 - Direct imports in components/pages for hero, logo, faculty docs, departments, and placements.
 - Dynamic gallery selection from:
-  - `src/assets/new assets/**/*.{jpg,jpeg,png,webp}`
+  - `src/assets/new-assets/**/*.{jpg,jpeg,png,webp}`
 
 ## Cleanup Policy
 
 - Keep only media/docs actually used by UI components.
-- Keep assets organized under `src/assets/new assets/` by category.
+- Keep assets organized under `src/assets/new-assets/` by category.
 - Remove orphan files if no static import or dynamic glob can reference them.
 
 ## Before Deleting Assets

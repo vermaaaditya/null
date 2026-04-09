@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles.css';
-import recruiterOne from '../assets/new assets/events/walk-in-1024x593.png';
-import recruiterTwo from '../assets/new assets/some other document for official work/b.tech-avt-img.png';
-import recruiterThree from '../assets/new assets/logoes/haryana-sarkar.png';
-import recruiterFour from '../assets/new assets/events/Web-Development-Competition.jpg';
-import recruiterFive from '../assets/new assets/gallery/Inspection-Pic-1024x768.jpg';
+import recruiterOne from '../assets/new-assets/events/walk-in-1024x593.png';
+import recruiterTwo from '../assets/new-assets/documents/b.tech-avt-img.png';
+import recruiterThree from '../assets/new-assets/logos/haryana-sarkar.png';
+import recruiterFour from '../assets/new-assets/events/Web-Development-Competition.jpg';
+import recruiterFive from '../assets/new-assets/gallery/Inspection-Pic-1024x768.jpg';
 
 /**
  * Training & Placements Page Component

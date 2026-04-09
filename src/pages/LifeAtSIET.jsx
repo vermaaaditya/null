@@ -6,7 +6,7 @@ import '../styles.css';
  * Media section and gallery
  */
 const LifeAtSIET = () => {
-  const galleryPool = import.meta.glob('../assets/new assets/**/*.{jpg,jpeg,png,webp}', {
+  const galleryPool = import.meta.glob('../assets/new-assets/**/*.{jpg,jpeg,png,webp}', {
     eager: true,
     import: 'default'
   });
