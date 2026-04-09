@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
 import { notificationsListData, noticesListData } from '../data/noticesData';
 
 const useAutoScroll = (scrollRef, contentRef, pauseRef) => {

@@ -1,0 +1,115 @@
+﻿/* Header */
+.header {
+  padding-top: 0.8rem;
+  position: relative;
+  z-index: 90;
+  animation: riseIn 0.7s ease both;
+}
+
+.header-content {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.3rem);
+  padding: clamp(0.8rem, 1.8vw, 1.2rem);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #ffffff;
+  color: #0a192f;
+  border: 1px solid rgba(10, 25, 47, 0.14);
+  box-shadow: var(--shadow-mid);
+}
+
+.header-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(197, 160, 89, 0.08) 0%, rgba(10, 25, 47, 0.02) 62%);
+}
+
+.tpo-header-emblem {
+  width: clamp(64px, 8vw, 88px);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 25, 47, 0.16);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.1);
+}
+
+.tpo-header-emblem img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.header-logo {
+  width: clamp(68px, 9vw, 90px);
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 25, 47, 0.2);
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.12);
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-info {
+  min-width: 0;
+}
+
+.tpo-header-hindi {
+  font-size: clamp(0.7rem, 1.5vw, 0.86rem);
+  color: rgba(10, 25, 47, 0.88);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.26rem;
+}
+
+.college-name {
+  font-size: clamp(1.08rem, 2.1vw, 1.5rem);
+  color: #0a192f;
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  text-wrap: balance;
+}
+
+.college-subtitle {
+  margin-top: 0.35rem;
+  font-size: clamp(0.72rem, 1.3vw, 0.88rem);
+  color: rgba(33, 64, 102, 0.92);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+.tpo-cell-title {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #0a192f;
+}
+
+.college-tagline {
+  margin-top: 0.15rem;
+  font-size: clamp(0.8rem, 1.35vw, 0.94rem);
+  color: rgba(10, 25, 47, 0.88);
+  font-weight: 700;
+}
+
+.tpo-gov-emblem {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+

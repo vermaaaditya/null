@@ -1,7 +1,5 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles.css';
-
 const SubmenuTemplate = ({
   sectionLabel,
   title,
@@ -219,7 +217,7 @@ const SubmenuTemplate = ({
                   Check the latest notifications and downloadable notices.
                 </p>
                 <Link to="/all-notices" className="submenu-aside-cta">
-                  Open Notices Board →
+                  Open Notices Board ?
                 </Link>
               </div>
               </aside>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
 import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
 import aimlImg from '../assets/new-assets/courses/AI-ML.jpg';
 import cyberImg from '../assets/new-assets/courses/Cyber-Security.jpg';

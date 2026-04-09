@@ -1,6 +1,4 @@
 import React from 'react';
-import '../styles.css';
-
 /**
  * Life @ SIET Page Component
  * Media section and gallery

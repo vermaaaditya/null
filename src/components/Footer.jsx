@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
-
 /**
  * Footer Component
  * Institute info, links, and contact details with social media integration

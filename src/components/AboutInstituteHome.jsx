@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import campusBuilding from '../assets/new-assets/campus/siet-panchkula-building.jpg';
-import '../styles.css';
-
 const AboutInstituteHome = () => {
   return (
     <ScrollReveal>

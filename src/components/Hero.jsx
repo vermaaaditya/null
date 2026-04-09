@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
 import heroBg1 from '../assets/new-assets/hero-home/siet1.jpg';
 import heroBg2 from '../assets/new-assets/hero-home/siet2.jpg';
 import heroBg3 from '../assets/new-assets/hero-home/siet3.jpg';

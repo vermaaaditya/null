@@ -1,0 +1,215 @@
+﻿    width: min(var(--container-max), calc(100% - 1.4rem));
+  }
+
+  .header-content {
+    border-radius: 18px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.7rem;
+    padding: 0.85rem;
+  }
+
+  .header-logo {
+    width: 64px;
+    border-radius: 14px;
+  }
+
+  .tpo-header-emblem {
+    width: 56px;
+    border-radius: 14px;
+  }
+
+  .tpo-header-hindi {
+    font-size: 0.74rem;
+  }
+
+  .college-subtitle {
+    font-size: 0.76rem;
+  }
+
+  .hero {
+    border-radius: 0;
+    min-height: 640px;
+  }
+
+  .hero-content {
+    padding-top: 2.5rem;
+    padding-bottom: 13.7rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .courses-grid,
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vm-grid,
+  .highlights-grid,
+  .benefits-grid,
+  .events-grid,
+  .media-grid,
+  .activities-grid,
+  .records-grid,
+  .process-grid,
+  .testimonials-grid,
+  .exam-info-grid,
+  .semester-grid,
+  .faculty-stats,
+  .student-life-grid,
+  .campus-updates-grid,
+  .objectives-grid,
+  .affiliation-grid,
+  .measures-grid,
+  .dept-info-grid,
+  .dept-stats,
+  .facilities-grid,
+  .recruiters-grid,
+  .gallery-grid,
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .all-notices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid .info-card:last-child {
+    grid-column: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  .footer-column {
+    gap: 0.35rem;
+  }
+
+  .footer-column + .footer-column {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 1rem;
+  }
+
+  .chatbot-panel {
+    width: min(340px, calc(100vw - 1rem));
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-block: 2.6rem;
+  }
+
+  .college-subtitle,
+  .college-tagline {
+    font-size: 0.82rem;
+  }
+
+  .header-meta {
+    display: none;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-content {
+    padding-bottom: 13.2rem;
+  }
+
+  .stats-grid {
+    gap: 0.45rem;
+    padding: 0.45rem;
+  }
+
+  .stat-item {
+    padding: 0.56rem;
+  }
+
+  .stat-label {
+    font-size: 0.64rem;
+  }
+
+  .card-header {
+    padding: 0.82rem;
+  }
+
+  .card-body {
+    padding: 0.74rem 0.74rem 0;
+  }
+
+  .notices-label {
+    justify-content: center;
+  }
+
+  .notice-item {
+    font-size: 0.75rem;
+    padding: 0.48rem 0.6rem;
+  }
+
+  .director-classic-wrap {
+    padding: 1rem;
+  }
+
+  .director-classic-message {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+}
+
+@media print {
+  .navbar,
+  .notices-strip,
+  .hero-buttons,
+  .carousel-indicators,
+  .view-all-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .header-content,
+  .hero,
+  .director-message,
+  .director-card,
+  .course-card,
+  .info-card {
+    box-shadow: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

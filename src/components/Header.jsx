@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
 import sietLogo from '../assets/new-assets/logos/siet.webp';
 import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 

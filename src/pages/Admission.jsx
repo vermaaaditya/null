@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import '../styles.css';
-
 const initialFormData = {
   studentName: '',
   fatherName: '',

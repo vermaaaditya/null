@@ -1,0 +1,256 @@
+﻿/* Director Section */
+.director-desk {
+  position: relative;
+}
+
+.director-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: start;
+}
+
+.about-page .leadership-message .director-content {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+}
+
+.director-message {
+  border-radius: 10px;
+  padding: clamp(1.1rem, 2.5vw, 1.7rem);
+  background: #ffffff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-left: 4px solid #c5a059;
+  box-shadow: var(--shadow-soft);
+}
+
+.director-kicker {
+  display: inline-flex;
+  margin-bottom: 0.6rem;
+  border-radius: 4px;
+  padding: 0.28rem 0.66rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #c5a059;
+  background: rgba(197, 160, 89, 0.12);
+}
+
+.message-title {
+  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
+  margin-bottom: 0.85rem;
+}
+
+.message-text {
+  color: var(--ink-700);
+  line-height: 1.8;
+}
+
+.read-more-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0a192f;
+  background: #c5a059;
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
+}
+
+.read-more-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(197, 160, 89, 0.35);
+  background: #d4b06a;
+}
+
+.btn-arrow {
+  display: inline-flex;
+  line-height: 1;
+}
+
+.highlights {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.74rem 0.82rem;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 35, 63, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(16, 35, 63, 0.12);
+}
+
+.highlight-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #0a192f;
+  background: rgba(197, 160, 89, 0.2);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  flex-shrink: 0;
+}
+
+.highlight-text h4 {
+  font-size: 1rem;
+}
+
+.highlight-text p {
+  margin-top: 0.08rem;
+  color: var(--ink-500);
+  font-size: 0.88rem;
+}
+
+.director-card {
+  border-radius: 10px;
+  overflow: clip;
+  background: #fff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  box-shadow: var(--shadow-mid);
+  position: sticky;
+  top: 5.5rem;
+}
+
+.director-photo-wrap {
+  padding: 0.9rem;
+  background: linear-gradient(180deg, #f5f8fc 0%, #edf3fa 100%);
+}
+
+.card-image {
+  position: relative;
+  height: clamp(290px, 44vw, 360px);
+  border-radius: 8px;
+  border: 1px solid rgba(10, 25, 47, 0.12);
+  background: #f6f9fd;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.card-info {
+  padding: 1rem 1.05rem 1.2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+}
+
+.director-name {
+  font-size: 1.3rem;
+}
+
+.director-designation {
+  margin-top: 0.18rem;
+  color: var(--ink-700);
+  font-weight: 700;
+}
+
+.director-credentials {
+  margin-top: 0.5rem;
+  color: var(--ink-500);
+  font-size: 0.9rem;
+}
+
+.director-focus-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.focus-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.3rem 0.62rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--ink-700);
+  background: rgba(16, 35, 63, 0.08);
+}
+
+.director-contact {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(16, 35, 63, 0.22);
+  display: grid;
+  gap: 0.25rem;
+  color: var(--ink-700);
+  font-size: 0.9rem;
+}
+
+/* Director Desk - Classic Letter Style */
+.director-classic-wrap {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: start;
+  padding: clamp(1.2rem, 2.8vw, 1.9rem);
+  border-radius: 10px;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: linear-gradient(180deg, #fcfcfa 0%, #f7f6f2 100%);
+}
+
+.director-classic-photo {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 35, 63, 0.22);
+  box-shadow: 0 10px 22px rgba(16, 35, 63, 0.12);
+}
+
+.director-classic-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 3.25;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.director-classic-message {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  color: #152842;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.08rem, 1.15vw, 1.22rem);
+  line-height: 1.72;
+}
+
+.director-classic-message p {
+  margin: 0;
+}
+
+.director-classic-signoff {
+  margin-top: 0.3rem;
+  color: #0a192f;
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
