@@ -110,8 +110,6 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
-  const toggleDropdown = (index) =>
-    setOpenDropdown((prev) => (prev === index ? null : index));
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -137,63 +135,39 @@ const Navbar = () => {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className={`nav-item ${item.submenu ? 'has-submenu' : ''} ${openDropdown === index ? 'open' : ''}`}
+                className={`nav-item ${item.submenu ? 'has-submenu' : ''}`}
                 onMouseEnter={() => item.submenu && setOpenDropdown(index)}
                 onMouseLeave={() => item.submenu && setOpenDropdown(null)}
               >
-                <div className="nav-link-row">
-                  <NavLink
-                    to={item.href}
-                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                    onClick={() => {
-                      setOpenDropdown(null);
-                      closeMobileMenu();
-                    }}
-                  >
-                    {item.name}
-                  </NavLink>
-
-                  {item.submenu && (
-                    <button
-                      className="submenu-toggle"
-                      type="button"
-                      aria-label={`Toggle ${item.name} submenu`}
-                      aria-expanded={openDropdown === index}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleDropdown(index);
-                      }}
-                    >
-                      <span className="dropdown-arrow" aria-hidden="true">▼</span>
-                    </button>
-                  )}
-                </div>
+                <NavLink
+                  to={item.href}
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => {
+                    setOpenDropdown(null);
+                    closeMobileMenu();
+                  }}
+                >
+                  {item.name}
+                  {item.submenu && <span className="dropdown-arrow">▼</span>}
+                </NavLink>
 
                 {item.submenu && (
-                  <div className={`mega-menu ${openDropdown === index ? 'active' : ''}`} role="menu">
-                    <div className="mega-menu-header">
-                      <p className="mega-kicker">Explore</p>
-                      <h3 className="mega-title">{item.name}</h3>
-                      <p className="mega-subtitle">Quick links for {item.name.toLowerCase()}.</p>
-                    </div>
-                    <div className="mega-menu-links">
-                      {item.submenu.map((subitem, subindex) => (
+                  <ul className={`dropdown-menu ${openDropdown === index ? 'active' : ''}`}>
+                    {item.submenu.map((subitem, subindex) => (
+                      <li key={subindex} className="dropdown-item">
                         <Link
-                          key={subindex}
                           to={subitem.href}
-                          className="mega-link"
-                          role="menuitem"
+                          className="dropdown-link"
                           onClick={() => {
                             closeMobileMenu();
                             setOpenDropdown(null);
                           }}
                         >
-                          <span className="mega-link-text">{subitem.name}</span>
-                          <span className="mega-link-arrow" aria-hidden="true">→</span>
+                          {subitem.name}
                         </Link>
-                      ))}
-                    </div>
-                  </div>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))}

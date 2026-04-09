@@ -1,4 +1,5 @@
 import campusImage from '../../assets/new-assets/hero-home/siet1.jpg';
+import campusAltImage from '../../assets/new-assets/hero-home/siet2.jpg';
 import directorImage from '../../assets/new-assets/principal-photo/prienciple.jpeg';
 import aiMlImage from '../../assets/new-assets/departments/AI-ML.jpg';
 import cyberImage from '../../assets/new-assets/departments/Cyber-Security.jpg';
@@ -6,8 +7,15 @@ import roboticsImage from '../../assets/new-assets/departments/Robotics-Automati
 import academicCalendarImage from '../../assets/new-assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
 import facilitiesImage from '../../assets/new-assets/campus/siet-panchkula-building.jpg';
 import competitionImage from '../../assets/new-assets/events/Web-Development-Competition.jpg';
+import expertLectureImage from '../../assets/new-assets/events/Expert_Lecture-1-724x1024.jpg';
+import walkInImage from '../../assets/new-assets/events/walk-in-1024x593.png';
 import campusLifeImage from '../../assets/new-assets/gallery/1-1-1024x768.jpg';
+import sportsImage from '../../assets/new-assets/gallery/sportsmeetpic_nancy-edited.jpg';
 import galleryImage from '../../assets/new-assets/gallery/3-1-edited.jpg';
+import galleryAltImage from '../../assets/new-assets/gallery/IMG_1927-1024x768.jpg';
+import libraryImage from '../../assets/new-assets/gallery/IMG_1922-1024x768.jpg';
+import inspectionImage from '../../assets/new-assets/gallery/Inspection-Pic-1024x768.jpg';
+import teacherImage from '../../assets/new-assets/teachers/anil-kumar.jpg';
 
 export const submenuData = {
   'about/about-institute': {
@@ -24,7 +32,7 @@ export const submenuData = {
   'about/vision-mission': {
     sectionLabel: 'ABOUT US',
     title: 'Vision & Mission',
-    image: campusImage,
+    image: campusAltImage,
     points: [
       'The mission focuses on holistic education with strong training outcomes and student well-being.',
       'The institute aims to prepare students for life in a rapidly changing 21st century.',
@@ -44,7 +52,7 @@ export const submenuData = {
   'about/quality-policy': {
     sectionLabel: 'ABOUT US',
     title: 'Quality Policy',
-    image: campusImage,
+    image: teacherImage,
     points: [
       'Academic quality assurance and standards.',
       'Continuous improvement in teaching-learning.',
@@ -54,7 +62,7 @@ export const submenuData = {
   'about/affiliations': {
     sectionLabel: 'ABOUT US',
     title: 'Affiliations',
-    image: campusImage,
+    image: inspectionImage,
     points: [
       'University affiliation details.',
       'Regulatory approvals and recognition status.',
@@ -64,7 +72,7 @@ export const submenuData = {
   'about/anti-ragging': {
     sectionLabel: 'ABOUT US',
     title: 'Anti-Ragging',
-    image: campusImage,
+    image: facilitiesImage,
     points: [
       'Zero-tolerance policy and preventive framework.',
       'Committee structure and reporting channels.',
@@ -74,7 +82,7 @@ export const submenuData = {
   'departments/engineering': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Engineering',
-    image: campusImage,
+    image: facilitiesImage,
     points: [
       'Interdisciplinary engineering foundation.',
       'Core labs and practical curriculum.',
@@ -114,7 +122,7 @@ export const submenuData = {
   'departments/computer-science': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Computer Science',
-    image: campusImage,
+    image: expertLectureImage,
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',
@@ -145,7 +153,7 @@ export const submenuData = {
   'academics/teaching-learning': {
     sectionLabel: 'ACADEMICS',
     title: 'Teaching & Learning',
-    image: campusImage,
+    image: teacherImage,
     points: [
       'Outcome-based pedagogy model.',
       'Classroom plus lab integration.',
@@ -155,7 +163,7 @@ export const submenuData = {
   'academics/curriculum': {
     sectionLabel: 'ACADEMICS',
     title: 'Curriculum',
-    image: campusImage,
+    image: campusAltImage,
     points: [
       'Course-wise syllabus design.',
       'Industry updates in subject content.',
@@ -195,7 +203,7 @@ export const submenuData = {
   'facilities/library': {
     sectionLabel: 'FACILITIES',
     title: 'Library',
-    image: campusImage,
+    image: libraryImage,
     points: [
       'Library is part of the academic facility ecosystem listed by the institute.',
       'Students are expected to use library support for curriculum and project learning.',
@@ -215,7 +223,7 @@ export const submenuData = {
   'facilities/sports': {
     sectionLabel: 'FACILITIES',
     title: 'Sports',
-    image: competitionImage,
+    image: sportsImage,
     points: [
       'Outdoor and indoor sports opportunities.',
       'Fitness and wellness participation.',
@@ -225,7 +233,7 @@ export const submenuData = {
   'facilities/smart-classrooms': {
     sectionLabel: 'FACILITIES',
     title: 'Smart Classrooms',
-    image: campusImage,
+    image: teacherImage,
     points: [
       'Audio-visual enabled classrooms.',
       'Interactive teaching tools.',
@@ -245,7 +253,7 @@ export const submenuData = {
   'facilities/cafeteria': {
     sectionLabel: 'FACILITIES',
     title: 'Cafeteria',
-    image: facilitiesImage,
+    image: galleryAltImage,
     points: [
       'Hygienic food services on campus.',
       'Student-friendly menu options.',
@@ -275,7 +283,7 @@ export const submenuData = {
   'placements/campus-training': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Campus Training',
-    image: competitionImage,
+    image: expertLectureImage,
     points: [
       'Aptitude and technical preparation tracks.',
       'Soft skills and interview readiness.',
@@ -285,7 +293,7 @@ export const submenuData = {
   'placements/placement-records': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Placement Records',
-    image: competitionImage,
+    image: walkInImage,
     points: [
       'Training and placement communication is shared through regular update notices.',
       'Students should monitor update posts for latest institutional opportunities.',
@@ -295,7 +303,7 @@ export const submenuData = {
   'placements/major-recruiters': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Major Recruiters',
-    image: campusImage,
+    image: inspectionImage,
     points: [
       'Partner organizations and hiring brands.',
       'Sector diversity in recruitment.',
@@ -305,7 +313,7 @@ export const submenuData = {
   'placements/placement-process': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Placement Process',
-    image: campusImage,
+    image: expertLectureImage,
     points: [
       'Step-by-step campus recruitment flow.',
       'Eligibility and registration guidance.',
@@ -375,7 +383,7 @@ export const submenuData = {
   'life-at-siet/video-gallery': {
     sectionLabel: 'LIFE @ SIET',
     title: 'Video Gallery',
-    image: galleryImage,
+    image: galleryAltImage,
     points: [
       'Campus showcase and event videos.',
       'Student projects and initiative clips.',
