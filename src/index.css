@@ -98,7 +98,6 @@ button:focus {
 @media print {
   .navbar,
   .notices-strip,
-  .footer-social,
   .hero-buttons {
     display: none !important;
   }

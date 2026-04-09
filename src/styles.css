@@ -1539,7 +1539,7 @@ img {
   color: #ffffff;
 }
 
-.tpo-find-title {
+.footer-find-title {
   margin-top: 0.16rem;
   margin-bottom: 0.1rem;
   font-family: var(--font-body);
@@ -1573,7 +1573,7 @@ img {
   max-width: 90ch;
 }
 
-.tpo-footer-text-gap {
+.footer-text-gap {
   margin-top: 0.55rem;
 }
 
@@ -3219,9 +3219,6 @@ img {
     padding: 0.48rem 0.6rem;
   }
 
-  .footer-bottom-links {
-    flex-wrap: wrap;
-  }
 }
 
 @media print {
@@ -3229,7 +3226,6 @@ img {
   .notices-strip,
   .hero-buttons,
   .carousel-indicators,
-  .footer-social,
   .view-all-btn {
     display: none !important;
   }

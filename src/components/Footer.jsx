@@ -21,11 +21,11 @@ const Footer = () => {
     <footer className="footer" id="contact">
       <div className="footer-top">
         <div className="container">
-          <div className="footer-grid tpo-footer-grid">
+          <div className="footer-grid">
             <div className="footer-column">
               <h3 className="footer-title">STATE INSTITUTE OF ENGINEERING &amp; TECHNOLOGY, PANCHKULA</h3>
               <p className="footer-text">Government Institute, Haryana</p>
-              <p className="footer-text tpo-footer-text-gap">
+              <p className="footer-text footer-text-gap">
                 Empowering students through quality technical education, practical learning, and strong industry readiness.
               </p>
             </div>
@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <div>
-                    <h4 className="tpo-find-title">FIND US</h4>
+                    <h4 className="footer-find-title">FIND US</h4>
                     <p>Sector 26, Panchkula, Haryana, India</p>
                   </div>
                 </div>
