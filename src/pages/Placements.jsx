@@ -31,6 +31,16 @@ const Placements = () => {
         <div className="container">
           <h1 className="page-title">Training & Placements</h1>
           <p className="page-subtitle">Connecting Talent with Opportunity</p>
+          <div className="hero-buttons" style={{ marginTop: '1rem' }}>
+            <a
+              href="https://siettpo.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Open TPO Portal
+            </a>
+          </div>
         </div>
       </section>
 

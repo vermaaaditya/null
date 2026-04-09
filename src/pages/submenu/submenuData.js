@@ -72,12 +72,14 @@ export const submenuData = {
   'about/anti-ragging': {
     sectionLabel: 'ABOUT US',
     title: 'Anti-Ragging',
-    image: facilitiesImage,
-    points: [
-      'Zero-tolerance policy and preventive framework.',
-      'Committee structure and reporting channels.',
-      'Safety measures and awareness initiatives.'
-    ]
+    showHeroImage: false,
+    body: [
+      'As the students are aware, Govt. of India and State Govt. of Haryana have already banned the ragging of newly admitted students in all the Professional Institutions. As per instructions of the State Govt. stern anti ragging disciplinary action is to be taken against the students indulging in ragging of the students, including expulsion from the Institute and hostels/mess or fine with a public apology or withholding of scholarships or other benefits, debarring from representation in events, withholding results, and debarring from campus recruitment/industrial training in view of involvement of some seniors students in ragging of 1st year students in some of the Institutions in the previous years.',
+      'Hon’ble Supreme Court of India has directed the concerned Institutions/Universities to take immediate steps for the prevention of ragging in future. The violation of this law (ban on ragging) is not only punishable by a sum of Rs.25, 000/- but also by rigorous imprisonment of 3 years.',
+      'In order to curb the ragging, the Institute takes various steps such as helping the local administration for keeping vigilance in the University, senior students are advised individually and group to keep a watch on students indulging in ragging and cooperation of their parents is also sought explaining the aspects of punishment for violation of law of ban on ragging, by deputing faculty members at different places in the Institute to check the ragging during day and also up to midnight.',
+      'The following will be treated as the act of ragging “any disorderly conduct whether by words, spoken or written or by an act which has the effect of teasing, treaking or handling with rudeness any other student(s), indulging in roudy or undisciplined activities which causes or is likely to cause annoyance, hardship or psychological harm or raise fear or apprehension thereof in fresher or junior student(s) or asking the student(s) to do any act or perform something, which such student(s) will not do in the ordinary course and which has the effect of causing or generating a sense of shame or embarrassment so as to adversely effect the physique or psyche of a fresher or a junior student.'
+    ],
+    points: []
   },
   'departments/engineering': {
     sectionLabel: 'DEPARTMENTS',

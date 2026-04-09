@@ -195,7 +195,7 @@ const About = () => {
             </div>
             <div className="helpline-info">
               <p><strong>Anti-Ragging Helpline:</strong> 1800-XXX-XXXX (Toll-Free)</p>
-              <p><strong>Email:</strong> antiragging@siet.edu.in</p>
+              <p><strong>Email:</strong> <a href="mailto:sietpkl@gmail.com">sietpkl@gmail.com</a></p>
             </div>
           </div>
         </div>

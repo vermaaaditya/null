@@ -2266,6 +2266,16 @@ img {
   gap: 0.85rem;
 }
 
+.submenu-body {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.submenu-paragraph {
+  color: var(--ink-700);
+  line-height: 1.85;
+}
+
 .submenu-aside {
   position: sticky;
   top: 5.2rem;

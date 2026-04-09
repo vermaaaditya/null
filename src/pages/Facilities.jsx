@@ -252,7 +252,7 @@ const Facilities = () => {
               discover how our infrastructure supports your engineering education journey.
             </p>
             <div className="cta-buttons">
-              <a href="mailto:admissions@siet.edu.in?subject=Campus%20Tour%20Request" className="btn btn-primary">Schedule Campus Tour</a>
+              <a href="mailto:sietpkl@gmail.com?subject=Campus%20Tour%20Request" className="btn btn-primary">Schedule Campus Tour</a>
               <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Virtual Tour</a>
             </div>
           </div>

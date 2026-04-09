@@ -89,6 +89,7 @@ const Navbar = () => {
       name: 'Training & Placements',
       href: '/placements',
       submenu: [
+        { name: 'TPO Portal', href: 'https://siettpo.vercel.app/', external: true },
         { name: 'Campus Training', href: '/placements/campus-training' },
         { name: 'Placement Records', href: '/placements/placement-records' },
         { name: 'Major Recruiters', href: '/placements/major-recruiters' },
@@ -180,16 +181,31 @@ const Navbar = () => {
                   <ul className={`dropdown-menu ${openDropdown === index ? 'active' : ''}`}>
                     {item.submenu.map((subitem, subindex) => (
                       <li key={subindex} className="dropdown-item">
-                        <Link
-                          to={subitem.href}
-                          className="dropdown-link"
-                          onClick={() => {
-                            closeMobileMenu();
-                            setOpenDropdown(null);
-                          }}
-                        >
-                          {subitem.name}
-                        </Link>
+                        {subitem.external ? (
+                          <a
+                            href={subitem.href}
+                            className="dropdown-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => {
+                              closeMobileMenu();
+                              setOpenDropdown(null);
+                            }}
+                          >
+                            {subitem.name}
+                          </a>
+                        ) : (
+                          <Link
+                            to={subitem.href}
+                            className="dropdown-link"
+                            onClick={() => {
+                              closeMobileMenu();
+                              setOpenDropdown(null);
+                            }}
+                          >
+                            {subitem.name}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>

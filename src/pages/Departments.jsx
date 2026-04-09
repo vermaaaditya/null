@@ -210,7 +210,7 @@ const Departments = () => {
             </p>
             <div className="cta-buttons">
               <a href={admissionFormDoc} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Apply Now</a>
-              <a href="mailto:admissions@siet.edu.in" className="btn btn-secondary">Contact Admissions</a>
+              <a href="mailto:sietpkl@gmail.com" className="btn btn-secondary">Contact Admissions</a>
             </div>
           </div>
         </div>

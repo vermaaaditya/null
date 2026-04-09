@@ -9,6 +9,7 @@ const SubmenuTemplate = ({
   image,
   imageMode,
   points = [],
+  body = [],
   showHeroImage = true,
   showSidebar = true,
 }) => {
@@ -147,6 +148,15 @@ const SubmenuTemplate = ({
               <div className="submenu-content-card">
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
+                  {body.length > 0 ? (
+                    <div className="submenu-body">
+                      {body.map((para) => (
+                        <p key={para} className="submenu-paragraph">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
+                  ) : null}
                   {points.length > 0 ? (
                     <ul className="submenu-point-list">
                       {points.map((point) => (
