@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import logo from '../assets/new-assets/logos/siet.webp';
+import sietLogo from '../assets/new-assets/logos/siet.webp';
 import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 
 /**
@@ -16,8 +16,8 @@ const Header = () => {
           <div className="tpo-header-emblem header-emblem-left">
             <img
               className="tpo-gov-emblem"
-              src={haryanaEmblem}
-              alt="Haryana Government Emblem"
+              src={sietLogo}
+              alt="SIET Panchkula Logo"
               loading="lazy"
             />
           </div>
@@ -32,7 +32,7 @@ const Header = () => {
             
           </div>
           <Link to="/" className="tpo-header-emblem header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
-            <img src={logo} alt="SIET Panchkula Logo" loading="lazy" />
+            <img src={haryanaEmblem} alt="Haryana Government Emblem" loading="lazy" />
           </Link>
           
         </div>
