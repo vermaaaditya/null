@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import logo from '../assets/new-assets/logos/LOGO.png';
+import logo from '../assets/new-assets/logos/siet.webp';
 import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 
 /**
