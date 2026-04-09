@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
 import logo from '../assets/LOGO.png';
+import haryanaEmblem from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/haryana-sarkar.png';
 
 /**
  * Header Component
@@ -12,13 +13,12 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content tpo-header-content">
-          <div className="tpo-header-emblem" aria-hidden="true">
-            <img
-              src="https://siettpo.vercel.app/images/haryana-sarkar.png"
-              alt="Haryana Government Emblem"
-              loading="lazy"
-            />
-          </div>
+          <img
+            className="tpo-gov-emblem"
+            src={haryanaEmblem}
+            alt="Haryana Government Emblem"
+            loading="lazy"
+          />
 
           <div className="header-info tpo-header-info">
             <p className="tpo-header-hindi">राज्य अभियांत्रिकी एवं प्रौद्योगिकी संस्थान, पंचकुला</p>
@@ -26,13 +26,15 @@ const Header = () => {
             <p className="college-subtitle tpo-college-subtitle">
               APPROVED BY AICTE, NEW DELHI AND AFFILIATED TO KURUKSHETRA UNIVERSITY, KURUKSHETRA
             </p>
-            <p className="tpo-cell-title">SIET PANCHKULA</p>
-            <p className="college-tagline tpo-cell-subtitle">Training &amp; Placement Cell</p>
+            
+            
           </div>
-
-          <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
-            <img src={logo} alt="SIET Panchkula Logo" />
-          </Link>
+          <div className="tpo-header-emblem">
+            <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
+              <img src={logo} alt="SIET Panchkula Logo" />
+            </Link>
+          </div>
+          
         </div>
       </div>
     </header>
