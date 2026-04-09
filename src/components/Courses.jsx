@@ -46,6 +46,36 @@ const Courses = () => {
       duration: '4 Years',
       status: 'ongoing',
       seats: 60
+    },
+    {
+      id: 4,
+      title: 'Electrical Engineering',
+      shortCode: 'EE',
+      image: null,
+      description: '',
+      duration: '',
+      status: 'ongoing',
+      seats: null
+    },
+    {
+      id: 5,
+      title: 'Electronics Engineering (VLSI Design)',
+      shortCode: 'ECE (VLSI)',
+      image: null,
+      description: '',
+      duration: '',
+      status: 'ongoing',
+      seats: null
+    },
+    {
+      id: 6,
+      title: 'Applied Science',
+      shortCode: 'AS',
+      image: null,
+      description: '',
+      duration: '',
+      status: 'ongoing',
+      seats: null
     }
   ];
 
@@ -54,11 +84,15 @@ const Courses = () => {
   const CourseCard = ({ course }) => (
     <div className={`course-card ${course.status}`}>
       <div className="course-card-image">
-        <img 
-          src={course.image}
-          alt={course.title}
-          className="course-img"
-        />
+        {course.image ? (
+          <img 
+            src={course.image}
+            alt={course.title}
+            className="course-img"
+          />
+        ) : (
+          <div className="course-img course-img-placeholder" aria-hidden="true" />
+        )}
         <div className="course-overlay">
           <div className="course-badge">{course.status === 'upcoming' ? 'Coming Soon' : 'Available'}</div>
         </div>
@@ -68,17 +102,21 @@ const Courses = () => {
         <h3 className="course-title">{course.title}</h3>
         <p className="course-code">Code: {course.shortCode}</p>
         
-        <p className="course-description">{course.description}</p>
+        {course.description ? <p className="course-description">{course.description}</p> : null}
         
         <div className="course-details">
-          <div className="detail-item">
-            <span className="detail-label">Duration:</span>
-            <span className="detail-value">{course.duration}</span>
-          </div>
-          <div className="detail-item">
-            <span className="detail-label">Seats:</span>
-            <span className="detail-value">{course.seats}</span>
-          </div>
+          {course.duration ? (
+            <div className="detail-item">
+              <span className="detail-label">Duration:</span>
+              <span className="detail-value">{course.duration}</span>
+            </div>
+          ) : null}
+          {typeof course.seats === 'number' ? (
+            <div className="detail-item">
+              <span className="detail-label">Seats:</span>
+              <span className="detail-value">{course.seats}</span>
+            </div>
+          ) : null}
         </div>
         
         {course.status === 'upcoming' ? (

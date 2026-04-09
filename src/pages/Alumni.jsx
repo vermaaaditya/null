@@ -176,6 +176,9 @@ const Alumni = () => {
                   <option value="cse-aiml">B.Tech CSE (AI & ML)</option>
                   <option value="cse-cs">B.Tech CSE (Cyber Security)</option>
                   <option value="ra">B.Tech Robotics & Automation</option>
+                  <option value="ee">B.Tech Electrical Engineering</option>
+                  <option value="ece-vlsi">B.Tech Electronics Engineering (VLSI Design)</option>
+                  <option value="as">Applied Science</option>
                 </select>
               </div>
 

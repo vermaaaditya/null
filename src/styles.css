@@ -1014,6 +1014,10 @@ img {
   transition: transform 0.45s ease;
 }
 
+.course-img-placeholder {
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.08), rgba(197, 160, 89, 0.14));
+}
+
 .course-card:hover .course-img {
   transform: scale(1.06);
 }
