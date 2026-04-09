@@ -16,6 +16,17 @@ const Courses = () => {
   const currentCourses = [
     {
       id: 1,
+      title: 'Computer Science & Engineering',
+      shortCode: 'CSE',
+      image: null,
+      description:
+        'Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
+      duration: '4 Years',
+      status: 'ongoing',
+      seats: 60
+    },
+    {
+      id: 2,
       title: 'Computer Science and Engineering (AI & ML)',
       shortCode: 'CSE-AIML',
       image: aimlImg,
@@ -26,7 +37,7 @@ const Courses = () => {
       seats: 60
     },
     {
-      id: 2,
+      id: 3,
       title: 'Computer Science and Engineering (Cyber Security)',
       shortCode: 'CSE-CS',
       image: cyberImg,
@@ -37,7 +48,7 @@ const Courses = () => {
       seats: 60
     },
     {
-      id: 3,
+      id: 4,
       title: 'Robotics & Automation',
       shortCode: 'RA',
       image: roboticsImg,
@@ -48,7 +59,7 @@ const Courses = () => {
       seats: 60
     },
     {
-      id: 4,
+      id: 5,
       title: 'Electrical Engineering',
       shortCode: 'EE',
       image: null,
@@ -58,19 +69,9 @@ const Courses = () => {
       seats: null
     },
     {
-      id: 5,
+      id: 6,
       title: 'Electronics Engineering (VLSI Design)',
       shortCode: 'ECE (VLSI)',
-      image: null,
-      description: '',
-      duration: '',
-      status: 'ongoing',
-      seats: null
-    },
-    {
-      id: 6,
-      title: 'Applied Science',
-      shortCode: 'AS',
       image: null,
       description: '',
       duration: '',

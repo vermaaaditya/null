@@ -1,4 +1,4 @@
-/* Fonts loaded via index.html: Playfair Display + Inter */
+/* Fonts loaded via index.html: Noto Serif + Source Sans 3 */
 
 :root {
   --bg-base: #fcfaf2;
@@ -38,8 +38,8 @@
 
   --container-max: 1180px;
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-heading: 'Noto Serif', Georgia, serif;
+  --font-body: 'Source Sans 3', -apple-system, sans-serif;
 }
 
 * {

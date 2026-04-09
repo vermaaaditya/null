@@ -13,6 +13,17 @@ import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Adm
 const Departments = () => {
   const departments = [
     {
+      id: 'cse',
+      name: 'Computer Science & Engineering',
+      shortName: 'CSE',
+      image: null,
+      description:
+        'Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
+      highlights: [],
+      careerPaths: [],
+      labs: []
+    },
+    {
       id: 'aiml',
       name: 'Computer Science and Engineering (AI & ML)',
       shortName: 'CSE (AI & ML)',
@@ -59,16 +70,6 @@ const Departments = () => {
       id: 'electronics-vlsi',
       name: 'Electronics Engineering (VLSI Design)',
       shortName: 'ECE (VLSI)',
-      image: null,
-      description: '',
-      highlights: [],
-      careerPaths: [],
-      labs: []
-    },
-    {
-      id: 'applied-science',
-      name: 'Applied Science',
-      shortName: 'AS',
       image: null,
       description: '',
       highlights: [],

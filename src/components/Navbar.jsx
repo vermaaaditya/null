@@ -50,6 +50,7 @@ const Navbar = () => {
       name: 'Departments',
       href: '/departments',
       submenu: [
+        { name: 'Computer Science & Engineering', href: '/departments/cse' },
         { name: 'AI & Machine Learning', href: '/departments/ai-ml' },
         { name: 'Cyber Security', href: '/departments/cyber-security' },
         { name: 'Robotics & Automation', href: '/departments/robotics' },
