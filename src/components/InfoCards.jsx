@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
+import { notificationsListData, noticesListData } from '../data/noticesData';
 
 const useAutoScroll = (scrollRef, contentRef, pauseRef) => {
   useEffect(() => {
@@ -46,12 +47,30 @@ const ScrollableCardBody = ({ items, scrollRef, contentRef, pauseRef }) => (
   >
     <ul className="card-list scroll-list" ref={contentRef}>
       {[...items, ...items].map((item, index) => (
-        <li key={`${item.title}-${index}`} className="card-list-item">
-          <div className="list-item-content">
-            <span className="item-title">{item.title}</span>
-            <span className="item-date">{item.date}</span>
-          </div>
-          {item.isNew && <span className="badge-new">NEW</span>}
+        <li key={`${item.id || item.title}-${index}`} className="card-list-item">
+          {item.href ? (
+            <a
+              className="list-item-link"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open: ${item.title}`}
+            >
+              <div className="list-item-content">
+                <span className="item-title">{item.title}</span>
+                <span className="item-date">{item.date}</span>
+              </div>
+              {item.isNew && <span className="badge-new">NEW</span>}
+            </a>
+          ) : (
+            <>
+              <div className="list-item-content">
+                <span className="item-title">{item.title}</span>
+                <span className="item-date">{item.date}</span>
+              </div>
+              {item.isNew && <span className="badge-new">NEW</span>}
+            </>
+          )}
         </li>
       ))}
     </ul>
@@ -70,12 +89,8 @@ const InfoCards = () => {
     { title: 'Sports Week Inauguration', date: 'Feb 5, 2026', isNew: false }
   ];
 
-  const notifications = [
-    { title: 'Exam schedule released', date: 'Feb 6, 2026', isNew: true },
-    { title: 'Scholarship applications opened', date: 'Feb 4, 2026', isNew: true },
-    { title: 'Library timings extended', date: 'Feb 2, 2026', isNew: false },
-    { title: 'Workshop on AI and ML', date: 'Jan 30, 2026', isNew: false }
-  ];
+  const notifications = notificationsListData;
+  const notices = noticesListData;
 
   const placements = [
     { title: '150 students placed in top companies', date: 'Feb 5, 2026', isNew: true },
@@ -92,12 +107,17 @@ const InfoCards = () => {
   const notifContentRef = useRef(null);
   const notifPauseRef = useRef(false);
 
+  const noticesScrollRef = useRef(null);
+  const noticesContentRef = useRef(null);
+  const noticesPauseRef = useRef(false);
+
   const placScrollRef = useRef(null);
   const placContentRef = useRef(null);
   const placPauseRef = useRef(false);
 
   useAutoScroll(newsScrollRef, newsContentRef, newsPauseRef);
   useAutoScroll(notifScrollRef, notifContentRef, notifPauseRef);
+  useAutoScroll(noticesScrollRef, noticesContentRef, noticesPauseRef);
   useAutoScroll(placScrollRef, placContentRef, placPauseRef);
 
   return (
@@ -141,6 +161,24 @@ const InfoCards = () => {
             <div className="card-footer">
               <Link to="/all-notices" className="card-link">
                 View all notifications {'->'}
+              </Link>
+            </div>
+          </div>
+
+          <div className="info-card card-peach">
+            <div className="card-header">
+              <div className="card-icon" aria-hidden="true">NOTE</div>
+              <h3 className="card-title">Notices</h3>
+            </div>
+            <ScrollableCardBody
+              items={notices}
+              scrollRef={noticesScrollRef}
+              contentRef={noticesContentRef}
+              pauseRef={noticesPauseRef}
+            />
+            <div className="card-footer">
+              <Link to="/all-notices" className="card-link">
+                View all notices {'->'}
               </Link>
             </div>
           </div>

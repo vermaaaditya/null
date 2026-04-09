@@ -28,10 +28,17 @@ const NoticesStrip = () => {
           >
             <div className="notices-scroll">
               {[...notices, ...notices].map((notice, index) => (
-                <div key={`${notice.id}-${index}`} className={`notice-item notice-${notice.type}`}>
+                <a
+                  key={`${notice.id}-${index}`}
+                  className={`notice-item notice-${notice.type}`}
+                  href={notice.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open notice: ${notice.text}`}
+                >
                   <span className="notice-icon">{notice.icon}</span>
                   <span className="notice-text">{notice.text}</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>

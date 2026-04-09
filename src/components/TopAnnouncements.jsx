@@ -24,10 +24,17 @@ const TopAnnouncements = () => {
             >
               <div className="announcements-marquee">
                 {[...announcements, ...announcements].map((notice, index) => (
-                  <article key={`${notice}-${index}`} className="announcement-item">
+                  <a
+                    key={`${notice.id}-${index}`}
+                    className="announcement-item announcement-link-item"
+                    href={notice.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open notice: ${notice.text}`}
+                  >
                     <span className="announcement-dot" aria-hidden="true"></span>
-                    <p>{notice}</p>
-                  </article>
+                    <p>{notice.text}</p>
+                  </a>
                 ))}
               </div>
             </div>

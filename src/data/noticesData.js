@@ -189,43 +189,68 @@ export const noticesBoardData = [
   }
 ];
 
-export const topAnnouncementsData = [
-  'B.Tech Prospectus 2025-26 available for download',
-  'B.Tech LEET key dates announced for 2025 admissions',
-  'Academic Calendar 2025-26 published for affiliated colleges',
-  'Fee Structure for B.Tech 2025 updated',
-  'Notice PTM and event notices now available'
-];
+const typeFromCategory = (category) => {
+  const normalized = String(category || '').toLowerCase();
+  if (normalized.includes('admission')) return 'important';
+  if (normalized.includes('academic')) return 'result';
+  if (normalized.includes('exam')) return 'deadline';
+  if (normalized.includes('event')) return 'event';
+  if (normalized.includes('placement') || normalized.includes('training')) return 'placement';
+  return 'important';
+};
 
-export const noticesStripData = [
-  {
-    id: 1,
-    text: 'B.Tech Prospectus 2025-26 released',
-    type: 'important',
-    icon: 'AD'
-  },
-  {
-    id: 2,
-    text: 'B.Tech LEET key dates announced',
-    type: 'deadline',
-    icon: 'DL'
-  },
-  {
-    id: 3,
-    text: 'Academic Calendar 2025-26 published',
-    type: 'result',
-    icon: 'AC'
-  },
-  {
-    id: 4,
-    text: 'IIT Ropar workshop notice uploaded',
-    type: 'event',
-    icon: 'EV'
-  },
-  {
-    id: 5,
-    text: 'Training policy and admission docs updated',
-    type: 'placement',
-    icon: 'NT'
+const iconFromType = (type) => {
+  switch (type) {
+    case 'deadline':
+      return 'DL';
+    case 'result':
+      return 'AC';
+    case 'event':
+      return 'EV';
+    case 'placement':
+      return 'TR';
+    case 'important':
+    default:
+      return 'NT';
   }
-];
+};
+
+export const topAnnouncementsData = noticesBoardData.slice(0, 6).map((notice) => ({
+  id: notice.id,
+  text: notice.title,
+  href: notice.readMoreUrl || notice.downloadUrl,
+  category: notice.category
+}));
+
+export const noticesStripData = noticesBoardData.slice(0, 8).map((notice) => {
+  const type = typeFromCategory(notice.category);
+  return {
+    id: notice.id,
+    text: notice.title,
+    type,
+    icon: iconFromType(type),
+    href: notice.readMoreUrl || notice.downloadUrl
+  };
+});
+
+export const notificationsListData = noticesBoardData
+  .filter((n) => ['Admission', 'Academic', 'Fee', 'Policy', 'Regulation', 'Guideline'].includes(n.category))
+  .slice(0, 8)
+  .map((n) => ({
+    id: n.id,
+    title: n.title,
+    date: n.date,
+    href: n.readMoreUrl || n.downloadUrl,
+    isNew: n.priority === 'High'
+  }));
+
+export const noticesListData = noticesBoardData
+  .filter((n) => ['Notice', 'Event'].includes(n.category))
+  .slice(0, 8)
+  .map((n) => ({
+    id: n.id,
+    title: n.title,
+    date: n.date,
+    href: n.readMoreUrl || n.downloadUrl,
+    isNew: n.priority === 'High'
+  }));
