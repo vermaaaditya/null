@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../styles.css';
-import aimlImg from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/03/AI-ML.jpg';
-import csImg from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/03/Cyber-Security.jpg';
-import roboticsImg from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/03/Robotics-Automation.jpg';
-import syllabusDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/06/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
-import admissionFormDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/07/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
+import aimlImg from '../assets/new assets/departments/AI-ML.jpg';
+import csImg from '../assets/new assets/departments/Cyber-Security.jpg';
+import roboticsImg from '../assets/new assets/departments/Robotics-Automation.jpg';
+import syllabusDoc from '../assets/new assets/notification and notice purpose/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
+import admissionFormDoc from '../assets/new assets/some other document for official work/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
 
 /**
  * Departments Page Component

@@ -4,22 +4,27 @@ This project keeps only curated assets that are used in the React app.
 
 ## Current Structure
 
-- `src/assets/LOGO.png`
-- `src/assets/homepageimage/`
-- `src/assets/prienciplephoto/`
-- `src/assets/sietpanchkula.ac.in/wp-content/uploads/`
+- `src/assets/new assets/hero or home page/`
+- `src/assets/new assets/logoes/`
+- `src/assets/new assets/prienciplephoto/`
+- `src/assets/new assets/gallery/`
+- `src/assets/new assets/departments/`
+- `src/assets/new assets/campus/`
+- `src/assets/new assets/events/`
+- `src/assets/new assets/teachers/`
+- `src/assets/new assets/notification and notice purpose/`
+- `src/assets/new assets/some other document for official work/`
 
 ## How These Are Used
 
 - Direct imports in components/pages for hero, logo, faculty docs, departments, and placements.
 - Dynamic gallery selection from:
-  - `src/assets/sietpanchkula.ac.in/wp-content/uploads/**/*.{jpg,jpeg,png,webp}`
+  - `src/assets/new assets/**/*.{jpg,jpeg,png,webp}`
 
 ## Cleanup Policy
 
-- Do not add full website mirrors under `src/assets`.
 - Keep only media/docs actually used by UI components.
-- Prefer placing new SIET media in `wp-content/uploads/<year>/<month>/` for consistency with existing paths.
+- Keep assets organized under `src/assets/new assets/` by category.
 - Remove orphan files if no static import or dynamic glob can reference them.
 
 ## Before Deleting Assets

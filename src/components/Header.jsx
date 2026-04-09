@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import logo from '../assets/LOGO.png';
-import haryanaEmblem from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/haryana-sarkar.png';
+import logo from '../assets/new assets/logoes/LOGO.png';
+import haryanaEmblem from '../assets/new assets/logoes/haryana-sarkar.png';
 
 /**
  * Header Component

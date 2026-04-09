@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
-import heroBg1 from '../assets/homepageimage/siet1.jpg';
-import heroBg2 from '../assets/homepageimage/siet2.jpg';
-import heroBg3 from '../assets/homepageimage/siet3.jpg';
-import heroBg4 from '../assets/homepageimage/siet2.webp';
+import heroBg1 from '../assets/new assets/hero or home page/siet1.jpg';
+import heroBg2 from '../assets/new assets/hero or home page/siet2.jpg';
+import heroBg3 from '../assets/new assets/hero or home page/siet3.jpg';
+import heroBg4 from '../assets/new assets/hero or home page/siet2.webp';
 /**
  * Hero Component
  * Hero banner with rotating backgrounds and quick actions

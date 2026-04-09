@@ -1,11 +1,11 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
-import admissionsDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/05/BTech-Prospectus-2025-26-1.pdf';
-import examNoticeDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/03/Notice-PTM.pdf';
-import placementDriveDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/03/Quiz-Competition-on-Martyrdom-Day.pdf';
-import academicCalendarDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/01/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
-import workshopDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/02/IITROPAR.pdf';
-import libraryNoticeDoc from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/03/training-policy.pdf';
+import admissionsDoc from '../assets/new assets/notification and notice purpose/BTech-Prospectus-2025-26-1.pdf';
+import examNoticeDoc from '../assets/new assets/notification and notice purpose/Notice-PTM.pdf';
+import placementDriveDoc from '../assets/new assets/notification and notice purpose/Quiz-Competition-on-Martyrdom-Day.pdf';
+import academicCalendarDoc from '../assets/new assets/notification and notice purpose/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
+import workshopDoc from '../assets/new assets/notification and notice purpose/IITROPAR.pdf';
+import libraryNoticeDoc from '../assets/new assets/notification and notice purpose/training-policy.pdf';
 
 const allNotices = [
   {

@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles.css';
-import recruiterOne from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/08/walk-in-1024x593.png';
-import recruiterTwo from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/07/b.tech-avt-img.png';
-import recruiterThree from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/haryana-sarkar.png';
-import recruiterFour from '../assets/sietpanchkula.ac.in/wp-content/uploads/2026/03/Web-Development-Competition.jpg';
-import recruiterFive from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/12/Inspection-Pic-1024x768.jpg';
+import recruiterOne from '../assets/new assets/events/walk-in-1024x593.png';
+import recruiterTwo from '../assets/new assets/some other document for official work/b.tech-avt-img.png';
+import recruiterThree from '../assets/new assets/logoes/haryana-sarkar.png';
+import recruiterFour from '../assets/new assets/events/Web-Development-Competition.jpg';
+import recruiterFive from '../assets/new assets/gallery/Inspection-Pic-1024x768.jpg';
 
 /**
  * Training & Placements Page Component

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles.css';
-import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
+import principalPhoto from '../assets/new assets/prienciplephoto/prienciple.jpeg';
 
 /**
  * About Us Page Component

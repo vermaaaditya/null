@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from './ScrollReveal';
-import bannerOne from '../assets/homepageimage/siet1.jpg';
-import bannerTwo from '../assets/homepageimage/siet2.jpg';
-import bannerThree from '../assets/homepageimage/siet3.jpg';
-import bannerFour from '../assets/sietpanchkula.ac.in/wp-content/uploads/2025/02/siet-panchkula-building.jpg';
+import bannerOne from '../assets/new assets/hero or home page/siet1.jpg';
+import bannerTwo from '../assets/new assets/hero or home page/siet2.jpg';
+import bannerThree from '../assets/new assets/hero or home page/siet3.jpg';
+import bannerFour from '../assets/new assets/campus/siet-panchkula-building.jpg';
 
 const banners = [
   {
