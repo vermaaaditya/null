@@ -1166,6 +1166,27 @@ img {
   padding: 0.85rem 0.85rem 0;
 }
 
+.card-empty {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.3rem;
+  padding: 0.3rem 0.2rem 0.9rem;
+}
+
+.card-empty-title {
+  font-weight: 800;
+  color: var(--ink-700);
+}
+
+.card-empty-subtitle {
+  color: var(--ink-500);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
 .card-body::after {
   content: '';
   position: absolute;

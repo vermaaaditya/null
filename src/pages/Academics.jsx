@@ -38,26 +38,7 @@ const Academics = () => {
     });
   };
 
-  const testimonials = [
-    {
-      name: 'Rahul Sharma',
-      course: 'B.Tech AIML, 2025',
-      text: 'The practical approach to learning at SIET has helped me understand complex AI concepts. The faculty support and lab facilities are excellent.',
-      rating: 5
-    },
-    {
-      name: 'Priya Verma',
-      course: 'B.Tech Cyber Security, 2024',
-      text: 'The hands-on training in cyber security labs and industry-relevant curriculum have prepared me well for my career. Highly recommended!',
-      rating: 5
-    },
-    {
-      name: 'Amit Kumar',
-      course: 'B.Tech Robotics, 2025',
-      text: 'Working on real robotics projects and learning from experienced faculty has been an amazing experience. SIET provides the perfect environment for innovation.',
-      rating: 5
-    }
-  ];
+  const testimonials = [];
 
   return (
     <div className="academics-page">
@@ -82,20 +63,6 @@ const Academics = () => {
               various engineering disciplines. Our faculty includes PhDs from premier institutions, industry
               professionals, and researchers committed to academic excellence and student development.
             </p>
-            <div className="faculty-stats">
-              <div className="stat-card">
-                <h3>20+</h3>
-                <p>Expert Faculty</p>
-              </div>
-              <div className="stat-card">
-                <h3>15+</h3>
-                <p>PhD Holders</p>
-              </div>
-              <div className="stat-card">
-                <h3>50+</h3>
-                <p>Years Combined Experience</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -272,28 +239,30 @@ const Academics = () => {
       </section>
 
       {/* Student Testimonials */}
-      <section className="section testimonials">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Student Testimonials</h2>
-            <div className="title-underline"></div>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="testimonial-rating">
-                  {'⭐'.repeat(testimonial.rating)}
+      {testimonials.length > 0 ? (
+        <section className="section testimonials">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Student Testimonials</h2>
+              <div className="title-underline"></div>
+            </div>
+            <div className="testimonials-grid">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <div className="testimonial-rating">
+                    {'⭐'.repeat(testimonial.rating)}
+                  </div>
+                  <p className="testimonial-text">"{testimonial.text}"</p>
+                  <div className="testimonial-author">
+                    <h4>{testimonial.name}</h4>
+                    <p>{testimonial.course}</p>
+                  </div>
                 </div>
-                <p className="testimonial-text">"{testimonial.text}"</p>
-                <div className="testimonial-author">
-                  <h4>{testimonial.name}</h4>
-                  <p>{testimonial.course}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {/* Student Feedback Form */}
       <section className="section feedback-form-section">
@@ -346,9 +315,9 @@ const Academics = () => {
                     required
                   >
                     <option value="">Select Course</option>
-                    <option value="aiml">B.Tech AIML</option>
-                    <option value="cyber">B.Tech Cyber Security</option>
-                    <option value="robotics">B.Tech Robotics</option>
+                    <option value="cse-aiml">B.Tech CSE (AI & ML)</option>
+                    <option value="cse-cs">B.Tech CSE (Cyber Security)</option>
+                    <option value="ra">B.Tech Robotics & Automation</option>
                   </select>
                 </div>
                 <div className="form-group">

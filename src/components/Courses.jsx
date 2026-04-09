@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
 import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
+import aimlImg from '../assets/new-assets/courses/AI-ML.jpg';
+import cyberImg from '../assets/new-assets/courses/Cyber-Security.jpg';
+import roboticsImg from '../assets/new-assets/courses/Robotics-Automation.jpg';
 
 /**
  * Courses Component
@@ -9,73 +12,44 @@ import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Adm
  * Includes AI, Cyber, Robotics (current) and Electrical, Mechanical, Civil (upcoming)
  */
 const Courses = () => {
-  // Current Courses
+  // Official "Courses Offered" (from sietpanchkula.ac.in)
   const currentCourses = [
     {
       id: 1,
-      title: 'Artificial Intelligence',
-      shortCode: 'AI',
-      image: 'https://images.unsplash.com/photo-1677442d019aa0de15c0e6e2b2d63e61d1b41d74?w=400&h=300&fit=crop',
-      description: 'Master machine learning, deep learning, and AI applications with hands-on projects and industry collaboration.',
+      title: 'Computer Science and Engineering (AI & ML)',
+      shortCode: 'CSE-AIML',
+      image: aimlImg,
+      description:
+        'Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
       duration: '4 Years',
       status: 'ongoing',
       seats: 60
     },
     {
       id: 2,
-      title: 'Cyber Security',
-      shortCode: 'CS',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop',
-      description: 'Learn cybersecurity fundamentals, ethical hacking, and network security from industry experts.',
+      title: 'Computer Science and Engineering (Cyber Security)',
+      shortCode: 'CSE-CS',
+      image: cyberImg,
+      description:
+        'Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
       duration: '4 Years',
       status: 'ongoing',
-      seats: 50
+      seats: 60
     },
     {
       id: 3,
       title: 'Robotics & Automation',
       shortCode: 'RA',
-      image: 'https://images.unsplash.com/photo-1561603879-2f8b92a40141?w=400&h=300&fit=crop',
-      description: 'Explore robotics, automation systems, and intelligent machines with practical laboratory experience.',
+      image: roboticsImg,
+      description:
+        'Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.',
       duration: '4 Years',
       status: 'ongoing',
-      seats: 45
+      seats: 60
     }
   ];
 
-  // Upcoming Courses
-  const upcomingCourses = [
-    {
-      id: 4,
-      title: 'Electrical Engineering',
-      shortCode: 'EE',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop',
-      description: 'Comprehensive study of electrical systems, power generation, and modern electrical technologies.',
-      duration: '4 Years',
-      status: 'upcoming',
-      seats: 55
-    },
-    {
-      id: 5,
-      title: 'Mechanical Engineering',
-      shortCode: 'ME',
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&h=300&fit=crop',
-      description: 'Learn mechanical design, manufacturing, and thermodynamics with state-of-the-art facilities.',
-      duration: '4 Years',
-      status: 'upcoming',
-      seats: 60
-    },
-    {
-      id: 6,
-      title: 'Civil Engineering',
-      shortCode: 'CE',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3780?w=400&h=300&fit=crop',
-      description: 'Study structural design, construction management, and infrastructure development projects.',
-      duration: '4 Years',
-      status: 'upcoming',
-      seats: 50
-    }
-  ];
+  const upcomingCourses = [];
 
   const CourseCard = ({ course }) => (
     <div className={`course-card ${course.status}`}>
@@ -140,14 +114,16 @@ const Courses = () => {
         </div>
 
         {/* Upcoming Courses */}
-        <div className="courses-category">
-          <h3 className="category-title">Coming Soon</h3>
-          <div className="courses-grid">
-            {upcomingCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
+        {upcomingCourses.length > 0 ? (
+          <div className="courses-category">
+            <h3 className="category-title">Coming Soon</h3>
+            <div className="courses-grid">
+              {upcomingCourses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

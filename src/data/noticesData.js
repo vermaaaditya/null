@@ -254,3 +254,21 @@ export const noticesListData = noticesBoardData
     href: n.readMoreUrl || n.downloadUrl,
     isNew: n.priority === 'High'
   }));
+
+// Pulled from the institute "Notices/Updates" feed
+// shown on https://sietpanchkula.ac.in/
+export const campusUpdatesData = [
+  { id: 1, title: 'Web Development Competition on 20.03.2026', date: '19 Mar, 2026' },
+  { id: 2, title: 'Quiz Competition on Martyrdom Day', date: '19 Mar, 2026' },
+  { id: 3, title: 'Notice: Parent-Teacher Meeting (March 13, 2026)', date: '5 Mar, 2026' },
+  { id: 4, title: 'Internal Academic Calendar for Even Semester Session : 2025-26', date: '18 Feb, 2026' },
+  { id: 5, title: 'External Practical Datesheet & Announcement', date: '2 Jan, 2026' },
+  { id: 6, title: 'Commencement of Classes for Even Semester B.Tech. All Branches (AIML , CS & RA)', date: '2 Jan, 2026' },
+  { id: 7, title: 'Commencement of B.TECH 1st Year Classes at SIET Panchkula', date: '20 Aug, 2025' },
+  { id: 8, title: 'Commencement of New Session Classes for Second and Third Year.', date: '14 Aug, 2025' },
+  { id: 9, title: 'B.Tech LEET Physical Counselling Meri List 2025', date: '7 Aug, 2025' },
+  { id: 10, title: 'Physical Institute Wise Counseling Merit List [12th based]', date: '5 Aug, 2025' }
+].map((item) => ({
+  ...item,
+  href: '/all-notices'
+}));

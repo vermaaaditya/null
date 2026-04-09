@@ -94,25 +94,6 @@ const Alumni = () => {
         </div>
       </section>
 
-      <section className="section alumni-stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-box">
-              <h2>500+</h2>
-              <p>Alumni Worldwide</p>
-            </div>
-            <div className="stat-box">
-              <h2>100+</h2>
-              <p>Companies</p>
-            </div>
-            <div className="stat-box">
-              <h2>20+</h2>
-              <p>Countries</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section registration-form-section">
         <div className="container">
           <div className="section-header">
@@ -192,9 +173,9 @@ const Alumni = () => {
                   required
                 >
                   <option value="">Select Department</option>
-                  <option value="aiml">B.Tech AIML</option>
-                  <option value="cyber">B.Tech Cyber Security</option>
-                  <option value="robotics">B.Tech Robotics & Automation</option>
+                  <option value="cse-aiml">B.Tech CSE (AI & ML)</option>
+                  <option value="cse-cs">B.Tech CSE (Cyber Security)</option>
+                  <option value="ra">B.Tech Robotics & Automation</option>
                 </select>
               </div>
 

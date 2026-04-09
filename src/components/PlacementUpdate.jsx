@@ -1,23 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-
-const placementUpdates = [
-  {
-    text: "Campus Placement Drive For Cyber Security ...",
-    isNew: true,
-    link: "https://example.com/cybersecurity", // optional link
-  },
-  {
-    text: "Campus Placement Drive For Artificial Intelligence ...",
-    isNew: true,
-    link: "https://example.com/ai",
-  },
-  {
-    text: "Campus Placement Drive For Robotics & Automation ...",
-    isNew: true,
-    // no link yet
-  },
-];
+const placementUpdates = [];
 
 const PlacementUpdate = () => {
   const scrollRef = useRef(null);

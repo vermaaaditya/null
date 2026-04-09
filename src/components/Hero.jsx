@@ -54,29 +54,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero-stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-item">
-              <h3 className="stat-number">12+</h3>
-              <p className="stat-label">Labs and Studios</p>
-            </div>
-            <div className="stat-item">
-              <h3 className="stat-number">500+</h3>
-              <p className="stat-label">Active Students</p>
-            </div>
-            <div className="stat-item">
-              <h3 className="stat-number">20+</h3>
-              <p className="stat-label">Expert Faculty</p>
-            </div>
-            <div className="stat-item">
-              <h3 className="stat-number">95%</h3>
-              <p className="stat-label">Placement Assistance</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="carousel-indicators">
         {heroImages.map((_, index) => (
           <button

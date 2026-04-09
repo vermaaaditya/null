@@ -45,6 +45,12 @@ const ScrollableCardBody = ({ items, scrollRef, contentRef, pauseRef }) => (
       pauseRef.current = false;
     }}
   >
+    {(!items || items.length === 0) ? (
+      <div className="card-empty">
+        <p className="card-empty-title">No updates available</p>
+        <p className="card-empty-subtitle">This section will appear once official updates are added.</p>
+      </div>
+    ) : (
     <ul className="card-list scroll-list" ref={contentRef}>
       {[...items, ...items].map((item, index) => (
         <li key={`${item.id || item.title}-${index}`} className="card-list-item">
@@ -74,6 +80,7 @@ const ScrollableCardBody = ({ items, scrollRef, contentRef, pauseRef }) => (
         </li>
       ))}
     </ul>
+    )}
   </div>
 );
 
@@ -82,22 +89,12 @@ const ScrollableCardBody = ({ items, scrollRef, contentRef, pauseRef }) => (
  * Three auto-scrolling information cards
  */
 const InfoCards = () => {
-  const newsEvents = [
-    { title: 'Annual Tech Fest 2026', date: 'Feb 15, 2026', isNew: true },
-    { title: 'Guest Lecture by IIT Professor', date: 'Feb 10, 2026', isNew: true },
-    { title: 'Industrial Visit to Tech Park', date: 'Feb 8, 2026', isNew: false },
-    { title: 'Sports Week Inauguration', date: 'Feb 5, 2026', isNew: false }
-  ];
+  const newsEvents = [];
 
   const notifications = notificationsListData;
   const notices = noticesListData;
 
-  const placements = [
-    { title: '150 students placed in top companies', date: 'Feb 5, 2026', isNew: true },
-    { title: 'Microsoft campus drive shortlist', date: 'Feb 3, 2026', isNew: true },
-    { title: 'Amazon pre-placement talk', date: 'Jan 28, 2026', isNew: false },
-    { title: 'Google recruitment prep series', date: 'Jan 25, 2026', isNew: false }
-  ];
+  const placements = [];
 
   const newsScrollRef = useRef(null);
   const newsContentRef = useRef(null);
