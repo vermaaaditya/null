@@ -15,9 +15,10 @@ export const submenuData = {
     title: 'About Institute',
     image: campusImage,
     points: [
-      'SIET Panchkula is approved by AICTE, New Delhi and affiliated to Kurukshetra University.',
-      'The institute emphasizes technical and industrial education for employability and productivity.',
-      'Current classes operate from Government Polytechnic campus, Sector 26, Panchkula.'
+      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
+      'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
+      'The institute offers undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'With industry-oriented learning, strong facilities, and expert faculty, SIET equips students with the skills to excel in the evolving world of technology.'
     ]
   },
   'about/vision-mission': {
@@ -36,9 +37,8 @@ export const submenuData = {
     image: directorImage,
     imageMode: 'portrait',
     points: [
-      'Leadership perspective and student-first priorities.',
-      'Focus on practical learning and research mindset.',
-      'Institutional direction for future growth.'
+      'We aim to inculcate industrial skills amongst youth to empower them for gainful employment through technical & industrial education and to enhance productivity of formal and non-formal sector of economy.',
+      'Our mission is to provide an outstanding holistic education for our students characterized by successful training and emotional well being that provide firm foundation for the next stage of their learning and fully prepare them for life in a rapidly changing 21st century.'
     ]
   },
   'about/quality-policy': {

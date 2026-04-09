@@ -8,9 +8,8 @@ import principalPhoto from '../assets/prienciplephoto/prienciple.jpeg';
  */
 const DirectorDesk = () => {
   const messageParagraphs = [
-    'The Training & Placement Office and academic leadership at SIET are dedicated to strengthening the professional journey of our students through practical learning, internships, and industry-oriented mentoring. Our objective is to build confident graduates who are ready to meet evolving technical and workplace expectations.',
-    'We strongly encourage students to participate in project work, skill-building activities, and internship opportunities, as these experiences improve employability and professional maturity. Faculty and mentors work closely with students to ensure consistent guidance and timely support.',
-    'Our institution continues to focus on academic quality, research culture, and responsible leadership. We invite every learner to stay proactive, disciplined, and committed to continuous growth throughout their time at SIET.'
+    'We aim to inculcate industrial skills amongst youth to empower them for gainful employment through technical & industrial education and to enhance productivity of formal and non-formal sector of economy.',
+    'Our mission is to provide an outstanding holistic education for our students characterized by successful training and emotional well being that provide firm foundation for the next stage of their learning and fully prepare them for life in a rapidly changing 21st century.'
   ];
 
   return (
