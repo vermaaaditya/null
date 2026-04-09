@@ -13,12 +13,14 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content tpo-header-content">
-          <img
-            className="tpo-gov-emblem"
-            src={haryanaEmblem}
-            alt="Haryana Government Emblem"
-            loading="lazy"
-          />
+          <div className="tpo-header-emblem header-emblem-left">
+            <img
+              className="tpo-gov-emblem"
+              src={haryanaEmblem}
+              alt="Haryana Government Emblem"
+              loading="lazy"
+            />
+          </div>
 
           <div className="header-info tpo-header-info">
             <p className="tpo-header-hindi">राज्य अभियांत्रिकी एवं प्रौद्योगिकी संस्थान, पंचकुला</p>
@@ -29,11 +31,9 @@ const Header = () => {
             
             
           </div>
-          <div className="tpo-header-emblem">
-            <Link to="/" className="header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
-              <img src={logo} alt="SIET Panchkula Logo" />
-            </Link>
-          </div>
+          <Link to="/" className="tpo-header-emblem header-logo tpo-header-logo" aria-label="SIET Panchkula Home">
+            <img src={logo} alt="SIET Panchkula Logo" loading="lazy" />
+          </Link>
           
         </div>
       </div>
