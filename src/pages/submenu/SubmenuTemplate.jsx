@@ -67,48 +67,87 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
 
   const infoText = `${title} is an important part of ${sectionLabel}. This section helps students and visitors quickly understand the scope, focus, and practical relevance.`;
 
+  const sectionHome = (() => {
+    switch (sectionLabel) {
+      case 'ABOUT US':
+        return { label: 'About', to: '/about' };
+      case 'DEPARTMENTS':
+        return { label: 'Departments', to: '/departments' };
+      case 'ACADEMICS':
+        return { label: 'Academics', to: '/academics' };
+      case 'FACILITIES':
+        return { label: 'Facilities', to: '/facilities' };
+      case 'TRAINING & PLACEMENTS':
+        return { label: 'Placements', to: '/placements' };
+      case 'ALUMNI':
+        return { label: 'Alumni', to: '/alumni' };
+      case 'LIFE @ SIET':
+        return { label: 'Life @ SIET', to: '/life-at-siet' };
+      default:
+        return { label: 'Home', to: '/' };
+    }
+  })();
+
   return (
     <div className="submenu-page">
       <section className="section submenu-hero">
         <div className="container">
-          <div className="submenu-hero-card">
-            <p className="submenu-kicker">{sectionLabel}</p>
-            <h1 className="submenu-title">{title}</h1>
-            <p className="submenu-subtitle">{subtitle || 'Focused information and highlights for this submenu section.'}</p>
+          <div className="submenu-hero-surface">
+            <nav className="submenu-breadcrumb" aria-label="Breadcrumb">
+              <Link to="/" className="crumb-link">Home</Link>
+              <span className="crumb-sep" aria-hidden="true">/</span>
+              <Link to={sectionHome.to} className="crumb-link">{sectionHome.label}</Link>
+              <span className="crumb-sep" aria-hidden="true">/</span>
+              <span className="crumb-current" aria-current="page">{title}</span>
+            </nav>
+
+            <div className="submenu-hero-grid">
+              <div className="submenu-hero-copy">
+                <p className="submenu-kicker">{sectionLabel}</p>
+                <h1 className="submenu-title">{title}</h1>
+                <p className="submenu-subtitle">
+                  {subtitle || 'Focused information and highlights for this submenu section.'}
+                </p>
+                <div className="submenu-hero-actions">
+                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
+                </div>
+              </div>
+
+              <div className="submenu-hero-visual" aria-hidden="true">
+                <div className="submenu-hero-image-wrap">
+                  <img
+                    src={image}
+                    alt=""
+                    className={`submenu-hero-image ${imageMode === 'portrait' ? 'portrait' : ''}`}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section submenu-content-section">
         <div className="container">
-          <div className="submenu-content-card">
-            <div className="submenu-feature-image-wrap">
-              <img
-                src={image}
-                alt={title}
-                className={`submenu-feature-image ${imageMode === 'portrait' ? 'portrait' : ''}`}
-              />
-            </div>
-            <h2>Overview</h2>
-            <ul className="submenu-point-list">
-              {points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-
-            <p className="submenu-info-text">{infoText}</p>
-
-            <div className="submenu-extra-grid">
-              <div className="submenu-extra-card">
-                <h3>For Students</h3>
-                <ul className="submenu-mini-list">
-                  {(sectionGuidance[sectionLabel] || []).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+          <div className="submenu-layout">
+            <main className="submenu-main">
+              <div className="submenu-content-card">
+                <h2 className="submenu-section-title">Overview</h2>
+                <div className="submenu-prose">
+                  <ul className="submenu-point-list">
+                    {points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                  <p className="submenu-info-text">{infoText}</p>
+                </div>
               </div>
+            </main>
 
-              <div className="submenu-extra-card">
+            <aside className="submenu-aside">
+              <div className="submenu-aside-card">
                 <h3>Quick Links</h3>
                 <div className="submenu-link-list">
                   {(quickLinks[sectionLabel] || []).map((item) => (
@@ -118,7 +157,26 @@ const SubmenuTemplate = ({ sectionLabel, title, subtitle, image, imageMode, poin
                   ))}
                 </div>
               </div>
-            </div>
+
+              <div className="submenu-aside-card">
+                <h3>For Students</h3>
+                <ul className="submenu-mini-list">
+                  {(sectionGuidance[sectionLabel] || []).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="submenu-aside-card subtle">
+                <h3>Need updates?</h3>
+                <p className="submenu-aside-text">
+                  Check the latest notifications and downloadable notices.
+                </p>
+                <Link to="/all-notices" className="submenu-aside-cta">
+                  Open Notices Board →
+                </Link>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
