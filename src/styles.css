@@ -2061,30 +2061,6 @@ img {
 }
 
 /* Shared page sections */
-.page-hero {
-  margin-top: 1rem;
-  padding: clamp(2.6rem, 7vw, 4.2rem) 0;
-  border-radius: 10px;
-  background: #0a192f;
-  box-shadow: var(--shadow-mid);
-  color: #fff;
-}
-
-.page-title,
-.page-subtitle {
-  color: #fff;
-  text-align: center;
-}
-
-.page-title {
-  font-size: clamp(2rem, 4.8vw, 3.3rem);
-}
-
-.page-subtitle {
-  margin-top: 0.42rem;
-  color: rgba(255, 255, 255, 0.88);
-}
-
 .submenu-content-section {
   margin-top: 0.3rem;
 }
@@ -2554,26 +2530,7 @@ img {
   border: 1px solid rgba(16, 35, 63, 0.08);
 }
 
-.director-image-large {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-}
 
-.about-page .director-image-large {
-  min-height: 340px;
-  max-height: 460px;
-}
-
-.director-image-large img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-page .director-image-large img {
-  object-position: center top;
-}
 
 .director-message-full {
   border-radius: 16px;
@@ -2621,223 +2578,13 @@ img {
   background: #fff;
 }
 
-.dept-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 1rem;
-}
 
-.department-detail.reverse .dept-grid {
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-}
 
-.department-detail.reverse .dept-image {
-  order: 2;
-}
 
-.department-detail.reverse .dept-content {
-  order: 1;
-}
 
-.dept-image {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  position: relative;
-}
 
-.dept-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  object-fit: contain;
-  background: #f4f7fb;
-}
 
-.dept-card-grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-}
 
-.dept-compact-card {
-  text-align: left;
-  border-radius: 14px;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  background: #fff;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-.dept-compact-card img {
-  width: 100%;
-  height: 170px;
-  object-fit: contain;
-  background: #f2f6fb;
-  border-bottom: 1px solid rgba(16, 35, 63, 0.1);
-}
-
-.dept-compact-card div {
-  padding: 0.72rem;
-}
-
-.dept-compact-card h3 {
-  font-size: 1rem;
-}
-
-.dept-short-tag {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  color: var(--brand-blue);
-  font-weight: 800;
-  letter-spacing: 0.06em;
-}
-
-.dept-compact-card.active {
-  border-color: rgba(15, 118, 110, 0.6);
-  box-shadow: var(--shadow-mid);
-}
-
-.dept-showcase-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 1rem;
-}
-
-.dept-showcase-visual {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  position: relative;
-}
-
-.dept-showcase-visual img {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  object-fit: contain;
-  background: #f2f6fb;
-}
-
-.dept-showcase-placeholder {
-  width: 100%;
-  min-height: 320px;
-  background: linear-gradient(135deg, rgba(10, 25, 47, 0.08), rgba(197, 160, 89, 0.12));
-}
-
-.dept-doc-link {
-  display: inline-flex;
-  margin-top: 0.9rem;
-  color: var(--brand-blue);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.dept-badge {
-  position: absolute;
-  top: 0.7rem;
-  left: 0.7rem;
-  border-radius: 999px;
-  padding: 0.4rem 0.7rem;
-  color: #fff;
-  background: rgba(9, 20, 38, 0.78);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.facility-card {
-  overflow: hidden;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.facility-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-mid);
-}
-
-.facility-image {
-  width: calc(100% + 2rem);
-  margin: -1rem -1rem 0.75rem;
-  height: 160px;
-  object-fit: contain;
-  background: #f2f6fb;
-  border-bottom: 1px solid rgba(16, 35, 63, 0.12);
-}
-
-.campus-map-card {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  background: #fff;
-  box-shadow: var(--shadow-soft);
-}
-
-.campus-map-card iframe {
-  width: 100%;
-  height: 320px;
-  border: 0;
-}
-
-.map-info {
-  padding: 0.9rem 1rem 1.1rem;
-}
-
-.map-link {
-  display: inline-flex;
-  margin-top: 0.5rem;
-  color: var(--brand-blue);
-  font-weight: 800;
-}
-
-.faculty-docs-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 0.9rem;
-}
-
-.faculty-profile-card {
-  border-radius: 16px;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  background: #fff;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-.faculty-profile-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: contain;
-  background: #f4f7fb;
-  border-bottom: 1px solid rgba(16, 35, 63, 0.1);
-}
-
-.faculty-profile-card div {
-  padding: 0.9rem;
-}
-
-.faculty-doc-list {
-  display: grid;
-  gap: 0.6rem;
-}
-
-.faculty-doc-item {
-  border-radius: 12px;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  background: #fff;
-  padding: 0.8rem;
-  font-weight: 700;
-  color: var(--ink-700);
-}
-
-.faculty-doc-item:hover {
-  color: var(--brand-blue);
-  border-color: rgba(37, 99, 235, 0.4);
-}
 
 .chatbot-widget {
   position: fixed;
@@ -2936,30 +2683,7 @@ img {
   opacity: 0.5;
 }
 
-.dept-content {
-  border-radius: 18px;
-  padding: 1rem;
-  background: #fff;
-  border: 1px solid rgba(16, 35, 63, 0.12);
-}
 
-.dept-name {
-  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
-}
-
-.dept-description {
-  margin-top: 0.5rem;
-  color: var(--ink-700);
-}
-
-.dept-highlights,
-.dept-info-grid,
-.dept-stats,
-.training-features,
-.process-timeline,
-.testimonials-slider {
-  margin-top: 0.92rem;
-}
 
 .stat {
   border-radius: 12px;
@@ -3074,56 +2798,7 @@ img {
   min-height: 140px;
 }
 
-.placement-stats-section .stats-grid {
-  background: transparent;
-  border: 0;
-  backdrop-filter: none;
-  padding: 0;
-}
 
-.placement-stats-section .stat-box {
-  text-align: center;
-}
-
-.process-timeline {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.timeline-item {
-  padding: 0.85rem;
-  border-radius: 14px;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  background: #fff;
-}
-
-.timeline-number {
-  margin-bottom: 0.5rem;
-}
-
-.recruiter-card {
-  border-radius: 14px;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  padding: 0.72rem;
-  background: #fff;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-}
-
-.recruiter-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.company-name {
-  margin-top: 0.5rem;
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: var(--ink-700);
-}
 
 .gallery-item {
   position: relative;
@@ -3165,12 +2840,7 @@ img {
   margin-bottom: 0.7rem;
 }
 
-.testimonial-box {
-  border-radius: 16px;
-  background: #fff;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  padding: 1rem;
-}
+
 
 @media (max-width: 1140px) {
   .header-content {

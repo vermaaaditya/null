@@ -153,8 +153,19 @@ const Navbar = () => {
                       }}
                     >
                       {item.name}
-                      {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
                     </a>
+                  ) : item.submenu ? (
+                    <button
+                      type="button"
+                      className="nav-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleDropdown(index);
+                      }}
+                    >
+                      {item.name}
+                      <span className={`dropdown-arrow ${openDropdown === index ? 'open' : ''}`}>▼</span>
+                    </button>
                   ) : (
                     <NavLink
                       to={item.href}
@@ -165,27 +176,8 @@ const Navbar = () => {
                       }}
                     >
                       {item.name}
-                      {!isMobile && item.submenu && <span className="dropdown-arrow">▼</span>}
                     </NavLink>
                   )}
-
-                  {isMobile && item.submenu ? (
-                    <button
-                      type="button"
-                      className="submenu-toggle"
-                      aria-label={`Toggle ${item.name} submenu`}
-                      aria-expanded={openDropdown === index}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleDropdown(index);
-                      }}
-                    >
-                      <span className={`dropdown-arrow ${openDropdown === index ? 'open' : ''}`} aria-hidden="true">
-                        ▼
-                      </span>
-                    </button>
-                  ) : null}
                 </div>
 
                 {item.submenu && (
