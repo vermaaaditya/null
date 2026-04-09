@@ -13,6 +13,10 @@ const Footer = () => {
     { label: 'Departments', to: '/departments' },
     { label: 'Admission Form', to: '/admission-form' },
     { label: 'All Notices', to: '/all-notices' },
+    { label: 'Events', to: '/events' },
+    { label: 'Student Helpline', to: '/student-helpline' },
+    { label: 'Staff Utilities', to: '/staff' },
+    { label: 'Top-Level Sections', to: '/top-level-sections' },
   ];
 
   return (

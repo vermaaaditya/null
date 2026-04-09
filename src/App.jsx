@@ -9,6 +9,11 @@ import SubmenuRouteHandler from './pages/submenu/SubmenuRouteHandler';
 import ChatbotWidget from './components/ChatbotWidget';
 import AllNotices from './pages/AllNotices';
 import Admission from './pages/Admission';
+import TopLevelSections from './pages/TopLevelSections';
+import Events from './pages/Events';
+import StudentHelpline from './pages/StudentHelpline';
+import ContentDifferences from './pages/ContentDifferences';
+import Staff from './pages/Staff';
 
 /**
  * Main App Component
@@ -35,6 +40,11 @@ function App() {
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/all-notices" element={<AllNotices />} />
         <Route path="/admission-form" element={<Admission />} />
+        <Route path="/top-level-sections" element={<TopLevelSections />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/student-helpline" element={<StudentHelpline />} />
+        <Route path="/content-differences" element={<ContentDifferences />} />
+        <Route path="/staff" element={<Staff />} />
       </Routes>
 
       <ChatbotWidget />

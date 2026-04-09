@@ -117,3 +117,43 @@ Compatibility file:
 2. Test navbar dropdown links on desktop and mobile widths.
 3. Open notices and document links to confirm they resolve.
 4. Check responsive layout after CSS changes.
+
+## 9) Additional pages added from live-site gap scan
+
+These pages were added as dedicated route-level entries and should be maintained like other core pages:
+
+- `src/pages/TopLevelSections.jsx` -> route: `/top-level-sections`
+- `src/pages/Events.jsx` -> route: `/events`
+- `src/pages/StudentHelpline.jsx` -> route: `/student-helpline`
+- `src/pages/ContentDifferences.jsx` -> route: `/content-differences`
+- `src/pages/Staff.jsx` -> route: `/staff`
+
+Where routes are wired:
+- `src/App.jsx`
+
+Where quick access links were exposed:
+- `src/components/Footer.jsx`
+
+## 10) Route hygiene rules
+
+When adding a new page, always update all three layers:
+1. Create page component in `src/pages/`.
+2. Register route in `src/App.jsx`.
+3. Add at least one visible navigation entry (navbar submenu, footer quick link, or in-page CTA).
+
+If a page is intentionally internal-only, document that decision in this guide to avoid accidental cleanup.
+
+## 11) Content consistency and naming rules
+
+1. Keep category names normalized in `noticesBoardData` (`Admission`, `Academic`, `Event`, etc.) to preserve existing filters.
+2. Keep all dates human-readable and consistent (example: `05 May 2025` or `Mar 2026`, but avoid mixing random formats in one section).
+3. Use stable route slugs with lowercase and hyphens (`/student-helpline`, not `/StudentHelpline`).
+4. Prefer adding new content blocks in data files before duplicating JSX structures.
+
+## 12) Pre-deploy quick checks
+
+Before pushing changes:
+1. Run `npm run lint`.
+2. Run `npm run build`.
+3. Manually open these critical routes: `/`, `/all-notices`, `/admission-form`, `/life-at-siet`, `/events`, `/student-helpline`.
+4. Confirm at least one PDF/document link opens correctly from the notices board.
