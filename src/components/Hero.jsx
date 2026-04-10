@@ -4,7 +4,6 @@ import heroBg1 from '../assets/new-assets/hero-home/siet1.jpg';
 import heroBg2 from '../assets/new-assets/hero-home/siet2.jpg';
 import heroBg3 from '../assets/new-assets/hero-home/siet3.jpg';
 import heroBg4 from '../assets/new-assets/hero-home/siet2.webp';
-import HeroCourseForms from './HeroCourseForms';
 /**
  * Hero Component
  * Hero banner with rotating backgrounds and quick actions
@@ -34,26 +33,22 @@ const Hero = () => {
 
       <div className="hero-content">
         <div className="container">
-          <div className="hero-grid">
-            <div className="hero-text">
-              <p className="hero-eyebrow">Admissions Open for 2026-27 Session</p>
-              <h1 className="hero-title">
-                Engineering Education Built for Real-World Impact
-              </h1>
-              <p className="hero-subtitle">
-                Learn from faculty mentors, build in modern labs, and graduate with the confidence to lead in AI, Cyber Security, and Robotics.
-              </p>
-              <div className="hero-buttons">
-                <Link to="/departments" className="btn btn-primary">
-                  Explore Departments
-                </Link>
-                <Link to="/admission-form" className="btn btn-secondary">
-                  Enquiry Form
-                </Link>
-              </div>
+          <div className="hero-text">
+            <p className="hero-eyebrow">Admissions Open for 2026-27 Session</p>
+            <h1 className="hero-title">
+              Engineering Education Built for Real-World Impact
+            </h1>
+            <p className="hero-subtitle">
+              Learn from faculty mentors, build in modern labs, and graduate with the confidence to lead in AI, Cyber Security, and Robotics.
+            </p>
+            <div className="hero-buttons">
+              <Link to="/departments" className="btn btn-primary">
+                Start Application
+              </Link>
+              <Link to="/admission-form" className="btn btn-secondary">
+                Admission Form
+              </Link>
             </div>
-
-            <HeroCourseForms />
           </div>
         </div>
       </div>
