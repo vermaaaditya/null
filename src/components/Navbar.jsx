@@ -76,9 +76,9 @@ const Navbar = () => {
       name: 'Departments',
       href: '/departments',
       submenu: [
-        { name: 'Computer Science & Engineering', href: '/departments/cse' },
-        { name: 'AI & Machine Learning', href: '/departments/ai-ml' },
-        { name: 'Cyber Security', href: '/departments/cyber-security' },
+        { name: 'Computer Science & Engineering (core)', href: '/departments/cse' },
+        { name: 'Computer Science & Engineering(AI & Machine Learning)', href: '/departments/ai-ml' },
+        { name: 'Computer Science & Engineering(Cyber Security)', href: '/departments/cyber-security' },
         { name: 'Robotics & Automation', href: '/departments/robotics' },
         { name: 'Electrical Engineering', href: '/departments/electrical-engineering' },
         { name: 'Electronics Engineering (VLSI Design)', href: '/departments/electronics-vlsi' }
@@ -143,7 +143,7 @@ const Navbar = () => {
         { name: 'Events', href: '/events' },
         { name: 'Student Helpline', href: '/student-helpline' },
         { name: 'Top-Level Sections', href: '/top-level-sections' },
-        { name: 'Staff Utilities', href: '/staff' },
+        
         { name: 'Content Differences', href: '/content-differences' }
       ]
     }
