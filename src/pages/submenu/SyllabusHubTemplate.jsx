@@ -69,11 +69,14 @@ const SyllabusHubTemplate = ({
                 <div className="submenu-pdf-wrap">
                   {active?.pdfUrl ? (
                     <>
-                      <div className="submenu-pdf-empty">
-                        PDF preview is disabled. Download the selected syllabus using the button below.
-                      </div>
+                      <iframe
+                        title={`${title} PDF preview`}
+                        src={active.pdfUrl}
+                        className="submenu-pdf-viewer"
+                        loading="lazy"
+                      />
                       <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Download Syllabus PDF
+                        Open Syllabus PDF in new tab
                       </a>
                     </>
                   ) : (
