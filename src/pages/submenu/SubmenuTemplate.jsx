@@ -206,9 +206,9 @@ const SubmenuTemplate = ({
                     <>
                       <div className="submenu-nested-links" aria-label="Department sub sections">
                         {nestedSections.map((section) => (
-                          <a key={section.id} href={`#${section.id}`} className="submenu-inline-link">
+                          <Link key={section.id} to={section.route || `#${section.id}`} className="submenu-inline-link">
                             {section.title}
-                          </a>
+                          </Link>
                         ))}
                       </div>
 

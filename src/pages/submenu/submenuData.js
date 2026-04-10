@@ -144,7 +144,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'AI & Machine Learning',
     image: aiMlImage,
-    nestedSections: createDepartmentDemoSections('AI & Machine Learning', ['machine learning', 'data science']),
+    nestedSections: createDepartmentDemoSections('AI & Machine Learning', ['machine learning', 'data science'], 'ai-ml'),
     points: [
       'Machine learning fundamentals and applications.',
       'Model development and evaluation workflows.',
@@ -155,7 +155,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Cyber Security',
     image: cyberImage,
-    nestedSections: createDepartmentDemoSections('Cyber Security', ['network security', 'digital forensics']),
+    nestedSections: createDepartmentDemoSections('Cyber Security', ['network security', 'digital forensics'], 'cyber-security'),
     points: [
       'Network and application security practices.',
       'Ethical hacking and digital forensics basics.',
@@ -166,7 +166,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Robotics & Automation',
     image: roboticsImage,
-    nestedSections: createDepartmentDemoSections('Robotics & Automation', ['control systems', 'automation']),
+    nestedSections: createDepartmentDemoSections('Robotics & Automation', ['control systems', 'automation'], 'robotics'),
     points: [
       'Control systems and embedded foundations.',
       'Sensor integration and automation workflows.',
@@ -177,7 +177,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Computer Science',
     image: cseDeptImage,
-    nestedSections: createDepartmentDemoSections('Computer Science', ['programming', 'software engineering']),
+    nestedSections: createDepartmentDemoSections('Computer Science', ['programming', 'software engineering'], 'cse'),
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',
@@ -188,7 +188,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electrical Engineering',
     image: electricalDeptImage,
-    nestedSections: createDepartmentDemoSections('Electrical Engineering', ['power systems', 'control engineering']),
+    nestedSections: createDepartmentDemoSections('Electrical Engineering', ['power systems', 'control engineering'], 'electrical-engineering'),
     body: [
       'The Department of Electrical Engineering at SIET prepares students for careers in power, automation, and control systems through a practical and industry-aligned curriculum.'
     ],
@@ -202,7 +202,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electronics Engineering (VLSI Design)',
     image: electronicsDeptImage,
-    nestedSections: createDepartmentDemoSections('Electronics Engineering (VLSI Design)', ['VLSI design', 'embedded systems']),
+    nestedSections: createDepartmentDemoSections('Electronics Engineering (VLSI Design)', ['VLSI design', 'embedded systems'], 'electronics-vlsi'),
     body: [
       'The Electronics Engineering (VLSI Design) program equips students with strong analog-digital electronics foundations and advanced chip design skills for modern semiconductor industries.'
     ],

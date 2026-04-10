@@ -114,6 +114,8 @@ Compatibility file:
 - `src/components/`: reusable UI sections.
 - `src/pages/`: route-level pages.
 - `src/pages/submenu/`: submenu page templates + data.
+- `src/pages/submenu/departmentSections/`: standalone route pages for department subsections.
+- `src/pages/submenu/departmentSections/content/`: per-department demo data files for About Department, Vision & Mission, Faculty, Lesson Plans, and Time Table.
 - `src/data/`: content/data lists (notices, updates).
 - `src/assets/new-assets/`: static media and downloadable docs.
 - `src/css/`: centralized stylesheet modules.

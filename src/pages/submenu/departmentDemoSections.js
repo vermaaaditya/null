@@ -1,7 +1,8 @@
-const createDepartmentDemoSections = (departmentName, focusAreas) => [
+const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => [
   {
     id: 'about-department',
     title: 'About Department',
+    route: routeSlug ? `/departments/${routeSlug}/about-department` : undefined,
     body: [
       `${departmentName} is shown here with demo content so the submenu layout can be tested before the official data is added.`,
       'Replace this block with the real department introduction, intake details, and departmental vision when ready.'
@@ -15,6 +16,7 @@ const createDepartmentDemoSections = (departmentName, focusAreas) => [
   {
     id: 'vision-mission',
     title: 'Vision & Mission',
+    route: routeSlug ? `/departments/${routeSlug}/vision-mission` : undefined,
     body: [
       'Vision',
       `To develop ${departmentName} graduates who can solve real problems with confidence, ethics, and practical skill.`,
@@ -29,6 +31,7 @@ const createDepartmentDemoSections = (departmentName, focusAreas) => [
   {
     id: 'faculty',
     title: 'Faculty',
+    route: routeSlug ? `/departments/${routeSlug}/faculty` : undefined,
     body: [
       'Demo faculty data is shown below. Use this layout to plug in the official department staff list later.'
     ],
@@ -42,6 +45,7 @@ const createDepartmentDemoSections = (departmentName, focusAreas) => [
   {
     id: 'lesson-plans',
     title: 'Lesson Plans',
+    route: routeSlug ? `/departments/${routeSlug}/lesson-plans` : undefined,
     body: [
       'Demo lesson-plan cards are shown here as placeholders for the official weekly plan.',
       'Each card can later be replaced with unit-wise teaching notes, assignments, and lab schedule updates.'
@@ -55,6 +59,7 @@ const createDepartmentDemoSections = (departmentName, focusAreas) => [
   {
     id: 'time-table',
     title: 'Time Table',
+    route: routeSlug ? `/departments/${routeSlug}/time-table` : undefined,
     body: [
       'This demo timetable shows the expected layout for the final department schedule.',
       'Replace it with the official timetable when the department confirms semester-wise slots.'

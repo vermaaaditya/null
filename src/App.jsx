@@ -16,6 +16,13 @@ import ContentDifferences from './pages/ContentDifferences';
 import Staff from './pages/Staff';
 import Search from './pages/Search';
 import ScheduledPopup from './components/ScheduledPopup';
+import DepartmentElectronicsVlsi from './pages/submenu/DepartmentElectronicsVlsi';
+import CoursesOffered from './pages/submenu/CoursesOffered';
+import AboutDepartment from './pages/submenu/departmentSections/AboutDepartment';
+import VisionMission from './pages/submenu/departmentSections/VisionMission';
+import Faculty from './pages/submenu/departmentSections/Faculty';
+import LessonPlans from './pages/submenu/departmentSections/LessonPlans';
+import TimeTable from './pages/submenu/departmentSections/TimeTable';
 
 const ExternalPlacementRedirect = () => {
   React.useEffect(() => {
@@ -47,6 +54,11 @@ function App() {
         <Route path="/about/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/departments" element={<Navigate to="/departments/cse" replace />} />
         <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/departments/:deptSlug/about-department" element={<AboutDepartment />} />
+        <Route path="/departments/:deptSlug/vision-mission" element={<VisionMission />} />
+        <Route path="/departments/:deptSlug/faculty" element={<Faculty />} />
+        <Route path="/departments/:deptSlug/lesson-plans" element={<LessonPlans />} />
+        <Route path="/departments/:deptSlug/time-table" element={<TimeTable />} />
         <Route path="/academics" element={<Navigate to="/academics/academic-calendar" replace />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/facilities" element={<Navigate to="/facilities/infrastructure" replace />} />
