@@ -52,7 +52,7 @@ const SubmenuDocumentHub = ({
               <span className="crumb-current" aria-current="page">{title}</span>
             </nav>
 
-            <div className="submenu-hero-grid">
+            <div className="submenu-hero-grid doc-hero">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
@@ -60,30 +60,48 @@ const SubmenuDocumentHub = ({
                   {subtitle || 'Focused information and highlights for this submenu section.'}
                 </p>
                 <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                  {active?.pdfUrl ? (
+                    <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-action-btn primary">
+                      Download
+                    </a>
+                  ) : null}
                 </div>
               </div>
 
               <div className="submenu-hero-visual">
-                <div className="submenu-pdf-wrap">
-                  {active?.pdfUrl ? (
-                    <>
+                <div className="doc-hero-preview">
+                  <div className="doc-hero-select">
+                    <label className="doc-hero-label" htmlFor="doc-select">
+                      Document
+                    </label>
+                    <select
+                      id="doc-select"
+                      className="doc-hero-dropdown"
+                      value={active?.key || ''}
+                      onChange={(e) => setActiveKey(e.target.value)}
+                      aria-label="Select document"
+                    >
+                      {normalizedDocs.map((d) => (
+                        <option key={d.key} value={d.key}>
+                          {d.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="doc-hero-frame">
+                    {active?.pdfUrl ? (
                       <iframe
                         title={`${active.label} document`}
                         src={active.pdfUrl}
-                        className="submenu-pdf-viewer"
+                        className="doc-hero-iframe"
                         loading="lazy"
                       />
-                      <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Download / Open PDF
-                      </a>
-                    </>
-                  ) : (
-                    <div className="submenu-pdf-empty">
-                      Select a document to preview the PDF.
-                    </div>
-                  )}
+                    ) : (
+                      <div className="submenu-pdf-empty">PDF not available.</div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,44 +114,9 @@ const SubmenuDocumentHub = ({
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
-                <h2 className="submenu-section-title">Documents</h2>
-
-                <div className="submenu-syllabus-controls">
-                  <input
-                    className="submenu-syllabus-search"
-                    type="search"
-                    value={query}
-                    placeholder="Search document…"
-                    onChange={(e) => setQuery(e.target.value)}
-                    aria-label="Search documents"
-                  />
-                </div>
-
-                <div className="submenu-syllabus-grid">
-                  <div className="submenu-syllabus-list" role="list">
-                    {filtered.map((d) => {
-                      const isActive = d.key === active?.key;
-                      return (
-                        <button
-                          key={d.key}
-                          type="button"
-                          className={`submenu-syllabus-item ${isActive ? 'active' : ''}`}
-                          onClick={() => setActiveKey(d.key)}
-                        >
-                          <span className="submenu-syllabus-item-title">{d.label}</span>
-                          <span className="submenu-syllabus-item-meta">{d.pdfUrl ? 'PDF available' : 'PDF pending'}</span>
-                        </button>
-                      );
-                    })}
-                    {filtered.length === 0 ? (
-                      <div className="submenu-syllabus-empty">
-                        No documents match your search.
-                      </div>
-                    ) : null}
-                  </div>
-
-                  <div className="submenu-syllabus-details">
-                    <h3 className="submenu-subsection-title">Overview</h3>
+                <div className="doc-body-grid">
+                  <section className="doc-body-copy">
+                    <h2 className="submenu-section-title">About this document</h2>
                     <div className="submenu-prose">
                       {body.length > 0 ? (
                         <div className="submenu-body">
@@ -143,6 +126,14 @@ const SubmenuDocumentHub = ({
                             </p>
                           ))}
                         </div>
+                      ) : null}
+
+                      {points.length > 0 ? (
+                        <ul className="submenu-point-list">
+                          {points.map((p) => (
+                            <li key={p}>{p}</li>
+                          ))}
+                        </ul>
                       ) : null}
 
                       {resources.length > 0 ? (
@@ -159,18 +150,52 @@ const SubmenuDocumentHub = ({
                           </ul>
                         </div>
                       ) : null}
-
-                      {points.length > 0 ? (
-                        <ul className="submenu-point-list">
-                          {points.map((p) => (
-                            <li key={p}>{p}</li>
-                          ))}
-                        </ul>
-                      ) : null}
-
-                      <p className="submenu-info-text">{infoText}</p>
                     </div>
-                  </div>
+                  </section>
+
+                  <aside className="doc-body-panel">
+                    <div className="doc-panel-card">
+                      <h3 className="doc-panel-title">Documents</h3>
+                      <input
+                        className="doc-panel-search"
+                        type="search"
+                        value={query}
+                        placeholder="Search…"
+                        onChange={(e) => setQuery(e.target.value)}
+                        aria-label="Search documents"
+                      />
+
+                      <div className="doc-panel-list" role="list">
+                        {filtered.map((d) => {
+                          const isActive = d.key === active?.key;
+                          return (
+                            <button
+                              key={d.key}
+                              type="button"
+                              className={`doc-panel-item ${isActive ? 'active' : ''}`}
+                              onClick={() => setActiveKey(d.key)}
+                            >
+                              <span className="doc-panel-item-title">{d.label}</span>
+                              <span className="doc-panel-item-meta">{d.pdfUrl ? 'PDF' : 'Pending'}</span>
+                            </button>
+                          );
+                        })}
+                        {filtered.length === 0 ? (
+                          <div className="submenu-syllabus-empty">
+                            No documents match your search.
+                          </div>
+                        ) : null}
+                      </div>
+
+                      {active?.pdfUrl ? (
+                        <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-panel-download">
+                          Download selected PDF
+                        </a>
+                      ) : null}
+                    </div>
+
+                    <p className="submenu-info-text">{infoText}</p>
+                  </aside>
                 </div>
               </div>
             </main>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { searchableLinks } from '../data/searchIndex';
 /**
  * Navbar Component
  * Sticky navigation with responsive mobile menu
@@ -10,7 +11,11 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeSuggestion, setActiveSuggestion] = useState(-1);
   const navigate = useNavigate();
+  const searchWrapRef = useRef(null);
+  const searchInputRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
@@ -27,6 +32,28 @@ const Navbar = () => {
     mq.addEventListener('change', apply);
     return () => mq.removeEventListener('change', apply);
   }, []);
+
+  useEffect(() => {
+    if (!isSearchOpen) return;
+    const onPointerDown = (e) => {
+      const wrap = searchWrapRef.current;
+      if (!wrap) return;
+      if (!wrap.contains(e.target)) {
+        setIsSearchOpen(false);
+        setActiveSuggestion(-1);
+      }
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [isSearchOpen]);
+
+  const suggestions = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    return searchableLinks
+      .filter((item) => item.label.toLowerCase().includes(q))
+      .slice(0, 6);
+  }, [searchQuery]);
 
   const navItems = [
     {
@@ -124,7 +151,29 @@ const Navbar = () => {
     if (!q) return;
     setOpenDropdown(null);
     closeMobileMenu();
+    setIsSearchOpen(false);
+    setActiveSuggestion(-1);
     navigate(`/search?q=${encodeURIComponent(q)}`);
+  };
+
+  const openSearch = () => {
+    setIsSearchOpen(true);
+    setOpenDropdown(null);
+    requestAnimationFrame(() => {
+      searchInputRef.current?.focus();
+    });
+  };
+
+  const runSuggestion = (item) => {
+    if (!item) return;
+    setIsSearchOpen(false);
+    setActiveSuggestion(-1);
+    setSearchQuery('');
+    if (item.external) {
+      window.open(item.href, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    navigate(item.href);
   };
 
   return (
@@ -233,16 +282,20 @@ const Navbar = () => {
           </ul>
 
           <div className="nav-actions">
-            <form className="nav-search" role="search" onSubmit={submitSearch}>
-              <input
-                className="nav-search-input"
-                type="search"
-                placeholder="Search…"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                aria-label="Search site"
-              />
-              <button className="nav-search-btn" type="submit" aria-label="Search">
+            <div className={`nav-search-wrap ${isSearchOpen ? 'open' : ''}`} ref={searchWrapRef}>
+              <button
+                type="button"
+                className="nav-search-icon"
+                aria-label={isSearchOpen ? 'Close search' : 'Open search'}
+                onClick={() => {
+                  if (isSearchOpen) {
+                    setIsSearchOpen(false);
+                    setActiveSuggestion(-1);
+                  } else {
+                    openSearch();
+                  }
+                }}
+              >
                 <svg
                   width="18"
                   height="18"
@@ -267,7 +320,62 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-            </form>
+
+              <form className="nav-search-form" role="search" onSubmit={submitSearch}>
+                <input
+                  ref={searchInputRef}
+                  className="nav-search-input"
+                  type="search"
+                  placeholder="Search…"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setActiveSuggestion(-1);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                      setIsSearchOpen(false);
+                      setActiveSuggestion(-1);
+                      return;
+                    }
+                    if (e.key === 'ArrowDown') {
+                      e.preventDefault();
+                      if (suggestions.length === 0) return;
+                      setActiveSuggestion((prev) => Math.min(prev + 1, suggestions.length - 1));
+                    }
+                    if (e.key === 'ArrowUp') {
+                      e.preventDefault();
+                      if (suggestions.length === 0) return;
+                      setActiveSuggestion((prev) => Math.max(prev - 1, 0));
+                    }
+                    if (e.key === 'Enter' && activeSuggestion >= 0) {
+                      e.preventDefault();
+                      runSuggestion(suggestions[activeSuggestion]);
+                    }
+                  }}
+                  aria-label="Search site"
+                />
+              </form>
+
+              {isSearchOpen && suggestions.length > 0 ? (
+                <div className="nav-search-suggestions" role="listbox" aria-label="Search suggestions">
+                  {suggestions.map((item, idx) => (
+                    <button
+                      key={`${item.label}-${item.href}`}
+                      type="button"
+                      className={`nav-search-suggestion ${idx === activeSuggestion ? 'active' : ''}`}
+                      onMouseEnter={() => setActiveSuggestion(idx)}
+                      onClick={() => runSuggestion(item)}
+                      role="option"
+                      aria-selected={idx === activeSuggestion}
+                    >
+                      <span className="nav-search-suggestion-title">{item.label}</span>
+                      <span className="nav-search-suggestion-meta">{item.external ? 'External' : 'Page'}</span>
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </div>
             <a href="#contact" className="nav-cta" onClick={closeMobileMenu}>
               Contact
             </a>
