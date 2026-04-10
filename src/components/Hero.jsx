@@ -39,7 +39,7 @@ const Hero = () => {
               Engineering Education Built for Real-World Impact
             </h1>
             <p className="hero-subtitle">
-              Learn from faculty mentors, build in modern labs, and graduate with the confidence to lead in AI, Cyber Security, and Robotics.
+              Learn from faculty mentors, build in modern labs, and graduate with the confidence to lead in AI, Cyber Security, Robotics, Computer Science (Core), Electrical Engineering, and Electronics Engineering (VLSI Design).
             </p>
             <div className="hero-buttons">
               <Link to="https://techadmissionshry.gov.in/" className="btn btn-primary">

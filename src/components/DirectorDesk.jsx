@@ -29,8 +29,8 @@ const DirectorDesk = () => {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <p className="director-classic-signoff">
-              Prof. Anil Kumar<br />
-              Director &amp; Principal, SIET Panchkula
+               Prof. Anil Kumar<br />
+               Director - Principal, SIET Panchkula
             </p>
           </div>
         </div>

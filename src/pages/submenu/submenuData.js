@@ -46,7 +46,7 @@ export const submenuData = {
     points: [
       'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
       'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
-      'The institute offers undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'The institute offers six undergraduate programs: Computer Science and Engineering (Core), Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).',
       'With industry-oriented learning, strong facilities, and expert faculty, SIET equips students with the skills to excel in the evolving world of technology.'
     ]
   },
@@ -69,16 +69,16 @@ export const submenuData = {
   },
   'about/directors-message': {
     sectionLabel: 'ABOUT US',
-    title: "Director Principal's Desk",
+    title: "Director - Principal's Desk",
     image: directorImage,
     imageMode: 'portrait',
     body: [
-      'I take the pleasure in welcoming you to State Institute of Engineering and Technology (SIET), Panchkula an institute dedicated to the proper growth and development of each and every student for a better career prospect.',
+      'It gives me great pleasure to welcome you to the State Institute of Engineering and Technology (SIET), Panchkula, an institute dedicated to the growth and development of every student for better career prospects.',
       'The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the college.',
       'The college provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility. All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.',
       'SIET has a team of highly qualified, experienced and dedicated faculty who devote their time not only to teaching but also for the overall development of the students. Further, faculty from other renowned institutions are invited to deliver guest lectures to help augment their studies beyond syllabus.',
       'We are confident that the students passing out from this college will be technically sound, confident and have good leadership skills. I wish all the best to all the prospective students.',
-      'Prof. Anil Kumar (Director Principal)'
+      'Prof. Anil Kumar (Director - Principal)'
     ],
     points: []
   },

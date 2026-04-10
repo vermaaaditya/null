@@ -2,7 +2,7 @@ export const searchableLinks = [
   { label: 'History', href: '/about/history' },
   { label: 'About Institute', href: '/about/about-institute' },
   { label: 'Vision & Mission', href: '/about/vision-mission' },
-  { label: "Director Principal's Desk", href: '/about/directors-message' },
+  { label: "Director - Principal's Desk", href: '/about/directors-message' },
   { label: 'Academic Calendar', href: '/academics/academic-calendar' },
   { label: 'Syllabus', href: '/academics/syllabus' },
   { label: 'Admission Form', href: '/admission-form' },

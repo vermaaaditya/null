@@ -157,3 +157,27 @@ Before pushing changes:
 2. Run `npm run build`.
 3. Manually open these critical routes: `/`, `/all-notices`, `/admission-form`, `/life-at-siet`, `/events`, `/student-helpline`.
 4. Confirm at least one PDF/document link opens correctly from the notices board.
+
+## 13) Backend implementation reference
+
+Backend planning and implementation notes are documented in:
+- `BACKEND.md`
+
+Use this document when you want to migrate static frontend content to API-driven content (notices, departments, courses, events, forms).
+
+## 14) Program count consistency rule
+
+The website now presents six B.Tech programs as the canonical offering:
+1. Computer Science and Engineering (Core)
+2. Computer Science and Engineering (AI & ML)
+3. Computer Science and Engineering (Cyber Security)
+4. Robotics & Automation
+5. Electrical Engineering
+6. Electronics Engineering (VLSI Design)
+
+When updating homepage copy, chatbot answers, submenu content, or course summaries, do not publish outdated text that lists only three programs.
+
+## 15) Cleanup policy for unused files
+
+Before adding new components, verify whether an existing component is still in use.
+If a component is not imported anywhere and has no route usage, remove it to avoid stale code.

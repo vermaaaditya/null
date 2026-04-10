@@ -12,7 +12,7 @@ const suggestedQuestions = [
 
 const botReplies = {
   admission: 'Admissions are open for the 2026-27 session. You can check the notices and prospectus links in Academics.',
-  departments: 'SIET offers AIML, Computer Science, and Robotics departments with modern labs and project-based learning.',
+  departments: 'SIET offers six B.Tech programs with modern labs and project-based learning.',
   placements: 'The placement cell provides aptitude, technical, and interview preparation with recruiter engagement year-round.',
   fees: 'You can find fee and admission-related PDFs in the academics document section.',
   default: 'Thanks for your message. I can help with admissions, departments, placements, and campus facilities.'
@@ -24,7 +24,7 @@ const getReply = (message) => {
     return `${botReplies.admission} You can open the Admission Form page from the Academics menu.`;
   }
   if (value.includes('department') || value.includes('course') || value.includes('branch')) {
-    return `${botReplies.departments} Current B.Tech options include CSE (AI & ML), CSE (Cyber Security), and Robotics & Automation.`;
+    return `${botReplies.departments} Current B.Tech options include CSE (Core), CSE (AI & ML), CSE (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).`;
   }
   if (value.includes('placement') || value.includes('job') || value.includes('recruiter')) {
     return `${botReplies.placements} For T&P specific updates, use the Training & Placements link in navbar.`;

@@ -69,7 +69,7 @@ const Navbar = () => {
         { name: 'History', href: '/about/history' },
         { name: 'About Institute', href: '/about/about-institute' },
         { name: 'Vision & Mission', href: '/about/vision-mission' },
-        { name: "Director Principal's Desk", href: '/about/directors-message' },
+        { name: "Director - Principal's Desk", href: '/about/directors-message' },
         { name: 'Unnat Bharat Abhiyan', href: 'https://unnatbharatabhiyan.gov.in/', external: true }
       ]
     },
