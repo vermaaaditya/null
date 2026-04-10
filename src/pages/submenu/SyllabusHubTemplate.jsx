@@ -52,7 +52,7 @@ const SyllabusHubTemplate = ({
               <span className="crumb-current" aria-current="page">{title}</span>
             </nav>
 
-            <div className="submenu-hero-grid">
+            <div className="submenu-hero-grid doc-reader-hero">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
@@ -65,26 +65,43 @@ const SyllabusHubTemplate = ({
                 </div>
               </div>
 
-              <div className="submenu-hero-visual">
-                <div className="submenu-pdf-wrap">
-                  {active?.pdfUrl ? (
-                    <>
-                      <iframe
-                        title={`${title} PDF preview`}
-                        src={active.pdfUrl}
-                        className="submenu-pdf-viewer"
-                        loading="lazy"
-                      />
-                      <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Open Syllabus PDF in new tab
-                      </a>
-                    </>
-                  ) : (
-                    <div className="submenu-pdf-empty">
-                      Select a course to download the PDF.
-                    </div>
-                  )}
-                </div>
+              <div className="doc-hero-select-bar">
+                <label className="doc-hero-label" htmlFor="syllabus-select">
+                  Program
+                </label>
+                <select
+                  id="syllabus-select"
+                  className="doc-hero-dropdown"
+                  value={active?.key || ''}
+                  onChange={(e) => setActiveKey(e.target.value)}
+                  aria-label="Select syllabus program"
+                >
+                  {normalizedCourses.map((c) => (
+                    <option key={c.key} value={c.key}>
+                      {c.label}
+                    </option>
+                  ))}
+                </select>
+                {active?.pdfUrl ? (
+                  <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-hero-download-btn">
+                    Open PDF in new tab
+                  </a>
+                ) : null}
+              </div>
+
+              <div className="doc-hero-reader submenu-pdf-wrap">
+                {active?.pdfUrl ? (
+                  <iframe
+                    title={`${title} PDF preview`}
+                    src={active.pdfUrl}
+                    className="submenu-pdf-viewer reader-full"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="submenu-pdf-empty">
+                    Select a course to download the PDF.
+                  </div>
+                )}
               </div>
             </div>
           </div>
