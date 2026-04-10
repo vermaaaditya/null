@@ -1743,6 +1743,21 @@ img {
   color: #ffffff;
 }
 
+.footer-map-wrap {
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 16px rgba(10, 25, 47, 0.28);
+}
+
+.footer-map {
+  width: 100%;
+  height: 170px;
+  border: 0;
+  display: block;
+}
+
 .footer-bottom {
   position: relative;
   z-index: 1;
