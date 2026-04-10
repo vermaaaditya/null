@@ -17,6 +17,14 @@ import Staff from './pages/Staff';
 import Search from './pages/Search';
 import ScheduledPopup from './components/ScheduledPopup';
 
+const ExternalPlacementRedirect = () => {
+  React.useEffect(() => {
+    window.location.replace('https://siettpo.vercel.app/');
+  }, []);
+
+  return null;
+};
+
 /**
  * Main App Component
  * Combines all sections to create the complete college website with routing
@@ -39,8 +47,8 @@ function App() {
         <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/facilities/:subSection" element={<SubmenuRouteHandler />} />
-        <Route path="/placements" element={<Navigate to="/placements/placement-brochure" replace />} />
-        <Route path="/placements/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/placements" element={<ExternalPlacementRedirect />} />
+        <Route path="/placements/:subSection" element={<ExternalPlacementRedirect />} />
         <Route path="/alumni/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />

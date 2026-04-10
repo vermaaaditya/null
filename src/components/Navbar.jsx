@@ -115,16 +115,9 @@ const Navbar = () => {
     },
     {
       name: 'Training & Placements',
-      href: '/placements',
-      submenu: [
-        { name: 'Placement Brochure', href: '/placements/placement-brochure' },
-        { name: 'Campus Training', href: '/placements/campus-training' },
-        { name: 'Placement Records', href: '/placements/placement-records' },
-        { name: 'Placement Process', href: '/placements/placement-process' },
-        { name: 'Major Recruiters', href: '/placements/major-recruiters' },
-        { name: 'Student Testimonials', href: '/placements/student-testimonials' },
-        { name: 'TPO Portal', href: 'https://siettpo.vercel.app/', external: true }
-      ]
+      href: 'https://siettpo.vercel.app/',
+      external: true,
+      submenu: null
     },
     {
       name: 'Alumni',

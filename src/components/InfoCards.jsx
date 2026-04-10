@@ -93,12 +93,7 @@ const InfoCards = () => {
   const notifications = notificationsListData;
   const notices = noticesListData;
 
-  const placements = [
-    { title: '150 Students Placed in Top Companies', date: 'Feb 05', isNew: true },
-    { title: 'Microsoft Campus Drive', date: 'Feb 03', isNew: true },
-    { title: 'Amazon Pre-Placement Talk', date: 'Jan 28', isNew: false },
-    { title: 'Google Recruitment Process', date: 'Jan 25', isNew: false }
-  ];
+  const placements = [];
 
   const newsScrollRef = useRef(null);
   const newsContentRef = useRef(null);
@@ -196,9 +191,9 @@ const InfoCards = () => {
               pauseRef={placPauseRef}
             />
             <div className="card-footer">
-              <Link to="/placements" className="card-link">
+              <a href="https://siettpo.vercel.app/" target="_blank" rel="noopener noreferrer" className="card-link">
                 View all placements {'->'}
-              </Link>
+              </a>
             </div>
           </div>
         </div>
