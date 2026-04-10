@@ -21,6 +21,8 @@ import TeachingLearning from './TeachingLearning';
 import Curriculum from './Curriculum';
 import ExamSchedule from './ExamSchedule';
 import AcademicStudentTestimonials from './AcademicStudentTestimonials';
+import Syllabus from './Syllabus';
+import CodeOfConduct from './CodeOfConduct';
 import Infrastructure from './Infrastructure';
 import Library from './Library';
 import Hostels from './Hostels';
@@ -61,10 +63,12 @@ const submenuComponents = {
   'departments/electronics-vlsi': DepartmentElectronicsVlsi,
   'academics/courses-offered': CoursesOffered,
   'academics/academic-calendar': AcademicCalendar,
+  'academics/syllabus': Syllabus,
   'academics/teaching-learning': TeachingLearning,
   'academics/curriculum': Curriculum,
   'academics/exam-schedule': ExamSchedule,
   'academics/student-testimonials': AcademicStudentTestimonials,
+  'academics/code-of-conduct': CodeOfConduct,
   'facilities/infrastructure': Infrastructure,
   'facilities/library': Library,
   'facilities/hostels': Hostels,
