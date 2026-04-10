@@ -99,6 +99,13 @@ CSS organization:
 - `src/css/forms.css`: form styles.
 - `src/css/responsive.css`: media queries.
 
+Why there appears to be repeated CSS:
+- `src/styles.css` is the older monolithic stylesheet that still holds many base selectors.
+- `src/css/base.css` imports that file first, then the newer modular CSS files override or extend it.
+- This means some selectors appear to be written twice on purpose: the later modular file wins when the same selector is repeated.
+- If you change a layout rule and it does not apply, check import order first. A later file such as `navbar.css`, `submenu.css`, or `responsive.css` may be overriding it.
+- `src/css/responsive.css` is intentionally used for shared media queries, while component-specific responsive fixes can live beside the component stylesheet when needed.
+
 Compatibility file:
 - `src/css/index.css` forwards to `base.css` and can be treated as legacy.
 
@@ -110,6 +117,7 @@ Compatibility file:
 - `src/data/`: content/data lists (notices, updates).
 - `src/assets/new-assets/`: static media and downloadable docs.
 - `src/css/`: centralized stylesheet modules.
+- `src/styles.css`: legacy base stylesheet imported by `src/css/base.css`.
 
 ## 8) Validation checklist after content edits
 

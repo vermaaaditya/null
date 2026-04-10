@@ -789,6 +789,104 @@
   box-shadow: var(--shadow-soft);
 }
 
+.submenu-nested-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.submenu-nested-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.submenu-nested-card {
+  scroll-margin-top: 6.5rem;
+}
+
+.submenu-nested-card-head {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.submenu-nested-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  color: var(--brand-coral);
+}
+
+.submenu-nested-card h3 {
+  margin: 0;
+  color: var(--ink-900);
+}
+
+.submenu-demo-table {
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+}
+
+.submenu-demo-table-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.submenu-demo-table-head {
+  background: rgba(10, 25, 47, 0.95);
+  color: #fff;
+}
+
+.submenu-demo-table-cell {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid rgba(16, 35, 63, 0.12);
+  border-bottom: 1px solid rgba(16, 35, 63, 0.12);
+  font-size: 0.92rem;
+}
+
+.submenu-demo-table-head .submenu-demo-table-cell {
+  border-color: rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+}
+
+.submenu-schedule-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.submenu-schedule-card {
+  border-radius: 12px;
+  padding: 0.8rem;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: rgba(10, 25, 47, 0.04);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.submenu-schedule-card strong {
+  color: var(--ink-900);
+}
+
+.submenu-schedule-card span {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-coral);
+  font-weight: 900;
+}
+
+.submenu-schedule-card p {
+  color: var(--ink-700);
+  line-height: 1.5;
+}
+
 @media (max-width: 920px) {
   .submenu-hero-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -814,6 +912,11 @@
   .doc-panel-item {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .submenu-demo-table-row,
+  .submenu-schedule-grid {
+    grid-template-columns: 1fr;
   }
 }
 

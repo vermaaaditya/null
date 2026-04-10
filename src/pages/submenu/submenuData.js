@@ -24,6 +24,75 @@ import leetSyllabusDoc from '../../assets/new-assets/notifications/B.Tech-LEET-S
 import beBtechBarchProspectusDoc from '../../assets/new-assets/prospectus/BE-BTech-BArch-Prospectus-2025.pdf';
 import btechLeetProspectusDoc from '../../assets/new-assets/prospectus/BTechLE-Prospectus-2025.pdf';
 
+const createDepartmentNestedSections = (departmentName, focusAreas) => [
+  {
+    id: 'about-department',
+    title: 'About Department',
+    body: [
+      `${departmentName} is shown here with demo content so the submenu layout can be tested before the official data is added.`,
+      'Replace this block with the real department introduction, intake details, and departmental vision when ready.'
+    ],
+    points: [
+      `Demo focus area 1: ${focusAreas[0]}`,
+      `Demo focus area 2: ${focusAreas[1]}`,
+      'Demo note: this section is reusable for every department page.'
+    ]
+  },
+  {
+    id: 'vision-mission',
+    title: 'Vision & Mission',
+    body: [
+      'Vision',
+      `To develop ${departmentName} graduates who can solve real problems with confidence, ethics, and practical skill.`,
+      'Mission'
+    ],
+    points: [
+      `Build strong fundamentals in ${focusAreas[0].toLowerCase()}.`,
+      `Encourage project work and lab practice in ${focusAreas[1].toLowerCase()}.`,
+      'Support internships, certifications, and outcome-based learning.'
+    ]
+  },
+  {
+    id: 'faculty',
+    title: 'Faculty',
+    body: [
+      'Demo faculty data is shown below. Use this layout to plug in the official department staff list later.'
+    ],
+    table: [
+      ['Name', 'Designation', 'Specialization'],
+      ['Dr. Demo Faculty', 'Head of Department', focusAreas[0]],
+      ['Prof. Demo Faculty', 'Assistant Professor', focusAreas[1]],
+      ['Ms. Demo Faculty', 'Assistant Professor', 'Lab Coordination']
+    ]
+  },
+  {
+    id: 'lesson-plans',
+    title: 'Lesson Plans',
+    body: [
+      'Demo lesson-plan cards are shown here as placeholders for the official weekly plan.',
+      'Each card can later be replaced with unit-wise teaching notes, assignments, and lab schedule updates.'
+    ],
+    points: [
+      'Week 1: foundation lectures and orientation.',
+      'Week 2: lab exercise and tutorial session.',
+      'Week 3: internal assessment and project discussion.'
+    ]
+  },
+  {
+    id: 'time-table',
+    title: 'Time Table',
+    body: [
+      'This demo timetable shows the expected layout for the final department schedule.',
+      'Replace it with the official timetable when the department confirms semester-wise slots.'
+    ],
+    schedule: [
+      { day: 'Monday', slot: '09:30 AM - 10:30 AM', subject: `${departmentName} Theory Demo` },
+      { day: 'Wednesday', slot: '11:00 AM - 12:00 PM', subject: 'Tutorial / Mentoring Demo' },
+      { day: 'Friday', slot: '02:00 PM - 04:00 PM', subject: 'Lab / Practical Demo' }
+    ]
+  }
+];
+
 export const submenuData = {
   'about/history': {
     sectionLabel: 'ABOUT US',
@@ -143,6 +212,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'AI & Machine Learning',
     image: aiMlImage,
+    nestedSections: createDepartmentNestedSections('AI & Machine Learning', ['machine learning', 'data science']),
     points: [
       'Machine learning fundamentals and applications.',
       'Model development and evaluation workflows.',
@@ -153,6 +223,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Cyber Security',
     image: cyberImage,
+    nestedSections: createDepartmentNestedSections('Cyber Security', ['network security', 'digital forensics']),
     points: [
       'Network and application security practices.',
       'Ethical hacking and digital forensics basics.',
@@ -163,6 +234,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Robotics & Automation',
     image: roboticsImage,
+    nestedSections: createDepartmentNestedSections('Robotics & Automation', ['control systems', 'automation']),
     points: [
       'Control systems and embedded foundations.',
       'Sensor integration and automation workflows.',
@@ -173,6 +245,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Computer Science',
     image: cseDeptImage,
+    nestedSections: createDepartmentNestedSections('Computer Science', ['programming', 'software engineering']),
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',
@@ -183,6 +256,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electrical Engineering',
     image: electricalDeptImage,
+    nestedSections: createDepartmentNestedSections('Electrical Engineering', ['power systems', 'control engineering']),
     body: [
       'The Department of Electrical Engineering at SIET prepares students for careers in power, automation, and control systems through a practical and industry-aligned curriculum.'
     ],
@@ -196,6 +270,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electronics Engineering (VLSI Design)',
     image: electronicsDeptImage,
+    nestedSections: createDepartmentNestedSections('Electronics Engineering (VLSI Design)', ['VLSI design', 'embedded systems']),
     body: [
       'The Electronics Engineering (VLSI Design) program equips students with strong analog-digital electronics foundations and advanced chip design skills for modern semiconductor industries.'
     ],
