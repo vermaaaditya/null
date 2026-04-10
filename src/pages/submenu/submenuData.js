@@ -4,6 +4,8 @@ import directorImage from '../../assets/new-assets/principal-photo/prienciple.jp
 import aiMlImage from '../../assets/new-assets/departments/AI-ML.jpg';
 import cyberImage from '../../assets/new-assets/departments/Cyber-Security.jpg';
 import roboticsImage from '../../assets/new-assets/departments/Robotics-Automation.jpg';
+import electricalDeptImage from '../../assets/new-assets/courses/electrical.jpeg';
+import electronicsDeptImage from '../../assets/new-assets/courses/electronics.jpeg';
 import academicCalendarImage from '../../assets/new-assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
 import facilitiesImage from '../../assets/new-assets/campus/siet-panchkula-building.jpg';
 import competitionImage from '../../assets/new-assets/events/Web-Development-Competition.jpg';
@@ -179,16 +181,28 @@ export const submenuData = {
   'departments/electrical-engineering': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electrical Engineering',
-    // no dedicated asset yet, so omit hero image
-    showHeroImage: false,
-    points: []
+    image: electricalDeptImage,
+    body: [
+      'The Department of Electrical Engineering at SIET prepares students for careers in power, automation, and control systems through a practical and industry-aligned curriculum.'
+    ],
+    points: [
+      'Core focus on power systems, electrical machines, and network analysis.',
+      'Hands-on lab training in circuits, measurements, and control engineering.',
+      'Exposure to renewable energy systems, industrial automation, and smart grid concepts.'
+    ]
   },
   'departments/electronics-vlsi': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electronics Engineering (VLSI Design)',
-    // no dedicated asset yet, so omit hero image
-    showHeroImage: false,
-    points: []
+    image: electronicsDeptImage,
+    body: [
+      'The Electronics Engineering (VLSI Design) program equips students with strong analog-digital electronics foundations and advanced chip design skills for modern semiconductor industries.'
+    ],
+    points: [
+      'Strong fundamentals in electronic devices, digital systems, and signal processing.',
+      'VLSI design flow exposure including HDL-based design, simulation, and verification.',
+      'Practice-oriented learning in embedded systems, PCB-level understanding, and hardware prototyping.'
+    ]
   },
   'academics/courses-offered': {
     sectionLabel: 'ACADEMICS',
@@ -198,9 +212,12 @@ export const submenuData = {
       'SIET Panchkula offers B.Tech programs designed around industry-relevant learning and career readiness.'
     ],
     points: [
+      'Computer Science and Engineering (Core) (Intake: 60) — Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
       'Computer Science and Engineering (AI & ML) (Intake: 60) — Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
       'Computer Science and Engineering (Cyber Security) (Intake: 60) — Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
-      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.'
+      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.',
+      'Electrical Engineering (Intake: 60) — Builds strong foundations in electrical machines, power systems, circuit analysis, and control engineering for modern energy and industrial applications.',
+      'Electronics Engineering (VLSI Design) (Intake: 60) — Focuses on semiconductor devices, VLSI circuit design, embedded systems, and electronics product development for next-generation hardware innovation.'
     ]
   },
   'academics/academic-calendar': {

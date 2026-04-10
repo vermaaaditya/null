@@ -57,6 +57,7 @@ const submenuComponents = {
   'about/anti-ragging': AntiRagging,
   'academics/anti-ragging': AcademicAntiRagging,
   'departments/engineering': DepartmentEngineering,
+  'departments/cse': DepartmentComputerScience,
   'departments/ai-ml': DepartmentAiMl,
   'departments/cyber-security': DepartmentCyberSecurity,
   'departments/robotics': DepartmentRobotics,

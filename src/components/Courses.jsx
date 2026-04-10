@@ -70,10 +70,11 @@ const Courses = () => {
       shortCode: 'EE',
       learnMoreHref: '/departments/electrical-engineering',
       image: electricalImg,
-      description: '',
-      duration: '',
+      description:
+        'Builds strong foundations in electrical machines, power systems, circuit analysis, and control engineering for modern energy and industrial applications.',
+      duration: '4 Years',
       status: 'ongoing',
-      seats: null
+      seats: 60
     },
     {
       id: 6,
@@ -81,10 +82,11 @@ const Courses = () => {
       shortCode: 'ECE (VLSI)',
       learnMoreHref: '/departments/electronics-vlsi',
       image: electronicsImg,
-      description: '',
-      duration: '',
+      description:
+        'Focuses on semiconductor devices, VLSI circuit design, embedded systems, and electronics product development for next-generation hardware innovation.',
+      duration: '4 Years',
       status: 'ongoing',
-      seats: null
+      seats: 60
     }
   ];
 
