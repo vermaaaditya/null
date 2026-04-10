@@ -6,6 +6,8 @@ import DirectorsMessage from './DirectorsMessage';
 import QualityPolicy from './QualityPolicy';
 import Affiliations from './Affiliations';
 import AntiRagging from './AntiRagging';
+import AcademicAntiRagging from './AcademicAntiRagging';
+import History from './History';
 import DepartmentEngineering from './DepartmentEngineering';
 import DepartmentAiMl from './DepartmentAiMl';
 import DepartmentCyberSecurity from './DepartmentCyberSecurity';
@@ -42,12 +44,14 @@ import VideoGallery from './VideoGallery';
 import EventsActivities from './EventsActivities';
 
 const submenuComponents = {
+  'about/history': History,
   'about/about-institute': AboutInstitute,
   'about/vision-mission': VisionMission,
   'about/directors-message': DirectorsMessage,
   'about/quality-policy': QualityPolicy,
   'about/affiliations': Affiliations,
   'about/anti-ragging': AntiRagging,
+  'academics/anti-ragging': AcademicAntiRagging,
   'departments/engineering': DepartmentEngineering,
   'departments/ai-ml': DepartmentAiMl,
   'departments/cyber-security': DepartmentCyberSecurity,

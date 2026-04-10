@@ -36,12 +36,11 @@ const Navbar = () => {
       name: 'About Us',
       href: '/about',
       submenu: [
+        { name: 'History', href: '/about/history' },
         { name: 'About Institute', href: '/about/about-institute' },
         { name: 'Vision & Mission', href: '/about/vision-mission' },
-        { name: 'Director\'s Message', href: '/about/directors-message' },
-        { name: 'Quality Policy', href: '/about/quality-policy' },
-        { name: 'Affiliations', href: '/about/affiliations' },
-        { name: 'Anti-Ragging', href: '/about/anti-ragging' }
+        { name: "Director Principal's Desk", href: '/about/directors-message' },
+        { name: 'Unnat Bharat Abhiyan', href: 'https://unnatbharatabhiyan.gov.in/', external: true }
       ]
     },
     {
@@ -66,7 +65,8 @@ const Navbar = () => {
         { name: 'Teaching & Learning', href: '/academics/teaching-learning' },
         { name: 'Curriculum', href: '/academics/curriculum' },
         { name: 'Exam Schedule', href: '/academics/exam-schedule' },
-        { name: 'Student Testimonials', href: '/academics/student-testimonials' }
+        { name: 'Student Testimonials', href: '/academics/student-testimonials' },
+        { name: 'Anti-Ragging', href: '/academics/anti-ragging' }
       ]
     },
     {
