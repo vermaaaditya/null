@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -36,6 +36,8 @@ function App() {
         <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/facilities/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/placements" element={<Navigate to="/placements/placement-brochure" replace />} />
+        <Route path="/placements/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/alumni/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />

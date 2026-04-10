@@ -47,7 +47,7 @@ export const quickLinks = {
     { label: 'Home', to: '/' }
   ],
   'TRAINING & PLACEMENTS': [
-    { label: 'Placements Home', to: '/placements' },
+    { label: 'Placements Home', to: '/placements/placement-brochure' },
     { label: 'All Notices', to: '/all-notices' }
   ],
   ALUMNI: [
@@ -71,7 +71,7 @@ export const getSectionHome = (sectionLabel) => {
     case 'FACILITIES':
       return { label: 'Facilities', to: '/facilities' };
     case 'TRAINING & PLACEMENTS':
-      return { label: 'Placements', to: '/placements' };
+      return { label: 'Placements', to: '/placements/placement-brochure' };
     case 'ALUMNI':
       return { label: 'Alumni', to: '/alumni' };
     case 'LIFE @ SIET':

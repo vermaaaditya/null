@@ -408,6 +408,24 @@ export const submenuData = {
       'Mock tests and mentoring sessions.'
     ]
   },
+  'placements/placement-brochure': {
+    sectionLabel: 'TRAINING & PLACEMENTS',
+    title: 'Placement Brochure 2026-27',
+    subtitle: 'Bridging the gap between academic excellence and industrial innovation.',
+    pdfUrl: 'https://siettpo.vercel.app/brochure.pdf',
+    body: [
+      'Explore our comprehensive guide to campus recruitment, featuring batch demographics, department highlights, and the technological landscape of our institute.',
+      'Use the embedded preview to view the brochure directly on this page, or download the PDF for offline access.'
+    ],
+    points: [
+      'Department-wise student intake and profile snapshot.',
+      'Placement cell process and recruiter engagement workflow.',
+      'Training ecosystem and student industry-readiness initiatives.'
+    ],
+    resources: [
+      { label: 'Open Placement Portal', href: 'https://siettpo.vercel.app/' }
+    ]
+  },
   'placements/placement-records': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Placement Records',

@@ -438,6 +438,24 @@
   box-shadow: var(--shadow-soft);
 }
 
+.submenu-doc-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.95rem;
+}
+
+.submenu-doc-actions .submenu-action-btn.secondary {
+  background: rgba(10, 25, 47, 0.08);
+  color: #0a192f;
+  border-color: rgba(10, 25, 47, 0.18);
+}
+
+.submenu-doc-actions .submenu-action-btn.secondary:hover {
+  background: rgba(10, 25, 47, 0.14);
+}
+
 .submenu-section-title {
   font-size: 1.25rem;
   margin-bottom: 0.65rem;

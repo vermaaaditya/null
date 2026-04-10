@@ -35,22 +35,17 @@ const SubmenuWithPDF = ({
                 <p className="submenu-subtitle">
                   {subtitle || 'Focused information and highlights for this submenu section.'}
                 </p>
-                <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
-                </div>
               </div>
 
               <div className="submenu-hero-visual">
                 <div className="submenu-pdf-wrap">
                   {pdfUrl ? (
                     <>
-                      <div className="submenu-pdf-empty">
-                        PDF preview is disabled. Use the button below to download.
-                      </div>
-                      <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Download PDF
-                      </a>
+                      <iframe
+                        title={`${title} PDF preview`}
+                        src={pdfUrl}
+                        className="submenu-pdf-viewer"
+                      />
                     </>
                   ) : (
                     <div className="submenu-pdf-empty">
@@ -69,6 +64,15 @@ const SubmenuWithPDF = ({
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
+                <div className="submenu-doc-actions">
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                  {pdfUrl ? (
+                    <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-action-btn primary">
+                      Download
+                    </a>
+                  ) : null}
+                </div>
+
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
                   {body.length > 0 ? (

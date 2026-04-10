@@ -34,6 +34,7 @@ import Cafeteria from './Cafeteria';
 import Healthcare from './Healthcare';
 import Security from './Security';
 import CampusTraining from './CampusTraining';
+import PlacementBrochure from './PlacementBrochure';
 import PlacementRecords from './PlacementRecords';
 import MajorRecruiters from './MajorRecruiters';
 import PlacementProcess from './PlacementProcess';
@@ -81,6 +82,7 @@ const submenuComponents = {
   'facilities/healthcare': Healthcare,
   'facilities/security': Security,
   'placements/campus-training': CampusTraining,
+  'placements/placement-brochure': PlacementBrochure,
   'placements/placement-records': PlacementRecords,
   'placements/major-recruiters': MajorRecruiters,
   'placements/placement-process': PlacementProcess,
