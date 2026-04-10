@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [openNestedDropdown, setOpenNestedDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -76,12 +77,72 @@ const Navbar = () => {
       name: 'Departments',
       href: '/departments',
       submenu: [
-        { name: 'Computer Science & Engineering (core)', href: '/departments/cse' },
-        { name: 'Computer Science & Engineering(AI & Machine Learning)', href: '/departments/ai-ml' },
-        { name: 'Computer Science & Engineering(Cyber Security)', href: '/departments/cyber-security' },
-        { name: 'Robotics & Automation', href: '/departments/robotics' },
-        { name: 'Electrical Engineering', href: '/departments/electrical-engineering' },
-        { name: 'Electronics Engineering (VLSI Design)', href: '/departments/electronics-vlsi' }
+        {
+          name: 'Computer Science & Engineering (core)',
+          href: '/departments/cse',
+          submenu: [
+            { name: 'About Department', href: '/departments/cse' },
+            { name: 'Vision & Mission', href: '/departments/cse#vision-mission' },
+            { name: 'Faculty', href: '/departments/cse#faculty' },
+            { name: 'Lesson Plans', href: '/departments/cse#lesson-plans' },
+            { name: 'Time Table', href: '/departments/cse#time-table' }
+          ]
+        },
+        {
+          name: 'Computer Science & Engineering(AI & Machine Learning)',
+          href: '/departments/ai-ml',
+          submenu: [
+            { name: 'About Department', href: '/departments/ai-ml' },
+            { name: 'Vision & Mission', href: '/departments/ai-ml#vision-mission' },
+            { name: 'Faculty', href: '/departments/ai-ml#faculty' },
+            { name: 'Lesson Plans', href: '/departments/ai-ml#lesson-plans' },
+            { name: 'Time Table', href: '/departments/ai-ml#time-table' }
+          ]
+        },
+        {
+          name: 'Computer Science & Engineering(Cyber Security)',
+          href: '/departments/cyber-security',
+          submenu: [
+            { name: 'About Department', href: '/departments/cyber-security' },
+            { name: 'Vision & Mission', href: '/departments/cyber-security#vision-mission' },
+            { name: 'Faculty', href: '/departments/cyber-security#faculty' },
+            { name: 'Lesson Plans', href: '/departments/cyber-security#lesson-plans' },
+            { name: 'Time Table', href: '/departments/cyber-security#time-table' }
+          ]
+        },
+        {
+          name: 'Robotics & Automation',
+          href: '/departments/robotics',
+          submenu: [
+            { name: 'About Department', href: '/departments/robotics' },
+            { name: 'Vision & Mission', href: '/departments/robotics#vision-mission' },
+            { name: 'Faculty', href: '/departments/robotics#faculty' },
+            { name: 'Lesson Plans', href: '/departments/robotics#lesson-plans' },
+            { name: 'Time Table', href: '/departments/robotics#time-table' }
+          ]
+        },
+        {
+          name: 'Electrical Engineering',
+          href: '/departments/electrical-engineering',
+          submenu: [
+            { name: 'About Department', href: '/departments/electrical-engineering' },
+            { name: 'Vision & Mission', href: '/departments/electrical-engineering#vision-mission' },
+            { name: 'Faculty', href: '/departments/electrical-engineering#faculty' },
+            { name: 'Lesson Plans', href: '/departments/electrical-engineering#lesson-plans' },
+            { name: 'Time Table', href: '/departments/electrical-engineering#time-table' }
+          ]
+        },
+        {
+          name: 'Electronics Engineering (VLSI Design)',
+          href: '/departments/electronics-vlsi',
+          submenu: [
+            { name: 'About Department', href: '/departments/electronics-vlsi' },
+            { name: 'Vision & Mission', href: '/departments/electronics-vlsi#vision-mission' },
+            { name: 'Faculty', href: '/departments/electronics-vlsi#faculty' },
+            { name: 'Lesson Plans', href: '/departments/electronics-vlsi#lesson-plans' },
+            { name: 'Time Table', href: '/departments/electronics-vlsi#time-table' }
+          ]
+        }
       ]
     },
     {
@@ -143,8 +204,12 @@ const Navbar = () => {
   ];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setOpenNestedDropdown(null);
+  };
   const toggleDropdown = (index) => setOpenDropdown((prev) => (prev === index ? null : index));
+  const toggleNestedDropdown = (key) => setOpenNestedDropdown((prev) => (prev === key ? null : key));
   const submitSearch = (e) => {
     e.preventDefault();
     const q = searchQuery.trim();
@@ -197,6 +262,23 @@ const Navbar = () => {
           </button>
 
           <ul className={`navbar-quick-links ${isMobileMenuOpen ? 'active' : ''}`}>
+            <li className="mobile-search-item">
+              <form className="mobile-nav-search-form" role="search" onSubmit={submitSearch}>
+                <input
+                  className="mobile-nav-search-input"
+                  type="search"
+                  placeholder="Search pages..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setActiveSuggestion(-1);
+                  }}
+                  aria-label="Search site"
+                />
+                <button type="submit" className="mobile-nav-search-btn">Go</button>
+              </form>
+            </li>
+
             {navItems.map((item, index) => (
               <li
                 key={index}
@@ -247,8 +329,50 @@ const Navbar = () => {
                 {item.submenu && (
                   <ul className={`dropdown-menu ${openDropdown === index ? 'active' : ''}`}>
                     {item.submenu.map((subitem, subindex) => (
-                      <li key={subindex} className="dropdown-item">
-                        {subitem.external ? (
+                      <li
+                        key={subindex}
+                        className={`dropdown-item ${subitem.submenu ? 'has-submenu' : ''}`}
+                        onMouseEnter={() => {
+                          if (!isMobile && subitem.submenu) {
+                            setOpenNestedDropdown(`${index}-${subindex}`);
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          if (!isMobile && subitem.submenu) {
+                            setOpenNestedDropdown(null);
+                          }
+                        }}
+                      >
+                        {subitem.submenu ? (
+                          <>
+                            <button
+                              type="button"
+                              className="dropdown-link nested-parent-link"
+                              onClick={() => toggleNestedDropdown(`${index}-${subindex}`)}
+                            >
+                              {subitem.name}
+                              <span className={`dropdown-arrow ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}>▶</span>
+                            </button>
+
+                            <ul className={`nested-dropdown-menu ${openNestedDropdown === `${index}-${subindex}` ? 'active' : ''}`}>
+                              {subitem.submenu.map((nestedItem, nestedIndex) => (
+                                <li key={nestedIndex} className="nested-dropdown-item">
+                                  <Link
+                                    to={nestedItem.href}
+                                    className="dropdown-link nested-dropdown-link"
+                                    onClick={() => {
+                                      closeMobileMenu();
+                                      setOpenDropdown(null);
+                                      setOpenNestedDropdown(null);
+                                    }}
+                                  >
+                                    {nestedItem.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : subitem.external ? (
                           <a
                             href={subitem.href}
                             className="dropdown-link"

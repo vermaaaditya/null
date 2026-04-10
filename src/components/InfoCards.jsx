@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { notificationsListData, noticesListData } from '../data/noticesData';
 
+const LOOP_DUPLICATE_COUNT = 3;
+
 const useAutoScroll = (scrollRef, contentRef, pauseRef) => {
   useEffect(() => {
     const container = scrollRef.current;
@@ -18,7 +20,7 @@ const useAutoScroll = (scrollRef, contentRef, pauseRef) => {
       if (!pauseRef.current) {
         container.scrollTop += speed;
 
-        if (container.scrollTop >= content.scrollHeight / 2) {
+        if (container.scrollTop >= content.scrollHeight / LOOP_DUPLICATE_COUNT) {
           container.scrollTop = 0;
         }
       }
@@ -51,7 +53,7 @@ const ScrollableCardBody = ({ items, scrollRef, contentRef, pauseRef }) => (
       </div>
     ) : (
     <ul className="card-list scroll-list" ref={contentRef}>
-      {[...items, ...items].map((item, index) => (
+      {Array.from({ length: LOOP_DUPLICATE_COUNT }, () => items).flat().map((item, index) => (
         <li key={`${item.id || item.title}-${index}`} className="card-list-item">
           {item.href ? (
             <a
