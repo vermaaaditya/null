@@ -1,7 +1,7 @@
 export const departmentSectionCatalog = {
   cse: {
     dataKey: 'departments/computer-science',
-    title: 'Computer Science',
+    title: 'Computer Science & Engineering',
     focusAreas: ['programming', 'software engineering']
   },
   'ai-ml': {

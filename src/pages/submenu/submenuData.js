@@ -175,9 +175,9 @@ export const submenuData = {
   },
   'departments/computer-science': {
     sectionLabel: 'DEPARTMENTS',
-    title: 'Computer Science',
+    title: 'Computer Science & Engineering',
     image: cseDeptImage,
-    nestedSections: createDepartmentDemoSections('Computer Science', ['programming', 'software engineering'], 'cse'),
+    nestedSections: createDepartmentDemoSections('Computer Science & Engineering', ['programming', 'software engineering'], 'cse'),
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',

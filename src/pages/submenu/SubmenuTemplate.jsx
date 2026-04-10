@@ -315,7 +315,7 @@ const SubmenuTemplate = ({
                   Check the latest notifications and downloadable notices.
                 </p>
                 <Link to="/all-notices" className="submenu-aside-cta">
-                  Open Notices Board ?
+                  Open Notices Board?
                 </Link>
               </div>
               </aside>
