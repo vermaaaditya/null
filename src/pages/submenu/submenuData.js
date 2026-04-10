@@ -16,6 +16,8 @@ import galleryAltImage from '../../assets/new-assets/gallery/IMG_1927-1024x768.j
 import libraryImage from '../../assets/new-assets/gallery/IMG_1922-1024x768.jpg';
 import inspectionImage from '../../assets/new-assets/gallery/Inspection-Pic-1024x768.jpg';
 import teacherImage from '../../assets/new-assets/teachers/anil-kumar.jpg';
+import academicCalendarDoc from '../../assets/new-assets/notifications/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
+import leetSyllabusDoc from '../../assets/new-assets/notifications/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
 
 export const submenuData = {
   'about/history': {
@@ -203,11 +205,34 @@ export const submenuData = {
     sectionLabel: 'ACADEMICS',
     title: 'Academic Calendar',
     image: academicCalendarImage,
+    showHeroImage: false,
+    body: [
+      'Academic calendar notices and downloadable documents are shared through official updates.',
+      'Use the link below to view or download the latest academic calendar document.'
+    ],
+    resources: [
+      { label: 'Open Academic Calendar (PDF)', href: academicCalendarDoc }
+    ],
     points: [
       'Even semester academic calendar notices are published under Updates.',
       'Class commencement and semester session notices are posted regularly.',
       'Students should track updates for latest term dates and institute announcements.'
     ]
+  },
+  'academics/syllabus': {
+    sectionLabel: 'ACADEMICS',
+    title: 'Syllabus',
+    subtitle: 'Select a program to preview the syllabus PDF.',
+    pdfOptions: [
+      { label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
+      { label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
+      { label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
+    ],
+    body: [
+      'Choose your program from the dropdown to view the syllabus in the built-in PDF viewer.',
+      'If your program syllabus is updated later, the document link here can be replaced with the latest file.'
+    ],
+    points: []
   },
   'academics/teaching-learning': {
     sectionLabel: 'ACADEMICS',
@@ -233,11 +258,26 @@ export const submenuData = {
     sectionLabel: 'ACADEMICS',
     title: 'Exam Schedule',
     image: academicCalendarImage,
+    resources: [
+      { label: 'Student Grievance Portal', href: 'https://grievance.sietpanchkula.ac.in/' }
+    ],
     points: [
       'External practical datesheets are announced through official updates.',
       'Students are instructed to follow notified timings and dress code.',
       'Exam-related notices are posted with date-wise update entries.'
     ]
+  },
+  'academics/code-of-conduct': {
+    sectionLabel: 'ACADEMICS',
+    title: 'Code of Conduct',
+    subtitle: 'Official student code of conduct document (PDF).',
+    pdfUrl: null,
+    body: [
+      'This section is reserved for the institute Code of Conduct document.',
+      'Once the PDF is provided, it will be embedded here for reading and download.'
+    ],
+    points: [],
+    resources: []
   },
   'academics/student-testimonials': {
     sectionLabel: 'ACADEMICS',

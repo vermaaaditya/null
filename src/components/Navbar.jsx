@@ -56,16 +56,16 @@ const Navbar = () => {
       ]
     },
     {
-      name: 'Academics',
+      name: 'Student',
       href: '/academics',
       submenu: [
-        { name: 'Courses Offered', href: '/academics/courses-offered' },
-        { name: 'Admission Form', href: '/admission-form' },
         { name: 'Academic Calendar', href: '/academics/academic-calendar' },
-        { name: 'Teaching & Learning', href: '/academics/teaching-learning' },
-        { name: 'Curriculum', href: '/academics/curriculum' },
+        { name: 'Syllabus', href: '/academics/syllabus' },
+        { name: 'Admission Form', href: '/admission-form' },
+        { name: 'Admission Prospectus 2026-27', href: 'https://www.hstes.org.in/', external: true },
         { name: 'Exam Schedule', href: '/academics/exam-schedule' },
-        { name: 'Student Testimonials', href: '/academics/student-testimonials' },
+        { name: 'Grievance Portal', href: 'https://grievance.sietpanchkula.ac.in/', external: true },
+        { name: 'Code of Conduct', href: '/academics/code-of-conduct' },
         { name: 'Anti-Ragging', href: '/academics/anti-ragging' }
       ]
     },
