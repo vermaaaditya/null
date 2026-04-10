@@ -15,7 +15,7 @@ const Courses = () => {
   const currentCourses = [
     {
       id: 1,
-      title: 'Computer Science & Engineering',
+      title: 'Computer Science & Engineering (Core)',
       shortCode: 'CSE',
       image: null,
       description:
