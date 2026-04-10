@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 const initialFormData = {
   studentName: '',
   fatherName: '',
   contactNo: '',
   alternativeContactNo: '',
   address: '',
+  course: '',
   jeeScore: '',
   jeeRank: '',
   class12Marks: ''
 };
 
 const Admission = () => {
-  const [formData, setFormData] = useState(initialFormData);
+  const [searchParams] = useSearchParams();
+  const initialCourse = useMemo(() => String(searchParams.get('course') || ''), [searchParams]);
+  const [formData, setFormData] = useState({ ...initialFormData, course: initialCourse });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -27,6 +31,10 @@ const Admission = () => {
     const class12Marks = Number(formData.class12Marks);
     const jeeScore = formData.jeeScore === '' ? null : Number(formData.jeeScore);
     const jeeRank = formData.jeeRank === '' ? null : Number(formData.jeeRank);
+
+    if (!formData.course) {
+      nextErrors.course = 'Please select a course.';
+    }
 
     if (!phonePattern.test(formData.contactNo)) {
       nextErrors.contactNo = 'Contact number should contain 10 to 13 digits.';
@@ -81,7 +89,7 @@ const Admission = () => {
       <section className="section registration-form-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Student Admission Details</h2>
+            <h2 className="section-title">Student Enquiry Detail</h2>
             <div className="title-underline"></div>
           </div>
           <div className="form-container admission-form-container">
@@ -89,6 +97,26 @@ const Admission = () => {
               Please fill in your details carefully. Fields marked with * are required.
             </p>
             <form onSubmit={handleSubmit} className="admission-form">
+              <div className="form-group">
+                <label htmlFor="course">Course *</label>
+                <select
+                  id="course"
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select course</option>
+                  <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                  <option value="AI & Machine Learning">AI & Machine Learning</option>
+                  <option value="Cyber Security">Cyber Security</option>
+                  <option value="Robotics & Automation">Robotics & Automation</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Electronics Engineering (VLSI Design)">Electronics Engineering (VLSI Design)</option>
+                </select>
+                {errors.course && <p className="form-error">{errors.course}</p>}
+              </div>
+
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="studentName">Name *</label>
@@ -201,11 +229,11 @@ const Admission = () => {
               </div>
 
               <button type="submit" className="btn btn-primary">
-                Submit Admission Form
+                Submit Enquiry
               </button>
               {isSubmitted && (
                 <p className="form-success">
-                  Admission form submitted successfully. Our admissions team will contact you soon.
+                  Enquiry submitted successfully. Our admissions team will contact you soon.
                 </p>
               )}
             </form>

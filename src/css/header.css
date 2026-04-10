@@ -67,10 +67,12 @@
 }
 
 .tpo-header-hindi {
-  font-size: clamp(0.7rem, 1.5vw, 0.86rem);
+  font-size: clamp(0.98rem, 2vw, 1.2rem);
   color: rgba(10, 25, 47, 0.88);
   letter-spacing: 0.02em;
   margin-bottom: 0.26rem;
+  font-weight: 800;
+  text-align: center;
 }
 
 .college-name {
