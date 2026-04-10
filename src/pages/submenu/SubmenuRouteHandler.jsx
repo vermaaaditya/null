@@ -23,6 +23,7 @@ import ExamSchedule from './ExamSchedule';
 import AcademicStudentTestimonials from './AcademicStudentTestimonials';
 import Syllabus from './Syllabus';
 import CodeOfConduct from './CodeOfConduct';
+import AdmissionProspectus from './AdmissionProspectus';
 import Infrastructure from './Infrastructure';
 import Library from './Library';
 import Hostels from './Hostels';
@@ -66,6 +67,7 @@ const submenuComponents = {
   'academics/syllabus': Syllabus,
   'academics/teaching-learning': TeachingLearning,
   'academics/curriculum': Curriculum,
+  'academics/admission-prospectus': AdmissionProspectus,
   'academics/exam-schedule': ExamSchedule,
   'academics/student-testimonials': AcademicStudentTestimonials,
   'academics/code-of-conduct': CodeOfConduct,

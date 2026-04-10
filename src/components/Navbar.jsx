@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 /**
  * Navbar Component
  * Sticky navigation with responsive mobile menu
@@ -9,6 +9,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
@@ -62,7 +64,7 @@ const Navbar = () => {
         { name: 'Academic Calendar', href: '/academics/academic-calendar' },
         { name: 'Syllabus', href: '/academics/syllabus' },
         { name: 'Admission Form', href: '/admission-form' },
-        { name: 'Admission Prospectus 2026-27', href: 'https://www.hstes.org.in/', external: true },
+        { name: 'Admission Prospectus', href: '/academics/admission-prospectus' },
         { name: 'Exam Schedule', href: '/academics/exam-schedule' },
         { name: 'Grievance Portal', href: 'https://grievance.sietpanchkula.ac.in/', external: true },
         { name: 'Code of Conduct', href: '/academics/code-of-conduct' },
@@ -116,6 +118,14 @@ const Navbar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
   const toggleDropdown = (index) => setOpenDropdown((prev) => (prev === index ? null : index));
+  const submitSearch = (e) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    setOpenDropdown(null);
+    closeMobileMenu();
+    navigate(`/search?q=${encodeURIComponent(q)}`);
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -223,6 +233,19 @@ const Navbar = () => {
           </ul>
 
           <div className="nav-actions">
+            <form className="nav-search" role="search" onSubmit={submitSearch}>
+              <input
+                className="nav-search-input"
+                type="search"
+                placeholder="Search…"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search site"
+              />
+              <button className="nav-search-btn" type="submit" aria-label="Search">
+                Search
+              </button>
+            </form>
             <a href="#contact" className="nav-cta" onClick={closeMobileMenu}>
               Contact
             </a>

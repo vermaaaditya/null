@@ -91,6 +91,43 @@
   gap: 0.5rem;
 }
 
+.nav-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-search-input {
+  width: min(280px, 34vw);
+  border-radius: 999px;
+  padding: 0.52rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.nav-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.nav-search-btn {
+  border-radius: 999px;
+  padding: 0.52rem 0.85rem;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  background: rgba(197, 160, 89, 0.14);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-search-btn:hover {
+  background: rgba(197, 160, 89, 0.22);
+}
+
 .nav-cta {
   justify-self: end;
   display: inline-flex;

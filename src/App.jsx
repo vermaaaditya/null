@@ -14,6 +14,7 @@ import Events from './pages/Events';
 import StudentHelpline from './pages/StudentHelpline';
 import ContentDifferences from './pages/ContentDifferences';
 import Staff from './pages/Staff';
+import Search from './pages/Search';
 
 /**
  * Main App Component
@@ -45,6 +46,7 @@ function App() {
         <Route path="/student-helpline" element={<StudentHelpline />} />
         <Route path="/content-differences" element={<ContentDifferences />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
 
       <ChatbotWidget />

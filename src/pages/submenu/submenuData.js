@@ -18,6 +18,8 @@ import inspectionImage from '../../assets/new-assets/gallery/Inspection-Pic-1024
 import teacherImage from '../../assets/new-assets/teachers/anil-kumar.jpg';
 import academicCalendarDoc from '../../assets/new-assets/notifications/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
 import leetSyllabusDoc from '../../assets/new-assets/notifications/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
+import beBtechBarchProspectusDoc from '../../assets/new-assets/prospectus/BE-BTech-BArch-Prospectus-2025.pdf';
+import btechLeetProspectusDoc from '../../assets/new-assets/prospectus/BTechLE-Prospectus-2025.pdf';
 
 export const submenuData = {
   'about/history': {
@@ -222,15 +224,32 @@ export const submenuData = {
   'academics/syllabus': {
     sectionLabel: 'ACADEMICS',
     title: 'Syllabus',
-    subtitle: 'Select a program to preview the syllabus PDF.',
-    pdfOptions: [
-      { label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
-      { label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
-      { label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
+    subtitle: 'Search and open the syllabus PDF for your program.',
+    courses: [
+      { key: 'aiml', label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
+      { key: 'cyber', label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
+      { key: 'ra', label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
     ],
     body: [
-      'Choose your program from the dropdown to view the syllabus in the built-in PDF viewer.',
-      'If your program syllabus is updated later, the document link here can be replaced with the latest file.'
+      'Use the search box to quickly find your program.',
+      'Open the PDF in the viewer, or download it in a new tab.'
+    ],
+    points: []
+  },
+  'academics/admission-prospectus': {
+    sectionLabel: 'ACADEMICS',
+    title: 'Admission Prospectus',
+    subtitle: 'Select a prospectus document to preview.',
+    documents: [
+      { key: 'be-btech-barch', label: 'BE / B.Tech / B.Arch Prospectus (2025)', pdfUrl: beBtechBarchProspectusDoc },
+      { key: 'btech-leet', label: 'B.Tech LEET Prospectus (2025)', pdfUrl: btechLeetProspectusDoc }
+    ],
+    resources: [
+      { label: 'HSTES Admissions Portal', href: 'https://www.hstes.org.in/' }
+    ],
+    body: [
+      'Use the selector to preview the prospectus document.',
+      'For the latest counselling updates and timelines, refer to the HSTES portal link.'
     ],
     points: []
   },
