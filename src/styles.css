@@ -3379,6 +3379,52 @@ img {
     padding-block: 2.6rem;
   }
 
+  .hero-content {
+    padding-top: 2.05rem;
+    padding-bottom: 11.2rem;
+  }
+
+  .hero-content .container {
+    padding-inline: 0.78rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.64rem;
+    padding: 0.3rem 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-title {
+    font-size: clamp(1.58rem, 8vw, 2.08rem);
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.56rem;
+    width: 100%;
+    padding-right: 4.8rem;
+  }
+
+  .hero-buttons .btn {
+    min-width: 0;
+    width: 100%;
+    padding: 0.66rem 0.78rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
   .header-content {
     padding: 0.75rem;
     gap: 0.55rem;
@@ -3461,6 +3507,36 @@ img {
     width: 100%;
   }
 
+  .chatbot-widget {
+    right: 0.55rem;
+    bottom: 0.65rem;
+  }
+
+  .chatbot-toggle {
+    padding: 0.5rem 0.68rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .hero-buttons {
+    padding-right: 4.3rem;
+  }
+
+  .top-announcements-wrap {
+    gap: 0.55rem;
+    padding: 0.72rem 0.6rem;
+  }
+
+  .announcement-item {
+    padding: 0.4rem 0.56rem;
+  }
+
+  .announcement-item p {
+    font-size: 0.72rem;
+  }
 }
 
 @media print {

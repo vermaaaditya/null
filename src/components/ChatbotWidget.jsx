@@ -46,6 +46,7 @@ const getReply = (message) => {
 
 const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCompactMobile, setIsCompactMobile] = useState(false);
   const [input, setInput] = useState('');
   const messagesRef = useRef(null);
   const [messages, setMessages] = useState(() => {
@@ -72,6 +73,14 @@ const ChatbotWidget = () => {
       messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
     }
   }, [messages, isOpen]);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 560px)');
+    const apply = () => setIsCompactMobile(media.matches);
+    apply();
+    media.addEventListener('change', apply);
+    return () => media.removeEventListener('change', apply);
+  }, []);
 
   const canSend = useMemo(() => input.trim().length > 0, [input]);
 
@@ -154,7 +163,7 @@ const ChatbotWidget = () => {
         aria-expanded={isOpen}
         aria-label="Toggle chatbot"
       >
-        {isOpen ? 'Close Chat' : 'Chat with SIET'}
+        {isOpen ? (isCompactMobile ? 'Close' : 'Close Chat') : (isCompactMobile ? 'Chat' : 'Chat with SIET')}
       </button>
     </div>
   );
