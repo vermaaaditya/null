@@ -15,6 +15,7 @@ import StudentHelpline from './pages/StudentHelpline';
 import ContentDifferences from './pages/ContentDifferences';
 import Staff from './pages/Staff';
 import Search from './pages/Search';
+import ScheduledPopup from './components/ScheduledPopup';
 
 /**
  * Main App Component
@@ -23,6 +24,8 @@ import Search from './pages/Search';
 function App() {
   return (
     <div className="App">
+      <ScheduledPopup />
+
       {/* Top Header with College Name and Logo */}
       <Header />
 

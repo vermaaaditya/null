@@ -93,7 +93,12 @@ const InfoCards = () => {
   const notifications = notificationsListData;
   const notices = noticesListData;
 
-  const placements = [];
+  const placements = [
+    { title: '150 Students Placed in Top Companies', date: 'Feb 05', isNew: true },
+    { title: 'Microsoft Campus Drive', date: 'Feb 03', isNew: true },
+    { title: 'Amazon Pre-Placement Talk', date: 'Jan 28', isNew: false },
+    { title: 'Google Recruitment Process', date: 'Jan 25', isNew: false }
+  ];
 
   const newsScrollRef = useRef(null);
   const newsContentRef = useRef(null);

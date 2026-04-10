@@ -1,0 +1,24 @@
+export const popupSchedule = [
+  {
+    id: 'admission-2026',
+    type: 'admission',
+    title: 'Admissions Open 2026',
+    message: 'Applications are now open for all major programs. Submit your admission form before the deadline.',
+    ctaLabel: 'Apply Now',
+    ctaLink: '/admission-form',
+    startDate: '2026-04-01',
+    endDate: '2026-07-31',
+    enabled: true,
+  },
+  {
+    id: 'event-2026-techfest',
+    type: 'event',
+    title: 'Upcoming Campus Event',
+    message: 'Join our upcoming institute event. Check details, schedule, and participation updates.',
+    ctaLabel: 'View Event',
+    ctaLink: '/events',
+    startDate: '2026-08-01',
+    endDate: '2026-09-15',
+    enabled: true,
+  },
+];
