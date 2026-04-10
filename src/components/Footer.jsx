@@ -8,9 +8,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const quickLinks = [
     { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/about' },
-    { label: 'Academics', to: '/academics' },
-    { label: 'Departments', to: '/departments' },
+    { label: 'About Us', to: '/about/about-institute' },
+    { label: 'Academics', to: '/academics/academic-calendar' },
+    { label: 'Departments', to: '/departments/cse' },
     { label: 'Admission Form', to: '/admission-form' },
     { label: 'All Notices', to: '/all-notices' },
     { label: 'Events', to: '/events' },

@@ -43,12 +43,17 @@ function App() {
       {/* Main Content Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Navigate to="/about/about-institute" replace />} />
         <Route path="/about/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/departments" element={<Navigate to="/departments/cse" replace />} />
         <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/academics" element={<Navigate to="/academics/academic-calendar" replace />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/facilities" element={<Navigate to="/facilities/infrastructure" replace />} />
         <Route path="/facilities/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/placements" element={<ExternalPlacementRedirect />} />
         <Route path="/placements/:subSection" element={<ExternalPlacementRedirect />} />
+        <Route path="/alumni" element={<Navigate to="/alumni/alumni-directory" replace />} />
         <Route path="/alumni/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />

@@ -4,6 +4,7 @@ import directorImage from '../../assets/new-assets/principal-photo/prienciple.jp
 import aiMlImage from '../../assets/new-assets/departments/AI-ML.jpg';
 import cyberImage from '../../assets/new-assets/departments/Cyber-Security.jpg';
 import roboticsImage from '../../assets/new-assets/departments/Robotics-Automation.jpg';
+import cseDeptImage from '../../assets/new-assets/courses/cse.jpeg';
 import electricalDeptImage from '../../assets/new-assets/courses/electrical.jpeg';
 import electronicsDeptImage from '../../assets/new-assets/courses/electronics.jpeg';
 import academicCalendarImage from '../../assets/new-assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
@@ -171,7 +172,7 @@ export const submenuData = {
   'departments/computer-science': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Computer Science',
-    image: expertLectureImage,
+    image: cseDeptImage,
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',

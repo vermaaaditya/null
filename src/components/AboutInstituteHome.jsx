@@ -28,7 +28,7 @@ const AboutInstituteHome = () => {
                 <Link to="/about/about-institute" className="btn btn-primary">
                   Read More
                 </Link>
-                <Link to="/departments" className="btn btn-secondary">
+                  <Link to="/departments/cse" className="btn btn-secondary">
                   Programs
                 </Link>
               </div>
