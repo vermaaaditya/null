@@ -789,6 +789,63 @@
   box-shadow: var(--shadow-soft);
 }
 
+@media (max-width: 920px) {
+  .submenu-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .submenu-hero-visual {
+    justify-self: stretch;
+  }
+
+  .submenu-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .submenu-aside {
+    position: static;
+    top: auto;
+  }
+
+  .submenu-content-card {
+    padding: 1rem;
+  }
+
+  .doc-panel-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .submenu-hero-surface {
+    padding: 0.9rem;
+  }
+
+  .submenu-hero-actions {
+    gap: 0.5rem;
+  }
+
+  .submenu-action-btn,
+  .doc-hero-download-btn,
+  .doc-panel-download,
+  .submenu-aside-cta {
+    width: 100%;
+  }
+
+  .doc-hero-select-bar {
+    padding: 0.65rem;
+  }
+
+  .doc-hero-dropdown {
+    width: 100%;
+  }
+
+  .submenu-pdf-viewer.reader-full {
+    height: clamp(280px, 52vh, 520px);
+  }
+}
+
 @media (max-width: 980px) {
   .submenu-syllabus-grid {
     grid-template-columns: minmax(0, 1fr);
