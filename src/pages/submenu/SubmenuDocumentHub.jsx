@@ -70,7 +70,7 @@ const SubmenuDocumentHub = ({
               </div>
 
               <div className="submenu-hero-visual">
-                <div className="doc-hero-preview">
+                <div className="doc-hero-controls">
                   <div className="doc-hero-select">
                     <label className="doc-hero-label" htmlFor="doc-select">
                       Document
@@ -90,14 +90,14 @@ const SubmenuDocumentHub = ({
                     </select>
                   </div>
 
-                  <div className="doc-hero-frame">
+                  <div className="doc-hero-download-card">
+                    <p className="doc-hero-download-text">
+                      PDF preview is disabled. Use download to open the file.
+                    </p>
                     {active?.pdfUrl ? (
-                      <iframe
-                        title={`${active.label} document`}
-                        src={active.pdfUrl}
-                        className="doc-hero-iframe"
-                        loading="lazy"
-                      />
+                      <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-hero-download-btn">
+                        Download PDF
+                      </a>
                     ) : (
                       <div className="submenu-pdf-empty">PDF not available.</div>
                     )}

@@ -45,14 +45,11 @@ const SubmenuWithPDF = ({
                 <div className="submenu-pdf-wrap">
                   {pdfUrl ? (
                     <>
-                      <iframe
-                        title={`${title} PDF preview`}
-                        src={pdfUrl}
-                        className="submenu-pdf-viewer"
-                        loading="lazy"
-                      />
+                      <div className="submenu-pdf-empty">
+                        PDF preview is disabled. Use the button below to download.
+                      </div>
                       <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Open PDF in new tab
+                        Download PDF
                       </a>
                     </>
                   ) : (
