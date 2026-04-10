@@ -71,8 +71,8 @@ const SubmenuNoImage = ({
                     <div className="submenu-resources">
                       <h3 className="submenu-subsection-title">Resources</h3>
                       <ul className="submenu-resource-list">
-                        {resources.map((item) => (
-                          <li key={`${item.label}-${item.href}`}>
+                        {resources.map((item, index) => (
+                          <li key={`${item.label}-${item.href}-${index}`}>
                             <a href={item.href} target="_blank" rel="noopener noreferrer" className="submenu-resource-link">
                               {item.label}
                             </a>
