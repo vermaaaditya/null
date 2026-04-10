@@ -40,7 +40,7 @@ export const noticesBoardData = [
   {
     id: 3,
     title: 'B.Tech LEET Syllabus 2025-26',
-    category: 'Academic',
+    category: 'Student',
     date: '07 May 2025',
     priority: 'Medium',
     details: 'Detailed LEET syllabus for engineering programs for session 2025-26.',
@@ -50,7 +50,7 @@ export const noticesBoardData = [
   {
     id: 4,
     title: 'Academic Calendar 2025-26',
-    category: 'Academic',
+    category: 'Student',
     date: 'Jan 2026',
     priority: 'High',
     details: 'Session schedule and key academic milestones for affiliated engineering colleges.',
@@ -89,11 +89,11 @@ export const noticesBoardData = [
   },
   {
     id: 8,
-    title: 'Notice PTM',
+    title: 'Notice: Parent-Teacher Meeting (March 13, 2026)',
     category: 'Notice',
     date: 'Mar 2026',
     priority: 'Low',
-    details: 'Parent-Teacher Meeting notice and related instructions.',
+    details: 'Parent-Teacher Meeting notice and related instructions for March 2026.',
     downloadUrl: ptmNoticeDoc,
     readMoreUrl: ptmNoticeDoc
   },
@@ -129,7 +129,7 @@ export const noticesBoardData = [
   },
   {
     id: 12,
-    title: 'AICTE Degree Pay Qualifications and Promotions',
+    title: 'AICTE Degree Pay: Qualifications & Promotions',
     category: 'Regulation',
     date: 'Aug 2025',
     priority: 'Low',
@@ -192,6 +192,7 @@ export const noticesBoardData = [
 const typeFromCategory = (category) => {
   const normalized = String(category || '').toLowerCase();
   if (normalized.includes('admission')) return 'important';
+  if (normalized.includes('student')) return 'result';
   if (normalized.includes('academic')) return 'result';
   if (normalized.includes('exam')) return 'deadline';
   if (normalized.includes('event')) return 'event';
@@ -234,7 +235,7 @@ export const noticesStripData = noticesBoardData.slice(0, 8).map((notice) => {
 });
 
 export const notificationsListData = noticesBoardData
-  .filter((n) => ['Admission', 'Academic', 'Fee', 'Policy', 'Regulation', 'Guideline'].includes(n.category))
+  .filter((n) => ['Admission', 'Student', 'Fee', 'Policy', 'Regulation', 'Guideline'].includes(n.category))
   .slice(0, 8)
   .map((n) => ({
     id: n.id,
@@ -266,7 +267,7 @@ export const campusUpdatesData = [
   { id: 6, title: 'Commencement of Classes for Even Semester B.Tech. All Branches (AIML , CS & RA)', date: '2 Jan, 2026' },
   { id: 7, title: 'Commencement of B.TECH 1st Year Classes at SIET Panchkula', date: '20 Aug, 2025' },
   { id: 8, title: 'Commencement of New Session Classes for Second and Third Year.', date: '14 Aug, 2025' },
-  { id: 9, title: 'B.Tech LEET Physical Counselling Meri List 2025', date: '7 Aug, 2025' },
+  { id: 9, title: 'B.Tech LEET Physical Counselling Merit List 2025', date: '7 Aug, 2025' },
   { id: 10, title: 'Physical Institute Wise Counseling Merit List [12th based]', date: '5 Aug, 2025' }
 ].map((item) => ({
   ...item,
