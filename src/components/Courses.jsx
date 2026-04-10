@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import admissionFormDoc from '../assets/new-assets/documents/SIET-PKL-B.TECH_Admission_Form-2025-26.pdf';
+import cseImg from '../assets/new-assets/courses/cse.jpeg';
 import aimlImg from '../assets/new-assets/courses/AI-ML.jpg';
 import cyberImg from '../assets/new-assets/courses/Cyber-Security.jpg';
 import roboticsImg from '../assets/new-assets/courses/Robotics-Automation.jpg';
+import electricalImg from '../assets/new-assets/courses/electrical.jpeg';
+import electronicsImg from '../assets/new-assets/courses/electronics.jpeg';
 
 /**
  * Courses Component
@@ -17,7 +20,7 @@ const Courses = () => {
       id: 1,
       title: 'Computer Science & Engineering (Core)',
       shortCode: 'CSE',
-      image: null,
+      image: cseImg,
       description:
         'Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
       duration: '4 Years',
@@ -61,7 +64,7 @@ const Courses = () => {
       id: 5,
       title: 'Electrical Engineering',
       shortCode: 'EE',
-      image: null,
+      image: electricalImg,
       description: '',
       duration: '',
       status: 'ongoing',
@@ -71,7 +74,7 @@ const Courses = () => {
       id: 6,
       title: 'Electronics Engineering (VLSI Design)',
       shortCode: 'ECE (VLSI)',
-      image: null,
+      image: electronicsImg,
       description: '',
       duration: '',
       status: 'ongoing',
