@@ -79,7 +79,7 @@ const Admission = () => {
       <section className="section registration-form-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Student Admission Inquiry</h2>
+            <h2 className="section-title">Student Admission Enquiry Form</h2>
             <div className="title-underline"></div>
           </div>
           <div className="form-container admission-form-container">
