@@ -351,7 +351,10 @@ const Navbar = () => {
                             <button
                               type="button"
                               className="dropdown-link nested-parent-link"
-                              onClick={() => toggleNestedDropdown(`${index}-${subindex}`)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleNestedDropdown(`${index}-${subindex}`);
+                              }}
                             >
                               {subitem.name}
                               <span className={`dropdown-arrow ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}>▶</span>
