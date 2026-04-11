@@ -18,6 +18,15 @@ const departmentSectionContent = {
   'electronics-vlsi': electronicsVlsiSections
 };
 
+const departmentDescriptions = {
+  cse: 'Build a strong foundation in computing with focus on algorithms, software development, and system design. The program equips students with problem-solving skills and industry-relevant knowledge to excel in diverse technology domains.',
+  'ai-ml': 'Specialize in cutting-edge technologies like artificial intelligence, machine learning, and data science. Students gain hands-on experience in building intelligent systems and solving real-world problems using modern AI tools.',
+  'cyber-security': 'Focused on securing digital systems, this program covers network security, ethical hacking, and data protection. Students are trained to identify vulnerabilities and build robust defense mechanisms against cyber threats.',
+  robotics: 'Explore the integration of mechanical systems, electronics, and intelligent control. This program prepares students to design and develop automated systems, robotics solutions, and smart technologies for industrial and real-world applications.',
+  'electrical-engineering': 'Gain in-depth knowledge of electrical systems, power generation, and control engineering. The program emphasizes practical learning and prepares students for careers in energy, infrastructure, and advanced electrical technologies.',
+  'electronics-vlsi': 'Dive into semiconductor technology and chip design with a focus on VLSI systems. Students learn to design, simulate, and optimize integrated circuits used in modern electronic devices.'
+};
+
 const DepartmentSectionPage = ({ sectionId }) => {
   const { deptSlug } = useParams();
   const config = departmentSectionCatalog[deptSlug];
@@ -57,7 +66,7 @@ const DepartmentSectionPage = ({ sectionId }) => {
                 <p className="submenu-kicker">DEPARTMENTS</p>
                 <h1 className="submenu-title">{departmentSectionTitles[sectionId]}</h1>
                 <p className="submenu-subtitle">
-                  Demo route for {config.title}. Replace the placeholder content with the official section copy later.
+                  {departmentDescriptions[deptSlug]}
                 </p>
                 <div className="submenu-hero-actions">
                   <Link to={homeLink} className="submenu-action-btn primary">Back to Department</Link>
