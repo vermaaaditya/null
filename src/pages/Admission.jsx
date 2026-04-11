@@ -73,6 +73,7 @@ const Admission = () => {
     <div className="admission-page">
       <section className="page-hero">
         <div className="container">
+          
         </div>
       </section>
 
