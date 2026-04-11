@@ -289,7 +289,8 @@
 }
 
 .nav-item.has-submenu:hover .dropdown-arrow,
-.nav-item.has-submenu .dropdown-menu.active .dropdown-arrow {
+.nav-item.has-submenu .dropdown-menu.active .dropdown-arrow,
+.dropdown-arrow.open {
   transform: rotate(180deg);
 }
 
@@ -428,7 +429,7 @@
   }
 
   .navbar-quick-links.active {
-    max-height: 360px;
+    max-height: min(80dvh, 600px);
     opacity: 1;
     pointer-events: auto;
     padding: 0.4rem;
@@ -478,9 +479,19 @@
     width: 100%;
   }
 
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+  }
+
   .nav-link {
     justify-content: flex-start;
     border-radius: 10px;
+  }
+
+  /* Disable hover-triggered rotation on touch devices; use JS-driven .open class instead */
+  .nav-item.has-submenu:hover .dropdown-arrow {
+    transform: none;
   }
 
   .submenu-toggle {

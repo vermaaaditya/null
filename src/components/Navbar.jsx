@@ -208,7 +208,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
     setOpenNestedDropdown(null);
   };
-  const toggleDropdown = (index) => setOpenDropdown((prev) => (prev === index ? null : index));
+  const toggleDropdown = (index) => {
+    setOpenDropdown((prev) => (prev === index ? null : index));
+    setOpenNestedDropdown(null);
+  };
   const toggleNestedDropdown = (key) => setOpenNestedDropdown((prev) => (prev === key ? null : key));
   const submitSearch = (e) => {
     e.preventDefault();
@@ -348,7 +351,10 @@ const Navbar = () => {
                             <button
                               type="button"
                               className="dropdown-link nested-parent-link"
-                              onClick={() => toggleNestedDropdown(`${index}-${subindex}`)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleNestedDropdown(`${index}-${subindex}`);
+                              }}
                             >
                               {subitem.name}
                               <span className={`dropdown-arrow ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}>▶</span>
