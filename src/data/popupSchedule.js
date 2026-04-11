@@ -5,7 +5,7 @@ export const popupSchedule = [
     title: 'Admissions Open 2026',
     message: 'Applications are now open for all major programs. Submit your admission form before the deadline.',
     ctaLabel: 'Apply Now',
-    ctaLink: '/admission-form',
+    ctaLink: 'https://techadmissionshry.gov.in/',
     startDate: '2026-04-01',
     endDate: '2026-07-31',
     enabled: true,
