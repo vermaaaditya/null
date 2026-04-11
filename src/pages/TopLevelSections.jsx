@@ -17,7 +17,7 @@ const TopLevelSections = () => {
         <div className="section-header">
           <h1 className="section-title">Top-Level Sections</h1>
           <div className="title-underline"></div>
-          <p className="section-subtitle">Major live-site style sections now represented as dedicated entry points.</p>
+          <p className="section-subtitle">All Sections are top level at SIET, but here are a few most visited ones</p>
         </div>
 
         <div className="all-notices-grid">
