@@ -91,11 +91,6 @@ const DepartmentSectionPage = ({ sectionId }) => {
               <div className="submenu-content-card">
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
-                  <p className="submenu-paragraph">
-                    This is a standalone route page for the {departmentSectionTitles[sectionId].toLowerCase()} section.
-                    It exists as a separate file so each department submenu can eventually be replaced with official data.
-                  </p>
-
                   {activeSection.body?.length > 0 ? (
                     <div className="submenu-body">
                       {activeSection.body.map((line) => {
