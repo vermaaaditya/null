@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,6 +14,23 @@ import Events from './pages/Events';
 import StudentHelpline from './pages/StudentHelpline';
 import ContentDifferences from './pages/ContentDifferences';
 import Staff from './pages/Staff';
+import Search from './pages/Search';
+import ScheduledPopup from './components/ScheduledPopup';
+import DepartmentElectronicsVlsi from './pages/submenu/DepartmentElectronicsVlsi';
+import CoursesOffered from './pages/submenu/CoursesOffered';
+import AboutDepartment from './pages/submenu/departmentSections/AboutDepartment';
+import VisionMission from './pages/submenu/departmentSections/VisionMission';
+import Faculty from './pages/submenu/departmentSections/Faculty';
+import LessonPlans from './pages/submenu/departmentSections/LessonPlans';
+import TimeTable from './pages/submenu/departmentSections/TimeTable';
+
+const ExternalPlacementRedirect = () => {
+  React.useEffect(() => {
+    window.location.replace('https://siettpo.vercel.app/');
+  }, []);
+
+  return null;
+};
 
 /**
  * Main App Component
@@ -22,6 +39,8 @@ import Staff from './pages/Staff';
 function App() {
   return (
     <div className="App">
+      <ScheduledPopup />
+
       {/* Top Header with College Name and Logo */}
       <Header />
 
@@ -31,10 +50,22 @@ function App() {
       {/* Main Content Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Navigate to="/about/about-institute" replace />} />
         <Route path="/about/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/departments" element={<Navigate to="/departments/cse" replace />} />
         <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/departments/:deptSlug/about-department" element={<AboutDepartment />} />
+        <Route path="/departments/:deptSlug/vision-mission" element={<VisionMission />} />
+        <Route path="/departments/:deptSlug/faculty" element={<Faculty />} />
+        <Route path="/departments/:deptSlug/lesson-plans" element={<LessonPlans />} />
+        <Route path="/departments/:deptSlug/time-table" element={<TimeTable />} />
+        <Route path="/academics" element={<Navigate to="/academics/academic-calendar" replace />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/facilities" element={<Navigate to="/facilities/infrastructure" replace />} />
         <Route path="/facilities/:subSection" element={<SubmenuRouteHandler />} />
+        <Route path="/placements" element={<ExternalPlacementRedirect />} />
+        <Route path="/placements/:subSection" element={<ExternalPlacementRedirect />} />
+        <Route path="/alumni" element={<Navigate to="/alumni/alumni-directory" replace />} />
         <Route path="/alumni/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/life-at-siet" element={<LifeAtSIET />} />
         <Route path="/life-at-siet/:subSection" element={<SubmenuRouteHandler />} />
@@ -45,6 +76,7 @@ function App() {
         <Route path="/student-helpline" element={<StudentHelpline />} />
         <Route path="/content-differences" element={<ContentDifferences />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
 
       <ChatbotWidget />

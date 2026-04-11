@@ -1,8 +1,8 @@
 import React from 'react';
-import SubmenuWithPdfDropdown from './SubmenuWithPdfDropdown';
+import SyllabusHubTemplate from './SyllabusHubTemplate';
 import { submenuData } from './submenuData';
 
-const Syllabus = () => <SubmenuWithPdfDropdown {...submenuData['academics/syllabus']} />;
+const Syllabus = () => <SyllabusHubTemplate {...submenuData['academics/syllabus']} />;
 
 export default Syllabus;
 

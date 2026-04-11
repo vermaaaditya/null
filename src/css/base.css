@@ -6,6 +6,10 @@
 /* Chatbot-specific fixes and suggested-question styles */
 @import './chatbot.css';
 
+/* Component-level CSS (overrides + new templates) */
+@import './navbar.css';
+@import './submenu.css';
+
 :root {
   --bg-base: #fcfaf2;
   --bg-soft: #faf7ee;

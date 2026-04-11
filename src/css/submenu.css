@@ -62,6 +62,17 @@
   align-items: center;
 }
 
+.submenu-hero-grid.doc-hero {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+}
+
+.submenu-hero-grid.doc-reader-hero {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.85rem;
+}
+
 .submenu-hero-grid.no-visual {
   grid-template-columns: minmax(0, 1fr);
 }
@@ -215,6 +226,230 @@
   font-weight: 600;
 }
 
+.doc-hero-controls {
+  display: grid;
+  gap: 0.85rem;
+  justify-self: end;
+  width: 100%;
+}
+
+.doc-hero-select-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.doc-hero-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.doc-hero-label {
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.doc-hero-dropdown {
+  flex: 1;
+  max-width: none;
+  border-radius: 10px;
+  padding: 0.48rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(10, 25, 47, 0.65);
+  color: #fff;
+  font-weight: 750;
+}
+
+.doc-hero-static {
+  flex: 1;
+  border-radius: 10px;
+  padding: 0.48rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(10, 25, 47, 0.45);
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 750;
+}
+
+.doc-hero-reader {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.submenu-pdf-viewer.reader-full {
+  height: clamp(460px, 70vh, 980px);
+}
+
+.doc-hero-download-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  padding: 0.95rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.doc-hero-download-text {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.6;
+  font-weight: 650;
+}
+
+.doc-hero-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  background: #c5a059;
+  color: #0a192f;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.doc-hero-download-btn:hover {
+  background: #d4b06a;
+  transform: translateY(-1px);
+}
+
+.doc-body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.doc-body-panel {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.doc-panel-card {
+  border-radius: 16px;
+  padding: 0.95rem;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.doc-panel-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.doc-panel-search {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.58rem 0.8rem;
+  border: 1px solid rgba(16, 35, 63, 0.14);
+  background: rgba(37, 99, 235, 0.06);
+  font-weight: 650;
+}
+
+.doc-panel-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.doc-panel-item {
+  text-align: left;
+  border-radius: 14px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.doc-panel-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+.doc-panel-item.active {
+  border-color: rgba(10, 25, 47, 0.65);
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.06), rgba(197, 160, 89, 0.08));
+}
+
+.doc-panel-item-title {
+  font-weight: 900;
+  color: var(--ink-900);
+  font-size: 0.92rem;
+}
+
+.doc-panel-item-meta {
+  font-size: 0.75rem;
+  color: var(--ink-700);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.doc-panel-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.62rem 0.85rem;
+  background: #0a192f;
+  color: #c5a059;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  border: 1px solid rgba(10, 25, 47, 0.7);
+}
+
+.doc-panel-download:hover {
+  background: #081223;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px) {
+  .submenu-hero-grid.doc-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .doc-hero-select-bar {
+    flex-wrap: wrap;
+  }
+
+  .doc-hero-dropdown,
+  .doc-hero-static {
+    min-width: 100%;
+  }
+
+  .submenu-pdf-viewer.reader-full {
+    height: clamp(340px, 58vh, 760px);
+  }
+
+  .doc-body-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .submenu-kicker {
   display: inline-flex;
   padding: 0.24rem 0.62rem;
@@ -250,6 +485,24 @@
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(16, 35, 63, 0.12);
   box-shadow: var(--shadow-soft);
+}
+
+.submenu-doc-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.95rem;
+}
+
+.submenu-doc-actions .submenu-action-btn.secondary {
+  background: rgba(10, 25, 47, 0.08);
+  color: #0a192f;
+  border-color: rgba(10, 25, 47, 0.18);
+}
+
+.submenu-doc-actions .submenu-action-btn.secondary:hover {
+  background: rgba(10, 25, 47, 0.14);
 }
 
 .submenu-section-title {
@@ -459,6 +712,247 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+}
+
+.submenu-syllabus-controls {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.submenu-syllabus-search {
+  width: min(520px, 100%);
+  border-radius: 999px;
+  padding: 0.62rem 0.85rem;
+  border: 1px solid rgba(16, 35, 63, 0.14);
+  background: rgba(37, 99, 235, 0.06);
+  font-weight: 650;
+}
+
+.submenu-syllabus-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.submenu-syllabus-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.submenu-syllabus-item {
+  text-align: left;
+  border-radius: 14px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.submenu-syllabus-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+.submenu-syllabus-item.active {
+  border-color: rgba(10, 25, 47, 0.65);
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.06), rgba(197, 160, 89, 0.08));
+}
+
+.submenu-syllabus-item-title {
+  font-weight: 900;
+  color: var(--ink-900);
+}
+
+.submenu-syllabus-item-meta {
+  font-size: 0.85rem;
+  color: var(--ink-700);
+}
+
+.submenu-syllabus-empty {
+  border-radius: 14px;
+  padding: 0.85rem;
+  border: 1px dashed rgba(16, 35, 63, 0.18);
+  background: rgba(16, 35, 63, 0.03);
+  color: var(--ink-700);
+}
+
+.submenu-syllabus-details {
+  border-radius: 16px;
+  padding: 0.95rem;
+  border: 1px solid rgba(16, 35, 63, 0.1);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.submenu-nested-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.submenu-nested-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.submenu-nested-card {
+  scroll-margin-top: 6.5rem;
+}
+
+.submenu-nested-card-head {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.submenu-nested-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  color: var(--brand-coral);
+}
+
+.submenu-nested-card h3 {
+  margin: 0;
+  color: var(--ink-900);
+}
+
+.submenu-demo-table {
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+}
+
+.submenu-demo-table-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.submenu-demo-table-head {
+  background: rgba(10, 25, 47, 0.95);
+  color: #fff;
+}
+
+.submenu-demo-table-cell {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid rgba(16, 35, 63, 0.12);
+  border-bottom: 1px solid rgba(16, 35, 63, 0.12);
+  font-size: 0.92rem;
+}
+
+.submenu-demo-table-head .submenu-demo-table-cell {
+  border-color: rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+}
+
+.submenu-schedule-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.submenu-schedule-card {
+  border-radius: 12px;
+  padding: 0.8rem;
+  border: 1px solid rgba(16, 35, 63, 0.12);
+  background: rgba(10, 25, 47, 0.04);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.submenu-schedule-card strong {
+  color: var(--ink-900);
+}
+
+.submenu-schedule-card span {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-coral);
+  font-weight: 900;
+}
+
+.submenu-schedule-card p {
+  color: var(--ink-700);
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .submenu-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .submenu-hero-visual {
+    justify-self: stretch;
+  }
+
+  .submenu-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .submenu-aside {
+    position: static;
+    top: auto;
+  }
+
+  .submenu-content-card {
+    padding: 1rem;
+  }
+
+  .doc-panel-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .submenu-demo-table-row,
+  .submenu-schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .submenu-hero-surface {
+    padding: 0.9rem;
+  }
+
+  .submenu-hero-actions {
+    gap: 0.5rem;
+  }
+
+  .submenu-action-btn,
+  .doc-hero-download-btn,
+  .doc-panel-download,
+  .submenu-aside-cta {
+    width: 100%;
+  }
+
+  .doc-hero-select-bar {
+    padding: 0.65rem;
+  }
+
+  .doc-hero-dropdown {
+    width: 100%;
+  }
+
+  .submenu-pdf-viewer.reader-full {
+    height: clamp(280px, 52vh, 520px);
+  }
+}
+
+@media (max-width: 980px) {
+  .submenu-syllabus-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .submenu-inline-link {

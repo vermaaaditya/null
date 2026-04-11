@@ -1,4 +1,6 @@
-﻿    width: min(var(--container-max), calc(100% - 1.4rem));
+﻿@media (max-width: 760px) {
+  .container {
+    width: min(var(--container-max), calc(100% - 1.4rem));
   }
 
   .header-content {

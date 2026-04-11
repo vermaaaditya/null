@@ -12,7 +12,7 @@ const suggestedQuestions = [
 
 const botReplies = {
   admission: 'Admissions are open for the 2026-27 session. You can check the notices and prospectus links in Academics.',
-  departments: 'SIET offers AIML, Computer Science, and Robotics departments with modern labs and project-based learning.',
+  departments: 'SIET offers six B.Tech programs with modern labs and project-based learning.',
   placements: 'The placement cell provides aptitude, technical, and interview preparation with recruiter engagement year-round.',
   fees: 'You can find fee and admission-related PDFs in the academics document section.',
   default: 'Thanks for your message. I can help with admissions, departments, placements, and campus facilities.'
@@ -24,7 +24,7 @@ const getReply = (message) => {
     return `${botReplies.admission} You can open the Admission Form page from the Academics menu.`;
   }
   if (value.includes('department') || value.includes('course') || value.includes('branch')) {
-    return `${botReplies.departments} Current B.Tech options include CSE (AI & ML), CSE (Cyber Security), and Robotics & Automation.`;
+    return `${botReplies.departments} Current B.Tech options include CSE (Core), CSE (AI & ML), CSE (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).`;
   }
   if (value.includes('placement') || value.includes('job') || value.includes('recruiter')) {
     return `${botReplies.placements} For T&P specific updates, use the Training & Placements link in navbar.`;
@@ -46,6 +46,7 @@ const getReply = (message) => {
 
 const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCompactMobile, setIsCompactMobile] = useState(false);
   const [input, setInput] = useState('');
   const messagesRef = useRef(null);
   const [messages, setMessages] = useState(() => {
@@ -72,6 +73,14 @@ const ChatbotWidget = () => {
       messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
     }
   }, [messages, isOpen]);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 560px)');
+    const apply = () => setIsCompactMobile(media.matches);
+    apply();
+    media.addEventListener('change', apply);
+    return () => media.removeEventListener('change', apply);
+  }, []);
 
   const canSend = useMemo(() => input.trim().length > 0, [input]);
 
@@ -154,7 +163,7 @@ const ChatbotWidget = () => {
         aria-expanded={isOpen}
         aria-label="Toggle chatbot"
       >
-        {isOpen ? 'Close Chat' : 'Chat with SIET'}
+        {isOpen ? (isCompactMobile ? 'Close' : 'Close Chat') : (isCompactMobile ? 'Chat' : 'Chat with SIET')}
       </button>
     </div>
   );

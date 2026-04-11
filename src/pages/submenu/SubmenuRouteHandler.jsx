@@ -23,6 +23,7 @@ import ExamSchedule from './ExamSchedule';
 import AcademicStudentTestimonials from './AcademicStudentTestimonials';
 import Syllabus from './Syllabus';
 import CodeOfConduct from './CodeOfConduct';
+import AdmissionProspectus from './AdmissionProspectus';
 import Infrastructure from './Infrastructure';
 import Library from './Library';
 import Hostels from './Hostels';
@@ -33,6 +34,7 @@ import Cafeteria from './Cafeteria';
 import Healthcare from './Healthcare';
 import Security from './Security';
 import CampusTraining from './CampusTraining';
+import PlacementBrochure from './PlacementBrochure';
 import PlacementRecords from './PlacementRecords';
 import MajorRecruiters from './MajorRecruiters';
 import PlacementProcess from './PlacementProcess';
@@ -55,6 +57,7 @@ const submenuComponents = {
   'about/anti-ragging': AntiRagging,
   'academics/anti-ragging': AcademicAntiRagging,
   'departments/engineering': DepartmentEngineering,
+  'departments/cse': DepartmentComputerScience,
   'departments/ai-ml': DepartmentAiMl,
   'departments/cyber-security': DepartmentCyberSecurity,
   'departments/robotics': DepartmentRobotics,
@@ -66,6 +69,7 @@ const submenuComponents = {
   'academics/syllabus': Syllabus,
   'academics/teaching-learning': TeachingLearning,
   'academics/curriculum': Curriculum,
+  'academics/admission-prospectus': AdmissionProspectus,
   'academics/exam-schedule': ExamSchedule,
   'academics/student-testimonials': AcademicStudentTestimonials,
   'academics/code-of-conduct': CodeOfConduct,
@@ -79,6 +83,7 @@ const submenuComponents = {
   'facilities/healthcare': Healthcare,
   'facilities/security': Security,
   'placements/campus-training': CampusTraining,
+  'placements/placement-brochure': PlacementBrochure,
   'placements/placement-records': PlacementRecords,
   'placements/major-recruiters': MajorRecruiters,
   'placements/placement-process': PlacementProcess,

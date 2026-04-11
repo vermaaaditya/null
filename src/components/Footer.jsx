@@ -8,9 +8,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const quickLinks = [
     { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/about' },
-    { label: 'Academics', to: '/academics' },
-    { label: 'Departments', to: '/departments' },
+    { label: 'About Us', to: '/about/about-institute' },
+    { label: 'Academics', to: '/academics/academic-calendar' },
+    { label: 'Departments', to: '/departments/cse' },
     { label: 'Admission Form', to: '/admission-form' },
     { label: 'All Notices', to: '/all-notices' },
     { label: 'Events', to: '/events' },
@@ -60,6 +60,16 @@ const Footer = () => {
                   <div>
                     <h4 className="footer-find-title">FIND US</h4>
                     <p>Sector 26, Panchkula, Haryana, India</p>
+                    <div className="footer-map-wrap">
+                      <iframe
+                        className="footer-map"
+                        title="SIET Panchkula Location Map"
+                        src="https://www.google.com/maps?q=State%20Institute%20of%20Engineering%20and%20Technology%2C%20Sector%2026%2C%20Panchkula%2C%20Haryana&output=embed"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -28,39 +28,38 @@ const SubmenuWithPDF = ({
               <span className="crumb-current" aria-current="page">{title}</span>
             </nav>
 
-            <div className="submenu-hero-grid">
+            <div className="submenu-hero-grid doc-reader-hero">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
                 <p className="submenu-subtitle">
                   {subtitle || 'Focused information and highlights for this submenu section.'}
                 </p>
-                <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
-                </div>
               </div>
 
-              <div className="submenu-hero-visual">
-                <div className="submenu-pdf-wrap">
-                  {pdfUrl ? (
-                    <>
-                      <iframe
-                        title={`${title} PDF preview`}
-                        src={pdfUrl}
-                        className="submenu-pdf-viewer"
-                        loading="lazy"
-                      />
-                      <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Open PDF in new tab
-                      </a>
-                    </>
-                  ) : (
-                    <div className="submenu-pdf-empty">
-                      PDF is not available for this section yet.
-                    </div>
-                  )}
-                </div>
+              <div className="doc-hero-select-bar">
+                <span className="doc-hero-label">Document</span>
+                <span className="doc-hero-static">Institute PDF</span>
+                {pdfUrl ? (
+                  <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-hero-download-btn">
+                    Open PDF in new tab
+                  </a>
+                ) : null}
+              </div>
+
+              <div className="doc-hero-reader submenu-pdf-wrap">
+                {pdfUrl ? (
+                  <iframe
+                    title={`${title} PDF preview`}
+                    src={pdfUrl}
+                    className="submenu-pdf-viewer reader-full"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="submenu-pdf-empty">
+                    PDF is not available for this section yet.
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -72,6 +71,15 @@ const SubmenuWithPDF = ({
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
+                <div className="submenu-doc-actions">
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                  {pdfUrl ? (
+                    <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-action-btn primary">
+                      Download
+                    </a>
+                  ) : null}
+                </div>
+
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
                   {body.length > 0 ? (

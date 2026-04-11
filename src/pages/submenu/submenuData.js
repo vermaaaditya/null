@@ -4,6 +4,9 @@ import directorImage from '../../assets/new-assets/principal-photo/prienciple.jp
 import aiMlImage from '../../assets/new-assets/departments/AI-ML.jpg';
 import cyberImage from '../../assets/new-assets/departments/Cyber-Security.jpg';
 import roboticsImage from '../../assets/new-assets/departments/Robotics-Automation.jpg';
+import cseDeptImage from '../../assets/new-assets/courses/cse.jpeg';
+import electricalDeptImage from '../../assets/new-assets/courses/electrical.jpeg';
+import electronicsDeptImage from '../../assets/new-assets/courses/electronics.jpeg';
 import academicCalendarImage from '../../assets/new-assets/teachers/Academic-Calendar-2025-26-733x1024.jpg';
 import facilitiesImage from '../../assets/new-assets/campus/siet-panchkula-building.jpg';
 import competitionImage from '../../assets/new-assets/events/Web-Development-Competition.jpg';
@@ -18,6 +21,9 @@ import inspectionImage from '../../assets/new-assets/gallery/Inspection-Pic-1024
 import teacherImage from '../../assets/new-assets/teachers/anil-kumar.jpg';
 import academicCalendarDoc from '../../assets/new-assets/notifications/Schedule-of-Academic-Calendar-for-Engg.-Affiliated-Colleges-for-the-Session-2025-26.pdf';
 import leetSyllabusDoc from '../../assets/new-assets/notifications/B.Tech-LEET-Syllabus-2025-26-07.05.2025.pdf';
+import beBtechBarchProspectusDoc from '../../assets/new-assets/prospectus/BE-BTech-BArch-Prospectus-2025.pdf';
+import btechLeetProspectusDoc from '../../assets/new-assets/prospectus/BTechLE-Prospectus-2025.pdf';
+import createDepartmentDemoSections from './departmentDemoSections';
 
 export const submenuData = {
   'about/history': {
@@ -41,7 +47,7 @@ export const submenuData = {
     points: [
       'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
       'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
-      'The institute offers undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'The institute offers six undergraduate programs: Computer Science and Engineering (Core), Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).',
       'With industry-oriented learning, strong facilities, and expert faculty, SIET equips students with the skills to excel in the evolving world of technology.'
     ]
   },
@@ -64,16 +70,16 @@ export const submenuData = {
   },
   'about/directors-message': {
     sectionLabel: 'ABOUT US',
-    title: "Director Principal's Desk",
+    title: "Director - Principal's Desk",
     image: directorImage,
     imageMode: 'portrait',
     body: [
-      'I take the pleasure in welcoming you to State Institute of Engineering and Technology (SIET), Panchkula an institute dedicated to the proper growth and development of each and every student for a better career prospect.',
+      'It gives me great pleasure to welcome you to the State Institute of Engineering and Technology (SIET), Panchkula, an institute dedicated to the growth and development of every student for better career prospects.',
       'The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the college.',
       'The college provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility. All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.',
       'SIET has a team of highly qualified, experienced and dedicated faculty who devote their time not only to teaching but also for the overall development of the students. Further, faculty from other renowned institutions are invited to deliver guest lectures to help augment their studies beyond syllabus.',
       'We are confident that the students passing out from this college will be technically sound, confident and have good leadership skills. I wish all the best to all the prospective students.',
-      'Prof. Anil Kumar (Director Principal)'
+      'Prof. Anil Kumar (Director - Principal)'
     ],
     points: []
   },
@@ -138,6 +144,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'AI & Machine Learning',
     image: aiMlImage,
+    nestedSections: createDepartmentDemoSections('AI & Machine Learning', ['machine learning', 'data science'], 'ai-ml'),
     points: [
       'Machine learning fundamentals and applications.',
       'Model development and evaluation workflows.',
@@ -148,6 +155,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Cyber Security',
     image: cyberImage,
+    nestedSections: createDepartmentDemoSections('Cyber Security', ['network security', 'digital forensics'], 'cyber-security'),
     points: [
       'Network and application security practices.',
       'Ethical hacking and digital forensics basics.',
@@ -158,6 +166,7 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Robotics & Automation',
     image: roboticsImage,
+    nestedSections: createDepartmentDemoSections('Robotics & Automation', ['control systems', 'automation'], 'robotics'),
     points: [
       'Control systems and embedded foundations.',
       'Sensor integration and automation workflows.',
@@ -166,8 +175,9 @@ export const submenuData = {
   },
   'departments/computer-science': {
     sectionLabel: 'DEPARTMENTS',
-    title: 'Computer Science',
-    image: expertLectureImage,
+    title: 'Computer Science & Engineering',
+    image: cseDeptImage,
+    nestedSections: createDepartmentDemoSections('Computer Science & Engineering', ['programming', 'software engineering'], 'cse'),
     points: [
       'Strong programming and algorithmic foundation.',
       'Software engineering lifecycle and practices.',
@@ -177,16 +187,30 @@ export const submenuData = {
   'departments/electrical-engineering': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electrical Engineering',
-    // no dedicated asset yet, so omit hero image
-    showHeroImage: false,
-    points: []
+    image: electricalDeptImage,
+    nestedSections: createDepartmentDemoSections('Electrical Engineering', ['power systems', 'control engineering'], 'electrical-engineering'),
+    body: [
+      'The Department of Electrical Engineering at SIET prepares students for careers in power, automation, and control systems through a practical and industry-aligned curriculum.'
+    ],
+    points: [
+      'Core focus on power systems, electrical machines, and network analysis.',
+      'Hands-on lab training in circuits, measurements, and control engineering.',
+      'Exposure to renewable energy systems, industrial automation, and smart grid concepts.'
+    ]
   },
   'departments/electronics-vlsi': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Electronics Engineering (VLSI Design)',
-    // no dedicated asset yet, so omit hero image
-    showHeroImage: false,
-    points: []
+    image: electronicsDeptImage,
+    nestedSections: createDepartmentDemoSections('Electronics Engineering (VLSI Design)', ['VLSI design', 'embedded systems'], 'electronics-vlsi'),
+    body: [
+      'The Electronics Engineering (VLSI Design) program equips students with strong analog-digital electronics foundations and advanced chip design skills for modern semiconductor industries.'
+    ],
+    points: [
+      'Strong fundamentals in electronic devices, digital systems, and signal processing.',
+      'VLSI design flow exposure including HDL-based design, simulation, and verification.',
+      'Practice-oriented learning in embedded systems, PCB-level understanding, and hardware prototyping.'
+    ]
   },
   'academics/courses-offered': {
     sectionLabel: 'ACADEMICS',
@@ -196,9 +220,12 @@ export const submenuData = {
       'SIET Panchkula offers B.Tech programs designed around industry-relevant learning and career readiness.'
     ],
     points: [
+      'Computer Science and Engineering (Core) (Intake: 60) — Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
       'Computer Science and Engineering (AI & ML) (Intake: 60) — Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
       'Computer Science and Engineering (Cyber Security) (Intake: 60) — Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
-      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.'
+      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.',
+      'Electrical Engineering (Intake: 60) — Builds strong foundations in electrical machines, power systems, circuit analysis, and control engineering for modern energy and industrial applications.',
+      'Electronics Engineering (VLSI Design) (Intake: 60) — Focuses on semiconductor devices, VLSI circuit design, embedded systems, and electronics product development for next-generation hardware innovation.'
     ]
   },
   'academics/academic-calendar': {
@@ -222,15 +249,32 @@ export const submenuData = {
   'academics/syllabus': {
     sectionLabel: 'ACADEMICS',
     title: 'Syllabus',
-    subtitle: 'Select a program to preview the syllabus PDF.',
-    pdfOptions: [
-      { label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
-      { label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
-      { label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
+    subtitle: 'Search and open the syllabus PDF for your program.',
+    courses: [
+      { key: 'aiml', label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
+      { key: 'cyber', label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
+      { key: 'ra', label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
     ],
     body: [
-      'Choose your program from the dropdown to view the syllabus in the built-in PDF viewer.',
-      'If your program syllabus is updated later, the document link here can be replaced with the latest file.'
+      'Use the search box to quickly find your program.',
+      'Open the PDF in the viewer, or download it in a new tab.'
+    ],
+    points: []
+  },
+  'academics/admission-prospectus': {
+    sectionLabel: 'ACADEMICS',
+    title: 'Admission Prospectus',
+    subtitle: 'Select a prospectus document to preview.',
+    documents: [
+      { key: 'be-btech-barch', label: 'BE / B.Tech / B.Arch Prospectus (2025)', pdfUrl: beBtechBarchProspectusDoc },
+      { key: 'btech-leet', label: 'B.Tech LEET Prospectus (2025)', pdfUrl: btechLeetProspectusDoc }
+    ],
+    resources: [
+      { label: 'HSTES Admissions Portal', href: 'https://www.hstes.org.in/' }
+    ],
+    body: [
+      'Use the selector to preview the prospectus document.',
+      'For the latest counselling updates and timelines, refer to the HSTES portal link.'
     ],
     points: []
   },
@@ -387,6 +431,24 @@ export const submenuData = {
       'Aptitude and technical preparation tracks.',
       'Soft skills and interview readiness.',
       'Mock tests and mentoring sessions.'
+    ]
+  },
+  'placements/placement-brochure': {
+    sectionLabel: 'TRAINING & PLACEMENTS',
+    title: 'Placement Brochure 2026-27',
+    subtitle: 'Bridging the gap between academic excellence and industrial innovation.',
+    pdfUrl: 'https://siettpo.vercel.app/brochure.pdf',
+    body: [
+      'Explore our comprehensive guide to campus recruitment, featuring batch demographics, department highlights, and the technological landscape of our institute.',
+      'Use the embedded preview to view the brochure directly on this page, or download the PDF for offline access.'
+    ],
+    points: [
+      'Department-wise student intake and profile snapshot.',
+      'Placement cell process and recruiter engagement workflow.',
+      'Training ecosystem and student industry-readiness initiatives.'
+    ],
+    resources: [
+      { label: 'Open Placement Portal', href: 'https://siettpo.vercel.app/' }
     ]
   },
   'placements/placement-records': {

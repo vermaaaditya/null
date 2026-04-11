@@ -99,6 +99,13 @@ CSS organization:
 - `src/css/forms.css`: form styles.
 - `src/css/responsive.css`: media queries.
 
+Why there appears to be repeated CSS:
+- `src/styles.css` is the older monolithic stylesheet that still holds many base selectors.
+- `src/css/base.css` imports that file first, then the newer modular CSS files override or extend it.
+- This means some selectors appear to be written twice on purpose: the later modular file wins when the same selector is repeated.
+- If you change a layout rule and it does not apply, check import order first. A later file such as `navbar.css`, `submenu.css`, or `responsive.css` may be overriding it.
+- `src/css/responsive.css` is intentionally used for shared media queries, while component-specific responsive fixes can live beside the component stylesheet when needed.
+
 Compatibility file:
 - `src/css/index.css` forwards to `base.css` and can be treated as legacy.
 
@@ -107,9 +114,12 @@ Compatibility file:
 - `src/components/`: reusable UI sections.
 - `src/pages/`: route-level pages.
 - `src/pages/submenu/`: submenu page templates + data.
+- `src/pages/submenu/departmentSections/`: standalone route pages for department subsections.
+- `src/pages/submenu/departmentSections/content/`: per-department demo data files for About Department, Vision & Mission, Faculty, Lesson Plans, and Time Table.
 - `src/data/`: content/data lists (notices, updates).
 - `src/assets/new-assets/`: static media and downloadable docs.
 - `src/css/`: centralized stylesheet modules.
+- `src/styles.css`: legacy base stylesheet imported by `src/css/base.css`.
 
 ## 8) Validation checklist after content edits
 
@@ -157,3 +167,27 @@ Before pushing changes:
 2. Run `npm run build`.
 3. Manually open these critical routes: `/`, `/all-notices`, `/admission-form`, `/life-at-siet`, `/events`, `/student-helpline`.
 4. Confirm at least one PDF/document link opens correctly from the notices board.
+
+## 13) Backend implementation reference
+
+Backend planning and implementation notes are documented in:
+- `BACKEND.md`
+
+Use this document when you want to migrate static frontend content to API-driven content (notices, departments, courses, events, forms).
+
+## 14) Program count consistency rule
+
+The website now presents six B.Tech programs as the canonical offering:
+1. Computer Science and Engineering (Core)
+2. Computer Science and Engineering (AI & ML)
+3. Computer Science and Engineering (Cyber Security)
+4. Robotics & Automation
+5. Electrical Engineering
+6. Electronics Engineering (VLSI Design)
+
+When updating homepage copy, chatbot answers, submenu content, or course summaries, do not publish outdated text that lists only three programs.
+
+## 15) Cleanup policy for unused files
+
+Before adding new components, verify whether an existing component is still in use.
+If a component is not imported anywhere and has no route usage, remove it to avoid stale code.
