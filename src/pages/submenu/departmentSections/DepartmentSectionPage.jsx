@@ -144,33 +144,7 @@ const DepartmentSectionPage = ({ sectionId }) => {
               </div>
             </main>
 
-            <aside className="submenu-aside">
-              <div className="submenu-aside-card">
-                <h3>Other Sections</h3>
-                <div className="submenu-link-list">
-                  {otherSections.map((section) => (
-                    <Link key={section.id} to={section.route} className="submenu-inline-link">
-                      {section.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
 
-              <div className="submenu-aside-card">
-                <h3>For Students</h3>
-                <ul className="submenu-mini-list">
-                  <li>Check your department page for official syllabus, timetable, and faculty details.</li>
-                  <li>Visit the Academics section for calendar, exam schedule, and notices.</li>
-                  <li>Contact your department for specific queries or academic guidance.</li>
-                </ul>
-              </div>
-
-              <div className="submenu-aside-card subtle">
-                <h3>Latest Updates</h3>
-                <p className="submenu-aside-text">Check the notices board for the latest department announcements and updates.</p>
-                <Link to="/all-notices" className="submenu-aside-cta">View Notices</Link>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
