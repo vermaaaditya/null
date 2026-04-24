@@ -304,30 +304,17 @@ const Navbar = () => {
                       {item.name}
                     </a>
                   ) : item.submenu ? (
-                    <div className="nav-link-row">
-                      <Link
-                        to={item.href}
-                        className="nav-link"
-                        onClick={() => {
-                          setOpenDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                      <button
-                        type="button"
-                        className={`nav-arrow-btn ${openDropdown === index ? 'open' : ''}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          toggleDropdown(index);
-                        }}
-                        aria-label="Toggle menu"
-                      >
-                        <span className="dropdown-arrow">▼</span>
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      className="nav-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleDropdown(index);
+                      }}
+                    >
+                      {item.name}
+                      <span className={`dropdown-arrow ${openDropdown === index ? 'open' : ''}`}>▼</span>
+                    </button>
                   ) : (
                     <NavLink
                       to={item.href}
