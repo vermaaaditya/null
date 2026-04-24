@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 import SubmenuSidebar from './SubmenuSidebar';
 
@@ -17,7 +17,6 @@ const SubmenuDocumentHub = ({
   showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
   const [query, setQuery] = useState('');
   const [activeKey, setActiveKey] = useState(documents[0]?.key || documents[0]?.label || '');
 
@@ -166,7 +165,6 @@ const SubmenuDocumentHub = ({
                       ) : null}
                     </div>
 
-                    <p className="submenu-info-text">{infoText}</p>
                   </aside>
                 </div>
               </div>

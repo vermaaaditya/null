@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 import SubmenuSidebar from './SubmenuSidebar';
 
@@ -14,7 +14,6 @@ const SubmenuNoImage = ({
   showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
 
   return (
     <div className="submenu-page">
@@ -54,7 +53,7 @@ const SubmenuNoImage = ({
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
                   <SubmenuBodyProse body={body} resources={resources} points={points} />
-                  <p className="submenu-info-text">{infoText}</p>
+
                 </div>
               </div>
             </main>

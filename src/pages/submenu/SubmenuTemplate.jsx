@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 import SubmenuSidebar from './SubmenuSidebar';
 
@@ -19,7 +19,6 @@ const SubmenuTemplate = ({
 }) => {
   const location = useLocation();
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
 
   useEffect(() => {
     if (!location.hash) return undefined;
@@ -168,7 +167,7 @@ const SubmenuTemplate = ({
                       </div>
                     </>
                   ) : null}
-                  <p className="submenu-info-text">{infoText}</p>
+
                 </div>
               </div>
             </main>

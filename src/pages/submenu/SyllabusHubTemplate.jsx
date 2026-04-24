@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 import SubmenuSidebar from './SubmenuSidebar';
 
@@ -17,7 +17,6 @@ const SyllabusHubTemplate = ({
   showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
   const [query, setQuery] = useState('');
   const [activeKey, setActiveKey] = useState(courses[0]?.key || courses[0]?.label || '');
 
@@ -156,7 +155,6 @@ const SyllabusHubTemplate = ({
                     <div className="submenu-prose">
                       <SubmenuBodyProse body={body} resources={resources} points={points} />
 
-                      <p className="submenu-info-text">{infoText}</p>
                     </div>
                   </div>
                 </div>

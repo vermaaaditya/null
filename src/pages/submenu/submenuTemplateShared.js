@@ -81,4 +81,4 @@ export const getSectionHome = (sectionLabel) => {
   }
 };
 
-export const getInfoText = (title, sectionLabel) => `${title} is an important part of ${sectionLabel}.`;
+
