@@ -591,6 +591,42 @@ img {
   padding-left: 1.5rem;
 }
 
+.dropdown-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-link-row .dropdown-link {
+  flex: 1;
+}
+
+.nav-arrow-btn, .nested-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-arrow-btn:hover, .nested-arrow-btn:hover {
+  color: #c5a059;
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.nav-arrow-btn.open .dropdown-arrow, 
+.nested-arrow-btn.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 920px) {
+  .nav-arrow-btn, .nested-arrow-btn {
+    padding: 0.8rem 1.2rem;
+  }
+}
+
 /* Hero */
 .hero {
   position: relative;

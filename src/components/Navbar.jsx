@@ -81,66 +81,66 @@ const Navbar = () => {
           name: 'Computer Science & Engineering (core)',
           href: '/departments/cse',
           submenu: [
-            { name: 'About Department', href: '/departments/cse/about-department' },
-            { name: 'Vision & Mission', href: '/departments/cse/vision-mission' },
-            { name: 'Faculty', href: '/departments/cse/faculty' },
-            { name: 'Lesson Plans', href: '/departments/cse/lesson-plans' },
-            { name: 'Time Table', href: '/departments/cse/time-table' }
+            { name: 'About Department', href: '/departments/cse#about-department' },
+            { name: 'Vision & Mission', href: '/departments/cse#vision-mission' },
+            { name: 'Faculty', href: '/departments/cse#faculty' },
+            { name: 'Lesson Plans', href: '/departments/cse#lesson-plans' },
+            { name: 'Time Table', href: '/departments/cse#time-table' }
           ]
         },
         {
           name: 'Computer Science & Engineering(AI & Machine Learning)',
           href: '/departments/ai-ml',
           submenu: [
-            { name: 'About Department', href: '/departments/ai-ml/about-department' },
-            { name: 'Vision & Mission', href: '/departments/ai-ml/vision-mission' },
-            { name: 'Faculty', href: '/departments/ai-ml/faculty' },
-            { name: 'Lesson Plans', href: '/departments/ai-ml/lesson-plans' },
-            { name: 'Time Table', href: '/departments/ai-ml/time-table' }
+            { name: 'About Department', href: '/departments/ai-ml#about-department' },
+            { name: 'Vision & Mission', href: '/departments/ai-ml#vision-mission' },
+            { name: 'Faculty', href: '/departments/ai-ml#faculty' },
+            { name: 'Lesson Plans', href: '/departments/ai-ml#lesson-plans' },
+            { name: 'Time Table', href: '/departments/ai-ml#time-table' }
           ]
         },
         {
           name: 'Computer Science & Engineering(Cyber Security)',
           href: '/departments/cyber-security',
           submenu: [
-            { name: 'About Department', href: '/departments/cyber-security/about-department' },
-            { name: 'Vision & Mission', href: '/departments/cyber-security/vision-mission' },
-            { name: 'Faculty', href: '/departments/cyber-security/faculty' },
-            { name: 'Lesson Plans', href: '/departments/cyber-security/lesson-plans' },
-            { name: 'Time Table', href: '/departments/cyber-security/time-table' }
+            { name: 'About Department', href: '/departments/cyber-security#about-department' },
+            { name: 'Vision & Mission', href: '/departments/cyber-security#vision-mission' },
+            { name: 'Faculty', href: '/departments/cyber-security#faculty' },
+            { name: 'Lesson Plans', href: '/departments/cyber-security#lesson-plans' },
+            { name: 'Time Table', href: '/departments/cyber-security#time-table' }
           ]
         },
         {
           name: 'Robotics & Automation',
           href: '/departments/robotics',
           submenu: [
-            { name: 'About Department', href: '/departments/robotics/about-department' },
-            { name: 'Vision & Mission', href: '/departments/robotics/vision-mission' },
-            { name: 'Faculty', href: '/departments/robotics/faculty' },
-            { name: 'Lesson Plans', href: '/departments/robotics/lesson-plans' },
-            { name: 'Time Table', href: '/departments/robotics/time-table' }
+            { name: 'About Department', href: '/departments/robotics#about-department' },
+            { name: 'Vision & Mission', href: '/departments/robotics#vision-mission' },
+            { name: 'Faculty', href: '/departments/robotics#faculty' },
+            { name: 'Lesson Plans', href: '/departments/robotics#lesson-plans' },
+            { name: 'Time Table', href: '/departments/robotics#time-table' }
           ]
         },
         {
           name: 'Electrical Engineering',
           href: '/departments/electrical-engineering',
           submenu: [
-            { name: 'About Department', href: '/departments/electrical-engineering/about-department' },
-            { name: 'Vision & Mission', href: '/departments/electrical-engineering/vision-mission' },
-            { name: 'Faculty', href: '/departments/electrical-engineering/faculty' },
-            { name: 'Lesson Plans', href: '/departments/electrical-engineering/lesson-plans' },
-            { name: 'Time Table', href: '/departments/electrical-engineering/time-table' }
+            { name: 'About Department', href: '/departments/electrical-engineering#about-department' },
+            { name: 'Vision & Mission', href: '/departments/electrical-engineering#vision-mission' },
+            { name: 'Faculty', href: '/departments/electrical-engineering#faculty' },
+            { name: 'Lesson Plans', href: '/departments/electrical-engineering#lesson-plans' },
+            { name: 'Time Table', href: '/departments/electrical-engineering#time-table' }
           ]
         },
         {
           name: 'Electronics Engineering (VLSI Design)',
           href: '/departments/electronics-vlsi',
           submenu: [
-            { name: 'About Department', href: '/departments/electronics-vlsi/about-department' },
-            { name: 'Vision & Mission', href: '/departments/electronics-vlsi/vision-mission' },
-            { name: 'Faculty', href: '/departments/electronics-vlsi/faculty' },
-            { name: 'Lesson Plans', href: '/departments/electronics-vlsi/lesson-plans' },
-            { name: 'Time Table', href: '/departments/electronics-vlsi/time-table' }
+            { name: 'About Department', href: '/departments/electronics-vlsi#about-department' },
+            { name: 'Vision & Mission', href: '/departments/electronics-vlsi#vision-mission' },
+            { name: 'Faculty', href: '/departments/electronics-vlsi#faculty' },
+            { name: 'Lesson Plans', href: '/departments/electronics-vlsi#lesson-plans' },
+            { name: 'Time Table', href: '/departments/electronics-vlsi#time-table' }
           ]
         }
       ]
@@ -348,17 +348,31 @@ const Navbar = () => {
                       >
                         {subitem.submenu ? (
                           <>
-                            <button
-                              type="button"
-                              className="dropdown-link nested-parent-link"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                toggleNestedDropdown(`${index}-${subindex}`);
-                              }}
-                            >
-                              {subitem.name}
-                              <span className={`dropdown-arrow ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}>▶</span>
-                            </button>
+                            <div className="dropdown-link-row">
+                              <Link
+                                to={subitem.href}
+                                className="dropdown-link nested-parent-link"
+                                onClick={() => {
+                                  closeMobileMenu();
+                                  setOpenDropdown(null);
+                                  setOpenNestedDropdown(null);
+                                }}
+                              >
+                                {subitem.name}
+                              </Link>
+                              <button
+                                type="button"
+                                className={`nested-arrow-btn ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  toggleNestedDropdown(`${index}-${subindex}`);
+                                }}
+                                aria-label="Toggle submenu"
+                              >
+                                <span className="dropdown-arrow">▶</span>
+                              </button>
+                            </div>
 
                             <ul className={`nested-dropdown-menu ${openNestedDropdown === `${index}-${subindex}` ? 'active' : ''}`}>
                               {subitem.submenu.map((nestedItem, nestedIndex) => (

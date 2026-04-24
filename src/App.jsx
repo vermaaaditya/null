@@ -23,6 +23,7 @@ import VisionMission from './pages/submenu/departmentSections/VisionMission';
 import Faculty from './pages/submenu/departmentSections/Faculty';
 import LessonPlans from './pages/submenu/departmentSections/LessonPlans';
 import TimeTable from './pages/submenu/departmentSections/TimeTable';
+import DepartmentSectionPage from './pages/submenu/departmentSections/DepartmentSectionPage';
 
 const ExternalPlacementRedirect = () => {
   React.useEffect(() => {
@@ -53,12 +54,12 @@ function App() {
         <Route path="/about" element={<Navigate to="/about/about-institute" replace />} />
         <Route path="/about/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/departments" element={<Navigate to="/departments/cse" replace />} />
-        <Route path="/departments/:subSection" element={<SubmenuRouteHandler />} />
-        <Route path="/departments/:deptSlug/about-department" element={<AboutDepartment />} />
-        <Route path="/departments/:deptSlug/vision-mission" element={<VisionMission />} />
-        <Route path="/departments/:deptSlug/faculty" element={<Faculty />} />
-        <Route path="/departments/:deptSlug/lesson-plans" element={<LessonPlans />} />
-        <Route path="/departments/:deptSlug/time-table" element={<TimeTable />} />
+        <Route path="/departments/:deptSlug" element={<DepartmentSectionPage />} />
+        <Route path="/departments/:deptSlug/about-department" element={<Navigate to="../#about-department" replace />} />
+        <Route path="/departments/:deptSlug/vision-mission" element={<Navigate to="../#vision-mission" replace />} />
+        <Route path="/departments/:deptSlug/faculty" element={<Navigate to="../#faculty" replace />} />
+        <Route path="/departments/:deptSlug/lesson-plans" element={<Navigate to="../#lesson-plans" replace />} />
+        <Route path="/departments/:deptSlug/time-table" element={<Navigate to="../#time-table" replace />} />
         <Route path="/academics" element={<Navigate to="/academics/academic-calendar" replace />} />
         <Route path="/academics/:subSection" element={<SubmenuRouteHandler />} />
         <Route path="/facilities" element={<Navigate to="/facilities/infrastructure" replace />} />

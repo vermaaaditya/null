@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sietLogo from '../assets/new-assets/logos/siet.webp';
 import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 
 /**
@@ -8,6 +7,7 @@ import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
  * Displays institute identity and key highlights
  */
 const Header = () => {
+  const sietLogo = '/newlogo.jpeg';
   return (
     <header className="header">
       <div className="container">

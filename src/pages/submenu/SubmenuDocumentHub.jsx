@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome, quickLinks, sectionGuidance } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
+import SubmenuBodyProse from './SubmenuBodyProse';
 
 const normalize = (value) => String(value || '').toLowerCase().trim();
 
@@ -15,7 +16,6 @@ const SubmenuDocumentHub = ({
   showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
   const [query, setQuery] = useState('');
   const [activeKey, setActiveKey] = useState(documents[0]?.key || documents[0]?.label || '');
 
@@ -44,21 +44,13 @@ const SubmenuDocumentHub = ({
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-            <nav className="submenu-breadcrumb" aria-label="Breadcrumb">
-              <Link to="/" className="crumb-link">Home</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <Link to={sectionHome.to} className="crumb-link">{sectionHome.label}</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <span className="crumb-current" aria-current="page">{title}</span>
-            </nav>
 
-            <div className="submenu-hero-grid doc-hero doc-reader-hero">
+
+            <div className="submenu-hero-grid doc-hero doc-reader-hero no-visual">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
                   {active?.pdfUrl ? (
@@ -67,43 +59,6 @@ const SubmenuDocumentHub = ({
                     </a>
                   ) : null}
                 </div>
-              </div>
-
-              <div className="doc-hero-select-bar">
-                <label className="doc-hero-label" htmlFor="doc-select">
-                  Document
-                </label>
-                <select
-                  id="doc-select"
-                  className="doc-hero-dropdown"
-                  value={active?.key || ''}
-                  onChange={(e) => setActiveKey(e.target.value)}
-                  aria-label="Select document"
-                >
-                  {normalizedDocs.map((d) => (
-                    <option key={d.key} value={d.key}>
-                      {d.label}
-                    </option>
-                  ))}
-                </select>
-                {active?.pdfUrl ? (
-                  <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-hero-download-btn">
-                    Open PDF in new tab
-                  </a>
-                ) : null}
-              </div>
-
-              <div className="doc-hero-reader submenu-pdf-wrap">
-                {active?.pdfUrl ? (
-                  <iframe
-                    title={`${active.label} PDF preview`}
-                    src={active.pdfUrl}
-                    className="submenu-pdf-viewer reader-full"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="submenu-pdf-empty">PDF not available.</div>
-                )}
               </div>
             </div>
           </div>
@@ -118,40 +73,9 @@ const SubmenuDocumentHub = ({
                 <div className="doc-body-grid">
                   <section className="doc-body-copy">
                     <h2 className="submenu-section-title">About this document</h2>
-                    <div className="submenu-prose">
-                      {body.length > 0 ? (
-                        <div className="submenu-body">
-                          {body.map((para) => (
-                            <p key={para} className="submenu-paragraph">
-                              {para}
-                            </p>
-                          ))}
-                        </div>
-                      ) : null}
-
-                      {points.length > 0 ? (
-                        <ul className="submenu-point-list">
-                          {points.map((p) => (
-                            <li key={p}>{p}</li>
-                          ))}
-                        </ul>
-                      ) : null}
-
-                      {resources.length > 0 ? (
-                        <div className="submenu-resources">
-                          <h3 className="submenu-subsection-title">Resources</h3>
-                          <ul className="submenu-resource-list">
-                            {resources.map((item, index) => (
-                              <li key={`${item.label}-${item.href}-${index}`}>
-                                <a href={item.href} target="_blank" rel="noopener noreferrer" className="submenu-resource-link">
-                                  {item.label}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
+                     <div className="submenu-prose">
+                       <SubmenuBodyProse body={body} resources={resources} points={points} />
+                     </div>
                   </section>
 
                   <aside className="doc-body-panel">
@@ -165,7 +89,6 @@ const SubmenuDocumentHub = ({
                         onChange={(e) => setQuery(e.target.value)}
                         aria-label="Search documents"
                       />
-
                       <div className="doc-panel-list" role="list">
                         {filtered.map((d) => {
                           const isActive = d.key === active?.key;
@@ -195,45 +118,40 @@ const SubmenuDocumentHub = ({
                       ) : null}
                     </div>
 
-                    <p className="submenu-info-text">{infoText}</p>
+                    <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
+                      <div className="coc-preview-head">
+                        {active?.pdfUrl && (
+                          <a
+                            href={active.pdfUrl}
+                            download
+                            className="gradient-button"
+                          >
+                            Download Document
+                          </a>
+                        )}
+                      </div>
+                      
+                      <div className="coc-preview-frame-wrap">
+                        {active?.pdfUrl ? (
+                          <iframe
+                            key={active.pdfUrl}
+                            title={`${active.label} PDF preview`}
+                            src={active.pdfUrl}
+                            className="coc-preview-frame"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
+                            PDF not available for this selection.
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </aside>
                 </div>
               </div>
             </main>
 
-            {showSidebar ? (
-              <aside className="submenu-aside">
-                <div className="submenu-aside-card">
-                  <h3>Quick Links</h3>
-                  <div className="submenu-link-list">
-                    {(quickLinks[sectionLabel] || []).map((item) => (
-                      <Link key={item.label} to={item.to} className="submenu-inline-link">
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="submenu-aside-card">
-                  <h3>For Students</h3>
-                  <ul className="submenu-mini-list">
-                    {(sectionGuidance[sectionLabel] || []).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="submenu-aside-card subtle">
-                  <h3>Need updates?</h3>
-                  <p className="submenu-aside-text">
-                    Check the latest notifications and downloadable notices.
-                  </p>
-                  <Link to="/all-notices" className="submenu-aside-cta">
-                    Open Notices Board?
-                  </Link>
-                </div>
-              </aside>
-            ) : null}
           </div>
         </div>
       </section>
@@ -242,4 +160,3 @@ const SubmenuDocumentHub = ({
 };
 
 export default SubmenuDocumentHub;
-

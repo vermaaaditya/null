@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome, quickLinks, sectionGuidance } from './submenuTemplateShared';
+import { Link, useNavigate } from 'react-router-dom';
+import { getSectionHome } from './submenuTemplateShared';
+import SubmenuBodyProse from './SubmenuBodyProse';
 
 const SubmenuWithPdfDropdown = ({
   sectionLabel,
@@ -10,10 +11,9 @@ const SubmenuWithPdfDropdown = ({
   points = [],
   body = [],
   resources = [],
-  showSidebar = true,
 }) => {
+  const navigate = useNavigate();
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
   const normalizedOptions = useMemo(
     () =>
       (pdfOptions || [])
@@ -26,74 +26,28 @@ const SubmenuWithPdfDropdown = ({
   const selected = normalizedOptions.find((opt) => opt.label === selectedLabel) || normalizedOptions[0];
   const pdfUrl = selected?.pdfUrl || '';
 
+  const handleDownload = () => {
+    if (!pdfUrl) return;
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = `${selectedLabel.replace(/\s+/g, '_')}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="submenu-page">
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-            <nav className="submenu-breadcrumb" aria-label="Breadcrumb">
-              <Link to="/" className="crumb-link">Home</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <Link to={sectionHome.to} className="crumb-link">{sectionHome.label}</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <span className="crumb-current" aria-current="page">{title}</span>
-            </nav>
-
-            <div className="submenu-hero-grid">
+            <div className="submenu-hero-grid no-visual">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
-                </div>
-              </div>
-
-              <div className="submenu-hero-visual">
-                <div className="submenu-pdf-wrap">
-                  <div className="submenu-pdf-toolbar">
-                    <label className="submenu-pdf-label" htmlFor="submenu-pdf-select">
-                      Select course
-                    </label>
-                    <select
-                      id="submenu-pdf-select"
-                      className="submenu-pdf-select"
-                      value={selectedLabel}
-                      onChange={(e) => setSelectedLabel(e.target.value)}
-                      disabled={normalizedOptions.length === 0}
-                    >
-                      {normalizedOptions.length === 0 ? (
-                        <option value="">No syllabus options available</option>
-                      ) : (
-                        normalizedOptions.map((opt) => (
-                          <option key={opt.label} value={opt.label}>
-                            {opt.label}
-                          </option>
-                        ))
-                      )}
-                    </select>
-                  </div>
-
-                  {pdfUrl ? (
-                    <>
-                      <iframe
-                        title={`${title} PDF preview`}
-                        src={pdfUrl}
-                        className="submenu-pdf-viewer"
-                        loading="lazy"
-                      />
-                      <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-pdf-open-link">
-                        Open PDF in new tab
-                      </a>
-                    </>
-                  ) : (
-                    <div className="submenu-pdf-empty">
-                      PDF is not available for this selection yet.
-                    </div>
-                  )}
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
                 </div>
               </div>
             </div>
@@ -106,79 +60,64 @@ const SubmenuWithPdfDropdown = ({
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
-                <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
-                  {body.length > 0 ? (
-                    <div className="submenu-body">
-                      {body.map((para) => (
-                        <p key={para} className="submenu-paragraph">
-                          {para}
-                        </p>
-                      ))}
-                    </div>
-                  ) : null}
+                  <SubmenuBodyProse body={body} resources={resources} points={points} />
+                </div>
 
-                  {resources.length > 0 ? (
-                    <div className="submenu-resources">
-                      <h3 className="submenu-subsection-title">Resources</h3>
-                      <ul className="submenu-resource-list">
-                        {resources.map((item, index) => (
-                          <li key={`${item.label}-${item.href}-${index}`}>
-                            <a href={item.href} target="_blank" rel="noopener noreferrer" className="submenu-resource-link">
-                              {item.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
+                <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
+                   <div className="submenu-pdf-toolbar" style={{ background: 'transparent', borderBottom: '1px solid rgba(10,25,47,0.1)', paddingBottom: '1rem', marginBottom: '1rem' }}>
+                    <label className="submenu-pdf-label" htmlFor="submenu-pdf-select" style={{ color: '#0a192f' }}>
+                      Select Option
+                    </label>
+                    <select
+                      id="submenu-pdf-select"
+                      className="submenu-pdf-select"
+                      value={selectedLabel}
+                      onChange={(e) => setSelectedLabel(e.target.value)}
+                      disabled={normalizedOptions.length === 0}
+                      style={{ background: '#f8fafc', color: '#0a192f', borderColor: 'rgba(10,25,47,0.1)' }}
+                    >
+                      {normalizedOptions.length === 0 ? (
+                        <option value="">No options available</option>
+                      ) : (
+                        normalizedOptions.map((opt) => (
+                          <option key={opt.label} value={opt.label}>
+                            {opt.label}
+                          </option>
+                        ))
+                      )}
+                    </select>
+                  </div>
 
-                  {points.length > 0 ? (
-                    <ul className="submenu-point-list">
-                      {points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-
-                  <p className="submenu-info-text">{infoText}</p>
+                  <div className="coc-preview-head">
+                    {pdfUrl && (
+                      <button
+                        onClick={handleDownload}
+                        className="gradient-button"
+                      >
+                        Download Selected PDF
+                      </button>
+                    )}
+                  </div>
+                  
+                  <div className="coc-preview-frame-wrap">
+                    {pdfUrl ? (
+                      <iframe
+                        key={pdfUrl}
+                        title={`${title} PDF preview`}
+                        src={pdfUrl}
+                        className="coc-preview-frame"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
+                        PDF is not available for this selection yet.
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </main>
-
-            {showSidebar ? (
-              <aside className="submenu-aside">
-                <div className="submenu-aside-card">
-                  <h3>Quick Links</h3>
-                  <div className="submenu-link-list">
-                    {(quickLinks[sectionLabel] || []).map((item) => (
-                      <Link key={item.label} to={item.to} className="submenu-inline-link">
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="submenu-aside-card">
-                  <h3>For Students</h3>
-                  <ul className="submenu-mini-list">
-                    {(sectionGuidance[sectionLabel] || []).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="submenu-aside-card subtle">
-                  <h3>Need updates?</h3>
-                  <p className="submenu-aside-text">
-                    Check the latest notifications and downloadable notices.
-                  </p>
-                  <Link to="/all-notices" className="submenu-aside-cta">
-                    Open Notices Board?
-                  </Link>
-                </div>
-              </aside>
-            ) : null}
           </div>
         </div>
       </section>
@@ -187,4 +126,3 @@ const SubmenuWithPdfDropdown = ({
 };
 
 export default SubmenuWithPdfDropdown;
-

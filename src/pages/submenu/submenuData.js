@@ -25,30 +25,48 @@ import beBtechBarchProspectusDoc from '../../assets/new-assets/prospectus/BE-BTe
 import btechLeetProspectusDoc from '../../assets/new-assets/prospectus/BTechLE-Prospectus-2025.pdf';
 import createDepartmentDemoSections from './departmentDemoSections';
 
+/* ──────────────────────────────────────────────
+   Shared anti-ragging content (used by both
+   about/anti-ragging and academics/anti-ragging)
+   ────────────────────────────────────────────── */
+const antiRaggingBody = [
+  'Ragging is strictly banned by the Government of India, State Government of Haryana, and the Hon\'ble Supreme Court. SIET enforces a zero-tolerance policy with round-the-clock vigilance by faculty and administration.'
+];
+const antiRaggingPoints = [
+  'Penalties include expulsion, hostel eviction, withholding of scholarships, and debarring from placements.',
+  'Violation is punishable by ₹25,000 fine and up to 3 years of rigorous imprisonment.',
+  'Faculty are deputed at key campus locations during day and night to prevent incidents.',
+  'Any form of teasing, intimidation, or coercion of junior students constitutes ragging.'
+];
+
 export const submenuData = {
+  /* ═══════════════════════
+     ABOUT US
+     ═══════════════════════ */
   'about/history': {
     sectionLabel: 'ABOUT US',
     title: 'History',
     showHeroImage: false,
     body: [
-      'State Institute of Engineering & Technology (SIET), Panchkula, was established to strengthen government-led technical education in Haryana and to develop future-ready engineers.',
-      'The institute focuses on a disciplined academic culture, practical learning, and industry-relevant skills, with an emphasis on innovation and responsible engineering.'
+      'SIET Panchkula was established to strengthen government-led technical education in Haryana and develop future-ready engineers through disciplined academics and practical learning.'
     ],
     points: [
-      'Commitment to quality technical education and student development.',
-      'Focus on hands-on learning, labs, and project-based outcomes.',
-      'Continuous growth through faculty mentoring and modern curriculum.'
+      'Focus on hands-on labs, projects, and industry-relevant skills.',
+      'Continuous growth through faculty mentoring and modern curriculum.',
+      'Emphasis on innovation, ethics, and responsible engineering.'
     ]
   },
   'about/about-institute': {
     sectionLabel: 'ABOUT US',
     title: 'About Institute',
     image: campusImage,
+    body: [
+      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college operating from GPP campus, Sector-26. It offers six B.Tech programs with industry-oriented learning and expert faculty.'
+    ],
     points: [
-      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
-      'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
-      'The institute offers six undergraduate programs: Computer Science and Engineering (Core), Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).',
-      'With industry-oriented learning, strong facilities, and expert faculty, SIET equips students with the skills to excel in the evolving world of technology.'
+      'CSE (Core) · CSE (AI & ML) · CSE (Cyber Security)',
+      'Robotics & Automation · Electrical Engineering · Electronics (VLSI Design)',
+      'Strong facilities, practical curriculum, and career-focused training.'
     ]
   },
   'about/vision-mission': {
@@ -57,15 +75,15 @@ export const submenuData = {
     image: campusAltImage,
     body: [
       'Vision',
-      'To be a centre of excellence in technical education, research, and innovation, fostering a skilled and ethical workforce that contributes to the sustainable development of society and the nation.',
+      'To be a centre of excellence in technical education, research, and innovation — fostering a skilled and ethical workforce for sustainable development.',
       'Mission'
     ],
     points: [
-      'Quality Education – To provide a dynamic and inclusive learning environment that nurtures creativity, problem-solving, and technical expertise.',
-      'Research & Innovation – To promote research and technological advancements that address local and global challenges.',
-      'Industry Collaboration – To strengthen industry-academia partnerships for hands-on learning, internships, and employability.',
-      'Social Responsibility – To instil values of ethics, leadership, and sustainability for the betterment of society.',
-      'Lifelong Learning – To equip students with the skills necessary for continuous learning and adaptation to emerging technologies.'
+      'Quality Education — Inclusive learning that nurtures creativity and technical expertise.',
+      'Research & Innovation — Advancing technology to address local and global challenges.',
+      'Industry Collaboration — Partnerships for hands-on learning and employability.',
+      'Social Responsibility — Ethics, leadership, and sustainability.',
+      'Lifelong Learning — Skills for continuous adaptation to emerging technologies.'
     ]
   },
   'about/directors-message': {
@@ -74,23 +92,23 @@ export const submenuData = {
     image: directorImage,
     imageMode: 'portrait',
     body: [
-      'It gives me great pleasure to welcome you to the State Institute of Engineering and Technology (SIET), Panchkula, an institute dedicated to the growth and development of every student for better career prospects.',
-      'The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the college.',
-      'The college provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility. All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.',
-      'SIET has a team of highly qualified, experienced and dedicated faculty who devote their time not only to teaching but also for the overall development of the students. Further, faculty from other renowned institutions are invited to deliver guest lectures to help augment their studies beyond syllabus.',
-      'We are confident that the students passing out from this college will be technically sound, confident and have good leadership skills. I wish all the best to all the prospective students.',
-      'Prof. Anil Kumar (Director - Principal)'
+      'Welcome to SIET Panchkula. Our institute is dedicated to unlocking every student\'s potential and shaping confident engineers ready for real-world challenges.'
     ],
-    points: []
+    points: [
+      'Highly qualified faculty committed to teaching and holistic student development.',
+      'Guest lectures from renowned institutions to broaden academic exposure.',
+      'Focus on communication skills, critical thinking, and leadership.',
+      '— Prof. Anil Kumar, Director-Principal'
+    ]
   },
   'about/quality-policy': {
     sectionLabel: 'ABOUT US',
     title: 'Quality Policy',
     image: teacherImage,
     points: [
-      'Academic quality assurance and standards.',
-      'Continuous improvement in teaching-learning.',
-      'Outcome-focused performance culture.'
+      'Academic quality assurance aligned with AICTE/KUK standards.',
+      'Continuous improvement in teaching-learning outcomes.',
+      'Performance culture driven by measurable results.'
     ]
   },
   'about/affiliations': {
@@ -98,7 +116,7 @@ export const submenuData = {
     title: 'Affiliations',
     image: inspectionImage,
     body: [
-      'The institute is approved by AICTE, New Delhi and affiliated to Kurukshetra University (KUK), Kurukshetra. The official documents are provided below.'
+      'SIET is approved by AICTE, New Delhi and affiliated to Kurukshetra University (KUK).'
     ],
     resources: [
       { label: 'AICTE Approval (PDF)', href: 'https://sietpanchkula.ac.in/wp-content/uploads/2025/03/AICTE-LOA.pdf' },
@@ -110,34 +128,32 @@ export const submenuData = {
     sectionLabel: 'ABOUT US',
     title: 'Anti-Ragging',
     showHeroImage: false,
-    body: [
-      'As the students are aware, Govt. of India and State Govt. of Haryana have already banned the ragging of newly admitted students in all the Professional Institutions. As per instructions of the State Govt. stern anti ragging disciplinary action is to be taken against the students indulging in ragging of the students, including expulsion from the Institute and hostels/mess or fine with a public apology or withholding of scholarships or other benefits, debarring from representation in events, withholding results, and debarring from campus recruitment/industrial training in view of involvement of some seniors students in ragging of 1st year students in some of the Institutions in the previous years.',
-      'Hon’ble Supreme Court of India has directed the concerned Institutions/Universities to take immediate steps for the prevention of ragging in future. The violation of this law (ban on ragging) is not only punishable by a sum of Rs.25, 000/- but also by rigorous imprisonment of 3 years.',
-      'In order to curb the ragging, the Institute takes various steps such as helping the local administration for keeping vigilance in the University, senior students are advised individually and group to keep a watch on students indulging in ragging and cooperation of their parents is also sought explaining the aspects of punishment for violation of law of ban on ragging, by deputing faculty members at different places in the Institute to check the ragging during day and also up to midnight.',
-      'The following will be treated as the act of ragging “any disorderly conduct whether by words, spoken or written or by an act which has the effect of teasing, treaking or handling with rudeness any other student(s), indulging in roudy or undisciplined activities which causes or is likely to cause annoyance, hardship or psychological harm or raise fear or apprehension thereof in fresher or junior student(s) or asking the student(s) to do any act or perform something, which such student(s) will not do in the ordinary course and which has the effect of causing or generating a sense of shame or embarrassment so as to adversely effect the physique or psyche of a fresher or a junior student.'
-    ],
-    points: []
+    body: antiRaggingBody,
+    points: antiRaggingPoints
   },
+
+  /* ═══════════════════════
+     ACADEMICS — Anti-Ragging (shared content)
+     ═══════════════════════ */
   'academics/anti-ragging': {
     sectionLabel: 'ACADEMICS',
     title: 'Anti-Ragging',
     showHeroImage: false,
-    body: [
-      'As the students are aware, Govt. of India and State Govt. of Haryana have already banned the ragging of newly admitted students in all the Professional Institutions. As per instructions of the State Govt. stern anti ragging disciplinary action is to be taken against the students indulging in ragging of the students, including expulsion from the Institute and hostels/mess or fine with a public apology or withholding of scholarships or other benefits, debarring from representation in events, withholding results, and debarring from campus recruitment/industrial training in view of involvement of some seniors students in ragging of 1st year students in some of the Institutions in the previous years.',
-      'Hon’ble Supreme Court of India has directed the concerned Institutions/Universities to take immediate steps for the prevention of ragging in future. The violation of this law (ban on ragging) is not only punishable by a sum of Rs.25, 000/- but also by rigorous imprisonment of 3 years.',
-      'In order to curb the ragging, the Institute takes various steps such as helping the local administration for keeping vigilance in the University, senior students are advised individually and group to keep a watch on students indulging in ragging and cooperation of their parents is also sought explaining the aspects of punishment for violation of law of ban on ragging, by deputing faculty members at different places in the Institute to check the ragging during day and also up to midnight.',
-      'The following will be treated as the act of ragging “any disorderly conduct whether by words, spoken or written or by an act which has the effect of teasing, treaking or handling with rudeness any other student(s), indulging in roudy or undisciplined activities which causes or is likely to cause annoyance, hardship or psychological harm or raise fear or apprehension thereof in fresher or junior student(s) or asking the student(s) to do any act or perform something, which such student(s) will not do in the ordinary course and which has the effect of causing or generating a sense of shame or embarrassment so as to adversely effect the physique or psyche of a fresher or a junior student.'
-    ],
-    points: []
+    body: antiRaggingBody,
+    points: antiRaggingPoints
   },
+
+  /* ═══════════════════════
+     DEPARTMENTS
+     ═══════════════════════ */
   'departments/engineering': {
     sectionLabel: 'DEPARTMENTS',
     title: 'Engineering',
     image: facilitiesImage,
     points: [
-      'Interdisciplinary engineering foundation.',
-      'Core labs and practical curriculum.',
-      'Project-based learning pathways.'
+      'Interdisciplinary engineering foundation across all branches.',
+      'Core labs and practical-first curriculum.',
+      'Project-based learning with industry exposure.'
     ]
   },
   'departments/ai-ml': {
@@ -145,9 +161,12 @@ export const submenuData = {
     title: 'AI & Machine Learning',
     image: aiMlImage,
     nestedSections: createDepartmentDemoSections('AI & Machine Learning', ['machine learning', 'data science'], 'ai-ml'),
+    body: [
+      'Focused on artificial intelligence, neural networks, and data science for building intelligent real-world systems.'
+    ],
     points: [
-      'Machine learning fundamentals and applications.',
-      'Model development and evaluation workflows.',
+      'Machine learning fundamentals and model development.',
+      'Data science pipelines and evaluation workflows.',
       'Industry-relevant AI project exposure.'
     ]
   },
@@ -156,10 +175,13 @@ export const submenuData = {
     title: 'Cyber Security',
     image: cyberImage,
     nestedSections: createDepartmentDemoSections('Cyber Security', ['network security', 'digital forensics'], 'cyber-security'),
+    body: [
+      'Specializes in securing digital systems through ethical hacking, cryptography, and forensic analysis.'
+    ],
     points: [
       'Network and application security practices.',
-      'Ethical hacking and digital forensics basics.',
-      'Security operations and risk awareness.'
+      'Ethical hacking and digital forensics.',
+      'Security operations and risk management.'
     ]
   },
   'departments/robotics': {
@@ -167,6 +189,9 @@ export const submenuData = {
     title: 'Robotics & Automation',
     image: roboticsImage,
     nestedSections: createDepartmentDemoSections('Robotics & Automation', ['control systems', 'automation'], 'robotics'),
+    body: [
+      'Integrates mechanical systems, electronics, and intelligent control for designing automated and smart technologies.'
+    ],
     points: [
       'Control systems and embedded foundations.',
       'Sensor integration and automation workflows.',
@@ -178,10 +203,13 @@ export const submenuData = {
     title: 'Computer Science & Engineering',
     image: cseDeptImage,
     nestedSections: createDepartmentDemoSections('Computer Science & Engineering', ['programming', 'software engineering'], 'cse'),
+    body: [
+      'Core computing program covering algorithms, software engineering, databases, and modern application development.'
+    ],
     points: [
       'Strong programming and algorithmic foundation.',
-      'Software engineering lifecycle and practices.',
-      'Cloud, data, and modern application stacks.'
+      'Full-stack software engineering practices.',
+      'Cloud, data, and system design exposure.'
     ]
   },
   'departments/electrical-engineering': {
@@ -190,12 +218,12 @@ export const submenuData = {
     image: electricalDeptImage,
     nestedSections: createDepartmentDemoSections('Electrical Engineering', ['power systems', 'control engineering'], 'electrical-engineering'),
     body: [
-      'The Department of Electrical Engineering at SIET prepares students for careers in power, automation, and control systems through a practical and industry-aligned curriculum.'
+      'Prepares students for careers in power systems, automation, and control engineering through a practical, industry-aligned curriculum.'
     ],
     points: [
-      'Core focus on power systems, electrical machines, and network analysis.',
-      'Hands-on lab training in circuits, measurements, and control engineering.',
-      'Exposure to renewable energy systems, industrial automation, and smart grid concepts.'
+      'Power systems, electrical machines, and network analysis.',
+      'Hands-on lab training in circuits and control engineering.',
+      'Renewable energy, industrial automation, and smart grid concepts.'
     ]
   },
   'departments/electronics-vlsi': {
@@ -204,28 +232,32 @@ export const submenuData = {
     image: electronicsDeptImage,
     nestedSections: createDepartmentDemoSections('Electronics Engineering (VLSI Design)', ['VLSI design', 'embedded systems'], 'electronics-vlsi'),
     body: [
-      'The Electronics Engineering (VLSI Design) program equips students with strong analog-digital electronics foundations and advanced chip design skills for modern semiconductor industries.'
+      'Builds strong analog-digital electronics foundations with advanced chip design skills for the semiconductor industry.'
     ],
     points: [
-      'Strong fundamentals in electronic devices, digital systems, and signal processing.',
-      'VLSI design flow exposure including HDL-based design, simulation, and verification.',
-      'Practice-oriented learning in embedded systems, PCB-level understanding, and hardware prototyping.'
+      'Electronic devices, digital systems, and signal processing.',
+      'VLSI design flow — HDL, simulation, and verification.',
+      'Embedded systems, PCB design, and hardware prototyping.'
     ]
   },
+
+  /* ═══════════════════════
+     ACADEMICS
+     ═══════════════════════ */
   'academics/courses-offered': {
     sectionLabel: 'ACADEMICS',
     title: 'Courses Offered',
     image: aiMlImage,
     body: [
-      'SIET Panchkula offers B.Tech programs designed around industry-relevant learning and career readiness.'
+      'SIET offers six B.Tech programs (intake: 60 each) designed for industry readiness.'
     ],
     points: [
-      'Computer Science and Engineering (Core) (Intake: 60) — Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
-      'Computer Science and Engineering (AI & ML) (Intake: 60) — Focuses on artificial intelligence and machine learning, covering data science, neural networks, and automation to develop intelligent systems for real-world problem-solving.',
-      'Computer Science and Engineering (Cyber Security) (Intake: 60) — Specializes in cybersecurity techniques, ethical hacking, cryptography, and digital forensics to protect systems and networks from cyber threats and ensure data security.',
-      'Robotics & Automation (Intake: 60) — Integrates mechanical engineering, electronics, and AI to design and develop intelligent robots, automated systems, and smart technologies for industrial and real-world applications.',
-      'Electrical Engineering (Intake: 60) — Builds strong foundations in electrical machines, power systems, circuit analysis, and control engineering for modern energy and industrial applications.',
-      'Electronics Engineering (VLSI Design) (Intake: 60) — Focuses on semiconductor devices, VLSI circuit design, embedded systems, and electronics product development for next-generation hardware innovation.'
+      'CSE (Core) — Programming, algorithms, software engineering, databases.',
+      'CSE (AI & ML) — Neural networks, data science, intelligent systems.',
+      'CSE (Cyber Security) — Ethical hacking, cryptography, digital forensics.',
+      'Robotics & Automation — Intelligent robots, smart technologies, automation.',
+      'Electrical Engineering — Power systems, machines, control engineering.',
+      'Electronics (VLSI Design) — Semiconductor devices, chip design, embedded systems.'
     ]
   },
   'academics/academic-calendar': {
@@ -234,16 +266,14 @@ export const submenuData = {
     image: academicCalendarImage,
     showHeroImage: false,
     body: [
-      'Academic calendar notices and downloadable documents are shared through official updates.',
-      'Use the link below to view or download the latest academic calendar document.'
+      'Download the latest academic calendar for session dates, exam schedules, and semester timelines.'
     ],
     resources: [
       { label: 'Open Academic Calendar (PDF)', href: academicCalendarDoc }
     ],
     points: [
-      'Even semester academic calendar notices are published under Updates.',
-      'Class commencement and semester session notices are posted regularly.',
-      'Students should track updates for latest term dates and institute announcements.'
+      'Semester dates and class commencement notices are published under Updates.',
+      'Track announcements regularly for the latest term dates.'
     ]
   },
   'academics/syllabus': {
@@ -251,13 +281,19 @@ export const submenuData = {
     title: 'Syllabus',
     subtitle: 'Search and open the syllabus PDF for your program.',
     courses: [
-      { key: 'aiml', label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
-      { key: 'cyber', label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
-      { key: 'ra', label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
+      { key: 'btech-1st', label: 'B.tech 1st year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-2nd', label: 'B.tech CSE AIML-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-2nd', label: 'B.tech CSE CS-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-2nd', label: 'B.tech Robotics & Automation-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-3rd', label: 'B.tech CSE AIML-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-3rd', label: 'B.tech CSE CS-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-3rd', label: 'B.tech Robotics & Automation-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-4th', label: 'B.tech CSE AIML-4th year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-4th', label: 'B.tech CSE CS-4th year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-4th', label: 'B.tech Robotics & Automation-4th year', pdfUrl: leetSyllabusDoc }
     ],
     body: [
-      'Use the search box to quickly find your program.',
-      'Open the PDF in the viewer, or download it in a new tab.'
+      'Find and download the official syllabus for each year and department below.'
     ],
     points: []
   },
@@ -273,8 +309,7 @@ export const submenuData = {
       { label: 'HSTES Admissions Portal', href: 'https://www.hstes.org.in/' }
     ],
     body: [
-      'Use the selector to preview the prospectus document.',
-      'For the latest counselling updates and timelines, refer to the HSTES portal link.'
+      'Preview and download official prospectus documents. For counselling updates, refer to the HSTES portal.'
     ],
     points: []
   },
@@ -283,9 +318,9 @@ export const submenuData = {
     title: 'Teaching & Learning',
     image: teacherImage,
     points: [
-      'Outcome-based pedagogy model.',
-      'Classroom plus lab integration.',
-      'Mentoring and continuous assessment.'
+      'Outcome-based pedagogy with integrated classroom and lab sessions.',
+      'Continuous assessment through assignments, practicals, and projects.',
+      'Faculty mentoring and personalized academic guidance.'
     ]
   },
   'academics/curriculum': {
@@ -293,9 +328,9 @@ export const submenuData = {
     title: 'Curriculum',
     image: campusAltImage,
     points: [
-      'Course-wise syllabus design.',
-      'Industry updates in subject content.',
-      'Balanced theory and practical credit mix.'
+      'Course-wise syllabus aligned with KUK university standards.',
+      'Regular industry-driven updates to subject content.',
+      'Balanced theory-practical credit mix across all semesters.'
     ]
   },
   'academics/exam-schedule': {
@@ -307,8 +342,8 @@ export const submenuData = {
     ],
     points: [
       'External practical datesheets are announced through official updates.',
-      'Students are instructed to follow notified timings and dress code.',
-      'Exam-related notices are posted with date-wise update entries.'
+      'Follow notified timings, dress code, and exam-day instructions.',
+      'Date-wise exam notices are posted on the Updates page.'
     ]
   },
   'academics/code-of-conduct': {
@@ -317,8 +352,7 @@ export const submenuData = {
     subtitle: 'Official student code of conduct document (PDF).',
     pdfUrl: null,
     body: [
-      'This section is reserved for the institute Code of Conduct document.',
-      'Once the PDF is provided, it will be embedded here for reading and download.'
+      'The institute Code of Conduct PDF will be embedded here once available.'
     ],
     points: [],
     resources: []
@@ -328,19 +362,26 @@ export const submenuData = {
     title: 'Student Testimonials',
     image: competitionImage,
     points: [
-      'Student success stories.',
-      'Learning journey reflections.',
-      'Placement and internship experiences.'
+      'First-hand accounts from students about their learning experience.',
+      'Placement journeys and internship highlights.',
+      'Academic and co-curricular achievement stories.'
     ]
   },
+
+  /* ═══════════════════════
+     FACILITIES
+     ═══════════════════════ */
   'facilities/infrastructure': {
     sectionLabel: 'FACILITIES',
     title: 'Infrastructure',
     image: facilitiesImage,
+    body: [
+      'SIET operates from a 5.15-acre campus in Sector 26, Panchkula with shared institutional infrastructure.'
+    ],
     points: [
-      'Declared campus area is 5.15 acres.',
-      'Current campus status indicates leased and shared infrastructure.',
-      'Academic operations are being run from Sector 26 Panchkula location.'
+      'Academic blocks, labs, and seminar halls.',
+      'Leased campus with planned expansion.',
+      'Wi-Fi enabled premises with digital resources.'
     ]
   },
   'facilities/library': {
@@ -348,9 +389,9 @@ export const submenuData = {
     title: 'Library',
     image: libraryImage,
     points: [
-      'Library is part of the academic facility ecosystem listed by the institute.',
-      'Students are expected to use library support for curriculum and project learning.',
-      'Resource availability is managed as part of shared institutional infrastructure.'
+      'Central library with textbooks, reference materials, and journals.',
+      'Digital access to e-resources for curriculum and project work.',
+      'Reading room with structured borrowing system.'
     ]
   },
   'facilities/hostels': {
@@ -358,9 +399,9 @@ export const submenuData = {
     title: 'Hostels',
     image: facilitiesImage,
     points: [
-      'Safe and managed residential facilities.',
-      'Student amenities and common spaces.',
-      'Hostel rules and support services.'
+      'Separate hostels for boys and girls with warden supervision.',
+      'Mess, common room, and basic student amenities.',
+      'Hostel rules enforced for safety and discipline.'
     ]
   },
   'facilities/sports': {
@@ -368,9 +409,9 @@ export const submenuData = {
     title: 'Sports',
     image: sportsImage,
     points: [
-      'Outdoor and indoor sports opportunities.',
-      'Fitness and wellness participation.',
-      'Inter-college competition support.'
+      'Outdoor grounds for cricket, football, and athletics.',
+      'Indoor facilities for table tennis and badminton.',
+      'Participation in inter-college and university-level competitions.'
     ]
   },
   'facilities/smart-classrooms': {
@@ -378,9 +419,9 @@ export const submenuData = {
     title: 'Smart Classrooms',
     image: teacherImage,
     points: [
-      'Audio-visual enabled classrooms.',
-      'Interactive teaching tools.',
-      'Hybrid-ready learning setup.'
+      'Projector-equipped classrooms with audio-visual aids.',
+      'Interactive teaching tools for enhanced engagement.',
+      'Hybrid-ready setup supporting digital and in-person learning.'
     ]
   },
   'facilities/laboratories': {
@@ -388,9 +429,9 @@ export const submenuData = {
     title: 'Laboratories',
     image: roboticsImage,
     points: [
-      'Department-specific lab ecosystems.',
-      'Hands-on experiments and mini projects.',
-      'Safety and equipment standards.'
+      'Department-specific labs for each B.Tech program.',
+      'Hands-on experiments, mini projects, and practical sessions.',
+      'Equipment maintained to safety and industry standards.'
     ]
   },
   'facilities/cafeteria': {
@@ -398,9 +439,9 @@ export const submenuData = {
     title: 'Cafeteria',
     image: galleryAltImage,
     points: [
-      'Hygienic food services on campus.',
-      'Student-friendly menu options.',
-      'Comfortable dining environment.'
+      'On-campus cafeteria with hygienic food services.',
+      'Affordable, student-friendly menu options.',
+      'Clean and comfortable dining space.'
     ]
   },
   'facilities/healthcare': {
@@ -408,9 +449,9 @@ export const submenuData = {
     title: 'Healthcare',
     image: facilitiesImage,
     points: [
-      'First-aid and emergency response support.',
-      'Medical consultation access.',
-      'Wellness awareness initiatives.'
+      'First-aid facility and emergency response on campus.',
+      'Access to medical consultation for students and staff.',
+      'Health and wellness awareness programs.'
     ]
   },
   'facilities/security': {
@@ -418,34 +459,37 @@ export const submenuData = {
     title: 'Security',
     image: facilitiesImage,
     points: [
-      'Campus security monitoring systems.',
-      'Access control and safety protocols.',
-      'Rapid response for incidents.'
+      '24/7 campus security with CCTV monitoring.',
+      'Controlled entry/exit with visitor management.',
+      'Rapid incident response and safety protocols.'
     ]
   },
+
+  /* ═══════════════════════
+     TRAINING & PLACEMENTS
+     ═══════════════════════ */
   'placements/campus-training': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Campus Training',
     image: expertLectureImage,
     points: [
-      'Aptitude and technical preparation tracks.',
-      'Soft skills and interview readiness.',
-      'Mock tests and mentoring sessions.'
+      'Aptitude, reasoning, and technical skill preparation.',
+      'Soft skills, group discussion, and interview coaching.',
+      'Mock tests and one-on-one mentoring sessions.'
     ]
   },
   'placements/placement-brochure': {
     sectionLabel: 'TRAINING & PLACEMENTS',
     title: 'Placement Brochure 2026-27',
-    subtitle: 'Bridging the gap between academic excellence and industrial innovation.',
+    subtitle: 'Bridging academic excellence and industrial innovation.',
     pdfUrl: 'https://siettpo.vercel.app/brochure.pdf',
     body: [
-      'Explore our comprehensive guide to campus recruitment, featuring batch demographics, department highlights, and the technological landscape of our institute.',
-      'Use the embedded preview to view the brochure directly on this page, or download the PDF for offline access.'
+      'The brochure covers batch demographics, department highlights, and the placement cell workflow. Preview below or download the PDF.'
     ],
     points: [
-      'Department-wise student intake and profile snapshot.',
-      'Placement cell process and recruiter engagement workflow.',
-      'Training ecosystem and student industry-readiness initiatives.'
+      'Department-wise intake and student profile snapshot.',
+      'Placement process and recruiter engagement workflow.',
+      'Training ecosystem and industry-readiness initiatives.'
     ],
     resources: [
       { label: 'Open Placement Portal', href: 'https://siettpo.vercel.app/' }
@@ -456,9 +500,9 @@ export const submenuData = {
     title: 'Placement Records',
     image: walkInImage,
     points: [
-      'Training and placement communication is shared through regular update notices.',
-      'Students should monitor update posts for latest institutional opportunities.',
-      'Department-specific activities are announced as official date-based notices.'
+      'Placement updates and drive results shared through official notices.',
+      'Department-specific placement activities announced by date.',
+      'Monitor the Updates page for the latest opportunities.'
     ]
   },
   'placements/major-recruiters': {
@@ -466,9 +510,9 @@ export const submenuData = {
     title: 'Major Recruiters',
     image: inspectionImage,
     points: [
-      'Partner organizations and hiring brands.',
-      'Sector diversity in recruitment.',
-      'Recurring placement collaborators.'
+      'Partner companies across IT, manufacturing, and service sectors.',
+      'Recurring campus recruiters and hiring collaborators.',
+      'Growing network of industry partnerships.'
     ]
   },
   'placements/placement-process': {
@@ -476,9 +520,9 @@ export const submenuData = {
     title: 'Placement Process',
     image: expertLectureImage,
     points: [
-      'Step-by-step campus recruitment flow.',
-      'Eligibility and registration guidance.',
-      'Interview and offer stages.'
+      'Pre-placement talk → Aptitude test → Technical round → HR interview → Offer.',
+      'Eligibility and registration criteria shared before each drive.',
+      'Placement cell coordinates logistics between students and recruiters.'
     ]
   },
   'placements/student-testimonials': {
@@ -486,29 +530,35 @@ export const submenuData = {
     title: 'Student Testimonials',
     image: competitionImage,
     points: [
-      'Student activities include competitions and academic engagement programs.',
-      'Recent updates highlight events such as web development and quiz competitions.',
-      'Students are encouraged to participate in institute-level skill events.'
+      'Students share experiences from placement drives and internships.',
+      'Highlights from web development, quiz, and coding competitions.',
+      'Skill-building events and institute-level engagement programs.'
     ]
   },
+
+  /* ═══════════════════════
+     ALUMNI
+     ═══════════════════════ */
   'alumni/alumni-directory': {
     sectionLabel: 'ALUMNI',
     title: 'Alumni Directory',
     image: campusLifeImage,
     points: [
-      'Batch-wise alumni network visibility.',
-      'Professional and academic profiles.',
-      'Mentorship and outreach opportunities.'
+      'Batch-wise alumni profiles with professional details.',
+      'Mentorship and career guidance opportunities.',
+      'Network with alumni across industries.'
     ]
   },
   'alumni/alumni-registration': {
     sectionLabel: 'ALUMNI',
     title: 'Alumni Registration',
     image: campusLifeImage,
+    body: [
+      'Register to stay connected with SIET\'s alumni network and receive event invitations.'
+    ],
     points: [
-      'For assistance and official communication, contact details are published by SIET.',
-      'Institute helpline: 0172-2929871.',
-      'Official email: sietpkl@gmail.com.'
+      'Institute helpline: 0172-2929871',
+      'Official email: sietpkl@gmail.com'
     ]
   },
   'alumni/alumni-events': {
@@ -516,19 +566,23 @@ export const submenuData = {
     title: 'Alumni Events',
     image: campusLifeImage,
     points: [
-      'Meetups, reunions, and knowledge sessions.',
-      'Guest talks and networking events.',
-      'Collaborative alumni initiatives.'
+      'Annual reunions and batch meetups.',
+      'Guest talks, networking events, and knowledge sessions.',
+      'Collaborative initiatives between alumni and current students.'
     ]
   },
+
+  /* ═══════════════════════
+     LIFE @ SIET
+     ═══════════════════════ */
   'life-at-siet/campus-life': {
     sectionLabel: 'LIFE @ SIET',
     title: 'Campus Life',
     image: campusLifeImage,
     points: [
-      'Student clubs and cultural activities.',
-      'Collaborative campus environment.',
-      'Balanced academic and social experience.'
+      'Student clubs for technical, cultural, and social activities.',
+      'Collaborative campus environment with peer learning.',
+      'Balanced academic and extracurricular experience.'
     ]
   },
   'life-at-siet/photo-gallery': {
@@ -536,9 +590,9 @@ export const submenuData = {
     title: 'Photo Gallery',
     image: galleryImage,
     points: [
-      'Snapshots from events and campus life.',
-      'Academic and co-curricular highlights.',
-      'Institutional achievements in visuals.'
+      'Campus events, fests, and academic highlights.',
+      'Co-curricular activities and student achievements.',
+      'Infrastructure and institutional milestones in visuals.'
     ]
   },
   'life-at-siet/video-gallery': {
@@ -546,8 +600,8 @@ export const submenuData = {
     title: 'Video Gallery',
     image: galleryAltImage,
     points: [
-      'Campus showcase and event videos.',
-      'Student projects and initiative clips.',
+      'Campus tours and event coverage.',
+      'Student project demos and initiative clips.',
       'Official highlights and media reels.'
     ]
   },
@@ -556,9 +610,9 @@ export const submenuData = {
     title: 'Events & Activities',
     image: competitionImage,
     points: [
-      'Workshops, fests, and seminars.',
-      'Technical and non-technical competitions.',
-      'Student engagement calendar.'
+      'Workshops, technical fests, and expert seminars.',
+      'Coding, quiz, and design competitions.',
+      'Semester-wise student engagement calendar.'
     ]
   }
 };

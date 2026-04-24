@@ -1,12 +1,14 @@
-﻿/* Shared page sections */
 .submenu-content-section {
-  margin-top: 0.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
 }
 
 .submenu-hero {
-  margin-top: 0.5rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(135deg, #0a192f 0%, #0e2240 50%, #0a192f 100%);
+  color: #fff;
+  border-bottom: 2px solid #c5a059;
 }
 
 .submenu-hero-card {
@@ -18,12 +20,11 @@
 }
 
 .submenu-hero-surface {
-  border-radius: 16px;
-  padding: 1.1rem;
-  background: linear-gradient(135deg, #0a192f 0%, #0e2240 60%, #0a192f 100%);
-  color: #fff;
-  box-shadow: var(--shadow-mid);
-  border: 1px solid rgba(197, 160, 89, 0.22);
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  border: none;
 }
 
 .submenu-breadcrumb {
@@ -55,10 +56,9 @@
 }
 
 .submenu-hero-grid {
-  margin-top: 0.9rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 3rem;
   align-items: center;
 }
 
@@ -126,11 +126,11 @@
 }
 
 .submenu-hero-image-wrap {
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  border: 4px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .submenu-hero-image {
@@ -452,39 +452,43 @@
 
 .submenu-kicker {
   display: inline-flex;
-  padding: 0.24rem 0.62rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-weight: 900;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(197, 160, 89, 0.18);
+  color: #c5a059;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  margin-bottom: 0.75rem;
 }
 
 .submenu-title {
-  margin-top: 0.55rem;
   color: #fff;
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
 }
 
 .submenu-subtitle {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   color: rgba(255, 255, 255, 0.86);
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
 .submenu-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 1rem;
-  align-items: start;
+  display: block;
+  width: 100%;
 }
 
 .submenu-content-card {
-  border-radius: 20px;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  box-shadow: var(--shadow-soft);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .submenu-doc-actions {
@@ -506,8 +510,9 @@
 }
 
 .submenu-section-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.65rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.85rem;
+  font-weight: 800;
 }
 
 .submenu-prose {
@@ -552,13 +557,15 @@
 .submenu-paragraph {
   color: var(--ink-700);
   line-height: 1.85;
+  font-size: 1.12rem;
 }
 
 .submenu-subsection-title {
-  margin: 0.25rem 0 0;
+  margin: 0.5rem 0 0.2rem;
   color: var(--ink-900);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   letter-spacing: 0.01em;
+  font-weight: 750;
 }
 
 .submenu-resources {
@@ -686,10 +693,10 @@
 }
 
 .submenu-extra-card {
-  border-radius: 14px;
-  padding: 0.85rem;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  background: #fff;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .submenu-extra-card h3 {
@@ -712,6 +719,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+}
+
+.syllabus-finder-bar {
+  background: white !important;
+  border: 1px solid rgba(10, 25, 47, 0.1) !important;
+  box-shadow: var(--shadow-mid) !important;
+  border-radius: 12px !important;
 }
 
 .submenu-syllabus-controls {
@@ -1158,4 +1172,51 @@
   background: #fff;
   box-shadow: var(--shadow-strong);
   overflow: hidden;
+}
+/* New PDF Preview Layout */
+.coc-panel {
+  margin-top: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.coc-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.coc-preview-frame-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  background: #f8fafc;
+}
+
+.coc-preview-frame {
+  width: 100%;
+  height: clamp(500px, 75vh, 1000px);
+  border: none;
+}
+
+.gradient-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: #0a192f;
+  color: #fff;
+}
+
+.gradient-button:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
 }

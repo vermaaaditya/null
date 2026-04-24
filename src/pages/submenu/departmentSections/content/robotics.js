@@ -11,9 +11,7 @@ const roboticsSections = demoSections.map((section) => {
   return {
     ...section,
     body: [
-      'The Department of Robotics & Automation combines principles of mechanical engineering, electronics, and computer science to design intelligent automated systems. The program focuses on developing innovative solutions for industrial and real-world applications.',
-      'Students gain hands-on experience in robotics, control systems, and automation technologies, working on projects that integrate hardware and software seamlessly.',
-      'The department fosters creativity and technical expertise, preparing students for careers in robotics, automation, and advanced manufacturing industries.'
+      'Combines mechanical engineering, electronics, and software to design intelligent automated systems — with hands-on projects integrating hardware and software.'
     ],
     points: [
       'Robotics Systems',
