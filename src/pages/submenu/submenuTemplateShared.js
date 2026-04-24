@@ -1,31 +1,24 @@
 export const sectionGuidance = {
   'ABOUT US': [
-    'Review institute profile and governance details before admission decisions.',
-    'Use this section to understand policies, affiliations, and campus culture.'
+    'Explore institute profile, governance, policies, and campus culture.'
   ],
   DEPARTMENTS: [
-    'Compare curriculum focus, labs, and project opportunities across branches.',
-    'Choose your specialization based on long-term skills and career goals.'
+    'Compare curriculum, labs, and career focus across all six branches.'
   ],
   ACADEMICS: [
-    'Track calendar notices and exam updates regularly during each semester.',
-    'Plan assignments, practicals, and assessments from official announcements.'
+    'Track calendar, exams, syllabus, and semester announcements.'
   ],
   FACILITIES: [
-    'Check available infrastructure and student support services before joining.',
-    'Use campus facilities for balanced academic, technical, and personal growth.'
+    'View campus infrastructure, labs, library, and student services.'
   ],
   'TRAINING & PLACEMENTS': [
-    'Prepare early through aptitude, communication, and technical practice.',
-    'Follow placement notices and eligibility criteria for each drive.'
+    'Placement drives, training programs, and recruiter information.'
   ],
   ALUMNI: [
-    'Stay connected through alumni registration, events, and mentoring channels.',
-    'Use alumni networks for internships, guidance, and career referrals.'
+    'Alumni network, registration, events, and mentoring channels.'
   ],
   'LIFE @ SIET': [
-    'Participate in clubs, activities, and events for holistic development.',
-    'Use media and gallery updates to stay connected with campus life.'
+    'Clubs, events, galleries, and campus life highlights.'
   ]
 };
 

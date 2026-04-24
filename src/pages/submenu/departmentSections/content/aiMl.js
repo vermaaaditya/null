@@ -11,9 +11,7 @@ const aiMlSections = demoSections.map((section) => {
   return {
     ...section,
     body: [
-      'The Department of Computer Science & Engineering (AI & Machine Learning) is dedicated to advancing intelligent systems and data-driven technologies. The program integrates core computing knowledge with specialized training in artificial intelligence and machine learning.',
-      'Students work on real-world datasets and applications, gaining hands-on experience in building predictive models, automation systems, and intelligent solutions using modern tools and frameworks.',
-      'The department promotes innovation and research to prepare students for careers in AI engineering, data science, and emerging technology fields.'
+      'Integrates core computing with AI and ML specialization — students build predictive models, automation systems, and intelligent solutions using modern frameworks.'
     ],
     points: [
       'Artificial Intelligence',

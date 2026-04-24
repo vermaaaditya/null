@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
-import SubmenuSidebar from './SubmenuSidebar';
 
 const SubmenuTemplate = ({
   sectionLabel,
@@ -15,7 +14,6 @@ const SubmenuTemplate = ({
   resources = [],
   nestedSections = [],
   showHeroImage = true,
-  showSidebar = true,
 }) => {
   const location = useLocation();
   const sectionHome = getSectionHome(sectionLabel);
@@ -52,11 +50,8 @@ const SubmenuTemplate = ({
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
                 </div>
               </div>
@@ -101,7 +96,6 @@ const SubmenuTemplate = ({
                         {nestedSections.map((section) => (
                           <article key={section.id} id={section.id} className="submenu-extra-card submenu-nested-card">
                             <div className="submenu-nested-card-head">
-                              <p className="submenu-nested-eyebrow">Demo section</p>
                               <h3>{section.title}</h3>
                             </div>
 
@@ -131,7 +125,7 @@ const SubmenuTemplate = ({
                             ) : null}
 
                             {section.table?.length > 0 ? (
-                              <div className="submenu-demo-table" role="table" aria-label={`${section.title} demo table`}>
+                              <div className="submenu-demo-table" role="table" aria-label={`${section.title} table`}>
                                 <div className="submenu-demo-table-row submenu-demo-table-head" role="row">
                                   {section.table[0].map((cell) => (
                                     <div key={cell} role="columnheader" className="submenu-demo-table-cell">
@@ -171,8 +165,6 @@ const SubmenuTemplate = ({
                 </div>
               </div>
             </main>
-
-            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>

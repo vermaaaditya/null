@@ -4,13 +4,12 @@ const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => 
     title: 'About Department',
     route: routeSlug ? `/departments/${routeSlug}/about-department` : undefined,
     body: [
-      `${departmentName} is shown here with demo content so the submenu layout can be tested before the official data is added.`,
-      'Replace this block with the real department introduction, intake details, and departmental vision when ready.'
+      `The ${departmentName} department at SIET offers a practice-oriented curriculum aligned with current industry requirements.`
     ],
     points: [
-      `Demo focus area 1: ${focusAreas[0]}`,
-      `Demo focus area 2: ${focusAreas[1]}`,
-      'Demo note: this section is reusable for every department page.'
+      `Core focus: ${focusAreas[0]}`,
+      `Applied learning: ${focusAreas[1]}`,
+      'Project-based outcomes and lab-intensive pedagogy.'
     ]
   },
   {
@@ -19,7 +18,7 @@ const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => 
     route: routeSlug ? `/departments/${routeSlug}/vision-mission` : undefined,
     body: [
       'Vision',
-      `To develop ${departmentName} graduates who can solve real problems with confidence, ethics, and practical skill.`,
+      `To develop ${departmentName} graduates who solve real problems with confidence, ethics, and practical skill.`,
       'Mission'
     ],
     points: [
@@ -33,13 +32,13 @@ const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => 
     title: 'Faculty',
     route: routeSlug ? `/departments/${routeSlug}/faculty` : undefined,
     body: [
-      'Demo faculty data is shown below. Use this layout to plug in the official department staff list later.'
+      'Faculty details will be updated with official department staff information.'
     ],
     table: [
       ['Name', 'Designation', 'Specialization'],
-      ['Dr. Demo Faculty', 'Head of Department', focusAreas[0]],
-      ['Prof. Demo Faculty', 'Assistant Professor', focusAreas[1]],
-      ['Ms. Demo Faculty', 'Assistant Professor', 'Lab Coordination']
+      ['TBA', 'Head of Department', focusAreas[0]],
+      ['TBA', 'Assistant Professor', focusAreas[1]],
+      ['TBA', 'Assistant Professor', 'Lab Coordination']
     ]
   },
   {
@@ -47,13 +46,12 @@ const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => 
     title: 'Lesson Plans',
     route: routeSlug ? `/departments/${routeSlug}/lesson-plans` : undefined,
     body: [
-      'Demo lesson-plan cards are shown here as placeholders for the official weekly plan.',
-      'Each card can later be replaced with unit-wise teaching notes, assignments, and lab schedule updates.'
+      'Unit-wise teaching plans, assignments, and lab schedules will be published each semester.'
     ],
     points: [
-      'Week 1: foundation lectures and orientation.',
-      'Week 2: lab exercise and tutorial session.',
-      'Week 3: internal assessment and project discussion.'
+      'Week 1–2: Foundation lectures and orientation.',
+      'Week 3–4: Lab exercises and tutorial sessions.',
+      'Week 5+: Internal assessment and project discussions.'
     ]
   },
   {
@@ -61,13 +59,12 @@ const createDepartmentDemoSections = (departmentName, focusAreas, routeSlug) => 
     title: 'Time Table',
     route: routeSlug ? `/departments/${routeSlug}/time-table` : undefined,
     body: [
-      'This demo timetable shows the expected layout for the final department schedule.',
-      'Replace it with the official timetable when the department confirms semester-wise slots.'
+      'The official semester-wise timetable will be published once the department confirms slot allocations.'
     ],
     schedule: [
-      { day: 'Monday', slot: '09:30 AM - 10:30 AM', subject: `${departmentName} Theory Demo` },
-      { day: 'Wednesday', slot: '11:00 AM - 12:00 PM', subject: 'Tutorial / Mentoring Demo' },
-      { day: 'Friday', slot: '02:00 PM - 04:00 PM', subject: 'Lab / Practical Demo' }
+      { day: 'Monday', slot: '09:30 AM - 10:30 AM', subject: `${departmentName} Theory` },
+      { day: 'Wednesday', slot: '11:00 AM - 12:00 PM', subject: 'Tutorial / Mentoring' },
+      { day: 'Friday', slot: '02:00 PM - 04:00 PM', subject: 'Lab / Practical' }
     ]
   }
 ];

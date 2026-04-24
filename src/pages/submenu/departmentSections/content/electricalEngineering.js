@@ -11,9 +11,7 @@ const electricalEngineeringSections = demoSections.map((section) => {
   return {
     ...section,
     body: [
-      'The Department of Electrical Engineering provides a strong foundation in electrical systems, power engineering, and control technologies. The curriculum blends theoretical concepts with practical applications to address real-world energy and infrastructure challenges.',
-      'Students develop expertise in power generation, transmission, and electrical system design, along with modern tools used in the industry.',
-      'The department prepares students for careers in core electrical sectors, energy systems, and emerging technologies in power and automation.'
+      'Builds expertise in power generation, transmission, and system design — blending theory with practical applications for energy and infrastructure careers.'
     ],
     points: [
       'Power Systems',

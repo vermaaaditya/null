@@ -159,16 +159,16 @@ const DepartmentSectionPage = ({ sectionId }) => {
               <div className="submenu-aside-card">
                 <h3>For Students</h3>
                 <ul className="submenu-mini-list">
-                  <li>Use the demo data as a placeholder for official department information.</li>
-                  <li>Check this route pattern before adding the final department content.</li>
-                  <li>Each section page is isolated so the content can be maintained separately.</li>
+                  <li>Check your department page for official syllabus, timetable, and faculty details.</li>
+                  <li>Visit the Academics section for calendar, exam schedule, and notices.</li>
+                  <li>Contact your department for specific queries or academic guidance.</li>
                 </ul>
               </div>
 
               <div className="submenu-aside-card subtle">
-                <h3>Need updates?</h3>
-                <p className="submenu-aside-text">Check notices and department announcements when the final data is published.</p>
-                <Link to="/all-notices" className="submenu-aside-cta">Open Notices Board?</Link>
+                <h3>Latest Updates</h3>
+                <p className="submenu-aside-text">Check the notices board for the latest department announcements and updates.</p>
+                <Link to="/all-notices" className="submenu-aside-cta">View Notices</Link>
               </div>
             </aside>
           </div>

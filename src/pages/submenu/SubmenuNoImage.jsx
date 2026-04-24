@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
-import SubmenuSidebar from './SubmenuSidebar';
 
 const SubmenuNoImage = ({
   sectionLabel,
@@ -11,7 +10,6 @@ const SubmenuNoImage = ({
   points = [],
   body = [],
   resources = [],
-  showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
 
@@ -32,11 +30,8 @@ const SubmenuNoImage = ({
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
                 </div>
               </div>
@@ -53,12 +48,9 @@ const SubmenuNoImage = ({
                 <h2 className="submenu-section-title">Overview</h2>
                 <div className="submenu-prose">
                   <SubmenuBodyProse body={body} resources={resources} points={points} />
-
                 </div>
               </div>
             </main>
-
-            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>
