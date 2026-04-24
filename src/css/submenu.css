@@ -474,8 +474,7 @@
 
 .submenu-layout {
   display: block;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .submenu-content-card {
