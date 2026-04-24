@@ -1,11 +1,10 @@
-/* Shared page sections */
 .submenu-content-section {
-  margin-top: 0.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
 }
 
 .submenu-hero {
-  margin-top: 0.5rem;
-  padding-top: 0.4rem;
+  padding-top: 1rem;
   padding-bottom: 0.5rem;
 }
 
@@ -478,11 +477,10 @@
 }
 
 .submenu-content-card {
-  border-radius: 20px;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(16, 35, 63, 0.12);
-  box-shadow: var(--shadow-soft);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .submenu-doc-actions {
@@ -684,10 +682,10 @@
 }
 
 .submenu-extra-card {
-  border-radius: 14px;
-  padding: 0.85rem;
-  border: 1px solid rgba(16, 35, 63, 0.1);
-  background: #fff;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .submenu-extra-card h3 {
@@ -1156,4 +1154,51 @@
   background: #fff;
   box-shadow: var(--shadow-strong);
   overflow: hidden;
+}
+/* New PDF Preview Layout */
+.coc-panel {
+  margin-top: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.coc-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.coc-preview-frame-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  background: #f8fafc;
+}
+
+.coc-preview-frame {
+  width: 100%;
+  height: clamp(500px, 75vh, 1000px);
+  border: none;
+}
+
+.gradient-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: #0a192f;
+  color: #fff;
+}
+
+.gradient-button:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
 }

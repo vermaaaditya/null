@@ -51,15 +51,6 @@ const DepartmentSectionPage = ({ sectionId }) => {
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-            <nav className="submenu-breadcrumb" aria-label="Breadcrumb">
-              <Link to="/" className="crumb-link">Home</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <Link to="/departments" className="crumb-link">Departments</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <Link to={homeLink} className="crumb-link">{config.title}</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <span className="crumb-current" aria-current="page">{departmentSectionTitles[sectionId]}</span>
-            </nav>
 
             <div className="submenu-hero-grid">
               <div className="submenu-hero-copy">
@@ -69,8 +60,7 @@ const DepartmentSectionPage = ({ sectionId }) => {
                   {departmentDescriptions[deptSlug]}
                 </p>
                 <div className="submenu-hero-actions">
-                  <Link to={homeLink} className="submenu-action-btn primary">Back to Department</Link>
-                  <Link to="/departments" className="submenu-action-btn secondary">Departments Home</Link>
+                  <Link to={homeLink} className="submenu-action-btn primary">Back</Link>
                 </div>
               </div>
 

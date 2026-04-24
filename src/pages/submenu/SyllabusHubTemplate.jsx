@@ -44,64 +44,51 @@ const SyllabusHubTemplate = ({
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-            <nav className="submenu-breadcrumb" aria-label="Breadcrumb">
-              <Link to="/" className="crumb-link">Home</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <Link to={sectionHome.to} className="crumb-link">{sectionHome.label}</Link>
-              <span className="crumb-sep" aria-hidden="true">/</span>
-              <span className="crumb-current" aria-current="page">{title}</span>
-            </nav>
-
             <div className="submenu-hero-grid doc-reader-hero">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
-                  <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
                 </div>
               </div>
 
-              <div className="doc-hero-select-bar">
-                <label className="doc-hero-label" htmlFor="syllabus-select">
-                  Program
-                </label>
-                <select
-                  id="syllabus-select"
-                  className="doc-hero-dropdown"
-                  value={active?.key || ''}
-                  onChange={(e) => setActiveKey(e.target.value)}
-                  aria-label="Select syllabus program"
-                >
-                  {normalizedCourses.map((c) => (
-                    <option key={c.key} value={c.key}>
-                      {c.label}
-                    </option>
-                  ))}
-                </select>
-                {active?.pdfUrl ? (
-                  <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="doc-hero-download-btn">
-                    Open PDF in new tab
-                  </a>
-                ) : null}
-              </div>
-
-              <div className="doc-hero-reader submenu-pdf-wrap">
-                {active?.pdfUrl ? (
-                  <iframe
-                    title={`${title} PDF preview`}
-                    src={active.pdfUrl}
-                    className="submenu-pdf-viewer reader-full"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="submenu-pdf-empty">
-                    Select a course to download the PDF.
+                <div className="coc-panel" style={{ marginTop: '2.5rem' }}>
+                  <div className="coc-preview-head">
+                    <button
+                      onClick={() => window.history.back()}
+                      className="gradient-button"
+                    >
+                      Back
+                    </button>
+                    {active?.pdfUrl && (
+                      <a
+                        href={active.pdfUrl}
+                        download
+                        className="gradient-button"
+                      >
+                        Download Syllabus
+                      </a>
+                    )}
                   </div>
-                )}
+                  
+                  <div className="coc-preview-frame-wrap">
+                    {active?.pdfUrl ? (
+                      <iframe
+                        key={active.pdfUrl}
+                        title={`${title} PDF preview`}
+                        src={active.pdfUrl}
+                        className="coc-preview-frame"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
+                        Select a course to view the syllabus PDF.
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
