@@ -11,7 +11,6 @@ const SubmenuWithPDF = ({
   points = [],
   body = [],
   resources = [],
-  showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
 
@@ -32,9 +31,7 @@ const SubmenuWithPDF = ({
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
               </div>
 
               <div className="doc-hero-select-bar">

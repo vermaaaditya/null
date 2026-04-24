@@ -3,16 +3,6 @@ import { Link } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 
-const getDefaultTabs = (body, points, resources) => [
-  {
-    key: 'overview',
-    label: 'Overview',
-    body,
-    points,
-    resources,
-  }
-];
-
 const SubmenuWithTabs = ({
   sectionLabel,
   title,
@@ -24,11 +14,10 @@ const SubmenuWithTabs = ({
   points = [],
   resources = [],
   showHeroImage = true,
-  showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const resolvedTabs = useMemo(() => (tabs.length > 0 ? tabs : getDefaultTabs(body, points, resources)), [tabs, body, points, resources]);
-  const [activeKey, setActiveKey] = useState(resolvedTabs[0]?.key || 'overview');
+  const resolvedTabs = useMemo(() => (tabs.length > 0 ? tabs : []), [tabs]);
+  const [activeKey, setActiveKey] = useState(resolvedTabs[0]?.key || '');
 
   const activeTab = resolvedTabs.find((tab) => tab.key === activeKey) || resolvedTabs[0];
 
@@ -49,9 +38,7 @@ const SubmenuWithTabs = ({
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
                   <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
@@ -81,32 +68,38 @@ const SubmenuWithTabs = ({
             <main className="submenu-main">
               <div className="submenu-content-card">
                 <h2 className="submenu-section-title">Overview</h2>
-                <div className="submenu-tabs" role="tablist" aria-label={`${title} content tabs`}>
-                  {resolvedTabs.map((tab) => {
-                    const selected = tab.key === activeTab?.key;
-                    return (
-                      <button
-                        key={tab.key}
-                        type="button"
-                        className={`submenu-tab-btn ${selected ? 'active' : ''}`}
-                        role="tab"
-                        aria-selected={selected}
-                        onClick={() => setActiveKey(tab.key)}
-                      >
-                        {tab.label}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                <div className="submenu-prose" role="tabpanel">
-                  <SubmenuBodyProse
-                    body={activeTab?.body || []}
-                    resources={activeTab?.resources || []}
-                    points={activeTab?.points || []}
-                  />
-
-                </div>
+                {resolvedTabs.length > 0 ? (
+                  <>
+                    <div className="submenu-tabs" role="tablist" aria-label={`${title} content tabs`}>
+                      {resolvedTabs.map((tab) => {
+                        const selected = tab.key === activeTab?.key;
+                        return (
+                          <button
+                            key={tab.key}
+                            type="button"
+                            className={`submenu-tab-btn ${selected ? 'active' : ''}`}
+                            role="tab"
+                            aria-selected={selected}
+                            onClick={() => setActiveKey(tab.key)}
+                          >
+                            {tab.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <div className="submenu-prose" role="tabpanel">
+                      <SubmenuBodyProse
+                        body={activeTab?.body || []}
+                        resources={activeTab?.resources || []}
+                        points={activeTab?.points || []}
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <div className="submenu-prose">
+                    <SubmenuBodyProse body={body} resources={resources} points={points} />
+                  </div>
+                )}
               </div>
             </main>
 

@@ -11,7 +11,6 @@ const SubmenuWithPdfDropdown = ({
   points = [],
   body = [],
   resources = [],
-  showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
   const normalizedOptions = useMemo(
@@ -43,9 +42,7 @@ const SubmenuWithPdfDropdown = ({
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
-                <p className="submenu-subtitle">
-                  {subtitle || 'Focused information and highlights for this submenu section.'}
-                </p>
+                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
                   <Link to="/all-notices" className="submenu-action-btn primary">Notices</Link>
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
