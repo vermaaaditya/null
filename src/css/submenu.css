@@ -467,8 +467,10 @@
 }
 
 .submenu-subtitle {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   color: rgba(255, 255, 255, 0.86);
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
 .submenu-layout {
@@ -502,8 +504,9 @@
 }
 
 .submenu-section-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.65rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.85rem;
+  font-weight: 800;
 }
 
 .submenu-prose {
@@ -548,13 +551,15 @@
 .submenu-paragraph {
   color: var(--ink-700);
   line-height: 1.85;
+  font-size: 1.12rem;
 }
 
 .submenu-subsection-title {
-  margin: 0.25rem 0 0;
+  margin: 0.5rem 0 0.2rem;
   color: var(--ink-900);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   letter-spacing: 0.01em;
+  font-weight: 750;
 }
 
 .submenu-resources {

@@ -33,8 +33,11 @@ const SubmenuWithPDF = ({
             <div className="submenu-hero-grid no-visual">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
-                <h1 className="submenu-title" style={{ marginBottom: '1rem' }}>{title}</h1>
+                <h1 className="submenu-title">{title}</h1>
                 {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
+                <div className="submenu-hero-actions">
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                </div>
               </div>
             </div>
           </div>
@@ -52,12 +55,6 @@ const SubmenuWithPDF = ({
 
                 <div className="coc-panel">
                   <div className="coc-preview-head">
-                    <button
-                      onClick={() => navigate(sectionHome.to)}
-                      className="gradient-button"
-                    >
-                      Back
-                    </button>
                     {pdfUrl && (
                       <button
                         onClick={handleDownload}

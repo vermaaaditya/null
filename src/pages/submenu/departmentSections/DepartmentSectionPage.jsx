@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import React, { useMemo, useEffect } from 'react';
+import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { submenuData } from '../submenuData';
 import { departmentSectionCatalog, departmentSectionTitles } from '../departmentSectionCatalog';
 import computerScienceSections from './content/computerScience';
@@ -27,40 +27,51 @@ const departmentDescriptions = {
   'electronics-vlsi': 'Dive into semiconductor technology and chip design with a focus on VLSI systems. Students learn to design, simulate, and optimize integrated circuits used in modern electronic devices.'
 };
 
-const DepartmentSectionPage = ({ sectionId }) => {
+const DepartmentSectionPage = () => {
   const { deptSlug } = useParams();
+  const { hash } = useLocation();
   const config = departmentSectionCatalog[deptSlug];
-
   const baseData = config ? submenuData[config.dataKey] : null;
 
   const sections = useMemo(() => {
     return departmentSectionContent[deptSlug] || [];
   }, [deptSlug]);
 
-  const activeSection = sections.find((section) => section.id === sectionId);
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Delay slightly for content rendering
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+       window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [hash, deptSlug]);
 
-  if (!config || !baseData || !activeSection) {
+  if (!config || !baseData) {
     return <Navigate to="/departments/cse" replace />;
   }
 
-  const homeLink = `/departments/${deptSlug}`;
-  const otherSections = sections.filter((section) => section.id !== sectionId);
+  const homeLink = '/departments';
 
   return (
     <div className="submenu-page">
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-
             <div className="submenu-hero-grid">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">DEPARTMENTS</p>
-                <h1 className="submenu-title">{departmentSectionTitles[sectionId]}</h1>
+                <h1 className="submenu-title" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.75rem)' }}>{config.title}</h1>
                 <p className="submenu-subtitle">
                   {departmentDescriptions[deptSlug]}
                 </p>
                 <div className="submenu-hero-actions">
-                  <Link to={homeLink} className="submenu-action-btn primary">Back</Link>
+                  <Link to={homeLink} className="submenu-action-btn secondary">Back</Link>
                 </div>
               </div>
 
@@ -74,67 +85,75 @@ const DepartmentSectionPage = ({ sectionId }) => {
         </div>
       </section>
 
-      <section className="section submenu-content-section">
+      <section className="section submenu-content-section" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
-                <h2 className="submenu-section-title">Overview</h2>
-                <div className="submenu-prose">
-                  {activeSection.body?.length > 0 ? (
-                    <div className="submenu-body">
-                      {activeSection.body.map((line) => {
-                        const isHeading = line === 'Vision' || line === 'Mission';
-                        return isHeading ? (
-                          <h3 key={`${sectionId}-${line}`} className="submenu-subsection-title">{line}</h3>
-                        ) : (
-                          <p key={`${sectionId}-${line}`} className="submenu-paragraph">{line}</p>
-                        );
-                      })}
-                    </div>
-                  ) : null}
+                <div className="submenu-uniscroll-stack" style={{ display: 'grid', gap: '3rem' }}>
+                  {sections.map((section) => (
+                    <div key={section.id} id={section.id} className="submenu-uniscroll-section" style={{ scrollMarginTop: '100px' }}>
+                      <h2 className="submenu-section-title">{departmentSectionTitles[section.id]}</h2>
+                      <div className="submenu-prose">
+                        {section.body?.length > 0 ? (
+                          <div className="submenu-body">
+                            {section.body.map((line) => {
+                              const isHeading = line === 'Vision' || line === 'Mission' || line === 'Program Educational Objectives (PEOs)' || line === 'Program Outcomes (POs)';
+                              return isHeading ? (
+                                <h3 key={`${section.id}-${line}`} className="submenu-subsection-title" style={{ marginTop: '1.5rem' }}>{line}</h3>
+                              ) : (
+                                <p key={`${section.id}-${line}`} className="submenu-paragraph">{line}</p>
+                              );
+                            })}
+                          </div>
+                        ) : null}
 
-                  {activeSection.points?.length > 0 ? (
-                    <ul className="submenu-point-list">
-                      {activeSection.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : null}
+                        {section.points?.length > 0 ? (
+                          <ul className="submenu-point-list">
+                            {section.points.map((point) => (
+                              <li key={point} className="submenu-paragraph" style={{ marginBottom: '0.4rem' }}>{point}</li>
+                            ))}
+                          </ul>
+                        ) : null}
 
-                  {activeSection.table?.length > 0 ? (
-                    <div className="submenu-demo-table" role="table" aria-label={`${departmentSectionTitles[sectionId]} demo table`}>
-                      <div className="submenu-demo-table-row submenu-demo-table-head" role="row">
-                        {activeSection.table[0].map((cell) => (
-                          <div key={cell} role="columnheader" className="submenu-demo-table-cell">{cell}</div>
-                        ))}
+                        {section.table?.length > 0 ? (
+                          <div className="submenu-demo-table" role="table" aria-label={`${departmentSectionTitles[section.id]} data table`} style={{ marginTop: '1rem' }}>
+                            <div className="submenu-demo-table-row submenu-demo-table-head" role="row">
+                              {section.table[0].map((cell) => (
+                                <div key={cell} role="columnheader" className="submenu-demo-table-cell">{cell}</div>
+                              ))}
+                            </div>
+                            {section.table.slice(1).map((row) => (
+                              <div key={row.join('-')} role="row" className="submenu-demo-table-row">
+                                {row.map((cell) => (
+                                  <div key={cell} role="cell" className="submenu-demo-table-cell">{cell}</div>
+                                ))}
+                              </div>
+                            ))}
+                          </div>
+                        ) : null}
+
+                        {section.schedule?.length > 0 ? (
+                          <div className="submenu-schedule-grid" style={{ marginTop: '1rem' }}>
+                            {section.schedule.map((item) => (
+                              <div key={`${item.day}-${item.slot}`} className="submenu-schedule-card">
+                                <strong>{item.day}</strong>
+                                <span>{item.slot}</span>
+                                <p>{item.subject}</p>
+                              </div>
+                            ))}
+                          </div>
+                        ) : null}
                       </div>
-                      {activeSection.table.slice(1).map((row) => (
-                        <div key={row.join('-')} role="row" className="submenu-demo-table-row">
-                          {row.map((cell) => (
-                            <div key={cell} role="cell" className="submenu-demo-table-cell">{cell}</div>
-                          ))}
-                        </div>
-                      ))}
+                      {/* Divider between sections except last */}
+                      {section.id !== sections[sections.length - 1].id && (
+                        <hr style={{ marginTop: '3rem', border: 'none', borderBottom: '1px solid rgba(10,25,47,0.08)' }} />
+                      )}
                     </div>
-                  ) : null}
-
-                  {activeSection.schedule?.length > 0 ? (
-                    <div className="submenu-schedule-grid">
-                      {activeSection.schedule.map((item) => (
-                        <div key={`${item.day}-${item.slot}`} className="submenu-schedule-card">
-                          <strong>{item.day}</strong>
-                          <span>{item.slot}</span>
-                          <p>{item.subject}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
+                  ))}
                 </div>
               </div>
             </main>
-
-
           </div>
         </div>
       </section>

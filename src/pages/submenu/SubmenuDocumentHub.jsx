@@ -63,12 +63,6 @@ const SubmenuDocumentHub = ({
 
                 <div className="coc-panel" style={{ marginTop: '2.5rem' }}>
                   <div className="coc-preview-head">
-                    <button
-                      onClick={() => window.history.back()}
-                      className="gradient-button"
-                    >
-                      Back
-                    </button>
                     {active?.pdfUrl && (
                       <a
                         href={active.pdfUrl}

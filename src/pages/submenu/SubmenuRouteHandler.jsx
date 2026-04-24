@@ -15,6 +15,7 @@ import DepartmentRobotics from './DepartmentRobotics';
 import DepartmentComputerScience from './DepartmentComputerScience';
 import DepartmentElectricalEngineering from './DepartmentElectricalEngineering';
 import DepartmentElectronicsVlsi from './DepartmentElectronicsVlsi';
+import DepartmentSectionPage from './departmentSections/DepartmentSectionPage';
 import CoursesOffered from './CoursesOffered';
 import AcademicCalendar from './AcademicCalendar';
 import TeachingLearning from './TeachingLearning';
@@ -57,13 +58,13 @@ const submenuComponents = {
   'about/anti-ragging': AntiRagging,
   'academics/anti-ragging': AcademicAntiRagging,
   'departments/engineering': DepartmentEngineering,
-  'departments/cse': DepartmentComputerScience,
-  'departments/ai-ml': DepartmentAiMl,
-  'departments/cyber-security': DepartmentCyberSecurity,
-  'departments/robotics': DepartmentRobotics,
-  'departments/computer-science': DepartmentComputerScience,
-  'departments/electrical-engineering': DepartmentElectricalEngineering,
-  'departments/electronics-vlsi': DepartmentElectronicsVlsi,
+  'departments/cse': DepartmentSectionPage,
+  'departments/ai-ml': DepartmentSectionPage,
+  'departments/cyber-security': DepartmentSectionPage,
+  'departments/robotics': DepartmentSectionPage,
+  'departments/computer-science': DepartmentSectionPage,
+  'departments/electrical-engineering': DepartmentSectionPage,
+  'departments/electronics-vlsi': DepartmentSectionPage,
   'academics/courses-offered': CoursesOffered,
   'academics/academic-calendar': AcademicCalendar,
   'academics/syllabus': Syllabus,
