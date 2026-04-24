@@ -92,7 +92,6 @@ const SyllabusHubTemplate = ({
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       <section className="section submenu-content-section">
