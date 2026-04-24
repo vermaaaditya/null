@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome, quickLinks, sectionGuidance } from './submenuTemplateShared';
+import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import SubmenuBodyProse from './SubmenuBodyProse';
+import SubmenuSidebar from './SubmenuSidebar';
 
 const normalize = (value) => String(value || '').toLowerCase().trim();
 
@@ -118,40 +120,9 @@ const SubmenuDocumentHub = ({
                 <div className="doc-body-grid">
                   <section className="doc-body-copy">
                     <h2 className="submenu-section-title">About this document</h2>
-                    <div className="submenu-prose">
-                      {body.length > 0 ? (
-                        <div className="submenu-body">
-                          {body.map((para) => (
-                            <p key={para} className="submenu-paragraph">
-                              {para}
-                            </p>
-                          ))}
-                        </div>
-                      ) : null}
-
-                      {points.length > 0 ? (
-                        <ul className="submenu-point-list">
-                          {points.map((p) => (
-                            <li key={p}>{p}</li>
-                          ))}
-                        </ul>
-                      ) : null}
-
-                      {resources.length > 0 ? (
-                        <div className="submenu-resources">
-                          <h3 className="submenu-subsection-title">Resources</h3>
-                          <ul className="submenu-resource-list">
-                            {resources.map((item, index) => (
-                              <li key={`${item.label}-${item.href}-${index}`}>
-                                <a href={item.href} target="_blank" rel="noopener noreferrer" className="submenu-resource-link">
-                                  {item.label}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
+                     <div className="submenu-prose">
+                       <SubmenuBodyProse body={body} resources={resources} points={points} />
+                     </div>
                   </section>
 
                   <aside className="doc-body-panel">
@@ -201,39 +172,7 @@ const SubmenuDocumentHub = ({
               </div>
             </main>
 
-            {showSidebar ? (
-              <aside className="submenu-aside">
-                <div className="submenu-aside-card">
-                  <h3>Quick Links</h3>
-                  <div className="submenu-link-list">
-                    {(quickLinks[sectionLabel] || []).map((item) => (
-                      <Link key={item.label} to={item.to} className="submenu-inline-link">
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="submenu-aside-card">
-                  <h3>For Students</h3>
-                  <ul className="submenu-mini-list">
-                    {(sectionGuidance[sectionLabel] || []).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="submenu-aside-card subtle">
-                  <h3>Need updates?</h3>
-                  <p className="submenu-aside-text">
-                    Check the latest notifications and downloadable notices.
-                  </p>
-                  <Link to="/all-notices" className="submenu-aside-cta">
-                    Open Notices Board?
-                  </Link>
-                </div>
-              </aside>
-            ) : null}
+            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>
@@ -242,4 +181,3 @@ const SubmenuDocumentHub = ({
 };
 
 export default SubmenuDocumentHub;
-

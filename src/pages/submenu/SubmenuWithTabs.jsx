@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome, quickLinks, sectionGuidance } from './submenuTemplateShared';
+import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import SubmenuBodyProse from './SubmenuBodyProse';
+import SubmenuSidebar from './SubmenuSidebar';
 
 const getDefaultTabs = (body, points, resources) => [
   {
@@ -100,84 +102,18 @@ const SubmenuWithTabs = ({
                 </div>
 
                 <div className="submenu-prose" role="tabpanel">
-                  {activeTab?.body?.length > 0 ? (
-                    <div className="submenu-body">
-                      {activeTab.body.map((para) => {
-                        const isHeading = para === 'Vision' || para === 'Mission';
-                        return isHeading ? (
-                          <h3 key={para} className="submenu-subsection-title">
-                            {para}
-                          </h3>
-                        ) : (
-                          <p key={para} className="submenu-paragraph">
-                            {para}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  ) : null}
-
-                  {activeTab?.resources?.length > 0 ? (
-                    <div className="submenu-resources">
-                      <h3 className="submenu-subsection-title">Resources</h3>
-                      <ul className="submenu-resource-list">
-                        {activeTab.resources.map((item, index) => (
-                          <li key={`${item.label}-${item.href}-${index}`}>
-                            <a href={item.href} target="_blank" rel="noopener noreferrer" className="submenu-resource-link">
-                              {item.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
-
-                  {activeTab?.points?.length > 0 ? (
-                    <ul className="submenu-point-list">
-                      {activeTab.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : null}
+                  <SubmenuBodyProse
+                    body={activeTab?.body || []}
+                    resources={activeTab?.resources || []}
+                    points={activeTab?.points || []}
+                  />
 
                   <p className="submenu-info-text">{infoText}</p>
                 </div>
               </div>
             </main>
 
-            {showSidebar ? (
-              <aside className="submenu-aside">
-                <div className="submenu-aside-card">
-                  <h3>Quick Links</h3>
-                  <div className="submenu-link-list">
-                    {(quickLinks[sectionLabel] || []).map((item) => (
-                      <Link key={item.label} to={item.to} className="submenu-inline-link">
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="submenu-aside-card">
-                  <h3>For Students</h3>
-                  <ul className="submenu-mini-list">
-                    {(sectionGuidance[sectionLabel] || []).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="submenu-aside-card subtle">
-                  <h3>Need updates?</h3>
-                  <p className="submenu-aside-text">
-                    Check the latest notifications and downloadable notices.
-                  </p>
-                  <Link to="/all-notices" className="submenu-aside-cta">
-                    Open Notices Board?
-                  </Link>
-                </div>
-              </aside>
-            ) : null}
+            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>
