@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getInfoText, getSectionHome } from './submenuTemplateShared';
+import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 import SubmenuSidebar from './SubmenuSidebar';
 
@@ -28,7 +28,6 @@ const SubmenuWithTabs = ({
   showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
-  const infoText = getInfoText(title, sectionLabel);
   const resolvedTabs = useMemo(() => (tabs.length > 0 ? tabs : getDefaultTabs(body, points, resources)), [tabs, body, points, resources]);
   const [activeKey, setActiveKey] = useState(resolvedTabs[0]?.key || 'overview');
 
@@ -108,7 +107,6 @@ const SubmenuWithTabs = ({
                     points={activeTab?.points || []}
                   />
 
-                  <p className="submenu-info-text">{infoText}</p>
                 </div>
               </div>
             </main>
