@@ -281,12 +281,19 @@ export const submenuData = {
     title: 'Syllabus',
     subtitle: 'Search and open the syllabus PDF for your program.',
     courses: [
-      { key: 'aiml', label: 'B.Tech CSE (AI & ML)', pdfUrl: leetSyllabusDoc },
-      { key: 'cyber', label: 'B.Tech CSE (Cyber Security)', pdfUrl: leetSyllabusDoc },
-      { key: 'ra', label: 'B.Tech Robotics & Automation', pdfUrl: leetSyllabusDoc }
+      { key: 'btech-1st', label: 'B.tech 1st year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-2nd', label: 'B.tech CSE AIML-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-2nd', label: 'B.tech CSE CS-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-2nd', label: 'B.tech Robotics & Automation-2nd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-3rd', label: 'B.tech CSE AIML-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-3rd', label: 'B.tech CSE CS-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-3rd', label: 'B.tech Robotics & Automation-3rd year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-aiml-4th', label: 'B.tech CSE AIML-4th year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-cse-cs-4th', label: 'B.tech CSE CS-4th year', pdfUrl: leetSyllabusDoc },
+      { key: 'btech-ra-4th', label: 'B.tech Robotics & Automation-4th year', pdfUrl: leetSyllabusDoc }
     ],
     body: [
-      'Select your program to preview or download the syllabus PDF.'
+      'Find and download the official syllabus for each year and department below.'
     ],
     points: []
   },

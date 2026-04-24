@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sietLogo from '../assets/new-assets/logos/siet.webp';
+import sietLogo from '../assets/new-assets/logos/LOGO.png';
 import haryanaEmblem from '../assets/new-assets/logos/haryana-sarkar.png';
 
 /**

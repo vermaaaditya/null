@@ -32,7 +32,7 @@ const SubmenuWithTabs = ({
                 <h1 className="submenu-title">{title}</h1>
                 {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
                 <div className="submenu-hero-actions">
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back to {sectionHome.label}</Link>
+                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
                 </div>
               </div>
 

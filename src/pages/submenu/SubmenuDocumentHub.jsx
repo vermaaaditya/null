@@ -46,7 +46,7 @@ const SubmenuDocumentHub = ({
           <div className="submenu-hero-surface">
 
 
-            <div className="submenu-hero-grid doc-hero doc-reader-hero">
+            <div className="submenu-hero-grid doc-hero doc-reader-hero no-visual">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
@@ -60,37 +60,7 @@ const SubmenuDocumentHub = ({
                   ) : null}
                 </div>
               </div>
-
-                <div className="coc-panel" style={{ marginTop: '2.5rem' }}>
-                  <div className="coc-preview-head">
-                    {active?.pdfUrl && (
-                      <a
-                        href={active.pdfUrl}
-                        download
-                        className="gradient-button"
-                      >
-                        Download Document
-                      </a>
-                    )}
-                  </div>
-                  
-                  <div className="coc-preview-frame-wrap">
-                    {active?.pdfUrl ? (
-                      <iframe
-                        key={active.pdfUrl}
-                        title={`${active.label} PDF preview`}
-                        src={active.pdfUrl}
-                        className="coc-preview-frame"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
-                        PDF not available for this selection.
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -119,7 +89,6 @@ const SubmenuDocumentHub = ({
                         onChange={(e) => setQuery(e.target.value)}
                         aria-label="Search documents"
                       />
-
                       <div className="doc-panel-list" role="list">
                         {filtered.map((d) => {
                           const isActive = d.key === active?.key;
@@ -149,6 +118,35 @@ const SubmenuDocumentHub = ({
                       ) : null}
                     </div>
 
+                    <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
+                      <div className="coc-preview-head">
+                        {active?.pdfUrl && (
+                          <a
+                            href={active.pdfUrl}
+                            download
+                            className="gradient-button"
+                          >
+                            Download Document
+                          </a>
+                        )}
+                      </div>
+                      
+                      <div className="coc-preview-frame-wrap">
+                        {active?.pdfUrl ? (
+                          <iframe
+                            key={active.pdfUrl}
+                            title={`${active.label} PDF preview`}
+                            src={active.pdfUrl}
+                            className="coc-preview-frame"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
+                            PDF not available for this selection.
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </aside>
                 </div>
               </div>

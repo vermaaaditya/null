@@ -53,7 +53,7 @@ const SubmenuWithPDF = ({
                   <SubmenuBodyProse body={body} resources={resources} points={points} />
                 </div>
 
-                <div className="coc-panel">
+                <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
                   <div className="coc-preview-head">
                     {pdfUrl && (
                       <button

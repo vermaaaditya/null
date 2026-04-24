@@ -304,17 +304,30 @@ const Navbar = () => {
                       {item.name}
                     </a>
                   ) : item.submenu ? (
-                    <button
-                      type="button"
-                      className="nav-link"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleDropdown(index);
-                      }}
-                    >
-                      {item.name}
-                      <span className={`dropdown-arrow ${openDropdown === index ? 'open' : ''}`}>▼</span>
-                    </button>
+                    <div className="nav-link-row">
+                      <Link
+                        to={item.href}
+                        className="nav-link"
+                        onClick={() => {
+                          setOpenDropdown(null);
+                          closeMobileMenu();
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        type="button"
+                        className={`nav-arrow-btn ${openDropdown === index ? 'open' : ''}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggleDropdown(index);
+                        }}
+                        aria-label="Toggle menu"
+                      >
+                        <span className="dropdown-arrow">▼</span>
+                      </button>
+                    </div>
                   ) : (
                     <NavLink
                       to={item.href}
@@ -348,17 +361,31 @@ const Navbar = () => {
                       >
                         {subitem.submenu ? (
                           <>
-                            <button
-                              type="button"
-                              className="dropdown-link nested-parent-link"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                toggleNestedDropdown(`${index}-${subindex}`);
-                              }}
-                            >
-                              {subitem.name}
-                              <span className={`dropdown-arrow ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}>▶</span>
-                            </button>
+                            <div className="dropdown-link-row">
+                              <Link
+                                to={subitem.href}
+                                className="dropdown-link nested-parent-link"
+                                onClick={() => {
+                                  closeMobileMenu();
+                                  setOpenDropdown(null);
+                                  setOpenNestedDropdown(null);
+                                }}
+                              >
+                                {subitem.name}
+                              </Link>
+                              <button
+                                type="button"
+                                className={`nested-arrow-btn ${openNestedDropdown === `${index}-${subindex}` ? 'open' : ''}`}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  toggleNestedDropdown(`${index}-${subindex}`);
+                                }}
+                                aria-label="Toggle submenu"
+                              >
+                                <span className="dropdown-arrow">▶</span>
+                              </button>
+                            </div>
 
                             <ul className={`nested-dropdown-menu ${openNestedDropdown === `${index}-${subindex}` ? 'active' : ''}`}>
                               {subitem.submenu.map((nestedItem, nestedIndex) => (

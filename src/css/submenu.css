@@ -721,6 +721,13 @@
   gap: 0.55rem;
 }
 
+.syllabus-finder-bar {
+  background: white !important;
+  border: 1px solid rgba(10, 25, 47, 0.1) !important;
+  box-shadow: var(--shadow-mid) !important;
+  border-radius: 12px !important;
+}
+
 .submenu-syllabus-controls {
   display: flex;
   gap: 0.65rem;

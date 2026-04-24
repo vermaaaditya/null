@@ -64,7 +64,7 @@ const SubmenuWithPdfDropdown = ({
                   <SubmenuBodyProse body={body} resources={resources} points={points} />
                 </div>
 
-                <div className="coc-panel" style={{ marginTop: '2.5rem' }}>
+                <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
                    <div className="submenu-pdf-toolbar" style={{ background: 'transparent', borderBottom: '1px solid rgba(10,25,47,0.1)', paddingBottom: '1rem', marginBottom: '1rem' }}>
                     <label className="submenu-pdf-label" htmlFor="submenu-pdf-select" style={{ color: '#0a192f' }}>
                       Select Option

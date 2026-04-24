@@ -44,7 +44,7 @@ const SyllabusHubTemplate = ({
       <section className="section submenu-hero">
         <div className="container">
           <div className="submenu-hero-surface">
-            <div className="submenu-hero-grid doc-reader-hero">
+            <div className="submenu-hero-grid no-visual">
               <div className="submenu-hero-copy">
                 <p className="submenu-kicker">{sectionLabel}</p>
                 <h1 className="submenu-title">{title}</h1>
@@ -53,93 +53,92 @@ const SyllabusHubTemplate = ({
                   <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
                 </div>
               </div>
-
-                <div className="coc-panel" style={{ marginTop: '2.5rem' }}>
-                  <div className="coc-preview-head">
-                    {active?.pdfUrl && (
-                      <a
-                        href={active.pdfUrl}
-                        download
-                        className="gradient-button"
-                      >
-                        Download Syllabus
-                      </a>
-                    )}
-                  </div>
-                  
-                  <div className="coc-preview-frame-wrap">
-                    {active?.pdfUrl ? (
-                      <iframe
-                        key={active.pdfUrl}
-                        title={`${title} PDF preview`}
-                        src={active.pdfUrl}
-                        className="coc-preview-frame"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '300px' }}>
-                        Select a course to view the syllabus PDF.
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
       </section>
 
-      <section className="section submenu-content-section">
+      <section className="section submenu-content-section" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
-              <div className="submenu-content-card">
-                <h2 className="submenu-section-title">Syllabus Finder</h2>
-
-                <div className="submenu-syllabus-controls">
-                  <input
-                    className="submenu-syllabus-search"
-                    type="search"
-                    value={query}
-                    placeholder="Search program…"
-                    onChange={(e) => setQuery(e.target.value)}
-                    aria-label="Search syllabus programs"
-                  />
-                </div>
-
-                <div className="submenu-syllabus-grid">
-                  <div className="submenu-syllabus-list" role="list">
-                    {filtered.map((c) => {
-                      const isActive = c.key === active?.key;
-                      return (
-                        <button
-                          key={c.key}
-                          type="button"
-                          className={`submenu-syllabus-item ${isActive ? 'active' : ''}`}
-                          onClick={() => setActiveKey(c.key)}
-                        >
-                          <span className="submenu-syllabus-item-title">{c.label}</span>
-                          <span className="submenu-syllabus-item-meta">{c.pdfUrl ? 'PDF available' : 'PDF pending'}</span>
-                        </button>
-                      );
-                    })}
-                    {filtered.length === 0 ? (
-                      <div className="submenu-syllabus-empty">
-                        No programs match your search.
-                      </div>
-                    ) : null}
+              {/* Syllabus Finder Horizontal Bar */}
+              <div className="submenu-content-card syllabus-finder-bar" style={{ marginBottom: '2rem', padding: '1.5rem' }}>
+                <div className="submenu-syllabus-finder-row" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ flex: '1', minWidth: '250px' }}>
+                     <label className="submenu-paragraph" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Find Program</label>
+                     <input
+                        className="submenu-syllabus-search"
+                        type="search"
+                        value={query}
+                        placeholder="Search program…"
+                        onChange={(e) => setQuery(e.target.value)}
+                        style={{ width: '100%', margin: '0' }}
+                        aria-label="Search syllabus programs"
+                      />
                   </div>
-
-                  <div className="submenu-syllabus-details">
-                    <h3 className="submenu-subsection-title">Overview</h3>
-                    <div className="submenu-prose">
-                      <SubmenuBodyProse body={body} resources={resources} points={points} />
-
-                    </div>
+                  <div style={{ flex: '1.5', minWidth: '300px' }}>
+                    <label className="submenu-paragraph" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Select Syllabus</label>
+                    <select
+                      className="submenu-pdf-select"
+                      value={active?.key}
+                      onChange={(e) => setActiveKey(e.target.value)}
+                      style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(10,25,47,0.1)' }}
+                    >
+                      {filtered.map((c) => (
+                        <option key={c.key} value={c.key}>
+                          {c.label}
+                        </option>
+                      ))}
+                      {filtered.length === 0 && <option value="">No programs match search</option>}
+                    </select>
                   </div>
                 </div>
               </div>
-            </main>
 
+              {/* PDF Reader Widget */}
+              <div className="coc-panel" style={{ boxShadow: 'var(--shadow-mid)' }}>
+                <div className="coc-preview-head" style={{ borderBottom: '1px solid rgba(10,25,47,0.05)', padding: '1rem 1.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                     <h3 className="submenu-subsection-title" style={{ margin: 0 }}>{active?.label || 'Curriculum Preview'}</h3>
+                     {active?.pdfUrl && (
+                      <a
+                        href={active.pdfUrl}
+                        download
+                        className="submenu-action-btn primary"
+                        style={{ fontSize: '0.9rem', padding: '0.5rem 1.25rem' }}
+                      >
+                        Download PDF
+                      </a>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="coc-preview-frame-wrap" style={{ background: '#f1f5f9' }}>
+                  {active?.pdfUrl ? (
+                    <iframe
+                      key={active.pdfUrl}
+                      title={`${title} PDF preview`}
+                      src={active.pdfUrl}
+                      className="coc-preview-frame"
+                      style={{ border: 'none', background: 'white' }}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="submenu-pdf-empty" style={{ color: '#0a192f', minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <p className="submenu-paragraph">Select a program from the finder above to view the syllabus.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Redundant Overview section removed, body content moved here if needed */}
+              {body.length > 0 && (
+                <div className="submenu-prose" style={{ marginTop: '2.5rem' }}>
+                   <SubmenuBodyProse body={body} resources={resources} points={points} />
+                </div>
+              )}
+            </main>
           </div>
         </div>
       </section>
