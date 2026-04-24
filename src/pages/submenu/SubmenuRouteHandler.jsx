@@ -1,4 +1,4 @@
-﻿import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import AboutInstitute from './AboutInstitute';
 import VisionMission from './VisionMission';

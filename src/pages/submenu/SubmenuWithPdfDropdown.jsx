@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
-import SubmenuSidebar from './SubmenuSidebar';
 
 const SubmenuWithPdfDropdown = ({
   sectionLabel,
@@ -115,7 +114,6 @@ const SubmenuWithPdfDropdown = ({
               </div>
             </main>
 
-            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>

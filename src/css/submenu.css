@@ -1,4 +1,4 @@
-﻿/* Shared page sections */
+/* Shared page sections */
 .submenu-content-section {
   margin-top: 0.3rem;
 }
@@ -473,10 +473,9 @@
 }
 
 .submenu-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 1rem;
-  align-items: start;
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .submenu-content-card {

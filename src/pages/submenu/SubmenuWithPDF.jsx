@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
-import SubmenuSidebar from './SubmenuSidebar';
 
 const SubmenuWithPDF = ({
   sectionLabel,
@@ -89,7 +88,6 @@ const SubmenuWithPDF = ({
               </div>
             </main>
 
-            {showSidebar ? <SubmenuSidebar sectionLabel={sectionLabel} /> : null}
           </div>
         </div>
       </section>
