@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getSectionHome } from './submenuTemplateShared';
 import SubmenuBodyProse from './SubmenuBodyProse';
 
@@ -12,7 +12,6 @@ const SubmenuWithPDF = ({
   body = [],
   resources = [],
 }) => {
-  const navigate = useNavigate();
   const sectionHome = getSectionHome(sectionLabel);
 
   const handleDownload = () => {

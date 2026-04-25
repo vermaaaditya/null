@@ -13,7 +13,6 @@ const SyllabusHubTemplate = ({
   body = [],
   points = [],
   resources = [],
-  showSidebar = true,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
   const [query, setQuery] = useState('');
