@@ -1146,8 +1146,9 @@
   border: 1px solid rgba(16, 35, 63, 0.1);
   background: #fff;
   box-shadow: var(--shadow-soft);
-  overflow: hidden;
+  padding: 0.9rem;
   display: grid;
+  gap: 0.65rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1156,21 +1157,38 @@
   box-shadow: 0 14px 30px rgba(10, 25, 47, 0.14);
 }
 
-.faculty-profile-media {
-  aspect-ratio: 4 / 3;
-  background: var(--surface-muted);
+.faculty-profile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
 }
 
-.faculty-profile-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.faculty-profile-avatar {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #0a192f;
+  background: linear-gradient(140deg, rgba(197, 160, 89, 0.3), rgba(197, 160, 89, 0.1));
+  border: 1px solid rgba(16, 35, 63, 0.2);
+}
+
+.faculty-profile-cta {
+  border-radius: 999px;
+  border: 1px solid rgba(16, 35, 63, 0.15);
+  background: rgba(16, 35, 63, 0.05);
+  color: var(--ink-700);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.24rem 0.65rem;
 }
 
 .faculty-profile-body {
   display: grid;
   gap: 0.5rem;
-  padding: 0.9rem;
 }
 
 .faculty-profile-body h3 {
@@ -1276,6 +1294,34 @@
   color: var(--ink-700);
 }
 
+.teacher-profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.teacher-profile-panel {
+  align-content: start;
+}
+
+.teacher-bullet-list {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+  padding-left: 1.05rem;
+}
+
+.teacher-bullet-list li {
+  list-style: disc;
+  color: var(--ink-700);
+}
+
+.teacher-profile-note-text {
+  margin-top: 0.55rem;
+  color: var(--ink-700);
+  font-size: 0.9rem;
+}
+
 .teacher-profile-interests {
   border-radius: 14px;
   border: 1px solid rgba(16, 35, 63, 0.1);
@@ -1298,9 +1344,34 @@
   padding: 0.28rem 0.72rem;
 }
 
+.teacher-interest-detail-list {
+  margin-top: 0.85rem;
+  display: grid;
+  gap: 0.42rem;
+  padding-left: 1.15rem;
+}
+
+.teacher-interest-detail-list li {
+  color: var(--ink-700);
+  list-style: decimal;
+}
+
+.teacher-profile-links-panel {
+  border-radius: 14px;
+  border: 1px solid rgba(16, 35, 63, 0.1);
+  background: #fff;
+  padding: 0.95rem;
+}
+
+.teacher-profile-link-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
 .teacher-inline-link {
   color: #154481;
   font-weight: 700;
+  word-break: break-word;
 }
 
 .teacher-inline-link:hover {
@@ -1323,6 +1394,7 @@
 
 @media (max-width: 640px) {
   .faculty-card-grid,
+  .teacher-profile-details-grid,
   .teacher-profile-info-grid {
     grid-template-columns: 1fr;
   }

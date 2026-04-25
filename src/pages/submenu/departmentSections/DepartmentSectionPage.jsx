@@ -156,6 +156,13 @@ const DepartmentSectionPage = () => {
                                 .map((item) => item.trim())
                                 .filter(Boolean)
                                 .slice(0, 3);
+                              const initials = faculty.name
+                                .split(' ')
+                                .map((word) => word.trim())
+                                .filter(Boolean)
+                                .slice(0, 2)
+                                .map((word) => word.charAt(0).toUpperCase())
+                                .join('');
 
                               return (
                                 <Link
@@ -164,8 +171,9 @@ const DepartmentSectionPage = () => {
                                   className="faculty-profile-card"
                                   aria-label={`Open profile of ${faculty.name}`}
                                 >
-                                  <div className="faculty-profile-media">
-                                    <img src={faculty.image} alt={faculty.name} loading="lazy" />
+                                  <div className="faculty-profile-head">
+                                    <div className="faculty-profile-avatar" aria-hidden="true">{initials}</div>
+                                    <span className="faculty-profile-cta">View Full Profile</span>
                                   </div>
                                   <div className="faculty-profile-body">
                                     <h3>{faculty.name}</h3>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { departmentSectionCatalog } from '../../departmentSectionCatalog';
+import { facultySourceUrl } from '../../../../data/facultyProfiles';
 
 const TeacherProfileTemplate = ({ deptSlug, profile }) => {
   if (!profile) {
@@ -8,10 +9,21 @@ const TeacherProfileTemplate = ({ deptSlug, profile }) => {
   }
 
   const departmentTitle = departmentSectionCatalog[deptSlug]?.title || 'Department';
+  const associatedDepartments = (profile.departments || [])
+    .map((slug) => departmentSectionCatalog[slug]?.title)
+    .filter(Boolean);
+  const qualificationItems = profile.qualification
+    ? profile.qualification
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean)
+    : ['Qualification details will be updated.'];
   const interests = profile.areaOfInterest
     .split(',')
     .map((item) => item.trim())
     .filter(Boolean);
+  const coreExpertise = interests.slice(0, 4);
+  const vidwanProfileId = profile.vidwan.split('/').filter(Boolean).pop();
 
   return (
     <div className="submenu-page teacher-profile-page">
@@ -50,8 +62,16 @@ const TeacherProfileTemplate = ({ deptSlug, profile }) => {
 
               <div className="teacher-profile-info-grid">
                 <div className="teacher-profile-info-card">
+                  <h2>Designation</h2>
+                  <p>{profile.designation}</p>
+                </div>
+                <div className="teacher-profile-info-card">
                   <h2>Qualification</h2>
                   <p>{profile.qualification}</p>
+                </div>
+                <div className="teacher-profile-info-card">
+                  <h2>Department Association</h2>
+                  <p>{associatedDepartments.join(', ') || departmentTitle}</p>
                 </div>
                 <div className="teacher-profile-info-card">
                   <h2>Email</h2>
@@ -62,6 +82,30 @@ const TeacherProfileTemplate = ({ deptSlug, profile }) => {
                   </p>
                 </div>
               </div>
+
+              <section className="teacher-profile-details-grid">
+                <div className="teacher-profile-info-card teacher-profile-panel">
+                  <h2>Academic Qualifications</h2>
+                  <ul className="teacher-bullet-list">
+                    {qualificationItems.map((qualification) => (
+                      <li key={`${profile.slug}-${qualification}`}>{qualification}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="teacher-profile-info-card teacher-profile-panel">
+                  <h2>Core Expertise</h2>
+                  <div className="teacher-profile-interest-list">
+                    {coreExpertise.map((expertise) => (
+                      <span key={`${profile.slug}-core-${expertise}`} className="teacher-interest-chip">
+                        {expertise}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="teacher-profile-note-text">
+                    Currently shown under {departmentTitle}. You can adjust faculty ordering or mapping anytime.
+                  </p>
+                </div>
+              </section>
 
               <section className="teacher-profile-interests">
                 <h2 className="submenu-section-title" style={{ marginBottom: '0.75rem' }}>
@@ -74,6 +118,29 @@ const TeacherProfileTemplate = ({ deptSlug, profile }) => {
                     </span>
                   ))}
                 </div>
+                <ol className="teacher-interest-detail-list">
+                  {interests.map((interest) => (
+                    <li key={`${profile.slug}-detail-${interest}`}>{interest}</li>
+                  ))}
+                </ol>
+              </section>
+
+              <section className="teacher-profile-links-panel">
+                <h2 className="submenu-section-title" style={{ marginBottom: '0.75rem' }}>
+                  Professional Links
+                </h2>
+                <div className="teacher-profile-link-list">
+                  <a href={`mailto:${profile.email}`} className="teacher-inline-link">
+                    Email: {profile.email}
+                  </a>
+                  <a href={profile.vidwan} target="_blank" rel="noreferrer" className="teacher-inline-link">
+                    VIDWAN: {profile.vidwan}
+                  </a>
+                </div>
+                <p className="teacher-profile-note-text">VIDWAN ID: {vidwanProfileId}</p>
+                <p className="teacher-profile-note-text">
+                  Source: <a href={facultySourceUrl} target="_blank" rel="noreferrer" className="teacher-inline-link">Official SIET Faculty Page</a>
+                </p>
               </section>
             </article>
           </div>
