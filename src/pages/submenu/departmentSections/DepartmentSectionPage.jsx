@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
-import { Navigate, useParams, useLocation } from 'react-router-dom';
+import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { departmentSectionCatalog, departmentSectionTitles } from '../departmentSectionCatalog';
 import computerScienceSections from './content/computerScience';
 import aiMlSections from './content/aiMl';
