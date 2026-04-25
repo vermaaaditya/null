@@ -1,6 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
-import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
-import { submenuData } from '../submenuData';
+import { Navigate, useParams, useLocation } from 'react-router-dom';
 import { departmentSectionCatalog, departmentSectionTitles } from '../departmentSectionCatalog';
 import computerScienceSections from './content/computerScience';
 import aiMlSections from './content/aiMl';
@@ -32,7 +31,6 @@ const DepartmentSectionPage = () => {
   const { deptSlug } = useParams();
   const { hash } = useLocation();
   const config = departmentSectionCatalog[deptSlug];
-  const baseData = config ? submenuData[config.dataKey] : null;
 
   const sections = useMemo(() => {
     const baseSections = departmentSectionContent[deptSlug] || [];
@@ -67,44 +65,21 @@ const DepartmentSectionPage = () => {
     }
   }, [hash, deptSlug]);
 
-  if (!config || !baseData) {
+  if (!config) {
     return <Navigate to="/departments/cse" replace />;
   }
 
-  const homeLink = '/departments';
-
   return (
     <div className="submenu-page">
-      <section className="section submenu-hero">
-        <div className="container">
-          <div className="submenu-hero-surface">
-            <div className="submenu-hero-grid">
-              <div className="submenu-hero-copy">
-                <p className="submenu-kicker">DEPARTMENTS</p>
-                <h1 className="submenu-title" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.75rem)' }}>{config.title}</h1>
-                <p className="submenu-subtitle">
-                  {departmentDescriptions[deptSlug]}
-                </p>
-                <div className="submenu-hero-actions">
-                  <Link to={homeLink} className="submenu-action-btn secondary">Back</Link>
-                </div>
-              </div>
-
-              <div className="submenu-hero-visual" aria-hidden="true">
-                <div className="submenu-hero-image-wrap">
-                  <img src={baseData.image} alt="" className="submenu-hero-image" loading="eager" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section submenu-content-section" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
+                <h2 className="submenu-section-title">{config.title}</h2>
+                <p className="submenu-paragraph" style={{ marginBottom: '1.5rem' }}>
+                  {departmentDescriptions[deptSlug]}
+                </p>
                 <div className="submenu-uniscroll-stack" style={{ display: 'grid', gap: '3rem' }}>
                   {sections.map((section) => (
                     <div key={section.id} id={section.id} className="submenu-uniscroll-section" style={{ scrollMarginTop: '100px' }}>

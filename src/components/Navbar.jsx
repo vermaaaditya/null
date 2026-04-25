@@ -78,7 +78,7 @@ const Navbar = () => {
       href: '/departments',
       submenu: [
         {
-          name: 'Computer Science & Engineering (core)',
+          name: 'Computer Science & Engineering',
           href: '/departments/cse',
           submenu: [
             { name: 'About Department', href: '/departments/cse#about-department' },

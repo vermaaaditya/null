@@ -18,12 +18,12 @@ const Courses = () => {
   const currentCourses = [
     {
       id: 1,
-      title: 'Computer Science & Engineering (Core)',
+      title: 'Computer Science & Engineering',
       shortCode: 'CSE',
       learnMoreHref: '/departments/cse',
       image: cseImg,
       description:
-        'Covers core computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
+        'Covers computing fundamentals including programming, data structures, algorithms, software engineering, databases, and computer networks to build versatile IT professionals.',
       duration: '4 Years',
       status: 'ongoing',
       seats: 60

@@ -48,12 +48,16 @@ export const submenuData = {
     title: 'History',
     showHeroImage: false,
     body: [
-      'SIET Panchkula was established to strengthen government-led technical education in Haryana and develop future-ready engineers through disciplined academics and practical learning.'
+      'SIET Panchkula was established to strengthen government-led technical education in Haryana and develop future-ready engineers through disciplined academics and practical learning.',
+      'The institute began with a clear public-service objective: make quality engineering education accessible, affordable, and aligned with regional workforce needs.',
+      'Over time, SIET has expanded academic opportunities, labs, student mentoring, and industry-facing activities to support holistic technical growth.'
     ],
     points: [
       'Focus on hands-on labs, projects, and industry-relevant skills.',
       'Continuous growth through faculty mentoring and modern curriculum.',
-      'Emphasis on innovation, ethics, and responsible engineering.'
+      'Emphasis on innovation, ethics, and responsible engineering.',
+      'Student progression supported through academic advising and co-curricular activities.',
+      'Strong institutional discipline and learning culture built around outcomes.'
     ]
   },
   'about/about-institute': {
@@ -61,12 +65,16 @@ export const submenuData = {
     title: 'About Institute',
     image: campusImage,
     body: [
-      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college operating from GPP campus, Sector-26. It offers six B.Tech programs with industry-oriented learning and expert faculty.'
+      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college operating from GPP campus, Sector-26. It offers six B.Tech programs with industry-oriented learning and expert faculty.',
+      'The institute combines classroom rigor with lab-based delivery, project mentoring, and regular technical events to build practical competence from early semesters.',
+      'Academic systems are designed around student support, transparent evaluation, and continuous improvement aligned with AICTE and university standards.'
     ],
     points: [
-      'CSE (Core) · CSE (AI & ML) · CSE (Cyber Security)',
+      'Computer Science & Engineering · CSE (AI & ML) · CSE (Cyber Security)',
       'Robotics & Automation · Electrical Engineering · Electronics (VLSI Design)',
-      'Strong facilities, practical curriculum, and career-focused training.'
+      'Strong facilities, practical curriculum, and career-focused training.',
+      'Regular skill-building through coding practice, labs, and mini projects.',
+      'Focused training support for internships and placement readiness.'
     ]
   },
   'about/vision-mission': {
@@ -150,10 +158,15 @@ export const submenuData = {
     sectionLabel: 'DEPARTMENTS',
     title: 'Engineering',
     image: facilitiesImage,
+    body: [
+      'Engineering education at SIET is designed to balance scientific fundamentals, practical laboratory exposure, and problem-solving through collaborative project work.',
+      'Students are progressively trained from basic concepts to advanced applications, with mentoring support and outcome-based assessment in every semester.'
+    ],
     points: [
       'Interdisciplinary engineering foundation across all branches.',
-      'Core labs and practical-first curriculum.',
-      'Project-based learning with industry exposure.'
+      'Well-equipped labs and practical-first curriculum.',
+      'Project-based learning with industry exposure.',
+      'Continuous assessment through quizzes, assignments, practicals, and reviews.'
     ]
   },
   'departments/ai-ml': {
@@ -204,12 +217,16 @@ export const submenuData = {
     image: cseDeptImage,
     nestedSections: createDepartmentDemoSections('Computer Science & Engineering', ['programming', 'software engineering'], 'cse'),
     body: [
-      'Core computing program covering algorithms, software engineering, databases, and modern application development.'
+      'Computer Science & Engineering builds strong capability in problem-solving, software development, and systems thinking through a structured academic pathway.',
+      'The program integrates coding practice, data structures, operating systems, databases, and software engineering with regular lab assignments and guided projects.',
+      'Students gain exposure to development workflows, version control, testing, and deployment practices expected in modern software teams.'
     ],
     points: [
       'Strong programming and algorithmic foundation.',
       'Full-stack software engineering practices.',
-      'Cloud, data, and system design exposure.'
+      'Cloud, data, and system design exposure.',
+      'Hands-on mini and major projects with review-based mentoring.',
+      'Preparation for internships, coding assessments, and placement interviews.'
     ]
   },
   'departments/electrical-engineering': {
@@ -249,15 +266,18 @@ export const submenuData = {
     title: 'Courses Offered',
     image: aiMlImage,
     body: [
-      'SIET offers six B.Tech programs (intake: 60 each) designed for industry readiness.'
+      'SIET offers six B.Tech programs (intake: 60 each) designed for industry readiness.',
+      'Each program follows a progressive structure that combines foundational theory, practical labs, tutorials, and guided project work across semesters.'
     ],
     points: [
-      'CSE (Core) — Programming, algorithms, software engineering, databases.',
+      'Computer Science & Engineering — Programming, algorithms, software engineering, databases.',
       'CSE (AI & ML) — Neural networks, data science, intelligent systems.',
       'CSE (Cyber Security) — Ethical hacking, cryptography, digital forensics.',
       'Robotics & Automation — Intelligent robots, smart technologies, automation.',
       'Electrical Engineering — Power systems, machines, control engineering.',
-      'Electronics (VLSI Design) — Semiconductor devices, chip design, embedded systems.'
+      'Electronics (VLSI Design) — Semiconductor devices, chip design, embedded systems.',
+      'Curriculum delivery includes internal assessments, practical evaluations, and semester-end examinations.',
+      'Students are encouraged to build portfolios through hackathons, technical clubs, and internships.'
     ]
   },
   'academics/academic-calendar': {

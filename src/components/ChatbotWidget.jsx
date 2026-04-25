@@ -24,7 +24,7 @@ const getReply = (message) => {
     return `${botReplies.admission} You can open the Admission Form page from the Academics menu.`;
   }
   if (value.includes('department') || value.includes('course') || value.includes('branch')) {
-    return `${botReplies.departments} Current B.Tech options include CSE (Core), CSE (AI & ML), CSE (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).`;
+    return `${botReplies.departments} Current B.Tech options include Computer Science & Engineering, CSE (AI & ML), CSE (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).`;
   }
   if (value.includes('placement') || value.includes('job') || value.includes('recruiter')) {
     return `${botReplies.placements} For T&P specific updates, use the Training & Placements link in navbar.`;
@@ -163,7 +163,14 @@ const ChatbotWidget = () => {
         aria-expanded={isOpen}
         aria-label="Toggle chatbot"
       >
-        {isOpen ? (isCompactMobile ? 'Close' : 'Close Chat') : (isCompactMobile ? 'Chat' : 'Chat with SIET')}
+        <span className="chatbot-toggle-inner">
+          <span className="chatbot-toggle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 2a7 7 0 0 0-7 7v3.2L3.6 14a1 1 0 0 0 .7 1.7H7V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2.3h2.7a1 1 0 0 0 .7-1.7L19 12.2V9a7 7 0 0 0-7-7Zm-3 8.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm6 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z" />
+            </svg>
+          </span>
+          <span>{isOpen ? (isCompactMobile ? 'Close' : 'Close Chat') : (isCompactMobile ? 'Chat' : 'Chat with SIET')}</span>
+        </span>
       </button>
     </div>
   );
