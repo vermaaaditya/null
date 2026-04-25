@@ -24,6 +24,7 @@ import Faculty from './pages/submenu/departmentSections/Faculty';
 import LessonPlans from './pages/submenu/departmentSections/LessonPlans';
 import TimeTable from './pages/submenu/departmentSections/TimeTable';
 import DepartmentSectionPage from './pages/submenu/departmentSections/DepartmentSectionPage';
+import FacultyProfileRoute from './pages/submenu/departmentSections/FacultyProfileRoute';
 
 const ExternalPlacementRedirect = () => {
   React.useEffect(() => {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/departments/:deptSlug/about-department" element={<Navigate to="../#about-department" replace />} />
         <Route path="/departments/:deptSlug/vision-mission" element={<Navigate to="../#vision-mission" replace />} />
         <Route path="/departments/:deptSlug/faculty" element={<Navigate to="../#faculty" replace />} />
+        <Route path="/departments/:deptSlug/faculty/:teacherSlug" element={<FacultyProfileRoute />} />
         <Route path="/departments/:deptSlug/lesson-plans" element={<Navigate to="../#lesson-plans" replace />} />
         <Route path="/departments/:deptSlug/time-table" element={<Navigate to="../#time-table" replace />} />
         <Route path="/academics" element={<Navigate to="/academics/academic-calendar" replace />} />

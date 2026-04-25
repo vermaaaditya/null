@@ -8,6 +8,7 @@ import cyberSecuritySections from './content/cyberSecurity';
 import roboticsSections from './content/robotics';
 import electricalEngineeringSections from './content/electricalEngineering';
 import electronicsVlsiSections from './content/electronicsVlsi';
+import { getFacultyByDepartment } from '../../../data/facultyProfiles';
 
 const departmentSectionContent = {
   cse: computerScienceSections,
@@ -34,7 +35,21 @@ const DepartmentSectionPage = () => {
   const baseData = config ? submenuData[config.dataKey] : null;
 
   const sections = useMemo(() => {
-    return departmentSectionContent[deptSlug] || [];
+    const baseSections = departmentSectionContent[deptSlug] || [];
+    const facultyMembers = getFacultyByDepartment(deptSlug);
+
+    return baseSections.map((section) => {
+      if (section.id !== 'faculty') {
+        return section;
+      }
+
+      return {
+        ...section,
+        body: ['Click a faculty card to view full teacher details.'],
+        table: undefined,
+        facultyMembers
+      };
+    });
   }, [deptSlug]);
 
   useEffect(() => {
@@ -130,6 +145,43 @@ const DepartmentSectionPage = () => {
                                 ))}
                               </div>
                             ))}
+                          </div>
+                        ) : null}
+
+                        {section.facultyMembers?.length > 0 ? (
+                          <div className="faculty-card-grid" style={{ marginTop: '1rem' }}>
+                            {section.facultyMembers.map((faculty) => {
+                              const interests = faculty.areaOfInterest
+                                .split(',')
+                                .map((item) => item.trim())
+                                .filter(Boolean)
+                                .slice(0, 3);
+
+                              return (
+                                <Link
+                                  key={faculty.slug}
+                                  to={`/departments/${deptSlug}/faculty/${faculty.slug}`}
+                                  className="faculty-profile-card"
+                                  aria-label={`Open profile of ${faculty.name}`}
+                                >
+                                  <div className="faculty-profile-media">
+                                    <img src={faculty.image} alt={faculty.name} loading="lazy" />
+                                  </div>
+                                  <div className="faculty-profile-body">
+                                    <h3>{faculty.name}</h3>
+                                    <p className="faculty-profile-designation">{faculty.designation}</p>
+                                    <p className="faculty-profile-qualification">{faculty.qualification}</p>
+                                    <div className="faculty-interest-tags">
+                                      {interests.map((interest) => (
+                                        <span key={`${faculty.slug}-${interest}`} className="faculty-interest-chip">
+                                          {interest}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </Link>
+                              );
+                            })}
                           </div>
                         ) : null}
 
