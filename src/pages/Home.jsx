@@ -6,7 +6,6 @@ import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
 import TopAnnouncements from '../components/TopAnnouncements';
 import SocialMediaPanel from '../components/SocialMediaPanel';
-import CampusUpdates from '../components/CampusUpdates';
 import BannerCarousel from '../components/BannerCarousel';
 
 /**
@@ -33,10 +32,7 @@ function Home() {
       {/* Information Cards: News, Notifications, Placements */}
       <InfoCards />
 
-      {/* Campus Updates */}
-      <CampusUpdates />
-
-      {/* Institute Gallery (below campus updates) */}
+      {/* Institute Gallery (below campus updates cards) */}
       <BannerCarousel />
 
       <SocialMediaPanel />

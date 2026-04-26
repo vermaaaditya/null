@@ -48,16 +48,13 @@ const banners = [
 
 const BannerCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % banners.length);
-    setIsLoading(true);
   };
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + banners.length) % banners.length);
-    setIsLoading(true);
   };
 
   useEffect(() => {
@@ -78,7 +75,6 @@ const BannerCarousel = () => {
           </div>
 
           <div className="banner-carousel">
-            {isLoading && <div className="banner-skeleton" aria-hidden="true"></div>}
             {banners.map((banner, index) => (
               <article
                 key={banner.id}
@@ -89,7 +85,6 @@ const BannerCarousel = () => {
                   src={banner.image}
                   alt={banner.title}
                   loading="lazy"
-                  onLoad={() => setIsLoading(false)}
                 />
                 <div className="banner-overlay"></div>
                 <div className="banner-content">
@@ -113,7 +108,6 @@ const BannerCarousel = () => {
                   key={banner.id}
                   onClick={() => {
                     setActiveIndex(index);
-                    setIsLoading(true);
                   }}
                   className={`banner-dot ${index === activeIndex ? 'active' : ''}`}
                   aria-label={`Go to banner ${index + 1}`}
