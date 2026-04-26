@@ -1,8 +1,19 @@
 import React from 'react';
-import SubmenuDocumentHub from './SubmenuDocumentHub';
+import SyllabusHubTemplate from './SyllabusHubTemplate';
 import { submenuData } from './submenuData';
 
-const AdmissionProspectus = () => <SubmenuDocumentHub {...submenuData['academics/admission-prospectus']} hideHero />;
+const AdmissionProspectus = () => {
+  const data = submenuData['academics/admission-prospectus'];
+  return (
+    <SyllabusHubTemplate
+      {...data}
+      courses={data.documents}
+      finderLabel="Search Documents"
+      selectLabel="Select Document"
+      searchPlaceholder="Search document title..."
+      hideHero
+    />
+  );
+};
 
 export default AdmissionProspectus;
-

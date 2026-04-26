@@ -1,4 +1,4 @@
-﻿@media (max-width: 760px) {
+@media (max-width: 760px) {
   .container {
     width: min(var(--container-max), calc(100% - 1.4rem));
   }
@@ -46,9 +46,8 @@
     width: 100%;
   }
 
-  .courses-grid,
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .courses-grid {
+    grid-template-columns: 1fr;
   }
 
   .vm-grid,
@@ -73,7 +72,8 @@
   .facilities-grid,
   .recruiters-grid,
   .gallery-grid,
-  .process-timeline {
+  .process-timeline,
+  .cards-grid {
     grid-template-columns: 1fr;
   }
 
@@ -113,11 +113,6 @@
   }
 }
 
-@media (max-width: 380px) {
-  .courses-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 560px) {
   .section {

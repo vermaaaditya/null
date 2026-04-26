@@ -14,6 +14,9 @@ const SyllabusHubTemplate = ({
   points = [],
   resources = [],
   hideHero = false,
+  finderLabel = 'Find Program',
+  selectLabel = 'Select Syllabus',
+  searchPlaceholder = 'Search program...',
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
   const [query, setQuery] = useState('');
@@ -81,18 +84,18 @@ const SyllabusHubTemplate = ({
                 <div className="syllabus-finder-bar">
                   <div className="submenu-syllabus-finder-row">
                     <div className="syllabus-finder-field">
-                      <label className="syllabus-field-label">Find Program</label>
+                      <label className="syllabus-field-label">{finderLabel}</label>
                       <input
                         className="submenu-syllabus-search"
                         type="search"
                         value={query}
-                        placeholder="Search program..."
+                        placeholder={searchPlaceholder}
                         onChange={(e) => setQuery(e.target.value)}
                         aria-label="Search syllabus programs"
                       />
                     </div>
                     <div className="syllabus-finder-field">
-                      <label className="syllabus-field-label">Select Syllabus</label>
+                      <label className="syllabus-field-label">{selectLabel}</label>
                       <select
                         className="submenu-pdf-select syllabus-hub-select-light"
                         value={active?.key || ''}

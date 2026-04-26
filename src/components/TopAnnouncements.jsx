@@ -1,46 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
-import { topAnnouncementsData } from '../data/noticesData';
 
 const TopAnnouncements = () => {
-  const [isPaused, setIsPaused] = useState(false);
-
-  const announcements = topAnnouncementsData;
-
   return (
     <ScrollReveal>
-      <section className="top-announcements" aria-label="Latest notices and announcements">
+      <section className="top-announcements" aria-label="Upcoming events">
         <div className="container">
           <div className="top-announcements-wrap">
             <div className="announcements-title-box">
-              <span className="announcements-chip">Latest</span>
-              <h2>Notices & Announcements</h2>
+              <span className="announcements-chip">Upcoming</span>
+              <h2>Upcoming Events</h2>
             </div>
 
-            <div
-              className={`announcements-track ${isPaused ? 'paused' : ''}`}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-            >
-              <div className="announcements-marquee">
-                {[...announcements, ...announcements].map((notice, index) => (
-                  <a
-                    key={`${notice.id}-${index}`}
-                    className="announcement-item announcement-link-item"
-                    href={notice.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open notice: ${notice.text}`}
-                  >
-                    <span className="announcement-dot" aria-hidden="true"></span>
-                    <p>{notice.text}</p>
-                  </a>
-                ))}
+            <div className="announcements-track">
+              <div className="announcements-placeholder">
+                <span className="announcement-dot" aria-hidden="true"></span>
+                <p>Events will be updated soon. Stay tuned for campus activities and programs.</p>
               </div>
             </div>
 
-            <Link to="/all-notices" className="announcements-link">View Notices</Link>
+            <Link to="/events" className="announcements-link">View Events</Link>
           </div>
         </div>
       </section>

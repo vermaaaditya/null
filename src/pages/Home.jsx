@@ -2,10 +2,10 @@ import React from 'react';
 import Hero from '../components/Hero';
 import AboutInstituteHome from '../components/AboutInstituteHome';
 import DirectorDesk from '../components/DirectorDesk';
+import VisionMissionHome from '../components/VisionMissionHome';
 import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
 import TopAnnouncements from '../components/TopAnnouncements';
-import SocialMediaPanel from '../components/SocialMediaPanel';
 import BannerCarousel from '../components/BannerCarousel';
 
 /**
@@ -26,6 +26,9 @@ function Home() {
       {/* Director's Message Section */}
       <DirectorDesk />
 
+      {/* Vision & Mission */}
+      <VisionMissionHome />
+
       {/* Courses Section - Current and Upcoming Programs */}
       <Courses />
 
@@ -34,8 +37,6 @@ function Home() {
 
       {/* Institute Gallery (below campus updates cards) */}
       <BannerCarousel />
-
-      <SocialMediaPanel />
     </div>
   );
 }

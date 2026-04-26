@@ -1,4 +1,4 @@
-﻿/* Director Section */
+/* Director Section */
 .director-desk {
   position: relative;
 }
@@ -254,3 +254,134 @@
   letter-spacing: 0.02em;
 }
 
+/* Vision & Mission Home Section */
+.vision-mission-home {
+  position: relative;
+}
+
+.vm-home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.vm-home-card {
+  border-radius: 12px;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+  background: #fff;
+  border: 1px solid rgba(16, 35, 63, 0.1);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vm-home-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 35, 63, 0.12);
+}
+
+.vm-home-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  background: rgba(197, 160, 89, 0.14);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  color: #c5a059;
+}
+
+.vm-home-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.vm-vision-card {
+  border-top: 3px solid #c5a059;
+}
+
+.vm-mission-card {
+  border-top: 3px solid #0a192f;
+}
+
+.vm-home-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.vm-home-card p {
+  color: var(--ink-700);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.vm-home-mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.vm-home-mission-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+  font-size: 0.94rem;
+}
+
+.vm-home-mission-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #c5a059;
+}
+
+.vm-home-action {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.vm-home-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.62rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0a192f;
+  background: #c5a059;
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.vm-home-read-more:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(197, 160, 89, 0.35);
+  background: #d4b06a;
+}
+
+@media (max-width: 768px) {
+  .vm-home-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .director-classic-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .director-classic-photo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}

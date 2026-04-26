@@ -127,7 +127,6 @@ const getReply = (message) => {
 const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCompactMobile, setIsCompactMobile] = useState(false);
-  const [showSuggestions, setShowSuggestions] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const [input, setInput] = useState('');
@@ -146,6 +145,9 @@ const ChatbotWidget = () => {
     return [botGreeting];
   });
   const messageIdRef = useRef(Math.max(0, ...messages.map((m) => Number(m.id) || 0)) + 1);
+
+  // Only show suggestions when conversation has just the greeting (no user messages yet)
+  const hasUserMessages = useMemo(() => messages.some((m) => m.role === 'user'), [messages]);
 
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
@@ -211,7 +213,6 @@ const ChatbotWidget = () => {
 
   const appendUserAndReply = (text) => {
     if (!text.trim()) return;
-    setShowSuggestions(false);
     setMessages((prev) => [...prev, createMessage('user', text, [])]);
     queueBotReply(text);
   };
@@ -256,7 +257,6 @@ const ChatbotWidget = () => {
     setMessages(reset);
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(reset));
     setUnreadCount(0);
-    setShowSuggestions(true);
     messageIdRef.current = 2;
   };
 
@@ -319,19 +319,8 @@ const ChatbotWidget = () => {
             ) : null}
           </div>
 
-          <div className="chatbot-suggestions-toggle-wrap">
-            <button
-              type="button"
-              className="chatbot-suggestions-toggle"
-              onClick={() => setShowSuggestions((prev) => !prev)}
-              aria-expanded={showSuggestions}
-              aria-controls="chatbot-suggestions"
-            >
-              {showSuggestions ? 'Hide quick questions' : 'Show quick questions'}
-            </button>
-          </div>
-
-          {showSuggestions ? (
+          {/* Only show suggestions when there are no user messages yet */}
+          {!hasUserMessages && (
             <div className="chatbot-suggestions" id="chatbot-suggestions" aria-label="Suggested questions">
               {suggestedQuestions.map((question) => (
                 <button
@@ -344,7 +333,7 @@ const ChatbotWidget = () => {
                 </button>
               ))}
             </div>
-          ) : null}
+          )}
 
           <form className="chatbot-form" onSubmit={handleSend}>
             <input

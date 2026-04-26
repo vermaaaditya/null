@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ScrollReveal from './ScrollReveal';
 
 const links = [
   {
@@ -23,30 +22,18 @@ const links = [
 
 const SocialMediaPanel = () => {
   return (
-    <ScrollReveal>
-      <section className="social-panel section" aria-label="Quick links">
-        <div className="container">
-          <div className="social-panel-card">
-            <div>
-              <h2>Quick Links</h2>
-              <p>Use these shortcuts to open the most requested SIET sections quickly.</p>
-            </div>
-            <div className="social-buttons">
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  className="social-panel-btn"
-                  aria-label={link.name}
-                >
-                  <span>{link.name}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </ScrollReveal>
+    <nav className="quick-links-sidebar" aria-label="Quick navigation links">
+      {links.map((link) => (
+        <Link
+          key={link.name}
+          to={link.to}
+          className="quick-links-sidebar-btn"
+          aria-label={link.name}
+        >
+          <span>{link.name}</span>
+        </Link>
+      ))}
+    </nav>
   );
 };
 

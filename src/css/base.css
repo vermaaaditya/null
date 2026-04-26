@@ -1,4 +1,4 @@
-﻿/* Fonts loaded via index.html: Noto Serif + Source Sans 3 */
+/* Fonts loaded via index.html: Noto Serif + Source Sans 3 */
 
 /* Primary website styling restored from the original monolithic stylesheet */
 @import '../styles.css';
@@ -7,8 +7,19 @@
 @import './chatbot.css';
 
 /* Component-level CSS (overrides + new templates) */
+@import './animations.css';
+@import './header.css';
 @import './navbar.css';
+@import './hero.css';
+@import './home.css';
+@import './director.css';
+@import './courses.css';
+@import './infocards.css';
+@import './notices.css';
 @import './submenu.css';
+@import './forms.css';
+@import './footer.css';
+@import './responsive.css';
 
 :root {
   --bg-base: #fcfaf2;
