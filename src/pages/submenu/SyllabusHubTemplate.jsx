@@ -13,6 +13,7 @@ const SyllabusHubTemplate = ({
   body = [],
   points = [],
   resources = [],
+  hideHero = false,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
   const [query, setQuery] = useState('');
@@ -40,28 +41,43 @@ const SyllabusHubTemplate = ({
 
   return (
     <div className="submenu-page">
-      <section className="section submenu-hero">
-        <div className="container">
-          <div className="submenu-hero-surface">
-            <div className="submenu-hero-grid no-visual">
-              <div className="submenu-hero-copy">
-                <p className="submenu-kicker">{sectionLabel}</p>
-                <h1 className="submenu-title">{title}</h1>
-                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
-                <div className="submenu-hero-actions">
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+      {!hideHero ? (
+        <section className="section submenu-hero">
+          <div className="container">
+            <div className="submenu-hero-surface">
+              <div className="submenu-hero-grid no-visual">
+                <div className="submenu-hero-copy">
+                  <p className="submenu-kicker">{sectionLabel}</p>
+                  <h1 className="submenu-title">{title}</h1>
+                  {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
+                  <div className="submenu-hero-actions">
+                    <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="section submenu-content-section">
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card syllabus-hub-shell">
+                {hideHero ? (
+                  <div className="submenu-inline-header">
+                    <p className="submenu-inline-kicker">{sectionLabel}</p>
+                    <div className="submenu-inline-header-row">
+                      <div>
+                        <h1 className="submenu-inline-title">{title}</h1>
+                        {subtitle ? <p className="submenu-inline-subtitle">{subtitle}</p> : null}
+                      </div>
+                      <Link to={sectionHome.to} className="submenu-inline-back">Back</Link>
+                    </div>
+                  </div>
+                ) : null}
+
                 <div className="syllabus-finder-bar">
                   <div className="submenu-syllabus-finder-row">
                     <div className="syllabus-finder-field">

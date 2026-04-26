@@ -13,6 +13,7 @@ const SubmenuDocumentHub = ({
   body = [],
   points = [],
   resources = [],
+  hideHero = false,
 }) => {
   const sectionHome = getSectionHome(sectionLabel);
   const [query, setQuery] = useState('');
@@ -40,35 +41,55 @@ const SubmenuDocumentHub = ({
 
   return (
     <div className="submenu-page">
-      <section className="section submenu-hero">
-        <div className="container">
-          <div className="submenu-hero-surface">
-
-
-            <div className="submenu-hero-grid doc-hero doc-reader-hero no-visual">
-              <div className="submenu-hero-copy">
-                <p className="submenu-kicker">{sectionLabel}</p>
-                <h1 className="submenu-title">{title}</h1>
-                {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
-                <div className="submenu-hero-actions">
-                  <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
-                  {active?.pdfUrl ? (
-                    <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-action-btn primary">
-                      Download
-                    </a>
-                  ) : null}
+      {!hideHero ? (
+        <section className="section submenu-hero">
+          <div className="container">
+            <div className="submenu-hero-surface">
+              <div className="submenu-hero-grid doc-hero doc-reader-hero no-visual">
+                <div className="submenu-hero-copy">
+                  <p className="submenu-kicker">{sectionLabel}</p>
+                  <h1 className="submenu-title">{title}</h1>
+                  {subtitle ? <p className="submenu-subtitle">{subtitle}</p> : null}
+                  <div className="submenu-hero-actions">
+                    <Link to={sectionHome.to} className="submenu-action-btn secondary">Back</Link>
+                    {active?.pdfUrl ? (
+                      <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-action-btn primary">
+                        Download
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="section submenu-content-section">
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
               <div className="submenu-content-card">
+                {hideHero ? (
+                  <div className="submenu-inline-header">
+                    <p className="submenu-inline-kicker">{sectionLabel}</p>
+                    <div className="submenu-inline-header-row">
+                      <div>
+                        <h1 className="submenu-inline-title">{title}</h1>
+                        {subtitle ? <p className="submenu-inline-subtitle">{subtitle}</p> : null}
+                      </div>
+                      <div className="submenu-inline-header-actions">
+                        <Link to={sectionHome.to} className="submenu-inline-back">Back</Link>
+                        {active?.pdfUrl ? (
+                          <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-inline-back primary">
+                            Download
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+
                 <div className="doc-body-grid">
                   <section className="doc-body-copy">
                     <h2 className="submenu-section-title">About this document</h2>
