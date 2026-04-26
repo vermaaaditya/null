@@ -65,7 +65,7 @@ const SubmenuDocumentHub = ({
         </section>
       ) : null}
 
-      <section className="section submenu-content-section">
+      <section className={`section submenu-content-section ${hideHero ? 'no-hero-offset' : ''}`}>
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
@@ -138,7 +138,7 @@ const SubmenuDocumentHub = ({
                       ) : null}
                     </div>
 
-                    <div className="coc-panel" style={{ marginTop: '2.5rem', boxShadow: 'var(--shadow-mid)' }}>
+                    <div className="coc-panel doc-preview-panel">
                       <div className="coc-preview-head">
                         {active?.pdfUrl && (
                           <a

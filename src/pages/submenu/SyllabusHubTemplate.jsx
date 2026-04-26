@@ -60,7 +60,7 @@ const SyllabusHubTemplate = ({
         </section>
       ) : null}
 
-      <section className="section submenu-content-section">
+      <section className={`section submenu-content-section ${hideHero ? 'no-hero-offset' : ''}`}>
         <div className="container">
           <div className="submenu-layout">
             <main className="submenu-main">
