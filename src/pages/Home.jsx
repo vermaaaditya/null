@@ -6,6 +6,8 @@ import Courses from '../components/Courses';
 import InfoCards from '../components/InfoCards';
 import TopAnnouncements from '../components/TopAnnouncements';
 import SocialMediaPanel from '../components/SocialMediaPanel';
+import CampusUpdates from '../components/CampusUpdates';
+import BannerCarousel from '../components/BannerCarousel';
 
 /**
  * Home Page Component
@@ -30,6 +32,12 @@ function Home() {
 
       {/* Information Cards: News, Notifications, Placements */}
       <InfoCards />
+
+      {/* Campus Updates */}
+      <CampusUpdates />
+
+      {/* Institute Gallery (below campus updates) */}
+      <BannerCarousel />
 
       <SocialMediaPanel />
     </div>
