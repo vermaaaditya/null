@@ -132,7 +132,7 @@ const ChatbotWidget = () => {
   const [input, setInput] = useState('');
   const messagesRef = useRef(null);
   const replyTimerRef = useRef(null);
-  const previousCountRef = useRef(messages.length);
+  const isOpenRef = useRef(false);
   const [messages, setMessages] = useState(() => {
     const storage = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null;
     if (storage) {
@@ -165,13 +165,7 @@ const ChatbotWidget = () => {
   }, []);
 
   useEffect(() => {
-    if (messages.length > previousCountRef.current && !isOpen) {
-      const latest = messages[messages.length - 1];
-      if (latest?.role === 'bot') {
-        setUnreadCount((count) => count + 1);
-      }
-    }
-    previousCountRef.current = messages.length;
+    isOpenRef.current = isOpen;
   }, [messages, isOpen]);
 
   useEffect(() => () => {
@@ -207,14 +201,16 @@ const ChatbotWidget = () => {
     replyTimerRef.current = window.setTimeout(() => {
       const botTime = Date.now();
       setMessages((prev) => [...prev, createMessage('bot', reply.text, reply.links || [], botTime)]);
+      if (!isOpenRef.current) {
+        setUnreadCount((count) => count + 1);
+      }
       setIsTyping(false);
     }, 520);
   };
 
   const appendUserAndReply = (text) => {
     if (!text.trim()) return;
-    const userTime = Date.now();
-    setMessages((prev) => [...prev, createMessage('user', text, [], userTime)]);
+    setMessages((prev) => [...prev, createMessage('user', text, [])]);
     queueBotReply(text);
   };
 
