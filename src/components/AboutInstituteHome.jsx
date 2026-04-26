@@ -21,9 +21,9 @@ const AboutInstituteHome = () => {
                 State Institute of Engineering &amp; Technology (SIET), Panchkula, is a premier government engineering
                 college committed to excellence in technical education and innovation. Established to nurture the next
                 generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic,
-                Panchkula) Sector-26. The institute offers six undergraduate programs: Computer Science and Engineering
-                (Core), Computer Science and Engineering (AI &amp; ML), Computer Science and Engineering (Cyber Security),
-                Robotics &amp; Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).
+                Panchkula) Sector-26. The institute offers cutting-edge undergraduate programs in Computer Science and Engineering
+                (AI &amp; ML), Computer Science and Engineering (Cyber Security), and Robotics &amp; Automation.
+                With a focus on industry-oriented learning, state-of-the-art facilities, and expert faculty, SIET aims to empower students with the knowledge and skills required to excel in the ever-evolving world of technology.
               </p>
               <div className="home-about-actions">
                 <Link to="/about/about-institute" className="btn btn-primary">

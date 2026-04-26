@@ -48,33 +48,27 @@ export const submenuData = {
     title: 'History',
     showHeroImage: false,
     body: [
-      'SIET Panchkula was established to strengthen government-led technical education in Haryana and develop future-ready engineers through disciplined academics and practical learning.',
-      'The institute began with a clear public-service objective: make quality engineering education accessible, affordable, and aligned with regional workforce needs.',
-      'Over time, SIET has expanded academic opportunities, labs, student mentoring, and industry-facing activities to support holistic technical growth.'
+      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
+      'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
+      'The institute offers cutting-edge undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'With a focus on industry-oriented learning, state-of-the-art facilities, and expert faculty, SIET aims to empower students with the knowledge and skills required to excel in the ever-evolving world of technology.'
     ],
-    points: [
-      'Focus on hands-on labs, projects, and industry-relevant skills.',
-      'Continuous growth through faculty mentoring and modern curriculum.',
-      'Emphasis on innovation, ethics, and responsible engineering.',
-      'Student progression supported through academic advising and co-curricular activities.',
-      'Strong institutional discipline and learning culture built around outcomes.'
-    ]
+    points: []
   },
   'about/about-institute': {
     sectionLabel: 'ABOUT US',
     title: 'About Institute',
     image: campusImage,
     body: [
-      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college operating from GPP campus, Sector-26. It offers six B.Tech programs with industry-oriented learning and expert faculty.',
-      'The institute combines classroom rigor with lab-based delivery, project mentoring, and regular technical events to build practical competence from early semesters.',
-      'Academic systems are designed around student support, transparent evaluation, and continuous improvement aligned with AICTE and university standards.'
+      'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation. Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
+      'The institute offers cutting-edge undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'With a focus on industry-oriented learning, state-of-the-art facilities, and expert faculty, SIET aims to empower students with the knowledge and skills required to excel in the ever-evolving world of technology.'
     ],
     points: [
-      'Computer Science & Engineering · CSE (AI & ML) · CSE (Cyber Security)',
-      'Robotics & Automation · Electrical Engineering · Electronics (VLSI Design)',
-      'Strong facilities, practical curriculum, and career-focused training.',
-      'Regular skill-building through coding practice, labs, and mini projects.',
-      'Focused training support for internships and placement readiness.'
+      'Computer Science and Engineering (AI & ML) - Intake: 60',
+      'Computer Science and Engineering (Cyber Security) - Intake: 60',
+      'Robotics & Automation - Intake: 60',
+      'Focus on hands-on labs, projects, and industry-relevant skills.'
     ]
   },
   'about/vision-mission': {
@@ -83,15 +77,15 @@ export const submenuData = {
     image: campusAltImage,
     body: [
       'Vision',
-      'To be a centre of excellence in technical education, research, and innovation — fostering a skilled and ethical workforce for sustainable development.',
+      'To be a centre of excellence in technical education, research, and innovation, fostering a skilled and ethical workforce that contributes to the sustainable development of society and the nation.',
       'Mission'
     ],
     points: [
-      'Quality Education — Inclusive learning that nurtures creativity and technical expertise.',
-      'Research & Innovation — Advancing technology to address local and global challenges.',
-      'Industry Collaboration — Partnerships for hands-on learning and employability.',
-      'Social Responsibility — Ethics, leadership, and sustainability.',
-      'Lifelong Learning — Skills for continuous adaptation to emerging technologies.'
+      'Quality Education – To provide a dynamic and inclusive learning environment that nurtures creativity, problem-solving, and technical expertise.',
+      'Research & Innovation – To promote research and technological advancements that address local and global challenges.',
+      'Industry Collaboration – To strengthen industry-academia partnerships for hands-on learning, internships, and employability.',
+      'Social Responsibility – To instil values of ethics, leadership, and sustainability for the betterment of society.',
+      'Lifelong Learning – To equip students with the skills necessary for continuous learning and adaptation to emerging technologies.'
     ]
   },
   'about/directors-message': {
@@ -100,12 +94,12 @@ export const submenuData = {
     image: directorImage,
     imageMode: 'portrait',
     body: [
-      'Welcome to SIET Panchkula. Our institute is dedicated to unlocking every student\'s potential and shaping confident engineers ready for real-world challenges.'
+      'I take the pleasure in welcoming you to State Institute of Engineering and Technology (SIET), Panchkula an institute dedicated to the proper growth and development of each and every student for a better career prospect.',
+      'The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the college. The college provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility. All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.',
+      'The infrastructure has been developed with most modern equipment; provisions have also been made to upgrade the same keeping pace with the technological advancements of the time. SIET has a team of highly qualified, experienced and dedicated faculty who devote their time not only to teaching but also for the overall development of the students. Further, faculty from other renowned institutions are invited to deliver guest lectures to help augment their studies beyond syllabus.',
+      'We are confident that the students passing out from this college will be technically sound, confident and have good leadership skills. I wish all the best to all the prospective students.'
     ],
     points: [
-      'Highly qualified faculty committed to teaching and holistic student development.',
-      'Guest lectures from renowned institutions to broaden academic exposure.',
-      'Focus on communication skills, critical thinking, and leadership.',
       '— Prof. Anil Kumar, Director-Principal'
     ]
   },

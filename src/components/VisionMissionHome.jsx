@@ -23,7 +23,7 @@ const VisionMissionHome = () => {
               </div>
               <h3>Vision</h3>
               <p>
-                To be a centre of excellence in technical education, research, and innovation — fostering a skilled and ethical workforce for sustainable development.
+                To be a centre of excellence in technical education, research, and innovation, fostering a skilled and ethical workforce that contributes to the sustainable development of society and the nation.
               </p>
             </div>
 
@@ -36,11 +36,11 @@ const VisionMissionHome = () => {
               </div>
               <h3>Mission</h3>
               <ul className="vm-home-mission-list">
-                <li>Quality Education — Inclusive learning that nurtures creativity and technical expertise.</li>
-                <li>Research &amp; Innovation — Advancing technology to address local and global challenges.</li>
-                <li>Industry Collaboration — Partnerships for hands-on learning and employability.</li>
-                <li>Social Responsibility — Ethics, leadership, and sustainability.</li>
-                <li>Lifelong Learning — Skills for continuous adaptation to emerging technologies.</li>
+                <li>Quality Education – To provide a dynamic and inclusive learning environment that nurtures creativity, problem-solving, and technical expertise.</li>
+                <li>Research &amp; Innovation – To promote research and technological advancements that address local and global challenges.</li>
+                <li>Industry Collaboration – To strengthen industry-academia partnerships for hands-on learning, internships, and employability.</li>
+                <li>Social Responsibility – To instil values of ethics, leadership, and sustainability for the betterment of society.</li>
+                <li>Lifelong Learning – To equip students with the skills necessary for continuous learning and adaptation to emerging technologies.</li>
               </ul>
             </div>
           </div>
