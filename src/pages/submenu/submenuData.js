@@ -50,7 +50,7 @@ export const submenuData = {
     body: [
       'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation.',
       'Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
-      'The institute offers cutting-edge undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'The institute offers six cutting-edge undergraduate programs: Computer Science and Engineering , Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).',
       'With a focus on industry-oriented learning, state-of-the-art facilities, and expert faculty, SIET aims to empower students with the knowledge and skills required to excel in the ever-evolving world of technology.'
     ],
     points: []
@@ -61,13 +61,16 @@ export const submenuData = {
     image: campusImage,
     body: [
       'State Institute of Engineering & Technology (SIET), Panchkula, is a premier government engineering college committed to excellence in technical education and innovation. Established to nurture the next generation of engineers, SIET currently operates from the shared campus of GPP (Government Polytechnic, Panchkula) Sector-26.',
-      'The institute offers cutting-edge undergraduate programs in Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), and Robotics & Automation.',
+      'The institute offers six cutting-edge undergraduate programs: Computer Science and Engineering (Core), Computer Science and Engineering (AI & ML), Computer Science and Engineering (Cyber Security), Robotics & Automation, Electrical Engineering, and Electronics Engineering (VLSI Design).',
       'With a focus on industry-oriented learning, state-of-the-art facilities, and expert faculty, SIET aims to empower students with the knowledge and skills required to excel in the ever-evolving world of technology.'
     ],
     points: [
+      'Computer Science and Engineering - Intake: 60',
       'Computer Science and Engineering (AI & ML) - Intake: 60',
       'Computer Science and Engineering (Cyber Security) - Intake: 60',
       'Robotics & Automation - Intake: 60',
+      'Electrical Engineering - Intake: 60',
+      'Electronics Engineering (VLSI Design) - Intake: 60',
       'Focus on hands-on labs, projects, and industry-relevant skills.'
     ]
   },

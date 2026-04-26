@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import principalPhoto from '../assets/new-assets/principal-photo/prienciple.jpeg';
 
 /**
@@ -25,10 +26,13 @@ const DirectorDesk = () => {
           </div>
 
           <div className="director-classic-message">
-            {messageParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <p className="director-classic-signoff">
+            <p>{messageParagraphs[0]}</p>
+            <div className="mt-4">
+              <Link to="/about/directors-message" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', marginTop: '1rem', display: 'inline-block' }}>
+                Read More →
+              </Link>
+            </div>
+            <p className="director-classic-signoff" style={{ marginTop: '1.5rem' }}>
                Prof. Anil Kumar<br />
                Director - Principal, SIET Panchkula
             </p>
