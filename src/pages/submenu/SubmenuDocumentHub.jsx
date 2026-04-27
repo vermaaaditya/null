@@ -72,11 +72,21 @@ const SubmenuDocumentHub = ({
             <main className="submenu-main">
               <div className="submenu-content-card">
                 {hideHero ? (
-                  <div className="section-header" style={{ marginBottom: '1.5rem' }}>
-                    <h1 className="section-title">{title}</h1>
-                    <div className="title-underline"></div>
-                    {subtitle ? <p className="section-subtitle">{subtitle}</p> : null}
-                  </div>
+                  <>
+                    <div className="section-header" style={{ marginBottom: '1rem' }}>
+                      <h1 className="section-title">{title}</h1>
+                      <div className="title-underline"></div>
+                      {subtitle ? <p className="section-subtitle">{subtitle}</p> : null}
+                    </div>
+                    <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem' }}>
+                      <Link to={sectionHome.to} className="submenu-inline-back">Back</Link>
+                      {active?.pdfUrl ? (
+                        <a href={active.pdfUrl} target="_blank" rel="noopener noreferrer" className="submenu-inline-back primary">
+                          Download
+                        </a>
+                      ) : null}
+                    </div>
+                  </>
                 ) : null}
 
                 <div className="doc-body-grid">
